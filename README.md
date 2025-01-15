@@ -41,6 +41,12 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
+## Visit My Website
+- [JimBLogic's Website](https://jimblogic.github.io/)
+
+## About This Website
+This website is a showcase of my GitHub repositories and certificates. It provides links to my various projects and achievements in the field of IT and cybersecurity.
+
 <footer>
 
 <!--

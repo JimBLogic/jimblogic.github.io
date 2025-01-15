@@ -16,3 +16,9 @@ title: Home
   ![AWS & IBM Certificates](https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute.png)
 - [TryHackMe & HackTheBox](https://github.com/JimBLogic/TryHackme-HackTheBox)
   ![TryHackMe & HackTheBox](https://github.com/JimBLogic/TryHackme-HackTheBox.png)
+
+## Visit My Website
+- [JimBLogic's Website](https://jimblogic.github.io/)
+
+## About This Website
+This website is a showcase of my GitHub repositories and certificates. It provides links to my various projects and achievements in the field of IT and cybersecurity.
