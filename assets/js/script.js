@@ -32,7 +32,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
       }
     }
   });
-});
+}
 
 // Fetch and display certificates
 fetch("assets/js/certificates.json")
