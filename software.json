@@ -1,50 +1,50 @@
 [
   {
     "name": "Linux",
-    "image": "assets/images/software/linux.png"
+    "image": "assets/images/software/linux_orange.png"
   },
   {
     "name": "Windows",
-    "image": "assets/images/software/windows.png"
+    "image": "assets/images/software/windows_orange.png"
   },
   {
     "name": "iOS",
-    "image": "assets/images/software/ios.png"
+    "image": "assets/images/software/ios_orange.png"
   },
   {
     "name": "Python",
-    "image": "assets/images/software/python.png"
+    "image": "assets/images/software/python_orange.png"
   },
   {
     "name": "SQL",
-    "image": "assets/images/software/sql.png"
+    "image": "assets/images/software/sql_orange.png"
   },
   {
     "name": "GitHub",
-    "image": "assets/images/software/github.png"
+    "image": "assets/images/software/github_orange.png"
   },
   {
     "name": "Google Workspace",
-    "image": "assets/images/software/google_workspace.png"
+    "image": "assets/images/software/google_workspace_orange.png"
   },
   {
     "name": "Slack",
-    "image": "assets/images/software/slack.png"
+    "image": "assets/images/software/slack_orange.png"
   },
   {
     "name": "Discord",
-    "image": "assets/images/software/discord.png"
+    "image": "assets/images/software/discord_orange.png"
   },
   {
     "name": "Zendesk",
-    "image": "assets/images/software/zendesk.png"
+    "image": "assets/images/software/zendesk_orange.png"
   },
   {
     "name": "Trello",
-    "image": "assets/images/software/trello.png"
+    "image": "assets/images/software/trello_orange.png"
   },
   {
     "name": "Vercel",
-    "image": "assets/images/software/vercel.png"
+    "image": "assets/images/software/vercel_orange.png"
   }
 ]

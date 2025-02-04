@@ -35,7 +35,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 });
 
 // Fetch and display certificates
-fetch("certificates.json")
+fetch("assets/js/certificates.json")
   .then(response => response.json())
   .then(data => {
     const certificateList = document.getElementById("certificateList");
@@ -57,7 +57,7 @@ fetch("certificates.json")
   .catch(error => console.error("Error loading certificates:", error));
 
 // Fetch and display software
-fetch("software.json")
+fetch("assets/js/software.json")
   .then(response => response.json())
   .then(data => {
     const softwareList = document.getElementById("softwareList");
@@ -73,7 +73,7 @@ fetch("software.json")
   .catch(error => console.error("Error loading software:", error));
 
 // Fetch and display tools
-fetch("tools.json")
+fetch("assets/js/tools.json")
   .then(response => response.json())
   .then(data => {
     const toolsList = document.getElementById("toolsList");
