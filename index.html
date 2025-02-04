@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaime Ramsden de Frutos - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+                <div class="avatar-box">
+                    <img src="assets/images/Profilepicandother/my-avatar.png" alt="Jaime Ramsden de Frutos"
+                        class="avatar">
+                </div>
+                <div class="info-content">
+                    <h1 class="name">Jaime Ramsden de Frutos</h1>
+                    <p class="title">Cybersecurity Professional</p>
+                </div>
+                <button class="info_more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+                            <address>Balearic Islands, Spain</address>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/jimblogic/" class="contact-link"
+                                target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">GitHub</p>
+                            <a href="https://github.com/JimBLogic" class="contact-link" target="_blank">GitHub
+                                Profile</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="separator"></div>
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href="https://www.linkedin.com/in/jimblogic/" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://github.com/JimBLogic" class="social-link">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main-content">
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <button class="navbar-link active" data-nav-link="about">About</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="certifications">Certifications</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+                    </li>
+                </ul>
+            </nav>
+            <article class="about active" data-page="about">
+                <header>
+                    <h2 class="h2 article-title">About Me</h2>
+                </header>
+                <section class="about-text">
+                    <p>Hi! I'm Jaime Ramsden de Frutos, a dedicated cybersecurity professional with a strong background
+                        in IT and programming. I am passionate about learning and implementing new technologies to solve
+                        complex problems. I have a proven track record of success in various projects and
+                        certifications.</p>
+                </section>
+                <section class="service profile-buttons">
+                    <a href="https://www.credly.com/users/jaime-ramsden" class="button" target="_blank">
+                        <ion-icon name="ribbon-outline"></ion-icon>
+                        Credly Profile
+                    </a>
+                    <a href="https://tryhackme.com/r/p/JimBLogic" class="button" target="_blank">
+                        <ion-icon name="shield-outline"></ion-icon>
+                        TryHackMe Profile
+                    </a>
+                    <a href="https://app.cybrary.it/profile/JimBLogic" class="button" target="_blank">
+                        <ion-icon name="school-outline"></ion-icon>
+                        Cybrary Profile
+                    </a>
+                </section>
+                <section class="tools">
+                    <h3 class="h3 tools-title">Tools</h3>
+                    <ul class="tools-list has-scrollbar" id="toolsList">
+                        <!-- Tools will be dynamically inserted here -->
+                    </ul>
+                </section>
+                <section class="software">
+                    <h3 class="h3 software-title">Software</h3>
+                    <ul class="software-list has-scrollbar" id="softwareList">
+                        <!-- Software will be dynamically inserted here -->
+                    </ul>
+                </section>
+            </article>
+            <article class="certifications" data-page="certifications">
+                <header>
+                    <h2 class="h2 article-title">Certifications</h2>
+                </header>
+                <section class="certificate-list" id="certificateList">
+                    <!-- Certificates will be dynamically inserted here -->
+                </section>
+            </article>
+            <article class="portfolio" data-page="portfolio">
+                <header>
+                    <h2 class="h2 article-title">Portfolio</h2>
+                </header>
+                <section class="portfolio-posts">
+                    <ul class="portfolio-posts-list">
+                        <li class="portfolio-post-item">
+                            <a href="assets/pdfs/tryhackme_journal.pdf" target="_blank">
+                                <figure class="portfolio-banner-box">
+                                    <img src="assets/images/Profilepicandother/tryhackme.png" alt="TryHackMe Journal"
+                                        loading="lazy" />
+                                </figure>
+                                <div class="portfolio-content">
+                                    <div class="portfolio-meta">
+                                        <p class="portfolio-category">Portfolio</p>
+                                    </div>
+                                    <h3 class="h3 portfolio-item-title">TryHackMe Journal</h3>
+                                    <p class="portfolio-text">This journal documents my progress and learnings from
+                                        different TryHackMe rooms. Each entry contains key takeaways, commonly used
+                                        commands, and practical applications. My experience with TryHackMe has enhanced
+                                        my understanding of Linux and Windows fundamentals, network protocols, incident
+                                        handling, and log analysis.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="portfolio-post-item">
+                            <a href="assets/pdfs/incident_handler_journal.pdf" target="_blank">
+                                <figure class="portfolio-banner-box">
+                                    <img src="assets/images/Profilepicandother/incident.png" alt="Incident Handler’s Journal"
+                                        loading="lazy" />
+                                </figure>
+                                <div class="portfolio-content">
+                                    <div class="portfolio-meta">
+                                        <p class="portfolio-category">Portfolio</p>
+                                    </div>
+                                    <h3 class="h3 portfolio-item-title">Incident Handler’s Journal</h3>
+                                    <p class="portfolio-text">This project demonstrates my ability to clearly,
+                                        concisely, and easily document a security event/incident. This journal allows me
+                                        to visualize my cybersecurity journey and improve my overall skills.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="portfolio-post-item">
+                            <a href="assets/pdfs/vulnerable_system_analysis.pdf" target="_blank">
+                                <figure class="portfolio-banner-box">
+                                    <img src="assets/images/Profilepicandother/vulnerableanalysis.png"
+                                        alt="Vulnerable System Analysis" loading="lazy" />
+                                </figure>
+                                <div class="portfolio-content">
+                                    <div class="portfolio-meta">
+                                        <p class="portfolio-category">Portfolio</p>
+                                    </div>
+                                    <h3 class="h3 portfolio-item-title">Vulnerable System Analysis</h3>
+                                    <p class="portfolio-text">This project showcases my ability to analyze and identify
+                                        vulnerabilities in systems, providing detailed reports and recommendations for
+                                        mitigation.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="portfolio-post-item">
+                            <a href="assets/pdfs/sql_query.pdf" target="_blank">
+                                <figure class="portfolio-banner-box">
+                                    <img src="assets/images/Profilepicandother/sql.png" alt="SQL Query" loading="lazy" />
+                                </figure>
+                                <div class="portfolio-content">
+                                    <div class="portfolio-meta">
+                                        <p class="portfolio-category">Portfolio</p>
+                                    </div>
+                                    <h3 class="h3 portfolio-item-title">SQL Query</h3>
+                                    <p class="portfolio-text">This project demonstrates my proficiency in SQL,
+                                        showcasing complex queries and data manipulation techniques.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+        <button id="scrollToTopBtn" class="scroll-to-top-btn">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </button>
+    </div>
+</body>
+
+</html>
