@@ -3,119 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JimBLogic's Portfolio</title>
-    <meta name="description" content="JimBLogic's Portfolio - Showcasing skills, certifications, and projects in IT and cybersecurity.">
-    <meta name="keywords" content="JimBLogic, Portfolio, IT, Cybersecurity, Skills, Certifications, Projects">
-    <meta name="author" content="Jaime Ramsden de Frutos">
-    <meta name="robots" content="index, follow">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jaime Ramsden de Frutos",
-        "jobTitle": "Cybersecurity Professional",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Balearic Islands",
-            "addressCountry": "Spain"
-        },
-        "email": "mailto:jrf91@proton.me",
-        "sameAs": [
-            "https://www.linkedin.com/in/jimblogic/",
-            "https://github.com/JimBLogic"
-        ]
-    }
-    </script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+    <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <aside class="sidebar" data-sidebar>
-        <div class="sidebar-info">
-            <figure class="avatar-box">
-                <img src="assets/images/Profilepicandother/my-avatar.png" alt="Jaime Ramsden de Frutos" class="responsive-img">
-            </figure>
-            <div class="info-content">
-                <h1 class="name" title="Jaime Ramsden de Frutos">Jaime Ramsden de Frutos</h1>
-                <p class="title">Cybersecurity Professional</p>
-            </div>
-            <button class="info_more-btn" data-sidebar-btn>
-                <span>Show Contacts</span>
-                <ion-icon name="chevron-down"></ion-icon>
-            </button>
-        </div>
-        <div class="sidebar-info_more">
-            <div class="separator"></div>
-            <ul class="contacts-list">
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="mail-outline"></ion-icon>
-                    </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Email</p>
-                        <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
-                    </div>
-                </li>
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="location-outline"></ion-icon>
-                    </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Location</p>
-                        <address>Madrid, Spain</address>
-                    </div>
-                </li>
-                <li class="contact-item">
-                    <div class="icon-box">
-                        <ion-icon name="document-outline"></ion-icon>
-                    </div>
-                    <div class="contact-info">
-                        <p class="contact-title">Resume</p>
-                        <a href="assets/pdfs/Jaime Ramsden de Frutos CV.pdf" class="contact-link" target="_blank">Open PDF</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="separator"></div>
-            <ul class="social-list">
-                <li class="social-item">
-                    <a href="https://www.linkedin.com/in/jimblogic/" class="social-link">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                    </a>
-                </li>
-                <li class="social-item">
-                    <a href="https://github.com/JimBLogic" class="social-link">
-                        <ion-icon name="logo-github"></ion-icon>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </aside>
+    <!-- MAIN -->
     <main>
-        <nav class="navbar">
-            <ul class="navbar-list">
-                <li class="navbar-item">
-                    <button class="navbar-link active" data-nav-link="about">About</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link="certifications">Certifications</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link="skills">Skills</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link="education">Education</button>
-                </li>
-                <li class="navbar-item">
-                    <button class="navbar-link" data-nav-link="contact">Contact</button>
-                </li>
-            </ul>
-        </nav>
+        <!-- SIDEBAR -->
+        <aside class="sidebar" data-sidebar>
+            <div class="sidebar-info">
+                <figure class="avatar-box">
+                    <img src="./assets/images/Profilepicandother/my-avatar.png" alt="Jaime Ramsden de Frutos" width="80" style="border-radius: 20%">
+                </figure>
+
+                <div class="info-content">
+                    <h1 class="name" title="Jaime Ramsden de Frutos">Jaime Ramsden de Frutos</h1>
+                    <p class="title">Cybersecurity Professional</p>
+                </div>
+
+                <button class="info_more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+
+            <div class="sidebar-info_more">
+                <div class="separator"></div>
+
+                <ul class="contacts-list">
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+                            <address>Madrid, Spain</address>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="document-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Resume</p>
+                            <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" class="contact-link" target="_blank">Open PDF</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="separator"></div>
+
+                <ul class="social-list">
+                    <li class="social-item">
+                        <a href="https://www.linkedin.com/in/jimblogic/" class="social-link">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://github.com/JimBLogic" class="social-link">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- main-content -->
         <div class="main-content">
+            <!-- NAVBAR -->
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <button class="navbar-link active" data-nav-link="about">About</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="certifications">Certifications</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="skills">Skills</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="education">Education</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="contact">Contact</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- ABOUT -->
             <article class="about active" data-page="about">
                 <header>
                     <h2 class="h2 article-title">About Me</h2>
@@ -124,6 +122,8 @@
                     <p>Hi! I'm Jaime Ramsden de Frutos, a dedicated cybersecurity professional with a strong background in IT and programming. I am passionate about learning and implementing new technologies to solve complex problems. I have a proven track record of success in various projects and certifications.</p>
                 </section>
             </article>
+
+            <!-- CERTIFICATIONS -->
             <article class="certifications" data-page="certifications">
                 <header>
                     <h2 class="h2 article-title">Certifications and Courses</h2>
@@ -133,7 +133,7 @@
                         <li class="certificate-item">
                             <a href="https://github.com/JimBLogic/Cybrary-IT-and-Cybersecurity-Foundations-Certificates" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/cybrary/cybrary_it_cybersecurity_foundations.png" alt="Cybrary IT and Cybersecurity Foundations" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/cybrary/cybrary_it_cybersecurity_foundations.png" alt="Cybrary IT and Cybersecurity Foundations" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">Cybrary IT and Cybersecurity Foundations</h3>
                             </a>
@@ -141,7 +141,7 @@
                         <li class="certificate-item">
                             <a href="https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/SecurityBlueTeam/security_blue_team_learning_journey.png" alt="Security Blue Team Learning Journey" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/SecurityBlueTeam/security_blue_team_learning_journey.png" alt="Security Blue Team Learning Journey" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">Security Blue Team Learning Journey</h3>
                             </a>
@@ -149,7 +149,7 @@
                         <li class="certificate-item">
                             <a href="https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/aws/aws_ibm_skills_build.png" alt="AWS & IBM Skills Build" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/aws/aws_ibm_skills_build.png" alt="AWS & IBM Skills Build" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">AWS & IBM Skills Build</h3>
                             </a>
@@ -157,7 +157,7 @@
                         <li class="certificate-item">
                             <a href="https://github.com/JimBLogic/TryHackme-HackTheBox" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/tryhackme/tryhackme_hackthebox.png" alt="TryHackMe & HackTheBox" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/tryhackme/tryhackme_hackthebox.png" alt="TryHackMe & HackTheBox" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">TryHackMe & HackTheBox</h3>
                             </a>
@@ -165,7 +165,7 @@
                         <li class="certificate-item">
                             <a href="https://academy.hackthebox.com/achievement/badge/0c6246a5-e11c-11ee-b18d-bea50ffe6cb4" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/hackthebox/hackthebox_achievement_1.png" alt="HackTheBox Achievement 1" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/hackthebox/hackthebox_achievement_1.png" alt="HackTheBox Achievement 1" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">HackTheBox Achievement 1</h3>
                             </a>
@@ -173,7 +173,7 @@
                         <li class="certificate-item">
                             <a href="https://academy.hackthebox.com/achievement/badge/2f425309-f326-11ee-b18d-bea50ffe6cb4" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/hackthebox/hackthebox_achievement_2.png" alt="HackTheBox Achievement 2" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/hackthebox/hackthebox_achievement_2.png" alt="HackTheBox Achievement 2" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">HackTheBox Achievement 2</h3>
                             </a>
@@ -181,15 +181,15 @@
                         <li class="certificate-item">
                             <a href="https://www.credly.com/badges/377ba6ff-0d4b-41df-8477-5ba08748c63d" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/credly/web_development_with_python.png" alt="Web Development with Python" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/credly/web_development_with_python.png" alt="Web Development with Python" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">Web Development with Python</h3>
                             </a>
                         </li>
                         <li class="certificate-item">
-                            <a href="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/MosseCyberSecurityInstitute/knowledge_of_cybersecurity_skills.png" target="_blank" class="certificate-link">
+                            <a href="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/knowledge_of_cybersecurity_skills.png" target="_blank" class="certificate-link">
                                 <figure class="certificate-img">
-                                    <img src="assets/images/certs/MosseCyberSecurityInstitute/knowledge_of_cybersecurity_skills.png" alt="Knowledge of Cybersecurity Skills" loading="lazy" class="responsive-img">
+                                    <img src="https://raw.githubusercontent.com/JimBLogic/jimblogic.github.io/main/assets/images/certs/knowledge_of_cybersecurity_skills.png" alt="Knowledge of Cybersecurity Skills" loading="lazy" class="responsive-img">
                                 </figure>
                                 <h3 class="certificate-title">Knowledge of Cybersecurity Skills</h3>
                             </a>
@@ -197,6 +197,8 @@
                     </ul>
                 </section>
             </article>
+
+            <!-- SKILLS -->
             <article class="skills" data-page="skills">
                 <header>
                     <h2 class="h2 article-title">Skills</h2>
@@ -211,77 +213,9 @@
                         <li><strong>Other Skills:</strong> Network Security, Cloud Computing, Cryptography, Forensic Analysis</li>
                     </ul>
                 </section>
-                <section class="tools-content">
-                    <h3 class="h3 article-title">Tools</h3>
-                    <ul class="tools-list">
-                        <li class="tools-item">
-                            <img src="assets/images/tools/wireshark.svg" alt="Wireshark" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/tcpdump.svg" alt="Tcpdump" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/splunk.svg" alt="Splunk" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/suricata.svg" alt="Suricata" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/chronicle.svg" alt="Chronicle" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/windows_registry.svg" alt="Windows Registry Explorer" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/greenbone.svg" alt="Greenbone" class="tool-image">
-                        </li>
-                        <li class="tools-item">
-                            <img src="assets/images/tools/thm.svg" alt="TryHackMe" class="tool-image">
-                        </li>
-                    </ul>
-                </section>
-                <section class="software-content">
-                    <h3 class="h3 article-title">Software</h3>
-                    <ul class="software-list">
-                        <li class="software-item">
-                            <img src="assets/images/software/linux.png" alt="Linux" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/windows.png" alt="Windows" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/ios.png" alt="iOS" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/python.png" alt="Python" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/sql.png" alt="SQL" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/github.png" alt="GitHub" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/google_workspace.png" alt="Google Workspace" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/slack.png" alt="Slack" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/discord.png" alt="Discord" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/zendesk.png" alt="Zendesk" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/trello.png" alt="Trello" class="software-image">
-                        </li>
-                        <li class="software-item">
-                            <img src="assets/images/software/vercel.png" alt="Vercel" class="software-image">
-                        </li>
-                    </ul>
-                </section>
             </article>
+
+            <!-- EDUCATION -->
             <article class="education" data-page="education">
                 <header>
                     <h2 class="h2 article-title">Education</h2>
@@ -305,12 +239,10 @@
                         <p>CFGS en Animación de Actividades Físicas y Deportivas</p>
                         <p>Sep 2009 - Jul 2011</p>
                     </div>
-                    <div class="education-item">
-                        <h3>NHS</h3>
-                        <p>Care certificate, Health/Health Care Administration/Management</p>
-                    </div>
                 </section>
             </article>
+
+            <!-- CONTACT -->
             <article class="contact" data-page="contact">
                 <header>
                     <h2 class="h2 article-title">Contact</h2>
@@ -323,8 +255,13 @@
             </article>
         </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+
+    <!-- custom js link -->
     <script src="./assets/js/script.js"></script>
+
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
