@@ -12,7 +12,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () {
   elementToggleFunc(sidebar);
-});
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -33,6 +32,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+});
 
 // Fetch and display certificates
 fetch("assets/js/certificates.json")
