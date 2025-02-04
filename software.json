@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Linux",
+    "image": "assets/images/software/linux.png"
+  },
+  {
+    "name": "Windows",
+    "image": "assets/images/software/windows.png"
+  },
+  {
+    "name": "iOS",
+    "image": "assets/images/software/ios.png"
+  },
+  {
+    "name": "Python",
+    "image": "assets/images/software/python.png"
+  },
+  {
+    "name": "SQL",
+    "image": "assets/images/software/sql.png"
+  },
+  {
+    "name": "GitHub",
+    "image": "assets/images/software/github.png"
+  },
+  {
+    "name": "Google Workspace",
+    "image": "assets/images/software/google_workspace.png"
+  },
+  {
+    "name": "Slack",
+    "image": "assets/images/software/slack.png"
+  },
+  {
+    "name": "Discord",
+    "image": "assets/images/software/discord.png"
+  },
+  {
+    "name": "Zendesk",
+    "image": "assets/images/software/zendesk.png"
+  },
+  {
+    "name": "Trello",
+    "image": "assets/images/software/trello.png"
+  },
+  {
+    "name": "Vercel",
+    "image": "assets/images/software/vercel.png"
+  }
+]

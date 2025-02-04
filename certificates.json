@@ -1,0 +1,58 @@
+[
+    {
+        "alt": "cybrary_it_cybersecurity_foundations",
+        "title": "Cybrary IT and Cybersecurity Foundations",
+        "category": "Cybrary",
+        "url": "assets/pdfs/cybrary/cybrary-cert-access-control-basics.pdf",
+        "image": "assets/images/certs/cybrary/cybrary_it_cybersecurity_foundations.png"
+    },
+    {
+        "alt": "security_blue_team_learning_journey",
+        "title": "Security Blue Team Learning Journey",
+        "category": "Blue Team",
+        "url": "assets/pdfs/SecurityBlueTeam/Blue%20Team%20Junior%20Analyst%20Pathway%20Bundle-btja.pdf",
+        "image": "assets/images/certs/SecurityBlueTeam/security_blue_team_learning_journey.png"
+    },
+    {
+        "alt": "aws_ibm_skills_build",
+        "title": "AWS & IBM Skills Build",
+        "category": "AWS & IBM",
+        "url": "assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf",
+        "image": "assets/images/certs/aws/aws_ibm_skills_build.png"
+    },
+    {
+        "alt": "tryhackme_hackthebox",
+        "title": "TryHackMe & HackTheBox",
+        "category": "TryHackMe",
+        "url": "assets/pdfs/tryhackme_journal.pdf",
+        "image": "assets/images/certs/tryhackme/tryhackme_hackthebox.png"
+    },
+    {
+        "alt": "hackthebox_achievement_1",
+        "title": "HackTheBox Achievement 1",
+        "category": "HackTheBox",
+        "url": "assets/pdfs/hackthebox_achievement_1.pdf",
+        "image": "assets/images/certs/hackthebox/hackthebox_achievement_1.png"
+    },
+    {
+        "alt": "hackthebox_achievement_2",
+        "title": "HackTheBox Achievement 2",
+        "category": "HackTheBox",
+        "url": "assets/pdfs/hackthebox_achievement_2.pdf",
+        "image": "assets/images/certs/hackthebox/hackthebox_achievement_2.png"
+    },
+    {
+        "alt": "web_development_with_python",
+        "title": "Web Development with Python",
+        "category": "Credly",
+        "url": "https://www.credly.com/badges/377ba6ff-0d4b-41df-8477-5ba08748c63d",
+        "image": "assets/images/certs/credly/web_development_with_python.png"
+    },
+    {
+        "alt": "knowledge_of_cybersecurity_skills",
+        "title": "Knowledge of Cybersecurity Skills",
+        "category": "MosseCyberSecurityInstitute",
+        "url": "assets/pdfs/MosseCyberSecurityInstitute/KCCS%20-%20Knowledge%20of%20Cybersecurity%20Skills.pdf",
+        "image": "assets/images/certs/MosseCyberSecurityInstitute/knowledge_of_cybersecurity_skills.png"
+    }
+]
