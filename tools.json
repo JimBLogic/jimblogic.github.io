@@ -1,34 +1,34 @@
 [
   {
     "name": "Wireshark",
-    "image": "assets/images/tools/wireshark.png"
+    "image": "assets/images/tools/wireshark_orange.png"
   },
   {
     "name": "Tcpdump",
-    "image": "assets/images/tools/tcpdump.png"
+    "image": "assets/images/tools/tcpdump_orange.png"
   },
   {
     "name": "Splunk",
-    "image": "assets/images/tools/splunk.png"
+    "image": "assets/images/tools/splunk_orange.png"
   },
   {
     "name": "Suricata",
-    "image": "assets/images/tools/suricata.png"
+    "image": "assets/images/tools/suricata_orange.png"
   },
   {
     "name": "Chronicle",
-    "image": "assets/images/tools/chronicle.png"
+    "image": "assets/images/tools/chronicle_orange.png"
   },
   {
     "name": "Windows Registry Explorer",
-    "image": "assets/images/tools/windows_registry.png"
+    "image": "assets/images/tools/windows_registry_orange.png"
   },
   {
     "name": "Greenbone",
-    "image": "assets/images/tools/greenbone.png"
+    "image": "assets/images/tools/greenbone_orange.png"
   },
   {
     "name": "TryHackMe",
-    "image": "assets/images/tools/thm.png"
+    "image": "assets/images/tools/thm_orange.png"
   }
 ]
