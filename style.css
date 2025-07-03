@@ -1,30 +1,67 @@
 /* assets/css/style.css */
-body {
-  font-family: 'Roboto', sans-serif;
+* {
   margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.sidebar {
-  width: 250px;
-  background-color: #111;
-  color: white;
-  position: fixed;
-  height: 100%;
-  padding: 20px;
-}
-
-.main-content {
-  margin-left: 270px;
-  padding: 20px;
-}
-
-.article-title {
-  margin-top: 0;
-}
-
-.skills-list, .certificate-list {
-  list-style: none;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  color: white;
+}
+
+.section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.language-switcher {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  background: #ff6f00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.lang-btn.active {
+  background: #e65100;
 }
