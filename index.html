@@ -3,49 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JimBLogic's Portfolio</title>
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon"/>
-  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <title>JimBLogic - Portfolio</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <script defer src="./assets/js/script.js"></script>
 </head>
-<body>
-  <main>
-    <!-- SIDEBAR & MAIN CONTENT REMAINS THE SAME -->
-    <!-- Use the same sidebar and main-content structure as before -->
+<body id="home">
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <button onclick="setLang('en')" class="lang-btn active" data-lang="en">EN</button>
+    <button onclick="setLang('es')" class="lang-btn" data-lang="es">ES</button>
+  </div>
 
-    <!-- SKILLS SECTION (example addition) -->
-    <article class="skills" data-page="skills">
-      <header><h2 class="h2 article-title">Skills</h2></header>
-      <section class="skills-content">
-        <p>With a diverse set of skills in cybersecurity, programming, and IT...</p>
-        <ul class="skills-list">
-          <li><strong>Cybersecurity:</strong> Penetration Testing, Incident Response...</li>
-        </ul>
-      </section>
-    </article>
+  <!-- Background Canvas -->
+  <canvas id="bgCanvas"></canvas>
 
-    <!-- CERTIFICATIONS AND OTHER SECTIONS REMAIN UNCHANGED -->
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <section id="about" class="section">
+      <h2 class="title" data-en="About Me" data-es="Sobre Mí">About Me</h2>
+      <p class="text" data-en="Hi! I'm Jaime Ramsden de Frutos..." data-es="¡Hola! Soy Jaime Ramsden de Frutos..."></p>
+    </section>
+
+    <section id="certifications" class="section">
+      <h2 class="title" data-en="Certifications" data-es="Certificaciones">Certifications</h2>
+      <p class="text" data-en="I have completed several cybersecurity certifications..." data-es="He completado varias certificaciones en ciberseguridad..."></p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="title" data-en="Skills" data-es="Habilidades">Skills</h2>
+      <ul class="text" data-en="Penetration Testing, Python, AWS..." data-es="Pruebas de penetración, Python, AWS...">
+        <li>Penetration Testing</li>
+        <li>Python</li>
+        <li>AWS</li>
+        <li>Kali Linux</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="title" data-en="Contact" data-es="Contacto">Contact</h2>
+      <p class="text" data-en="Email: jrf91@proton.me | LinkedIn: /in/jimblogic" data-es="Correo: jrf91@proton.me | LinkedIn: /in/jimblogic"></p>
+    </section>
   </main>
-
-  <!-- JS LINKS -->
-  <script src="./assets/js/script.js"></script>
-  <script>
-    // Load JSON data dynamically if needed
-    fetch("assets/js/certificates.json")
-      .then(response => response.json())
-      .then(data => console.log(data));
-
-    fetch("assets/js/software.json")
-      .then(response => response.json())
-      .then(data => console.log(data));
-
-    fetch("assets/js/tools.json")
-      .then(response => response.json())
-      .then(data => console.log(data));
-  </script>
-
-  <!-- Ionicons -->
-  <script type="module" src=" https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
