@@ -1,187 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JimBLogic's Portfolio</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/Profilepicandother/logo.png" type="image/x-icon">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css?v=1.0.0">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Ionicons -->
+  <script type="module" src=" https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-  <!-- SIDEBAR -->
-  <aside class="sidebar" data-sidebar>
-    <div class="sidebar-info">
-      <figure class="avatar-box">
-        <img src="./assets/images/Profilepicandother/my-avatar.png" alt="Jaime Ramsden de Frutos" width="80" style="border-radius: 20%">
-      </figure>
-      <div class="info-content">
-        <h1 class="name" title="Jaime Ramsden de Frutos">Jaime Ramsden de Frutos</h1>
-        <p class="title">Cybersecurity Professional</p>
-      </div>
-      <button class="info_more-btn" data-sidebar-btn>
-        <span>Show Contacts</span>
-        <ion-icon name="chevron-down"></ion-icon>
-      </button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" data-sidebar>
+  <div class="sidebar-info">
+    <figure class="avatar-box">
+      <img src="./assets/images/Profilepicandother/my-avatar.png" alt="Jaime Ramsden de Frutos" width="80" style="border-radius: 20%">
+    </figure>
+    <div class="info-content">
+      <h1 class="name">Jaime Ramsden de Frutos</h1>
+      <p class="title">Cybersecurity Professional</p>
     </div>
-    <div class="sidebar-info_more">
-      <div class="separator"></div>
-      <ul class="contacts-list">
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="mail-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Email</p>
-            <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
-          </div>
-        </li>
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="location-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Location</p>
-            <address>Madrid, Spain</address>
-          </div>
-        </li>
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="document-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Resume</p>
-            <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" class="contact-link" target="_blank">Open PDF</a>
-          </div>
-        </li>
-      </ul>
-      <div class="separator"></div>
-      <ul class="social-list">
-        <li class="social-item">
-          <a href=" https://www.linkedin.com/in/jimblogic/ " class="social-link">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-        <li class="social-item">
-          <a href="https://github.com/JimBLogic " class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+  </div>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <ul class="navbar-list">
-        <li class="navbar-item">
-          <button class="navbar-link active" data-nav-link="about">About</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link="certifications">Certifications</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link="skills">Skills</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link="education">Education</button>
-        </li>
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link="contact">Contact</button>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- ABOUT -->
-    <article class="about active" data-page="about">
-      <header>
-        <h2 class="h2 article-title">About Me</h2>
-      </header>
-      <section class="about-text">
-        <p>
-          Hi! I'm Jaime Ramsden de Frutos, a dedicated cybersecurity professional with a strong background in IT and programming. I am passionate about learning and implementing new technologies to solve complex problems. I have a proven track record of success in various projects and certifications.
-        </p>
-        <p>
-          I recently honed my skills at UpgradeHub's intensive cybersecurity bootcamp in Madrid, gaining hands-on experience in penetration testing, vulnerability analysis, and incident response. I'm eager to apply my knowledge and contribute to a dynamic security team.
-        </p>
-      </section>
-    </article>
-
-    <!-- CERTIFICATIONS -->
-    <article class="certifications" data-page="certifications">
-      <header>
-        <h2 class="h2 article-title">Certifications and Courses</h2>
-      </header>
-      <section class="certifications">
-        <ul class="certificate-list">
-          <li class="certificate-item">
-            <a href="https://github.com/JimBLogic/Cybrary-IT-and-Cybersecurity-Foundations-Certificates " target="_blank" class="certificate-link">
-              <figure class="certificate-img">
-                <img src="assets/images/certs/cybrary/cybrary_it_cybersecurity_foundations.png" alt="Cybrary IT and Cybersecurity Foundations" loading="lazy" class="responsive-img">
-              </figure>
-              <h3 class="certificate-title">Cybrary IT and Cybersecurity Foundations</h3>
-            </a>
-          </li>
-          <!-- Add more certificates here -->
-        </ul>
-      </section>
-    </article>
-
-    <!-- SKILLS -->
-    <article class="skills" data-page="skills">
-      <header>
-        <h2 class="h2 article-title">Skills</h2>
-      </header>
-      <section class="skills-content">
-        <p>
-          With a diverse set of skills in cybersecurity, programming, and IT, I am equipped to tackle various challenges. Here are some of my key skills:
-        </p>
-        <ul class="skills-list">
-          <li><strong>Cybersecurity:</strong> Ethical Hacking, Penetration Testing, Vulnerability Analysis, Incident Response, SOC Analysis, Digital Forensics, OSINT, Ciberintelligence.</li>
-          <li><strong>Cloud Computing:</strong> AWS Cloud Practitioner.</li>
-          <li><strong>Programming:</strong> Python (Introductory), HTML/CSS (Introductory), C (Learning), PowerShell (Learning).</li>
-        </ul>
-      </section>
-    </article>
-
-    <!-- EDUCATION -->
-    <article class="education" data-page="education">
-      <header>
-        <h2 class="h2 article-title">Education</h2>
-      </header>
-      <section class="education-content">
-        <div class="education-item">
-          <h3>Upgrade Hub</h3>
-          <p>Full Time Bootcamp, Cybersecurity, Ethical Hacking & Cloud</p>
-          <p>Jan 2024 - May 2024</p>
-          <p>Completed an intensive bootcamp focused on cybersecurity, ethical hacking, and cloud technologies. Gained hands-on experience with tools like Kali, Metasploit, and AWS.</p>
+  <div class="sidebar-info_more">
+    <div class="separator"></div>
+    <ul class="contacts-list" id="contactList">
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
         </div>
-        <!-- Add more education items here -->
-      </section>
-    </article>
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+          <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+          <address>Madrid, Spain</address>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="document-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Resume</p>
+          <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" target="_blank" class="contact-link">Open PDF</a>
+        </div>
+      </li>
+    </ul>
+    <div class="separator"></div>
+    <ul class="social-list">
+      <li class="social-item">
+        <a href="https://www.linkedin.com/in/jimblogic/ " class="social-link">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a href="https://github.com/JimBLogic " class="social-link">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>
 
-    <!-- CONTACT -->
-    <article class="contact" data-page="contact">
-      <header>
-        <h2 class="h2 article-title">Contact</h2>
-      </header>
-      <section class="contact-info">
-        <p>If you would like to get in touch, please reach out via email:</p>
-        <a href="mailto:jrf91@proton.me" class="contact-email">jrf91@proton.me</a>
-        <p>Or connect with me on <a href="https://www.linkedin.com/in/jimblogic/ " class="contact-linkedin">LinkedIn</a>.</p>
-      </section>
-    </article>
-  </main>
+<!-- MAIN CONTENT -->
+<main>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="navbar-item"><button class="navbar-link active" data-nav-link="about">About</button></li>
+      <li class="navbar-item"><button class="navbar-link" data-nav-link="certifications">Certifications</button></li>
+      <li class="navbar-item"><button class="navbar-link" data-nav-link="skills">Skills</button></li>
+      <li class="navbar-item"><button class="navbar-link" data-nav-link="education">Education</button></li>
+      <li class="navbar-item"><button class="navbar-link" data-nav-link="contact">Contact</button></li>
+    </ul>
+  </nav>
 
-  <!-- Scripts -->
-  <script src="./assets/js/script.js?v=1.0.0"></script>
-  <!-- Ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons @5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- SECTIONS -->
+  <article class="about active" data-page="about">
+    <header><h2 class="h2 article-title">About Me</h2></header>
+    <section class="about-text">
+      <p>I'm a highly motivated and results-oriented cybersecurity professional...</p>
+    </section>
+  </article>
+
+  <article class="certifications" data-page="certifications">
+    <header><h2 class="h2 article-title">Certifications and Courses</h2></header>
+    <section class="certifications">
+      <ul class="certificate-list" id="certificateList"></ul>
+    </section>
+  </article>
+
+  <article class="skills" data-page="skills">
+    <header><h2 class="h2 article-title">Skills</h2></header>
+    <section class="skills-content">
+      <ul class="skills-list">
+        <li><strong>Cybersecurity:</strong> Ethical Hacking, Penetration Testing...</li>
+        <li><strong>Cloud Computing:</strong> AWS Cloud Practitioner.</li>
+        <li><strong>Programming:</strong> Python, HTML/CSS, C, PowerShell.</li>
+      </ul>
+    </section>
+  </article>
+
+  <article class="education" data-page="education">
+    <header><h2 class="h2 article-title">Education</h2></header>
+    <section class="education-content">
+      <div class="education-item">
+        <h3>Upgrade Hub</h3>
+        <p>Full Time Bootcamp, Cybersecurity, Ethical Hacking & Cloud</p>
+        <p>Jan 2024 - May 2024</p>
+        <p>Completed an intensive bootcamp focused on cybersecurity...</p>
+      </div>
+    </section>
+  </article>
+
+  <article class="contact" data-page="contact">
+    <header><h2 class="h2 article-title">Contact</h2></header>
+    <section class="contact-info">
+      <p>If you would like to get in touch, please reach out via email:</p>
+      <a href="mailto:jrf91@proton.me" class="contact-email">jrf91@proton.me</a>
+    </section>
+  </article>
+</main>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top">↑</button>
+
+<!-- Scripts -->
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
