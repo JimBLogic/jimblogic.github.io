@@ -1,41 +1,49 @@
 [
   {
     "name": "Kali Linux",
+    "iconLocal": "kalilinux.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
     "description": "Penetration testing and digital forensics OS"
   },
   {
     "name": "Metasploit",
+    "iconLocal": "metasploit.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
     "description": "Exploit development & penetration testing"
   },
   {
     "name": "AWS CloudFormation",
+    "iconLocal": "amazonaws.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "description": "Cloud infrastructure as code"
   },
   {
     "name": "Django",
+    "iconLocal": "django.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
     "description": "Python web framework"
   },
   {
     "name": "Git",
+    "iconLocal": "git.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
     "description": "Version control system"
   },
   {
     "name": "Bash",
+    "iconLocal": "gnubash.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Unix shell and command language"
   },
   {
     "name": "Python",
+    "iconLocal": "python.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
     "description": "Programming language"
   },
   {
     "name": "Linux",
+    "iconLocal": "linux.png",
     "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
     "description": "Operating system"
   }
