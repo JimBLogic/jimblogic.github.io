@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(cert =>
           `<li>
-            <img src="${cert.badge}" alt="${cert.name}" loading="lazy">
+            <img src="${cert.badge}" alt="${cert.name}" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg'">
             <div>
               <strong>${cert.name}</strong><br>
               <span>${cert.issuer}</span>
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(soft =>
           `<li>
-            <img src="${soft.icon}" alt="${soft.name}" loading="lazy">
+            <img src="${soft.icon}" alt="${soft.name}" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/software.svg'">
             <div>
               <strong>${soft.name}</strong>
               <br><span>${soft.description || ''}</span>
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(tool =>
           `<li>
-            <img src="${tool.icon}" alt="${tool.name}" loading="lazy">
+            <img src="${tool.icon}" alt="${tool.name}" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tools.svg'">
             <div>
               <strong>${tool.name}</strong>
               <br><span>${tool.description || ''}</span>
