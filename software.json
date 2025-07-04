@@ -1,44 +1,42 @@
-{
-  "software": [
-    {
-      "name": "Kali Linux",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg",
-      "description": "Penetration testing and digital forensics OS"
-    },
-    {
-      "name": "Metasploit",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Metasploit.svg",
-      "description": "Exploit development & penetration testing"
-    },
-    {
-      "name": "AWS CloudFormation",
-      "icon": "https://cdn.worldvectorlogo.com/logos/aws-cloudformation.svg",
-      "description": "Cloud infrastructure as code"
-    },
-    {
-      "name": "Django",
-      "icon": "https://cdn.worldvectorlogo.com/logos/django.svg",
-      "description": "Python web framework"
-    },
-    {
-      "name": "Git",
-      "icon": "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
-      "description": "Version control system"
-    },
-    {
-      "name": "Bash",
-      "icon": "https://cdn.worldvectorlogo.com/logos/gnubash.svg",
-      "description": "Unix shell and command language"
-    },
-    {
-      "name": "Python",
-      "icon": "https://cdn.worldvectorlogo.com/logos/python-5.svg",
-      "description": "Programming language"
-    },
-    {
-      "name": "Linux",
-      "icon": "https://cdn.worldvectorlogo.com/logos/tux.svg",
-      "description": "Operating system"
-    }
-  ]
-}
+[
+  {
+    "name": "Kali Linux",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg",
+    "description": "Penetration testing and digital forensics OS"
+  },
+  {
+    "name": "Metasploit",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Metasploit.svg",
+    "description": "Exploit development & penetration testing"
+  },
+  {
+    "name": "AWS CloudFormation",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "description": "Cloud infrastructure as code"
+  },
+  {
+    "name": "Django",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg",
+    "description": "Python web framework"
+  },
+  {
+    "name": "Git",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
+    "description": "Version control system"
+  },
+  {
+    "name": "Bash",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+    "description": "Unix shell and command language"
+  },
+  {
+    "name": "Python",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    "description": "Programming language"
+  },
+  {
+    "name": "Linux",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png",
+    "description": "Operating system"
+  }
+]
