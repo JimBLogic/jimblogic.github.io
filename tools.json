@@ -1,19 +1,34 @@
 {
   "tools": [
     {
-      "name": "Wireshark",
-      "icon": "./assets/Images/Profilepicandother/wireshark.png",
-      "description": "Network protocol analyzer"
+      "name": "SIEM",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Security_Information_and_Event_Management_icon.png",
+      "description": "Security Information and Event Management"
     },
     {
-      "name": "Suricata",
-      "icon": "./assets/Images/Profilepicandother/suricata.png",
-      "description": "Open source intrusion detection system"
+      "name": "fcrackzip",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+      "description": "ZIP password recovery tool"
     },
     {
-      "name": "Greenbone",
-      "icon": "./assets/Images/Profilepicandother/greenbone.png",
-      "description": "Vulnerability management tool"
+      "name": "steghide",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+      "description": "Steganography tool"
+    },
+    {
+      "name": "Linux",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png",
+      "description": "Operating system"
+    },
+    {
+      "name": "Firewall",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Firewall_icon.png",
+      "description": "Network security system"
+    },
+    {
+      "name": "Databases",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/8/87/Database-icon.svg",
+      "description": "SQL, data storage and management"
     }
   ]
 }
