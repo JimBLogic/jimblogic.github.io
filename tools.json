@@ -2,56 +2,67 @@
   {
     "name": "SIEM",
     "icon": "assets/tools/splunk.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
     "description": "Security Information and Event Management"
   },
   {
     "name": "fcrackzip",
     "icon": "assets/tools/fcrackzip.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "ZIP password recovery tool"
   },
   {
     "name": "steghide",
     "icon": "assets/tools/steghide.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Steganography tool"
   },
   {
     "name": "Firewall",
     "icon": "assets/tools/firewall.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
     "description": "Network security system"
   },
   {
     "name": "Databases",
     "icon": "assets/tools/database.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/database.svg",
     "description": "SQL, data storage and management"
   },
   {
     "name": "Wireshark",
     "icon": "assets/tools/wireshark.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wireshark.svg",
     "description": "Network protocol analyzer"
   },
   {
     "name": "Suricata",
     "icon": "assets/tools/suricata.png",
+    "icon_fallback": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png",
     "description": "Network threat detection tool"
   },
   {
     "name": "Greenbone",
     "icon": "assets/tools/greenbone.png",
+    "icon_fallback": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png",
     "description": "Vulnerability management"
   },
   {
     "name": "tcpdump",
     "icon": "assets/tools/tcpdump.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Network traffic analyzer"
   },
   {
     "name": "Windows Registry",
     "icon": "assets/tools/windows_registry.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg",
     "description": "Windows system registry analysis"
   },
   {
     "name": "Chronicle",
     "icon": "assets/tools/chronicle.png",
+    "icon_fallback": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png",
     "description": "Cloud security analytics"
   }
 ]
