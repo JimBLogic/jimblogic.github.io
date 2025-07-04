@@ -1,107 +1,72 @@
-"use strict";
-
-// element toggle function
-const elementToggleFunc = function (elem) {
-  elem.classList.toggle("active");
-};
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () {
-  elementToggleFunc(sidebar);
-});
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    for (let j = 0; j < pages.length; j++) {
-      if (this.dataset.navLink === pages[j].dataset.page) {
-        pages[j].classList.add("active");
-        navigationLinks[j].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[j].classList.remove("active");
-        navigationLinks[j].classList.remove("active");
+document.addEventListener('DOMContentLoaded', () => {
+  // Load certificates
+  fetch('./certificates.json')
+    .then(r => r.json())
+    .then(data => {
+      const el = document.getElementById('certificateList');
+      if (el && Array.isArray(data.certificates)) {
+        el.innerHTML = data.certificates.map(cert =>
+          `<li>
+            <img src="${cert.badge}" alt="${cert.name}">
+            <div>
+              <strong>${cert.name}</strong><br>
+              <span>${cert.issuer}</span>
+              ${cert.link ? ` - <a href="${cert.link}" target="_blank" rel="noopener">View</a>` : ''}
+            </div>
+          </li>`
+        ).join('');
       }
-    }
+    });
+
+  // Load software
+  fetch('./software.json')
+    .then(r => r.json())
+    .then(data => {
+      const el = document.getElementById('softwareList');
+      if (el && Array.isArray(data.software)) {
+        el.innerHTML = data.software.map(soft =>
+          `<li>
+            <img src="${soft.icon}" alt="${soft.name}">
+            <div>
+              <strong>${soft.name}</strong>
+              <br><span>${soft.description || ''}</span>
+            </div>
+          </li>`
+        ).join('');
+      }
+    });
+
+  // Load tools
+  fetch('./tools.json')
+    .then(r => r.json())
+    .then(data => {
+      const el = document.getElementById('toolsList');
+      if (el && Array.isArray(data.tools)) {
+        el.innerHTML = data.tools.map(tool =>
+          `<li>
+            <img src="${tool.icon}" alt="${tool.name}">
+            <div>
+              <strong>${tool.name}</strong>
+              <br><span>${tool.description || ''}</span>
+            </div>
+          </li>`
+        ).join('');
+      }
+    });
+
+  // Highlight navbar link on scroll
+  const links = document.querySelectorAll('.navbar-link');
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 90;
+    links.forEach(link => {
+      let section = document.querySelector(link.getAttribute('href'));
+      if (
+        section.offsetTop <= fromTop &&
+        section.offsetTop + section.offsetHeight > fromTop
+      ) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
   });
-}
-
-// Fetch and display certificates
-fetch("assets/js/certificates.json")
-  .then(response => response.json())
-  .then(data => {
-    const certificateList = document.getElementById("certificateList");
-    data.forEach(cert => {
-      const li = document.createElement("li");
-      li.className = "certificate-item";
-      li.innerHTML = `
-        <a href="${cert.url}" target="_blank" class="certificate-link">
-          <figure class="certificate-img">
-            <img src="${cert.image}" alt="${cert.alt}" loading="lazy">
-          </figure>
-          <h3 class="certificate-title">${cert.title}</h3>
-          <p class="certificate-category">${cert.category}</p>
-        </a>
-      `;
-      certificateList.appendChild(li);
-    });
-  })
-  .catch(error => console.error("Error loading certificates:", error));
-
-// Fetch and display software
-fetch("assets/js/software.json")
-  .then(response => response.json())
-  .then(data => {
-    const softwareList = document.getElementById("softwareList");
-    data.forEach(software => {
-      const li = document.createElement("li");
-      li.className = "software-item";
-      li.innerHTML = `
-        <img src="${software.image}" alt="${software.name}" class="software-image">
-      `;
-      softwareList.appendChild(li);
-    });
-  })
-  .catch(error => console.error("Error loading software:", error));
-
-// Fetch and display tools
-fetch("assets/js/tools.json")
-  .then(response => response.json())
-  .then(data => {
-    const toolsList = document.getElementById("toolsList");
-    data.forEach(tool => {
-      const li = document.createElement("li");
-      li.className = "tools-item";
-      li.innerHTML = `
-        <img src="${tool.image}" alt="${tool.name}" class="tool-image">
-      `;
-      toolsList.appendChild(li);
-    });
-  })
-  .catch(error => console.error("Error loading tools:", error));
-
-// Scroll to top functionality
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-scrollToTopBtn.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.classList.add("show");
-  } else {
-    scrollToTopBtn.classList.remove("show");
-  }
 });
