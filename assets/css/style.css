@@ -1,10 +1,36 @@
-body {
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
-  color: #f4f4f4;
-  font-family: 'Poppins', Arial, sans-serif;
-  min-height: 100vh;
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #f4f4f4;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, #4f5154 0%, #a9a9a9 40%, #d7d7d7 60%, #888 100%);
+  background-size: 600% 600%;
+  filter: blur(2px) brightness(1.1) saturate(1.2);
+  animation: metallicFlow 12s ease-in-out infinite;
+}
+@keyframes metallicFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
 .sidebar {
   background: rgba(40, 40, 40, 0.98);
   padding: 24px 18px;
@@ -14,7 +40,7 @@ body {
   top: 0;
   left: 0;
   box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-  z-index: 100;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +49,8 @@ body {
   margin-left: 320px;
   max-width: 800px;
   padding: 32px 24px 36px 24px;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 1000px) {
   .sidebar { width: 100vw; min-height: initial; position: relative; box-shadow: none; }
