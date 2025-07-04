@@ -5,7 +5,19 @@
       "issuer": "Amazon Web Services",
       "badge": "./assets/Images/credly.png",
       "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf"
+    },
+    {
+      "name": "Blue Team Junior Analyst Pathway",
+      "issuer": "Security Blue Team",
+      "badge": "./assets/Images/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
+      "link": "./assets/pdfs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.pdf"
+    },
+    {
+      "name": "UpgradeHub Cybersecurity Bootcamp",
+      "issuer": "UpgradeHub",
+      "badge": "./assets/Images/UpgradeHub/upgradehubcert.png",
+      "link": "./assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf"
     }
-    // ... more
+    // Add more certificates as needed
   ]
 }
