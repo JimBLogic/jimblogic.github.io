@@ -2,18 +2,38 @@
   "software": [
     {
       "name": "Kali Linux",
-      "icon": "./assets/Images/Profilepicandother/linux.png",
-      "description": "Penetration testing and digital forensics"
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg",
+      "description": "Penetration testing and digital forensics OS"
     },
     {
       "name": "Metasploit",
-      "icon": "./assets/Images/Profilepicandother/linux.png",
-      "description": "Exploit development and penetration testing"
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Metasploit.svg",
+      "description": "Exploit development & penetration testing"
     },
     {
-      "name": "Splunk",
-      "icon": "./assets/Images/Profilepicandother/splunk.png",
-      "description": "Security Information and Event Management"
+      "name": "AWS CloudFormation",
+      "icon": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+      "description": "Cloud infrastructure as code"
+    },
+    {
+      "name": "Django",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg",
+      "description": "Python web framework"
+    },
+    {
+      "name": "Git",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
+      "description": "Version control system"
+    },
+    {
+      "name": "Bash",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+      "description": "Unix shell and command language"
+    },
+    {
+      "name": "Python",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "description": "Programming language"
     }
   ]
 }
