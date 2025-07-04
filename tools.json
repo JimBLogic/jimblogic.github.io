@@ -1,29 +1,27 @@
-{
-  "tools": [
-    {
-      "name": "SIEM",
-      "icon": "https://cdn.worldvectorlogo.com/logos/splunk-1.svg",
-      "description": "Security Information and Event Management"
-    },
-    {
-      "name": "fcrackzip",
-      "icon": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnome-terminal.svg",
-      "description": "ZIP password recovery tool"
-    },
-    {
-      "name": "steghide",
-      "icon": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnome-terminal.svg",
-      "description": "Steganography tool"
-    },
-    {
-      "name": "Firewall",
-      "icon": "https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/firewall.svg",
-      "description": "Network security system"
-    },
-    {
-      "name": "Databases",
-      "icon": "https://cdn.worldvectorlogo.com/logos/database.svg",
-      "description": "SQL, data storage and management"
-    }
-  ]
-}
+[
+  {
+    "name": "SIEM",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Splunk_logo.svg",
+    "description": "Security Information and Event Management"
+  },
+  {
+    "name": "fcrackzip",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "description": "ZIP password recovery tool"
+  },
+  {
+    "name": "steghide",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "description": "Steganography tool"
+  },
+  {
+    "name": "Firewall",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Firewall_icon.png",
+    "description": "Network security system"
+  },
+  {
+    "name": "Databases",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/87/Database-icon.svg",
+    "description": "SQL, data storage and management"
+  }
+]
