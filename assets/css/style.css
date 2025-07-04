@@ -30,7 +30,7 @@ body {
   }
 }
 .avatar-bg {
-  background: url('./assets/Images/Profilepicandother/circuit-board.svg') center center/cover no-repeat;
+  background: url('https://www.svgrepo.com/show/261971/circuit-board.svg') center center/cover no-repeat;
   border-radius: 32px;
   margin: 0 auto 16px auto;
   max-width: 220px;
