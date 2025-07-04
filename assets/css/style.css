@@ -1,196 +1,80 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-height: 100vh;
-  font-family: 'Poppins', Arial, sans-serif;
-  color: #f4f4f4;
-  position: relative;
-  z-index: 1;
-  overflow-x: hidden;
-}
-.bg-animation {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(120deg, #2a2c2f 0%, #616d7e 33%, #c3c7cb 66%, #23292e 100%),
-    radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.09) 0%, rgba(0,0,0,0) 80%),
-    radial-gradient(ellipse at 45% 80%, rgba(60, 60, 60, 0.11) 0%, rgba(0,0,0,0.17) 100%);
-  background-blend-mode: multiply, screen;
-  background-size: 180% 180%;
-  filter: blur(1.7px) brightness(0.91) saturate(1.14) contrast(1.07);
-  animation: metallicSteelFlow 24s ease-in-out infinite;
-  box-shadow: 0 0 120px 24px rgba(60,70,80,0.18) inset, 0 12px 80px 20px rgba(0,0,0,0.19) inset;
-}
-@keyframes metallicSteelFlow {
-  0% { background-position: 0% 50%, 60% 50%, 40% 60%; }
-  33% { background-position: 80% 40%, 30% 60%, 60% 80%; }
-  66% { background-position: 60% 100%, 80% 20%, 30% 80%; }
-  100% { background-position: 0% 50%, 60% 50%, 40% 60%; }
-}
-.lang-switch {
-  position: fixed;
-  top: 18px;
-  right: 34px;
-  z-index: 1001;
-  display: flex;
-  gap: 6px;
-  background: rgba(36,36,36,0.92);
-  border-radius: 12px;
-  padding: 4px 9px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-}
-.lang-switch button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0 4px;
-  transition: filter .2s;
-  border-radius: 4px;
-  height: 28px;
-  width: 32px;
-  color: #f4f4f4;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-.lang-switch button:focus,
-.lang-switch button:hover {
-  filter: drop-shadow(0 1px 4px #f7931a88) brightness(1.18);
-}
-@media (max-width: 1100px) {
-  .main-content {
-    max-width: 100vw;
-    margin-left: 0;
-    padding: 16px 3vw;
-    grid-template-columns: 1fr;
+const translations = {
+  es: {
+    name: "Jaime R. de Frutos",
+    title: "Aspirante a Junior en Ciberseguridad y Bitcoiner",
+    email: "Correo",
+    location: "Ubicación",
+    location_value: "Islas Baleares, España",
+    resume: "Currículum",
+    openpdf: "Abrir PDF",
+    about: "Sobre mí",
+    about_1: "Soy un aspirante a junior en ciberseguridad con formación práctica en hacking ético, cloud y forense digital. Bitcoiner curioso, interesado en privacidad y software libre. Opero un nodo público de Bitcoin/Lightning.",
+    about_2: "Recientemente completé un bootcamp intensivo en UpgradeHub y obtuve varios certificados en operaciones de seguridad y hacking ético. Me apasiona defender activos digitales, aprender herramientas nuevas y apoyar una Internet libre y abierta.",
+    looking_for_label: "Buscando:",
+    looking_for_text: "Un puesto de entrada o junior en ciberseguridad donde seguir aprendiendo y contribuir a la seguridad real.",
+    certifications: "Certificaciones",
+    skills: "Habilidades",
+    skills_cyber: "<strong>Ciberseguridad:</strong> Hacking Ético, Pentesting, Análisis de Vulnerabilidades, Respuesta a Incidentes, SIEM, Forense Digital, OSINT, Detección de Amenazas, Gestión de Riesgos, Gobernanza, Evidencia, Seguridad Linux.",
+    skills_btc: "<strong>Bitcoin:</strong> Operación de nodo Lightning, Seguridad Bitcoin, Análisis on-chain, Protocolos abiertos, Privacidad, Mitigación de Riesgos, Forense Bitcoin.",
+    skills_cloud: "<strong>Cloud & Infra:</strong> AWS Cloud Practitioner, CloudFormation, Infraestructura como código.",
+    skills_prog: "<strong>Programación & Scripting:</strong> Python, Bash, Django, Git, Bases de datos (SQL), Desarrollo Web.",
+    skills_languages: "<strong>Idiomas:</strong> Inglés (Fluido), Español (Fluido).",
+    skills_other: "<strong>Otros:</strong> Comunidad, Creación de Contenido, Atención al Cliente.",
+    education: "Educación",
+    edu_title: "Bootcamp Intensivo, Ciberseguridad, Hacking Ético y Cloud",
+    edu_desc: "Bootcamp práctico en ciberseguridad, hacking ético y cloud. Uso de Kali, Metasploit, AWS y escenarios reales.",
+    software: "Software",
+    tools: "Herramientas",
+    contact: "Contacto",
+    contact_1: "¿Listo para colaborar? Escríbeme:",
+    contact_2: "También puedes contactar por <a href='https://www.linkedin.com/in/jimblogic/' target='_blank'>LinkedIn</a> o ver mi nodo público en <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f' target='_blank'>Amboss</a>."
+  },
+  ca: {
+    name: "Jaime R. de Frutos",
+    title: "Aspirant Junior en Ciberseguretat i Bitcoiner",
+    email: "Correu",
+    location: "Ubicació",
+    location_value: "Illes Balears, Espanya",
+    resume: "Currículum",
+    openpdf: "Obrir PDF",
+    about: "Sobre mi",
+    about_1: "Sóc aspirant junior en ciberseguretat amb formació pràctica en hacking ètic, cloud i forense digital. Bitcoiner curiós, interessat en privadesa i programari lliure. Oper un node públic de Bitcoin/Lightning.",
+    about_2: "Recentment he completat un bootcamp intensiu a UpgradeHub i he obtingut diversos certificats en seguretat i hacking ètic. M'apassiona defensar actius digitals, aprendre eines noves i donar suport a una Internet lliure i oberta.",
+    looking_for_label: "Busco:",
+    looking_for_text: "Un lloc d'entrada o junior en ciberseguretat on continuar aprenent i contribuir a la seguretat real.",
+    certifications: "Certificacions",
+    skills: "Habilitats",
+    skills_cyber: "<strong>Ciberseguretat:</strong> Hacking Ètic, Pentesting, Anàlisi de Vulnerabilitats, Resposta a Incidents, SIEM, Forense Digital, OSINT, Detecció d'Amenaces, Gestió de Riscos, Governança, Evidència, Seguretat Linux.",
+    skills_btc: "<strong>Bitcoin:</strong> Operació de node Lightning, Seguretat Bitcoin, Anàlisi on-chain, Protocols oberts, Privadesa, Mitigació de Riscos, Forense Bitcoin.",
+    skills_cloud: "<strong>Cloud & Infra:</strong> AWS Cloud Practitioner, CloudFormation, Infraestructura com a codi.",
+    skills_prog: "<strong>Programació & Scripting:</strong> Python, Bash, Django, Git, Bases de dades (SQL), Desenvolupament Web.",
+    skills_languages: "<strong>Idiomes:</strong> Anglès (Fluid), Espanyol (Fluid).",
+    skills_other: "<strong>Altres:</strong> Comunitat, Creació de Contingut, Atenció al Client.",
+    education: "Educació",
+    edu_title: "Bootcamp Intensiu, Ciberseguretat, Hacking Ètic i Cloud",
+    edu_desc: "Bootcamp pràctic en ciberseguretat, hacking ètic i cloud. Ús de Kali, Metasploit, AWS i escenaris reals.",
+    software: "Programari",
+    tools: "Eines",
+    contact: "Contacte",
+    contact_1: "Preparat per col·laborar? Escriu-me:",
+    contact_2: "També pots contactar per <a href='https://www.linkedin.com/in/jimblogic/' target='_blank'>LinkedIn</a> o veure el meu node públic a <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f' target='_blank'>Amboss</a>."
   }
-  .sidebar {
-    width: 100vw;
-    position: relative;
-    min-height: auto;
-    box-shadow: none;
-  }
-  .lang-switch {
-    right: 10px;
-    top: 8px;
-  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll("[data-txt]").forEach(el => {
+    const key = el.getAttribute("data-txt");
+    if (translations[lang] && translations[lang][key]) {
+      if (el.tagName === "INPUT") {
+        el.placeholder = translations[lang][key];
+      } else {
+        el.innerHTML = translations[lang][key];
+      }
+    }
+  });
+  document.documentElement.lang = lang;
 }
-@media (min-width: 1200px) {
-  .main-content {
-    max-width: 1800px;
-    margin-left: 320px;
-    padding: 40px 48px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 38px;
-  }
-  .main-content section {
-    grid-column: span 2;
-  }
-  .main-content section#certifications, 
-  .main-content section#skills,
-  .main-content section#software,
-  .main-content section#tools {
-    grid-column: span 1;
-  }
-}
-.sidebar {
-  background: rgba(40, 40, 40, 0.97);
-  padding: 24px 18px;
-  width: 300px;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.main-content {
-  margin-left: 320px;
-  max-width: 1800px;
-  padding: 32px 24px 36px 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-}
-.avatar-box img {
-  border-radius: 50%;
-  border: 3px solid #f7931a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-.info-content h1 { color: #f7931a; letter-spacing: 1px; margin-bottom: 8px; }
-.title { color: #ffd580; margin-top: 0; }
-.separator { height: 1px; background: #444; margin: 15px 0; width: 100%; }
-.contacts-list, .social-list { list-style: none; padding: 0; margin: 0; }
-.contact-item { display: flex; align-items: center; margin-bottom: 12px; }
-.icon-box { margin-right: 12px; }
-.contact-link { color: #f7931a; text-decoration: none; }
-.social-list { display: flex; gap: 12px; margin-top: 10px; }
-.social-link { color: #ffd580; font-size: 1.4em; transition: color 0.3s; }
-.social-link:hover { color: #f7931a; }
-.social-link img {display:inline-block;vertical-align:middle;}
-.navbar { margin-bottom: 32px; }
-.navbar-list { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 0; }
-.navbar-link { color: #ffd580; text-decoration: none; font-size: 1.1em; font-weight: 500; border-bottom: 2px solid transparent; transition: border 0.3s, color 0.3s; }
-.navbar-link:hover, .navbar-link.active { color: #f7931a; border-bottom: 2px solid #f7931a; }
-section { margin-bottom: 48px; background: rgba(36,36,36,0.94); border-radius: 18px; box-shadow: 0 4px 32px rgba(0,0,0,0.28); padding: 28px 22px; }
-section h2 { color: #f7931a; margin-top: 0; }
-.certificate-list, .software-list, .tools-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.certificate-list li, .software-list li, .tools-list li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: rgba(36,36,36,0.91);
-  border-radius: 8px;
-  padding: 7px 12px;
-  min-height: 36px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-}
-.certificate-list img, .software-list img, .tools-list img {
-  width: 33px;
-  height: 33px;
-  border-radius: 6px;
-  background: #232526;
-  object-fit: contain;
-  aspect-ratio: 1 / 1;
-  display: block;
-}
-.education-item { margin-bottom: 14px; }
-.scroll-btn {
-  position: fixed;
-  right: 24px;
-  z-index: 999;
-  background: #232526;
-  color: #f7931a;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 2rem;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: opacity 0.3s;
-  opacity: 0.7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.scroll-btn:hover { opacity: 1; }
-#scrollToTopBtn { bottom: 90px; }
-#scrollToBottomBtn { bottom: 30px; }
-@media (max-width: 600px) {
-  .sidebar { position: static; width: 100vw; padding: 8px 2vw; }
-  .main-content { margin-left: 0; padding: 8px 2vw; max-width: 100vw; grid-template-columns: 1fr; }
-  section { padding: 10px 4vw; margin-bottom: 28px; }
-}
+
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang')));
+});
