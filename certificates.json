@@ -1,20 +1,20 @@
 [
   {
+    "title": "Cybrary IT and Cybersecurity Foundations",
+    "category": "Cybersecurity",
+    "image": "./assets/images/certs/cybrary/cybrary_it_cybersecurity_foundations.png",
+    "url": "https://github.com/JimBLogic/Cybrary-IT-and-Cybersecurity-Foundations-Certificates "
+  },
+  {
+    "title": "Security Blue Team Learning Journey",
+    "category": "Cybersecurity",
+    "image": "./assets/images/certs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
+    "url": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates "
+  },
+  {
     "title": "AWS Cloud Practitioner",
-    "category": "Cloud Security",
+    "category": "Cloud Computing",
     "image": "./assets/images/certs/aws/Introduction to Python pt1.png",
     "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/ "
-  },
-  {
-    "title": "Cybrary IT Foundations",
-    "category": "IT & Cybersecurity",
-    "image": "./assets/images/certs/cybrary/cybrary-cert-security-general-security-concepts.png",
-    "url": "https://www.cybrary.it/course/introduction-it-foundations/ "
-  },
-  {
-    "title": "IBM Python 60h",
-    "category": "Programming",
-    "image": "./assets/images/Profilepicandother/ibm.jpg",
-    "url": "https://www.credly.com/badges/... "
   }
 ]
