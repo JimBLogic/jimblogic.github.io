@@ -1,50 +1,50 @@
 [
   {
     "name": "Kali Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
     "icon": "kalilinux.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
     "description": "Penetration testing and digital forensics OS"
   },
   {
     "name": "Metasploit",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
     "icon": "metasploit.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
     "description": "Exploit development & penetration testing"
   },
   {
     "name": "AWS CloudFormation",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "icon": "amazonaws.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "description": "Cloud infrastructure as code"
   },
   {
     "name": "Django",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
     "icon": "django.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
     "description": "Python web framework"
   },
   {
     "name": "Git",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
     "icon": "git.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
     "description": "Version control system"
   },
   {
     "name": "Bash",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "icon": "gnubash.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Unix shell and command language"
   },
   {
     "name": "Python",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
     "icon": "python.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
     "description": "Programming language"
   },
   {
     "name": "Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
     "icon": "linux.png",
-    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
     "description": "Operating system"
   }
 ]
