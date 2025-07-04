@@ -1,32 +1,50 @@
 [
   {
-    "name": "SIEM",
-    "iconLocal": "splunk.png",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
-    "description": "Security Information and Event Management"
+    "name": "Kali Linux",
+    "icon": "assets/software/kalilinux.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
+    "description": "Penetration testing and digital forensics OS"
   },
   {
-    "name": "fcrackzip",
-    "iconLocal": "fcrackzip.png",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
-    "description": "ZIP password recovery tool"
+    "name": "Metasploit",
+    "icon": "assets/software/metasploit.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
+    "description": "Exploit development & penetration testing"
   },
   {
-    "name": "steghide",
-    "iconLocal": "steghide.png",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
-    "description": "Steganography tool"
+    "name": "AWS CloudFormation",
+    "icon": "assets/software/amazonaws.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
+    "description": "Cloud infrastructure as code"
   },
   {
-    "name": "Firewall",
-    "iconLocal": "firewall.png",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
-    "description": "Network security system"
+    "name": "Django",
+    "icon": "assets/software/django.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
+    "description": "Python web framework"
   },
   {
-    "name": "Databases",
-    "iconLocal": "database.png",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/database.svg",
-    "description": "SQL, data storage and management"
+    "name": "Git",
+    "icon": "assets/software/git.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
+    "description": "Version control system"
+  },
+  {
+    "name": "Bash",
+    "icon": "assets/software/gnubash.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "description": "Unix shell and command language"
+  },
+  {
+    "name": "Python",
+    "icon": "assets/software/python.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
+    "description": "Programming language"
+  },
+  {
+    "name": "Linux",
+    "icon": "assets/software/linux.png",
+    "icon_fallback": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
+    "description": "Operating system"
   }
 ]
