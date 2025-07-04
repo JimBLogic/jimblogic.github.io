@@ -1,5 +1,19 @@
-[
-  { "name": "Wireshark", "image": "./assets/images/tools/wireshark.png" },
-  { "name": "Tcpdump", "image": "./assets/images/tools/tcpdump.png" },
-  { "name": "Splunk", "image": "./assets/images/tools/splunk.png" }
-]
+{
+  "tools": [
+    {
+      "name": "Wireshark",
+      "icon": "./assets/Images/tools/wireshark.png",
+      "description": "Network protocol analyzer"
+    },
+    {
+      "name": "Suricata",
+      "icon": "./assets/Images/tools/suricata.png",
+      "description": "Open source intrusion detection system"
+    },
+    {
+      "name": "Greenbone",
+      "icon": "./assets/Images/tools/greenbone.png",
+      "description": "Vulnerability management tool"
+    }
+  ]
+}
