@@ -1,27 +1,57 @@
 [
   {
     "name": "SIEM",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
+    "icon": "assets/tools/splunk.png",
     "description": "Security Information and Event Management"
   },
   {
     "name": "fcrackzip",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "icon": "assets/tools/fcrackzip.png",
     "description": "ZIP password recovery tool"
   },
   {
     "name": "steghide",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "icon": "assets/tools/steghide.png",
     "description": "Steganography tool"
   },
   {
     "name": "Firewall",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
+    "icon": "assets/tools/firewall.png",
     "description": "Network security system"
   },
   {
     "name": "Databases",
-    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/database.svg",
+    "icon": "assets/tools/database.png",
     "description": "SQL, data storage and management"
+  },
+  {
+    "name": "Wireshark",
+    "icon": "assets/tools/wireshark.png",
+    "description": "Network protocol analyzer"
+  },
+  {
+    "name": "Suricata",
+    "icon": "assets/tools/suricata.png",
+    "description": "Network threat detection tool"
+  },
+  {
+    "name": "Greenbone",
+    "icon": "assets/tools/greenbone.png",
+    "description": "Vulnerability management"
+  },
+  {
+    "name": "tcpdump",
+    "icon": "assets/tools/tcpdump.png",
+    "description": "Network traffic analyzer"
+  },
+  {
+    "name": "Windows Registry",
+    "icon": "assets/tools/windows_registry.png",
+    "description": "Windows system registry analysis"
+  },
+  {
+    "name": "Chronicle",
+    "icon": "assets/tools/chronicle.png",
+    "description": "Cloud security analytics"
   }
 ]
