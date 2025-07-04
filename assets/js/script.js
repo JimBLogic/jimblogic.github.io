@@ -1,30 +1,25 @@
-function imgLocalThenOnline(local, fallback, alt) {
-  // Show local image, if it fails load fallback
-  return `<img src="${local}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">`;
+function certImg(local, fallback, alt) {
+  // If local is blank, use fallback directly
+  if (!local) return `<img src="${fallback}" alt="${alt}" loading="lazy">`;
+  const localPath = `assets/Images/${local}`;
+  return `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">`;
 }
 
-function renderList(jsonFile, listId, label) {
-  fetch(jsonFile)
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('./certificates.json')
     .then(r => r.json())
     .then(data => {
-      const el = document.getElementById(listId);
+      const el = document.getElementById('certificateList');
       if (!el || !Array.isArray(data)) return;
-      el.innerHTML = data.map(item => {
-        const icon = imgLocalThenOnline(item.icon, item.icon_fallback, item.name);
+      el.innerHTML = data.map(cert => {
         return `<li>
-          ${icon}
+          ${certImg(cert.badgeLocal, cert.badgeFallback, cert.name)}
           <div>
-            <strong>${item.name}</strong><br>
-            <span>${item.description || item.issuer || ''}</span>
-            ${item.link ? ` - <a href="${item.link}" target="_blank" rel="noopener">${label || 'View'}</a>` : ''}
+            <strong>${cert.name}</strong><br>
+            <span>${cert.issuer}</span>
+            ${cert.link ? ` - <a href="${cert.link}" target="_blank" rel="noopener">View</a>` : ''}
           </div>
         </li>`;
       }).join('');
     });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderList('./certificates.json', 'certificateList', 'Certificate');
-  renderList('./software.json', 'softwareList');
-  renderList('./tools.json', 'toolsList');
 });
