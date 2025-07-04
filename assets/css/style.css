@@ -3,7 +3,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 body {
   min-height: 100vh;
   font-family: 'Poppins', Arial, sans-serif;
@@ -12,27 +11,30 @@ body {
   z-index: 1;
   overflow-x: hidden;
 }
-
 .bg-animation {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(120deg, #4f5154 0%, #a9a9a9 40%, #d7d7d7 60%, #888 100%);
-  background-size: 600% 600%;
-  filter: blur(2px) brightness(1.1) saturate(1.2);
-  animation: metallicFlow 12s ease-in-out infinite;
+  /* A more subdued, earthy metallic gradient with a faint highlight and shadow overlay */
+  background: 
+    linear-gradient(125deg, #29221a 0%, #665c4a 15%, #8a7a5b 35%, #b09a6a 60%, #3e372e 100%),
+    radial-gradient(ellipse at 70% 30%, rgba(255,241,180,0.09) 0%, rgba(0,0,0,0) 80%),
+    radial-gradient(ellipse at 40% 75%, rgba(60, 40, 20, 0.10) 0%, rgba(0,0,0,0.12) 100%);
+  background-blend-mode: multiply, screen;
+  background-size: 300% 300%;
+  filter: blur(2.5px) brightness(0.74) saturate(1.08);
+  animation: metallicEarthFlow 18s ease-in-out infinite;
+  box-shadow: 0 0 120px 24px rgba(30,22,12,0.23) inset, 0 12px 80px 20px rgba(0,0,0,0.20) inset;
 }
-@keyframes metallicFlow {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 100%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 0%; }
-  100% { background-position: 0% 50%; }
+@keyframes metallicEarthFlow {
+  0% { background-position: 0% 50%, 60% 50%, 40% 60%; }
+  33% { background-position: 80% 40%, 30% 60%, 60% 80%; }
+  66% { background-position: 60% 100%, 80% 20%, 30% 80%; }
+  100% { background-position: 0% 50%, 60% 50%, 40% 60%; }
 }
-
 .sidebar {
-  background: rgba(40, 40, 40, 0.98);
+  background: rgba(40, 40, 40, 0.97);
   padding: 24px 18px;
   width: 300px;
   min-height: 100vh;
@@ -47,7 +49,7 @@ body {
 }
 .main-content {
   margin-left: 320px;
-  max-width: 800px;
+  max-width: 820px;
   padding: 32px 24px 36px 24px;
   position: relative;
   z-index: 2;
@@ -58,25 +60,26 @@ body {
 }
 .avatar-box img {
   border-radius: 50%;
-  border: 3px solid #ffb347;
+  border: 3px solid #f7931a;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
-.info-content h1 { color: #ffb347; letter-spacing: 1px; margin-bottom: 8px; }
+.info-content h1 { color: #f7931a; letter-spacing: 1px; margin-bottom: 8px; }
 .title { color: #ffd580; margin-top: 0; }
 .separator { height: 1px; background: #444; margin: 15px 0; width: 100%; }
 .contacts-list, .social-list { list-style: none; padding: 0; margin: 0; }
 .contact-item { display: flex; align-items: center; margin-bottom: 12px; }
 .icon-box { margin-right: 12px; }
-.contact-link { color: #ffb347; text-decoration: none; }
+.contact-link { color: #f7931a; text-decoration: none; }
 .social-list { display: flex; gap: 12px; margin-top: 10px; }
 .social-link { color: #ffd580; font-size: 1.4em; transition: color 0.3s; }
-.social-link:hover { color: #ffb347; }
+.social-link:hover { color: #f7931a; }
+.social-link img {display:inline-block;vertical-align:middle;}
 .navbar { margin-bottom: 32px; }
 .navbar-list { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; margin: 0; }
 .navbar-link { color: #ffd580; text-decoration: none; font-size: 1.1em; font-weight: 500; border-bottom: 2px solid transparent; transition: border 0.3s, color 0.3s; }
-.navbar-link:hover, .navbar-link.active { color: #ffb347; border-bottom: 2px solid #ffb347; }
-section { margin-bottom: 48px; background: rgba(36,36,36,0.94); border-radius: 18px; box-shadow: 0 4px 32px rgba(0,0,0,0.3); padding: 28px 22px; }
-section h2 { color: #ffb347; margin-top: 0; }
+.navbar-link:hover, .navbar-link.active { color: #f7931a; border-bottom: 2px solid #f7931a; }
+section { margin-bottom: 48px; background: rgba(36,36,36,0.94); border-radius: 18px; box-shadow: 0 4px 32px rgba(0,0,0,0.28); padding: 28px 22px; }
+section h2 { color: #f7931a; margin-top: 0; }
 .certificate-list, .skills-list, .software-list, .tools-list { list-style: none; padding-left: 0; }
 .certificate-list li, .software-list li, .tools-list li {
   margin-bottom: 12px;
@@ -92,7 +95,12 @@ section h2 { color: #ffb347; margin-top: 0; }
   height: 36px;
   object-fit: contain;
   border-radius: 6px;
-  background: #222;
+  background: #232526;
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+@media (max-width: 600px) {
+  .certificate-list img, .software-list img, .tools-list img { width: 28px; height: 28px; }
 }
 .education-item { margin-bottom: 14px; }
 .scroll-btn {
@@ -100,7 +108,7 @@ section h2 { color: #ffb347; margin-top: 0; }
   right: 24px;
   z-index: 999;
   background: #232526;
-  color: #ffb347;
+  color: #f7931a;
   border: none;
   border-radius: 50%;
   width: 48px;
