@@ -1,25 +1,28 @@
+// script.js
+
 // Sidebar toggle
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-sidebarBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("active");
+const sidebar = document.querySelector('[data-sidebar]');
+const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+
+sidebarBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
 });
 
 // Navigation logic
-const navLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+const navLinks = document.querySelectorAll('[data-nav-link]');
+const pages = document.querySelectorAll('[data-page]');
 
 navLinks.forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener('click', () => {
     const pageId = link.dataset.navLink;
 
     pages.forEach(page => {
       if (page.dataset.page === pageId) {
-        page.classList.add("active");
-        link.classList.add("active");
+        page.classList.add('active');
+        link.classList.add('active');
       } else {
-        page.classList.remove("active");
-        link.classList.remove("active");
+        page.classList.remove('active');
+        link.classList.remove('active');
       }
     });
 
@@ -45,35 +48,23 @@ fetch("./assets/js/certificates.json")
         </a>`;
       list.appendChild(li);
     });
-  });
+  })
+  .catch(error => console.error("Error loading certificates:", error));
 
-// Load software icons
-fetch("./assets/js/software.json")
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById("softwareList");
-    data.forEach(item => {
-      const li = document.createElement("li");
-      li.className = "software-item";
-      li.innerHTML = `<img src="${item.image}" alt="${item.name}">`;
-      list.appendChild(li);
-    });
-  });
+// Scroll to top functionality
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Load tool icons
-fetch("./assets/js/tools.json")
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById("toolsList");
-    data.forEach(item => {
-      const li = document.createElement("li");
-      li.className = "tool-item";
-      li.innerHTML = `<img src="${item.image}" alt="${item.name}">`;
-      list.appendChild(li);
-    });
+scrollToTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
+});
 
-// Scroll to top
-document.getElementById("scrollToTopBtn").addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
 });
