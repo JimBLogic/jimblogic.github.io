@@ -1,14 +1,11 @@
-[
-  {
-    "title": "AWS Cloud Practitioner",
-    "category": "Cloud Security",
-    "image": "./assets/images/certs/aws/Introduction to Python pt1.png",
-    "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/ "
-  },
-  {
-    "title": "Cybrary IT Foundations",
-    "category": "IT & Cybersecurity",
-    "image": "./assets/images/certs/cybrary/cybrary-cert-security-general-security-concepts.png",
-    "url": "https://www.cybrary.it/course/introduction-it-foundations/ "
-  }
-]
+{
+  "certificates": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "badge": "./assets/Images/credly.png",
+      "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf"
+    }
+    // ... more
+  ]
+}
