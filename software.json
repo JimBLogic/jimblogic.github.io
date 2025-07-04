@@ -1,42 +1,42 @@
 [
   {
     "name": "Kali Linux",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
     "description": "Penetration testing and digital forensics OS"
   },
   {
     "name": "Metasploit",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Metasploit.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
     "description": "Exploit development & penetration testing"
   },
   {
     "name": "AWS CloudFormation",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "description": "Cloud infrastructure as code"
   },
   {
     "name": "Django",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
     "description": "Python web framework"
   },
   {
     "name": "Git",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
     "description": "Version control system"
   },
   {
     "name": "Bash",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Unix shell and command language"
   },
   {
     "name": "Python",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
     "description": "Programming language"
   },
   {
     "name": "Linux",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
     "description": "Operating system"
   }
 ]
