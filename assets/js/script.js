@@ -1,19 +1,19 @@
-function certImg(local, fallback, alt) {
-  // If local is blank, use fallback directly
+// Handles certs (badgeLocal + badgeFallback), software/tools (icon + icon_fallback)
+function imgLocalThenOnline(local, fallback, alt, prefix = "") {
   if (!local) return `<img src="${fallback}" alt="${alt}" loading="lazy">`;
-  const localPath = `assets/Images/${local}`;
+  const localPath = prefix + local;
   return `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('./certificates.json')
+function renderCertList(jsonFile, listId) {
+  fetch(jsonFile)
     .then(r => r.json())
     .then(data => {
-      const el = document.getElementById('certificateList');
+      const el = document.getElementById(listId);
       if (!el || !Array.isArray(data)) return;
       el.innerHTML = data.map(cert => {
         return `<li>
-          ${certImg(cert.badgeLocal, cert.badgeFallback, cert.name)}
+          ${imgLocalThenOnline(cert.badgeLocal, cert.badgeFallback, cert.name, "assets/Images/")}
           <div>
             <strong>${cert.name}</strong><br>
             <span>${cert.issuer}</span>
@@ -22,4 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </li>`;
       }).join('');
     });
+}
+
+function renderList(jsonFile, listId, folder) {
+  fetch(jsonFile)
+    .then(r => r.json())
+    .then(data => {
+      const el = document.getElementById(listId);
+      if (!el || !Array.isArray(data)) return;
+      el.innerHTML = data.map(item => {
+        return `<li>
+          ${imgLocalThenOnline(item.icon, item.icon_fallback, item.name, `assets/${folder}/`)}
+          <div>
+            <strong>${item.name}</strong><br>
+            <span>${item.description || ""}</span>
+          </div>
+        </li>`;
+      }).join('');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCertList('./certificates.json', 'certificateList');
+  renderList('./software.json', 'softwareList', "software");
+  renderList('./tools.json', 'toolsList', "tools");
 });
