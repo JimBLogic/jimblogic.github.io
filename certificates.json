@@ -1,10 +1,14 @@
 [
   {
-    "name": "Cybrary IT and Cybersecurity Foundations",
-    "url": "https://github.com/JimBLogic/Cybrary-IT-and-Cybersecurity-Foundations-Certificates "
+    "title": "AWS Cloud Practitioner",
+    "category": "Cloud Security",
+    "image": "./assets/images/certs/aws/Introduction to Python pt1.png",
+    "url": "https://aws.amazon.com/ "
   },
   {
-    "name": "Security Blue Team Learning Journey",
-    "url": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates "
+    "title": "Cybrary IT Foundations",
+    "category": "IT & Cybersecurity",
+    "image": "./assets/images/certs/cybrary/cybrary-cert-security-general-security-concepts.png",
+    "url": "https://www.cybrary.it "
   }
 ]
