@@ -12,28 +12,33 @@
     },
     {
       "name": "AWS CloudFormation",
-      "icon": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+      "icon": "https://cdn.worldvectorlogo.com/logos/aws-cloudformation.svg",
       "description": "Cloud infrastructure as code"
     },
     {
       "name": "Django",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg",
+      "icon": "https://cdn.worldvectorlogo.com/logos/django.svg",
       "description": "Python web framework"
     },
     {
       "name": "Git",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
+      "icon": "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
       "description": "Version control system"
     },
     {
       "name": "Bash",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+      "icon": "https://cdn.worldvectorlogo.com/logos/gnubash.svg",
       "description": "Unix shell and command language"
     },
     {
       "name": "Python",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+      "icon": "https://cdn.worldvectorlogo.com/logos/python-5.svg",
       "description": "Programming language"
+    },
+    {
+      "name": "Linux",
+      "icon": "https://cdn.worldvectorlogo.com/logos/tux.svg",
+      "description": "Operating system"
     }
   ]
 }
