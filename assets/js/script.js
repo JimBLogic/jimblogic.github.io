@@ -1,5 +1,5 @@
 function imgLocalFirst(local, fallback, alt) {
-  // If local image is not present, onerror falls back to fallback URL
+  // Try to use local image, fall back to remote if error
   return `<img src="${local}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">`;
 }
 
@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('certificateList');
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(cert => {
-          const local = cert.badgeLocal ? `./assets/Images/${cert.badgeLocal}` : '';
-          const fallback = cert.badge || 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg';
+          const local = cert.badgeLocal ? `./assets/Images/${cert.badgeLocal}` : cert.badge;
+          const fallback = cert.badge;
           return `<li>
             ${imgLocalFirst(local, fallback, cert.name)}
             <div>
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('softwareList');
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(soft => {
-          const local = soft.iconLocal ? `./assets/Images/software/${soft.iconLocal}` : '';
-          const fallback = soft.icon || 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/software.svg';
+          const local = soft.iconLocal ? `./assets/Images/software/${soft.iconLocal}` : soft.icon;
+          const fallback = soft.icon;
           return `<li>
             ${imgLocalFirst(local, fallback, soft.name)}
             <div>
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('toolsList');
       if (el && Array.isArray(data)) {
         el.innerHTML = data.map(tool => {
-          const local = tool.iconLocal ? `./assets/Images/tools/${tool.iconLocal}` : '';
-          const fallback = tool.icon || 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tools.svg';
+          const local = tool.iconLocal ? `./assets/Images/tools/${tool.iconLocal}` : tool.icon;
+          const fallback = tool.icon;
           return `<li>
             ${imgLocalFirst(local, fallback, tool.name)}
             <div>
