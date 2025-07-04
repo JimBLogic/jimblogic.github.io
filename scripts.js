@@ -17,39 +17,17 @@ navLinks.forEach(link => {
     const pageId = link.dataset.navLink;
 
     pages.forEach(page => {
-      if (page.dataset.page === pageId) {
+      if (this.dataset.navLink === page.dataset.page) {
         page.classList.add('active');
         link.classList.add('active');
+        window.scrollTo(0, 0);
       } else {
         page.classList.remove('active');
         link.classList.remove('active');
       }
     });
-
-    window.scrollTo(0, 0);
   });
 });
-
-// Load certificates dynamically
-fetch("./assets/js/certificates.json")
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById("certificateList");
-    data.forEach(cert => {
-      const li = document.createElement("li");
-      li.className = "certificate-item";
-      li.innerHTML = `
-        <a href="${cert.url}" target="_blank">
-          <figure class="certificate-img">
-            <img src="${cert.image}" alt="${cert.title}">
-          </figure>
-          <h3>${cert.title}</h3>
-          <p>${cert.category}</p>
-        </a>`;
-      list.appendChild(li);
-    });
-  })
-  .catch(error => console.error("Error loading certificates:", error));
 
 // Scroll to top functionality
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
