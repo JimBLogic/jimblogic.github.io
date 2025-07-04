@@ -3,19 +3,19 @@
     {
       "name": "AWS Certified Cloud Practitioner",
       "issuer": "Amazon Web Services",
-      "badge": "./assets/Images/credly.png",
+      "badge": "./assets/Images/Profilepicandother/credly.png",
       "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf"
     },
     {
       "name": "Blue Team Junior Analyst Pathway",
       "issuer": "Security Blue Team",
-      "badge": "./assets/Images/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
-      "link": "./assets/pdfs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.pdf"
+      "badge": "./assets/Images/Profilepicandother/blueteam.png",
+      "link": "./assets/pdfs/SecurityBlueTeam/Blue%20Team%20Junior%20Analyst%20Pathway%20Bundle-btja.pdf"
     },
     {
       "name": "UpgradeHub Cybersecurity Bootcamp",
       "issuer": "UpgradeHub",
-      "badge": "./assets/Images/UpgradeHub/upgradehubcert.png",
+      "badge": "./assets/Images/Profilepicandother/logo.png",
       "link": "./assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf"
     }
   ]
