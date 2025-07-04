@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(data => {
       const el = document.getElementById('certificateList');
-      if (el && Array.isArray(data.certificates)) {
-        el.innerHTML = data.certificates.map(cert =>
+      if (el && Array.isArray(data)) {
+        el.innerHTML = data.map(cert =>
           `<li>
             <img src="${cert.badge}" alt="${cert.name}" loading="lazy">
             <div>
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(data => {
       const el = document.getElementById('softwareList');
-      if (el && Array.isArray(data.software)) {
-        el.innerHTML = data.software.map(soft =>
+      if (el && Array.isArray(data)) {
+        el.innerHTML = data.map(soft =>
           `<li>
             <img src="${soft.icon}" alt="${soft.name}" loading="lazy">
             <div>
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(data => {
       const el = document.getElementById('toolsList');
-      if (el && Array.isArray(data.tools)) {
-        el.innerHTML = data.tools.map(tool =>
+      if (el && Array.isArray(data)) {
+        el.innerHTML = data.map(tool =>
           `<li>
             <img src="${tool.icon}" alt="${tool.name}" loading="lazy">
             <div>
