@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data.certificates)) {
         el.innerHTML = data.certificates.map(cert =>
           `<li>
-            <img src="${cert.badge}" alt="${cert.name}">
+            <img src="${cert.badge}" alt="${cert.name}" loading="lazy">
             <div>
               <strong>${cert.name}</strong><br>
               <span>${cert.issuer}</span>
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data.software)) {
         el.innerHTML = data.software.map(soft =>
           `<li>
-            <img src="${soft.icon}" alt="${soft.name}">
+            <img src="${soft.icon}" alt="${soft.name}" loading="lazy">
             <div>
               <strong>${soft.name}</strong>
               <br><span>${soft.description || ''}</span>
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && Array.isArray(data.tools)) {
         el.innerHTML = data.tools.map(tool =>
           `<li>
-            <img src="${tool.icon}" alt="${tool.name}">
+            <img src="${tool.icon}" alt="${tool.name}" loading="lazy">
             <div>
               <strong>${tool.name}</strong>
               <br><span>${tool.description || ''}</span>
