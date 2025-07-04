@@ -2,17 +2,17 @@
   "tools": [
     {
       "name": "Wireshark",
-      "icon": "./assets/Images/tools/wireshark.png",
+      "icon": "./assets/Images/Profilepicandother/wireshark.png",
       "description": "Network protocol analyzer"
     },
     {
       "name": "Suricata",
-      "icon": "./assets/Images/tools/suricata.png",
+      "icon": "./assets/Images/Profilepicandother/suricata.png",
       "description": "Open source intrusion detection system"
     },
     {
       "name": "Greenbone",
-      "icon": "./assets/Images/tools/greenbone.png",
+      "icon": "./assets/Images/Profilepicandother/greenbone.png",
       "description": "Vulnerability management tool"
     }
   ]
