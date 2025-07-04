@@ -1,4 +1,3 @@
-// Handles certs (badgeLocal + badgeFallback), software/tools (icon + icon_fallback)
 function imgLocalThenOnline(local, fallback, alt, prefix = "") {
   if (!local) return `<img src="${fallback}" alt="${alt}" loading="lazy">`;
   const localPath = prefix + local;
