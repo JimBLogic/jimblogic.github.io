@@ -1,136 +1,134 @@
-{
-  "certificates": [
-    {
-      "name": "Defensive Security Operations",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-defensive-security-operations.pdf"
-    },
-    {
-      "name": "Career Essentials in Cybersecurity",
-      "issuer": "Microsoft & LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/microsoft.svg",
-      "link": ""
-    },
-    {
-      "name": "Career Essentials in GitHub Professional Certificate",
-      "issuer": "GitHub",
-      "badge": "https://cdn.worldvectorlogo.com/logos/github-icon.svg",
-      "link": ""
-    },
-    {
-      "name": "Cybersecurity Awareness: Cybersecurity Terminology",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "Cybersecurity Foundations",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "Data Backup and Recovery Basics",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-data-backup-and-recovery.pdf"
-    },
-    {
-      "name": "Ethical Hacking: Cloud Computing",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-cloud-computing.pdf"
-    },
-    {
-      "name": "Ethical Hacking: Cryptography",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-cryptography.pdf"
-    },
-    {
-      "name": "Ethical Hacking: Mobile Platform, IoT, and OT Hacking",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-mobile-platform-iot-and-ot-hacking.pdf"
-    },
-    {
-      "name": "Ethical Hacking: Web Application Hacking",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/web-application-hacking.pdf"
-    },
-    {
-      "name": "Ethical Hacking: Wireless Network Hacking",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-wireless-network-hacking.pdf"
-    },
-    {
-      "name": "ISO 27001:2022-Compliant Cybersecurity",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "Introduction to Bash",
-      "issuer": "Security Blue Team",
-      "badge": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnome-terminal.svg",
-      "link": "./assets/pdfs/Introduction-to-Bash-course.pdf"
-    },
-    {
-      "name": "OSINT",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-osint-basics.pdf"
-    },
-    {
-      "name": "Prepare for the AWS Certified Cloud Practitioner (CLF-C02) Certification",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "The Cybersecurity Threat Landscape",
-      "issuer": "LinkedIn",
-      "badge": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
-      "link": ""
-    },
-    {
-      "name": "Threat Modeling",
-      "issuer": "Cybrary",
-      "badge": "https://cdn.worldvectorlogo.com/logos/cybrary.svg",
-      "link": "./assets/pdfs/cybrary-cert-threat-modeling.pdf"
-    },
-    {
-      "name": "Web Development with Python",
-      "issuer": "IBM",
-      "badge": "https://cdn.worldvectorlogo.com/logos/ibm-2.svg",
-      "link": "./assets/pdfs/WebDevelopmentwithPython_Badge20241230-25-r71g5e.pdf"
-    },
-    {
-      "name": "CS120: Bitcoin for Developers I",
-      "issuer": "Saylor Academy",
-      "badge": "https://cdn.worldvectorlogo.com/logos/bitcoin.svg",
-      "link": "./assets/pdfs/CS120-Bitcoin-for-Developers-I.pdf"
-    },
-    {
-      "name": "KCCS - KNOWLEDGE OF CYBERSECURITY SKILLS",
-      "issuer": "Mossé Cyber Security Institute",
-      "badge": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/securityscorecard.svg",
-      "link": "./assets/pdfs/KCCS-KNOWLEDGE-OF-CYBERSECURITY-SKILLS.pdf"
-    },
-    {
-      "name": "Blue Team Junior Analyst Pathway Bundle",
-      "issuer": "Security Blue Team",
-      "badge": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/blue.svg",
-      "link": "./assets/pdfs/Blue-Team-Junior-Analyst-Pathway-Bundle-btja.pdf"
-    }
-  ]
-}
+[
+  {
+    "name": "Defensive Security Operations",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-defensive-security-operations.pdf"
+  },
+  {
+    "name": "Career Essentials in Cybersecurity",
+    "issuer": "Microsoft & LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    "link": ""
+  },
+  {
+    "name": "Career Essentials in GitHub Professional Certificate",
+    "issuer": "GitHub",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+    "link": ""
+  },
+  {
+    "name": "Cybersecurity Awareness: Cybersecurity Terminology",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "Cybersecurity Foundations",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "Data Backup and Recovery Basics",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-data-backup-and-recovery.pdf"
+  },
+  {
+    "name": "Ethical Hacking: Cloud Computing",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-cloud-computing.pdf"
+  },
+  {
+    "name": "Ethical Hacking: Cryptography",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-cryptography.pdf"
+  },
+  {
+    "name": "Ethical Hacking: Mobile Platform, IoT, and OT Hacking",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-mobile-platform-iot-and-ot-hacking.pdf"
+  },
+  {
+    "name": "Ethical Hacking: Web Application Hacking",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/web-application-hacking.pdf"
+  },
+  {
+    "name": "Ethical Hacking: Wireless Network Hacking",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-wireless-network-hacking.pdf"
+  },
+  {
+    "name": "ISO 27001:2022-Compliant Cybersecurity",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "Introduction to Bash",
+    "issuer": "Security Blue Team",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "link": "./assets/pdfs/Introduction-to-Bash-course.pdf"
+  },
+  {
+    "name": "OSINT",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-osint-basics.pdf"
+  },
+  {
+    "name": "Prepare for the AWS Certified Cloud Practitioner (CLF-C02) Certification",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "The Cybersecurity Threat Landscape",
+    "issuer": "LinkedIn",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    "link": ""
+  },
+  {
+    "name": "Threat Modeling",
+    "issuer": "Cybrary",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/Cybrary_logo.svg",
+    "link": "./assets/pdfs/cybrary-cert-threat-modeling.pdf"
+  },
+  {
+    "name": "Web Development with Python",
+    "issuer": "IBM",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+    "link": "./assets/pdfs/WebDevelopmentwithPython_Badge20241230-25-r71g5e.pdf"
+  },
+  {
+    "name": "CS120: Bitcoin for Developers I",
+    "issuer": "Saylor Academy",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg",
+    "link": "./assets/pdfs/CS120-Bitcoin-for-Developers-I.pdf"
+  },
+  {
+    "name": "KCCS - KNOWLEDGE OF CYBERSECURITY SKILLS",
+    "issuer": "Mossé Cyber Security Institute",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "link": "./assets/pdfs/KCCS-KNOWLEDGE-OF-CYBERSECURITY-SKILLS.pdf"
+  },
+  {
+    "name": "Blue Team Junior Analyst Pathway Bundle",
+    "issuer": "Security Blue Team",
+    "badge": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "link": "./assets/pdfs/Blue-Team-Junior-Analyst-Pathway-Bundle-btja.pdf"
+  }
+]
