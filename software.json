@@ -1,14 +1,4 @@
 [
-  {
-    "name": "Linux",
-    "image": "assets/images/software/linux.png"
-  },
-  {
-    "name": "Windows",
-    "image": "assets/images/software/windows.png"
-  },
-  {
-    "name": "Python",
-    "image": "assets/images/software/python.png"
-  }
+  { "name": "Python", "image": "./assets/images/software/python.png" },
+  { "name": "Linux", "image": "./assets/images/software/linux.png" }
 ]
