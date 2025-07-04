@@ -2,32 +2,27 @@
   "tools": [
     {
       "name": "SIEM",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Security_Information_and_Event_Management_icon.png",
+      "icon": "https://cdn.worldvectorlogo.com/logos/splunk-1.svg",
       "description": "Security Information and Event Management"
     },
     {
       "name": "fcrackzip",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+      "icon": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnome-terminal.svg",
       "description": "ZIP password recovery tool"
     },
     {
       "name": "steghide",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+      "icon": "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnome-terminal.svg",
       "description": "Steganography tool"
     },
     {
-      "name": "Linux",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png",
-      "description": "Operating system"
-    },
-    {
       "name": "Firewall",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Firewall_icon.png",
+      "icon": "https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/firewall.svg",
       "description": "Network security system"
     },
     {
       "name": "Databases",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/8/87/Database-icon.svg",
+      "icon": "https://cdn.worldvectorlogo.com/logos/database.svg",
       "description": "SQL, data storage and management"
     }
   ]
