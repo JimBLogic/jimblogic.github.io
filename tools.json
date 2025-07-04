@@ -1,27 +1,27 @@
 [
   {
     "name": "SIEM",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Splunk_logo.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
     "description": "Security Information and Event Management"
   },
   {
     "name": "fcrackzip",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "ZIP password recovery tool"
   },
   {
     "name": "steghide",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Terminal_icon_ubuntu.png",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "description": "Steganography tool"
   },
   {
     "name": "Firewall",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Firewall_icon.png",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
     "description": "Network security system"
   },
   {
     "name": "Databases",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/87/Database-icon.svg",
+    "icon": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/database.svg",
     "description": "SQL, data storage and management"
   }
 ]
