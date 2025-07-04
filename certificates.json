@@ -4,7 +4,7 @@
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-security-operations.png",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-security-operations.pdf"
+    "link": ""
   },
   {
     "name": "Career Essentials in Cybersecurity",
@@ -16,7 +16,7 @@
   {
     "name": "Career Essentials in GitHub Professional Certificate",
     "issuer": "GitHub",
-    "badgeLocal": "github.png",
+    "badgeLocal": "software/github.png",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg",
     "link": ""
   },
@@ -95,7 +95,7 @@
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to PowerShell-course.pdf"
+    "link": ""
   },
   {
     "name": "OSINT",
@@ -109,7 +109,7 @@
     "issuer": "LinkedIn",
     "badgeLocal": "",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg",
-    "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS Course Completion Certificate.pdf"
+    "link": ""
   },
   {
     "name": "The Cybersecurity Threat Landscape",
@@ -130,7 +130,7 @@
     "issuer": "IBM",
     "badgeLocal": "ibm.jpg",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg",
-    "link": "./assets/pdfs/IBM/python 60h.pdf"
+    "link": ""
   },
   {
     "name": "CS120: Bitcoin for Developers I",
@@ -151,6 +151,6 @@
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
     "badge": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
-    "link": "./assets/pdfs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.pdf"
+    "link": ""
   }
 ]
