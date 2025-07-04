@@ -1,12 +1,4 @@
 /* style.css */
-:root {
-  --bg-dark: #121212;
-  --accent-orange: #ff6f00;
-  --text-light: #ffffff;
-  --gray-light: #aaa;
-  --font-main: 'Poppins', sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +6,10 @@
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
+  color: #fff;
+  background-color: #121212;
 }
 
 .sidebar {
@@ -27,35 +19,26 @@ body {
   height: 100vh;
   width: 250px;
   background-color: #1f1f1f;
-  padding: 20px;
-  overflow-y: auto;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .avatar-box img {
-  border-radius: 20%;
+  border-radius: 50%;
 }
 
-.name {
+.info-content .name {
   font-size: 1.5rem;
-  color: #fff;
-}
-
-.title {
-  font-size: 0.8rem;
-  background: #333;
-  padding: 3px 8px;
-  border-radius: 5px;
-  color: #ccc;
+  margin-bottom: 5px;
 }
 
 .navbar {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background-color: #1f1f1f;
-  padding: 10px 0;
-  text-align: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -74,7 +57,7 @@ body {
 
 .navbar-link:hover,
 .navbar-link.active {
-  color: var(--accent-orange);
+  color: #ff6f00;
 }
 
 main {
@@ -83,22 +66,19 @@ main {
 }
 
 .article-title {
-  color: var(--accent-orange);
-  margin-bottom: 10px;
+  color: #ff6f00;
+  margin-top: 0;
 }
 
-.certificate-list,
-.software-list,
-.tools-list {
+.certificate-list {
   list-style: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
 }
 
-.certificate-item,
-.software-item,
-.tools-item {
+.certificate-item {
   background: #2c2c2c;
   border-radius: 10px;
   padding: 10px;
@@ -117,14 +97,14 @@ main {
 
 .certificate-category {
   font-size: 0.75rem;
-  color: var(--gray-light);
+  color: #aaa;
 }
 
 .scroll-to-top {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  background: var(--accent-orange);
+  background: #ff6f00;
   color: #000;
   border: none;
   padding: 10px;
