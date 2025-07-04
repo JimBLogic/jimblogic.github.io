@@ -2,17 +2,17 @@
   "software": [
     {
       "name": "Kali Linux",
-      "icon": "./assets/Images/software/linux.png",
+      "icon": "./assets/Images/Profilepicandother/linux.png",
       "description": "Penetration testing and digital forensics"
     },
     {
       "name": "Metasploit",
-      "icon": "./assets/Images/software/linux.png",
+      "icon": "./assets/Images/Profilepicandother/linux.png",
       "description": "Exploit development and penetration testing"
     },
     {
       "name": "Splunk",
-      "icon": "./assets/Images/software/splunk.png",
+      "icon": "./assets/Images/Profilepicandother/splunk.png",
       "description": "Security Information and Event Management"
     }
   ]
