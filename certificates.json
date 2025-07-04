@@ -3,12 +3,18 @@
     "title": "AWS Cloud Practitioner",
     "category": "Cloud Security",
     "image": "./assets/images/certs/aws/Introduction to Python pt1.png",
-    "url": "https://aws.amazon.com/ "
+    "url": "https://aws.amazon.com/certification/certified-cloud-practitioner/ "
   },
   {
     "title": "Cybrary IT Foundations",
     "category": "IT & Cybersecurity",
     "image": "./assets/images/certs/cybrary/cybrary-cert-security-general-security-concepts.png",
-    "url": "https://www.cybrary.it "
+    "url": "https://www.cybrary.it/course/introduction-it-foundations/ "
+  },
+  {
+    "title": "IBM Python 60h",
+    "category": "Programming",
+    "image": "./assets/images/Profilepicandother/ibm.jpg",
+    "url": "https://www.credly.com/badges/... "
   }
 ]
