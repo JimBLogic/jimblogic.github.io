@@ -1,4 +1,5 @@
 [
   { "name": "Wireshark", "image": "./assets/images/tools/wireshark.png" },
+  { "name": "Tcpdump", "image": "./assets/images/tools/tcpdump.png" },
   { "name": "Splunk", "image": "./assets/images/tools/splunk.png" }
 ]
