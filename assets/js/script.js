@@ -1,11 +1,28 @@
 function imgLocalThenOnline(local, fallback, alt, prefix = "") {
-  const defaultImg = "https://via.placeholder.com/40x40?text=Icon";
+  // Enhanced fallback system with multiple backup options
+  const createIconSvg = (name) => {
+    const firstLetter = name.charAt(0).toUpperCase();
+    return `data:image/svg+xml,${encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+        <rect width="40" height="40" rx="8" fill="#f7931a"/>
+        <text x="20" y="26" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">${firstLetter}</text>
+      </svg>
+    `)}`;
+  };
+  
+  const backupIcon = `https://img.icons8.com/fluency/48/${alt.toLowerCase().replace(/\s+/g, '-')}.png`;
+  const letterIcon = createIconSvg(alt);
+  
   if (local) {
-    return `<img src="${prefix + local}" alt="${alt}" loading="lazy" onerror="this.onerror=null; this.src='${fallback || defaultImg}';">`;
+    return `<img src="${prefix + local}" alt="${alt}" loading="lazy" 
+            onerror="this.onerror=null; this.src='${fallback || backupIcon}'; 
+            this.onerror = function() { this.src='${letterIcon}'; }">`;
   } else if (fallback) {
-    return `<img src="${fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null; this.src='${defaultImg}';">`;
+    return `<img src="${fallback}" alt="${alt}" loading="lazy" 
+            onerror="this.onerror=null; this.src='${backupIcon}'; 
+            this.onerror = function() { this.src='${letterIcon}'; }">`;
   } else {
-    return `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
+    return `<img src="${letterIcon}" alt="${alt}" loading="lazy">`;
   }
 }
 
@@ -90,15 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile swipe functionality
+  // Enhanced mobile swipe functionality
+  let touchStartX = 0;
   let touchStartY = 0;
+  let touchEndX = 0;
   let touchEndY = 0;
   let currentSectionIndex = 0;
-  let isSwipeEnabled = window.innerWidth <= 768;
+  let isSwipeEnabled = window.innerWidth <= 1024; // Increased threshold for tablets
 
   // Update swipe availability on resize
   window.addEventListener('resize', () => {
-    isSwipeEnabled = window.innerWidth <= 768;
+    isSwipeEnabled = window.innerWidth <= 1024;
   });
 
   function updateCurrentSection() {
@@ -118,44 +137,74 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleSwipe() {
     if (!isSwipeEnabled) return;
     
-    const swipeThreshold = 80;
-    const swipeDistance = touchStartY - touchEndY;
+    const swipeThreshold = 50; // Reduced threshold for more responsive swipes
+    const deltaX = touchStartX - touchEndX;
+    const deltaY = touchStartY - touchEndY;
     
-    if (Math.abs(swipeDistance) > swipeThreshold) {
-      if (swipeDistance > 0 && currentSectionIndex < sections.length - 1) {
-        // Swipe up - next section
-        currentSectionIndex++;
-      } else if (swipeDistance < 0 && currentSectionIndex > 0) {
-        // Swipe down - previous section
-        currentSectionIndex--;
+    // Determine swipe direction
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      // Horizontal swipe
+      if (Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX > 0) {
+          // Swipe left - next section
+          if (currentSectionIndex < sections.length - 1) {
+            currentSectionIndex++;
+          }
+        } else {
+          // Swipe right - previous section
+          if (currentSectionIndex > 0) {
+            currentSectionIndex--;
+          }
+        }
+        navigateToSection();
       }
-      
-      if (sections[currentSectionIndex]) {
-        sections[currentSectionIndex].scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        });
-        
-        // Add visual feedback
-        const targetSection = sections[currentSectionIndex];
-        targetSection.style.transform = 'scale(1.02)';
-        setTimeout(() => {
-          targetSection.style.transform = '';
-        }, 300);
+    } else {
+      // Vertical swipe
+      if (Math.abs(deltaY) > swipeThreshold) {
+        if (deltaY > 0) {
+          // Swipe up - next section
+          if (currentSectionIndex < sections.length - 1) {
+            currentSectionIndex++;
+          }
+        } else {
+          // Swipe down - previous section
+          if (currentSectionIndex > 0) {
+            currentSectionIndex--;
+          }
+        }
+        navigateToSection();
       }
     }
   }
-
+  
+  function navigateToSection() {
+    if (sections[currentSectionIndex]) {
+      sections[currentSectionIndex].scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+      
+      // Add visual feedback
+      const targetSection = sections[currentSectionIndex];
+      targetSection.style.transform = 'scale(1.02)';
+      targetSection.style.transition = 'transform 0.3s ease';
+      setTimeout(() => {
+        targetSection.style.transform = '';
+      }, 300);
+    }
+  }
   // Add touch events for mobile
   if ('ontouchstart' in window) {
     document.addEventListener('touchstart', (e) => {
       if (!isSwipeEnabled) return;
+      touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
       updateCurrentSection();
     });
     
     document.addEventListener('touchend', (e) => {
       if (!isSwipeEnabled) return;
+      touchEndX = e.changedTouches[0].screenX;
       touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
     });

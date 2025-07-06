@@ -1,22 +1,26 @@
 [
   {
     "name": "Wireshark",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/wireshark.svg",
-    "icon": "wireshark.png"
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wireshark.svg",
+    "icon": "wireshark.png",
+    "description": "Network protocol analyzer"
   },
   {
     "name": "tcpdump",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "tcpdump.png"
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "icon": "tcpdump.png",
+    "description": "Command-line packet analyzer"
   },
   {
     "name": "Splunk",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/splunk.svg",
-    "icon": "splunk.png"
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
+    "icon": "splunk.png",
+    "description": "Security information and event management"
   },
   {
     "name": "Windows Registry Analysis",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
-    "icon": "windows_registry.png"
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg",
+    "icon": "windows_registry.png",
+    "description": "Registry forensics and analysis"
   }
 ]

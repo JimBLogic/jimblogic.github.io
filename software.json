@@ -1,50 +1,50 @@
 [
   {
     "name": "Python",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/python.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
     "icon": "python.png",
     "description": "Programming language"
   },
   {
     "name": "Linux",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linux.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
     "icon": "linux.png",
     "description": "Operating system"
   },
   {
     "name": "Git",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/git.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
     "icon": "github.png",
     "description": "Version control system"
   },
   {
     "name": "Bash",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "icon": "gnubash.png",
     "description": "Unix shell and command language"
   },
   {
     "name": "Django",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/django.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
     "icon": "django.png",
     "description": "Python web framework"
   },
   {
     "name": "AWS CloudFormation",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "icon": "amazonaws.png",
     "description": "Cloud infrastructure as code"
   },
   {
     "name": "Metasploit",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
     "icon": "metasploit.png",
     "description": "Exploit development & penetration testing"
   },
   {
     "name": "Kali Linux",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
-
-    "icon": "kalilinux.png"
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
+    "icon": "kalilinux.png",
+    "description": "Penetration testing distribution"
   }
 ]
