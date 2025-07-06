@@ -9,13 +9,11 @@
   margin: 0;
   padding: 0;
 }
-<<<<<<< copilot/fix-18d0aac6-24a3-4a39-aa96-94a19c98a940
+
 html {
   scroll-behavior: smooth;
 }
-=======
 
->>>>>>> main
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
@@ -103,11 +101,15 @@ body {
 }
 
 @media (max-width: 700px) {
-  .container { flex-direction: column; }
+  .container {
+    flex-direction: column;
+  }
+
   .main-section {
     margin: 18px 1vw;
     padding: 14px 2vw;
   }
+
   .sidebar {
     position: static;
     height: auto;
@@ -156,191 +158,4 @@ body {
 .icon-box {
   min-width: 28px;
   color: var(--accent);
-  font-size: 1.1em;
-  margin-right: 8px;
-}
-.contact-title {
-  font-size: 0.94em;
-  color: #bbb;
-  margin-bottom: 2px;
-}
-.contact-link,
-address {
-  font-size: 1em;
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.social-list {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  margin: 12px 0;
-}
-.social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px #0005;
-}
-.linkedin-icon path,
-.github-icon path,
-.bitcoin-icon path {
-  fill: #fff;
-}
-
-.navbar {
-  width: 100%;
-  margin-top: 20px;
-}
-.navbar-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.navbar-link {
-  color: #ccc;
-  text-decoration: none;
-  display: block;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-weight: 500;
-  font-size: 0.94em;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  text-align: center;
-}
-.navbar-link:hover {
-  background: var(--accent);
-  color: black;
-  border-color: var(--accent);
-  transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(247, 147, 26, 0.3);
-}
-.navbar-link.active {
-  background: var(--accent);
-  color: black;
-  border-color: var(--accent);
-  font-weight: 600;
-}
-
-.certificate-list li,
-.tools-list li,
-.software-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.certificate-list img,
-.tools-list img,
-.software-list img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  background: #181a1b;
-  border-radius: 8px;
-  margin-right: 10px;
-  border: 2px solid var(--accent);
-  box-shadow: 0 1px 6px #f7931a33;
-}
-
-.skills-list {
-  padding-left: 18px;
-}
-<<<<<<< copilot/fix-18d0aac6-24a3-4a39-aa96-94a19c98a940
-.skills-list li {
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-h2 {
-  font-size: 1.18em;
-  margin-bottom: 0.6em;
-  border-left: 5px solid var(--accent);
-  padding-left: 12px;
-  letter-spacing: 0.01em;
-  color: #fff;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-h3 {
-  color: #fff;
-  margin-bottom: 8px;
-  font-size: 1.1em;
-}
-.education-item {
-  background: rgba(40, 42, 46, 0.3);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  border-left: 3px solid var(--accent);
-}
-.main-section p {
-  line-height: 1.7;
-  margin-bottom: 12px;
-}
-.main-section a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-.main-section a:hover {
-  color: #fff;
-  text-shadow: 0 0 6px rgba(247, 147, 26, 0.5);
-  text-decoration: underline;
-}
-
-.contact-content {
-  max-width: 600px;
-}
-.contact-intro {
-  font-size: 1.1em;
-  margin-bottom: 24px;
-  color: #f0f0f0;
-}
-.contact-methods {
-  margin: 20px 0;
-}
-.contact-method {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  padding: 12px;
-  background: rgba(40, 42, 46, 0.3);
-  border-radius: 8px;
-  border-left: 3px solid var(--accent);
-}
-.contact-method strong {
-  min-width: 120px;
-  color: #fff;
-}
-.contact-footer {
-  margin-top: 24px;
-  font-style: italic;
-  color: #ccc;
-  font-size: 0.95em;
-=======
-
-.about-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 24px 0;
-}
-.about-buttons button {
-  background: var(--accent);
-  color: black;
-  border: none;
-  border-radius: 28px;
-  padding: 6px 14px;
-  font-size: 0.9em;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.about-buttons button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 12px #0006;
->>>>>>> main
-}
+  font-size: 1
