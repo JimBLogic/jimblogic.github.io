@@ -3,24 +3,28 @@
     "name": "Wireshark",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wireshark.svg",
     "icon": "wireshark.png",
-    "description": "Network protocol analyzer"
+    "description": "Network protocol analyzer",
+    "link": "https://www.wireshark.org/"
   },
   {
     "name": "tcpdump",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
     "icon": "tcpdump.png",
-    "description": "Command-line packet analyzer"
+    "description": "Command-line packet analyzer",
+    "link": "https://www.tcpdump.org/"
   },
   {
     "name": "Splunk",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
     "icon": "splunk.png",
-    "description": "Security information and event management"
+    "description": "Security information and event management",
+    "link": "https://www.splunk.com/"
   },
   {
     "name": "Windows Registry Analysis",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg",
     "icon": "windows_registry.png",
-    "description": "Registry forensics and analysis"
+    "description": "Registry forensics and analysis",
+    "link": "https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry"
   }
 ]
