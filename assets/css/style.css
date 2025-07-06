@@ -12,6 +12,48 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+@media (min-width: 769px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .main-content {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .main-section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .main-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(35, 37, 38, 0.1));
+    pointer-events: none;
+  }
+  
+  .main-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to top, transparent, rgba(35, 37, 38, 0.1));
+    pointer-events: none;
+  }
 }
 
 body {
@@ -36,14 +78,17 @@ body {
     radial-gradient(circle at 95% 80%, #f7931a33 0, #383838 50%, transparent 100%),
     repeating-linear-gradient(120deg, #86868622 0 2px, transparent 2px 24px),
     repeating-linear-gradient(-60deg, #f7931a11 0 3px, transparent 3px 32px);
-  animation: bgmove 16s linear infinite alternate;
+  animation: bgmove 20s ease-in-out infinite;
   filter: brightness(1.12) blur(1px) contrast(1.12);
   transition: filter 0.4s;
 }
 
 @keyframes bgmove {
   0% { background-position: 0% 0%, 100% 100%, 0 0, 0 0; }
-  100% { background-position: 10% 8%, 85% 90%, 40px 0, 0 40px; }
+  25% { background-position: 20% 10%, 80% 90%, 15px 5px, 5px 15px; }
+  50% { background-position: 40% 20%, 60% 70%, 30px 10px, 10px 30px; }
+  75% { background-position: 60% 30%, 40% 50%, 45px 15px, 15px 45px; }
+  100% { background-position: 80% 40%, 20% 30%, 60px 20px, 20px 60px; }
 }
 
 .container {
@@ -82,7 +127,12 @@ body {
 .circuit-banner {
   background: 
     linear-gradient(135deg, rgba(35, 37, 38, 0.95) 0%, rgba(35, 37, 38, 0.7) 100%),
-    url('https://www.svgrepo.com/show/432994/circuit-board.svg') center center/cover no-repeat;
+    repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(247, 147, 26, 0.1) 8px, rgba(247, 147, 26, 0.1) 10px),
+    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(247, 147, 26, 0.08) 8px, rgba(247, 147, 26, 0.08) 10px),
+    radial-gradient(circle at 20% 20%, rgba(247, 147, 26, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 80% 80%, rgba(247, 147, 26, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 40% 60%, rgba(247, 147, 26, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 30px 30px, 25px 25px, 15px 15px;
   border-radius: 20px;
   max-width: 240px;
   width: 100%;
@@ -163,7 +213,21 @@ body {
   max-width: 720px;
   min-width: 200px;
   border-left: 4px solid var(--accent);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.main-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px #000a;
+  background: #242527dd;
+}
+
+@media (min-width: 769px) {
+  .main-section {
+    margin: 20px 0 20px 40px;
+  }
 }
 
 @media (max-width: 700px) {
