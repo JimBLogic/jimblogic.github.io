@@ -8,7 +8,7 @@
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <title>JimBLogic | Aspiring Junior Cybersecurity Analyst & Bitcoiner</title>
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=5.2.0">
+  <link rel="stylesheet" href="./assets/css/style.css?v=6.0.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -94,7 +94,7 @@
     </div>
   </aside>
   <main class="main-content">
-    <div class="sections-slider" id="sectionsSlider">
+    <div class="sections-vertical" id="sectionsSlider">
       <section id="about" class="slide-section active">
         <h2 data-txt="about">About Me</h2>
         <p data-txt="about_1">
@@ -150,36 +150,71 @@
         <p data-txt="contact_2">You can also connect with me on <a href="https://www.linkedin.com/in/jimblogic/" target="_blank">LinkedIn</a> or see my public Bitcoin node at <a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" target="_blank">Amboss</a>.</p>
       </section>
     </div>
-    <div class="slider-controls">
-      <button id="prevSection" aria-label="Previous Section">&larr;</button>
-      <button id="nextSection" aria-label="Next Section">&rarr;</button>
+    <div class="slider-controls vertical">
+      <button id="prevSection" aria-label="Previous Section">&uarr;</button>
+      <button id="nextSection" aria-label="Next Section">&darr;</button>
+    </div>
+    <div class="slider-controls horizontal">
+      <button id="prevSectionH" aria-label="Previous Section">&larr;</button>
+      <button id="nextSectionH" aria-label="Next Section">&rarr;</button>
     </div>
   </main>
 </div>
-<script src="./assets/js/script.js?v=5.0.0"></script>
-<script src="./assets/js/translate.js?v=5.0.0"></script>
+<script src="./assets/js/script.js?v=6.0.0"></script>
+<script src="./assets/js/translate.js?v=6.0.0"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
+// --- Section Navigation Logic ---
 const slides = document.querySelectorAll('.slide-section');
 let currentSlide = 0;
 function showSlide(idx) {
-  slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === idx);
+    s.setAttribute('tabindex', i === idx ? 0 : -1);
+  });
+  // Scroll to keep section centered on desktop
+  if (window.innerWidth > 800) {
+    slides[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
-document.getElementById('nextSection').onclick = () => {
+function nextSection() {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
-};
-document.getElementById('prevSection').onclick = () => {
+}
+function prevSection() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   showSlide(currentSlide);
-};
+}
+document.getElementById('nextSection').onclick = nextSection;
+document.getElementById('prevSection').onclick = prevSection;
+document.getElementById('nextSectionH').onclick = nextSection;
+document.getElementById('prevSectionH').onclick = prevSection;
 document.querySelectorAll('.navbar-link').forEach((btn, idx) => {
-  btn.onclick = () => {
-    currentSlide = idx;
-    showSlide(currentSlide);
+  btn.onclick = () => { currentSlide = idx; showSlide(currentSlide); };
+});
+function updateArrows() {
+  if (window.innerWidth <= 800) {
+    document.querySelector('.slider-controls.vertical').style.display = 'none';
+    document.querySelector('.slider-controls.horizontal').style.display = 'flex';
+  } else {
+    document.querySelector('.slider-controls.vertical').style.display = 'flex';
+    document.querySelector('.slider-controls.horizontal').style.display = 'none';
+  }
+}
+window.addEventListener('resize', updateArrows);
+updateArrows();
+// Desktop: scroll wheel or arrow keys
+window.addEventListener('keydown', (e) => {
+  if (window.innerWidth > 800) {
+    if (["ArrowDown", "PageDown"].includes(e.key)) { nextSection(); e.preventDefault(); }
+    if (["ArrowUp", "PageUp"].includes(e.key)) { prevSection(); e.preventDefault(); }
+  } else {
+    if (e.key === "ArrowLeft") { prevSection(); e.preventDefault(); }
+    if (e.key === "ArrowRight") { nextSection(); e.preventDefault(); }
   }
 });
+// Mobile swipe (horizontal)
 let startX = null;
 document.getElementById('sectionsSlider').addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
@@ -187,11 +222,20 @@ document.getElementById('sectionsSlider').addEventListener('touchstart', e => {
 document.getElementById('sectionsSlider').addEventListener('touchend', e => {
   if (startX !== null) {
     const endX = e.changedTouches[0].clientX;
-    if (endX - startX > 50) document.getElementById('prevSection').click();
-    else if (startX - endX > 50) document.getElementById('nextSection').click();
+    if (endX - startX > 50) prevSection();
+    else if (startX - endX > 50) nextSection();
     startX = null;
   }
 });
+// Desktop mouse wheel for snapping
+document.getElementById('sectionsSlider').addEventListener('wheel', e => {
+  if (window.innerWidth > 800) {
+    if (e.deltaY > 9) nextSection();
+    if (e.deltaY < -9) prevSection();
+    e.preventDefault();
+  }
+});
+showSlide(currentSlide);
 </script>
 </body>
 </html>
