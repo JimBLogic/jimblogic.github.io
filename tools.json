@@ -1,80 +1,52 @@
 [
   {
-    "name": "SIEM",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/splunk.svg",
-    "icon": "splunk.png",
-    "description": "Security Information and Event Management"
+    "name": "Python",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/python.svg",
+    "icon": "python.png"
   },
   {
-    "name": "fcrackzip",
+    "name": "Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linux.svg",
+    "icon": "linux.png"
+  },
+  {
+    "name": "Git",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/git.svg",
+    "icon": "github.png"
+  },
+  {
+    "name": "Bash",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "fcrackzip.png",
-    "description": "ZIP password recovery tool"
+    "icon": "gnubash.png"
   },
   {
-    "name": "steghide",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "steghide.png",
-    "description": "Steganography tool"
+    "name": "Django",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/django.svg",
+    "icon": "django.png"
   },
   {
-    "name": "Firewall",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "icon": "firewall.png",
-    "description": "Network security system"
+    "name": "AWS CloudFormation",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
+    "icon": "amazonaws.png"
   },
   {
-    "name": "Databases",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/database.svg",
-    "icon": "database.png",
-    "description": "SQL, data storage and management"
+    "name": "Metasploit",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
+    "icon": "metasploit.png"
   },
   {
-    "name": "Wireshark",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/wireshark.svg",
-    "icon": "wireshark.png",
-    "description": "Network protocol analyzer"
+    "name": "Kali Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
+    "icon": "kalilinux.png"
   },
   {
-    "name": "Suricata",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png ",
-    "icon": "suricata.png",
-    "description": "Network threat detection tool"
+    "name": "Trello",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/trello.svg",
+    "icon": "trello.png"
   },
   {
-    "name": "Greenbone",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png ",
-    "icon": "greenbone.png",
-    "description": "Vulnerability management"
-  },
-  {
-    "name": "tcpdump",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "tcpdump.png",
-    "description": "Network traffic analyzer"
-  },
-  {
-    "name": "Windows Registry",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
-    "icon": "windows_registry.png",
-    "description": "Windows system registry analysis"
-  },
-  {
-    "name": "Chronicle",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png ",
-    "icon": "chronicle.png",
-    "description": "Cloud security analytics"
-  },
-  {
-    "name": "TryHackMe",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/tryhackme.svg",
-    "icon": "thm.png",
-    "description": "Penetration testing platform"
-  },
-  {
-    "name": "Hack The Box",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/hackthebox.svg",
-    "icon": "tryhackmehackthebox.jpg",
-    "description": "CTF and penetration testing lab"
+    "name": "Vercel",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/vercel.svg",
+    "icon": "vercel.png"
   }
 ]
