@@ -50,9 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCertList('./certificates.json', 'certificateList');
   renderList('./software.json', 'softwareList', "software");
   renderList('./tools.json', 'toolsList', "tools");
-
-  // Language Switcher
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => setLang(btn.dataset.lang));
-  });
 });
