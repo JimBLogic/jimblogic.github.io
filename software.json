@@ -2,97 +2,51 @@
   {
     "name": "Python",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/python.svg",
-    "icon": "python.png",
-    "description": "Programming language"
+    "icon": "python.png"
   },
   {
     "name": "Linux",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linux.svg",
-    "icon": "linux.png",
-    "description": "Operating system"
+    "icon": "linux.png"
   },
   {
     "name": "Git",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/git.svg",
-    "icon": "github.png",
-    "description": "Version control system"
+    "icon": "github.png"
   },
   {
     "name": "Bash",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "gnubash.png",
-    "description": "Unix shell and command language"
+    "icon": "gnubash.png"
   },
   {
     "name": "Django",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/django.svg",
-    "icon": "django.png",
-    "description": "Python web framework"
+    "icon": "django.png"
   },
   {
     "name": "AWS CloudFormation",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
-    "icon": "amazonaws.png",
-    "description": "Cloud infrastructure as code"
-  },
-  {
-    "name": "Kali Linux",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
-    "icon": "kalilinux.png",
-    "description": "Penetration testing OS"
+    "icon": "amazonaws.png"
   },
   {
     "name": "Metasploit",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
-    "icon": "metasploit.png",
-    "description": "Exploit development framework"
+    "icon": "metasploit.png"
   },
   {
-    "name": "iOS",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/apple.svg",
-    "icon": "ios.png",
-    "description": "Apple mobile operating system"
-  },
-  {
-    "name": "SQL",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/mysql.svg",
-    "icon": "sql.png",
-    "description": "Database query language"
-  },
-  {
-    "name": "Discord",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/discord.svg",
-    "icon": "discord.png",
-    "description": "Communication platform"
-  },
-  {
-    "name": "Slack",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/slack.svg",
-    "icon": "slack.png",
-    "description": "Team communication platform"
+    "name": "Kali Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
+    "icon": "kalilinux.png"
   },
   {
     "name": "Trello",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/trello.svg",
-    "icon": "trello.png",
-    "description": "Project management tool"
+    "icon": "trello.png"
   },
   {
     "name": "Vercel",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/vercel.svg",
-    "icon": "vercel.png",
-    "description": "Frontend deployment platform"
-  },
-  {
-    "name": "Windows",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
-    "icon": "windows.png",
-    "description": "Operating system"
-  },
-  {
-    "name": "Zendesk",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/zendesk.svg",
-    "icon": "zendesk.png",
-    "description": "Customer service platform"
+    "icon": "vercel.png"
   }
 ]
