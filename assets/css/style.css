@@ -1,341 +1,241 @@
-body {
-  margin: 0;
-  background: #181a1b;
-  font-family: 'Poppins', Arial, sans-serif;
-  color: #f7f7f7;
-}
-.bg-animation {
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 5% 10%, #a8a8a8 0, #474747 45%, transparent 80%),
-              radial-gradient(circle at 95% 80%, #f7931a55 0, #181a1b 70%, transparent 100%);
-  animation: bgmove 7s linear infinite alternate;
-  filter: brightness(1.13) blur(1.2px) contrast(1.14);
-  transition: filter 0.4s;
-}
-@media (max-width: 800px) {
-  .bg-animation {
-    background: radial-gradient(circle at 12% 8%, #b9b9b9 0, #474747 45%, transparent 65%),
-                radial-gradient(circle at 85% 100%, #f7931a77 0, #181a1b 65%, transparent 90%);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Jaime Ramsden de Frutos (JimBLogic) - Aspiring Junior Cybersecurity Analyst and Bitcoiner." />
+  <meta name="keywords" content="Cybersecurity, Bitcoin, Ethical Hacking, Cloud Security, Portfolio, Jaime Ramsden de Frutos, JimBLogic" />
+  <meta name="author" content="Jaime Ramsden de Frutos" />
+  <title>JimBLogic | Aspiring Junior Cybersecurity Analyst & Bitcoiner</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css?v=6.0.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="bg-animation"></div>
+<div class="lang-switch">
+  <button data-lang="en" aria-label="English" title="English">EN</button>
+  <button data-lang="es" aria-label="Español" title="Español">ES</button>
+  <button data-lang="ca" aria-label="Català" title="Català">CA</button>
+</div>
+<div class="container">
+  <aside class="sidebar">
+    <div class="sidebar-info">
+      <div class="avatar-bg">
+        <figure class="avatar-box">
+          <img 
+            src="./assets/Images/Profilepicandother/my-avatar.png"
+            alt="Jaime Ramsden de Frutos"
+            width="225"
+            height="225"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&q=80'"
+          >
+        </figure>
+      </div>
+      <h1 class="main-name" data-txt="main_name">Jaime Ramsden de Frutos</h1>
+      <div class="info-content">
+        <p class="title" data-txt="title">Aspiring Junior Cybersecurity Analyst & Bitcoiner</p>
+      </div>
+      <div class="separator"></div>
+      <ul class="contacts-list">
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title" data-txt="email">Email</p>
+            <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title" data-txt="location">Location</p>
+            <address data-txt="location_value">Balearic Islands, Spain</address>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box"><ion-icon name="document-outline"></ion-icon></div>
+          <div class="contact-info">
+            <p class="contact-title" data-txt="resume">Resume</p>
+            <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" target="_blank" class="contact-link" data-txt="openpdf">Open PDF</a>
+          </div>
+        </li>
+      </ul>
+      <div class="separator"></div>
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="https://www.linkedin.com/in/jimblogic/" class="social-link" aria-label="LinkedIn Profile">
+            <img src="./assets/Images/linkedin.png" alt="LinkedIn" class="social-icon" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg';">
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://github.com/JimBLogic" class="social-link" aria-label="GitHub Profile">
+            <img src="./assets/software/github.png" alt="GitHub" class="social-icon" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg';">
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" class="social-link" aria-label="Amboss Space Bitcoin Node">
+            <img src="./assets/Images/bitcoin.png" alt="Bitcoin Node" class="social-icon" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg';">
+          </a>
+        </li>
+      </ul>
+      <nav class="navbar">
+        <ul class="navbar-list" id="navList">
+          <li><button class="navbar-link" data-section="about" data-txt="about">About</button></li>
+          <li><button class="navbar-link" data-section="certifications" data-txt="certifications">Certifications</button></li>
+          <li><button class="navbar-link" data-section="skills" data-txt="skills">Skills</button></li>
+          <li><button class="navbar-link" data-section="experience" data-txt="experience">Experience</button></li>
+          <li><button class="navbar-link" data-section="education" data-txt="education">Education</button></li>
+          <li><button class="navbar-link" data-section="software" data-txt="software">Software</button></li>
+          <li><button class="navbar-link" data-section="tools" data-txt="tools">Tools</button></li>
+          <li><button class="navbar-link" data-section="contact" data-txt="contact">Contact</button></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <main class="main-content">
+    <div class="sections-vertical" id="sectionsSlider">
+      <section id="about" class="slide-section active">
+        <h2 data-txt="about">About Me</h2>
+        <p data-txt="about_1">
+          I am an aspiring junior cybersecurity analyst with hands-on training in ethical hacking, cloud security, and digital forensics. I'm a Bitcoiner who enjoys learning about privacy, open-source software, and running my own public Bitcoin/Lightning node.
+        </p>
+        <p data-txt="about_2">
+          I recently completed an intensive cybersecurity bootcamp at <a href="./assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf" target="_blank">UpgradeHub</a>, earning several certifications in security operations and ethical hacking. I am passionate about defending digital assets, learning new tools, and supporting a free and open internet.
+        </p>
+        <p>
+          <strong data-txt="looking_for_label">Looking for:</strong> <span data-txt="looking_for_text">An entry-level or junior cybersecurity position where I can keep learning and contribute to real-world security projects.</span>
+        </p>
+      </section>
+      <section id="certifications" class="slide-section">
+        <h2 data-txt="certifications">Certifications</h2>
+        <ul class="certificate-list" id="certificateList"></ul>
+      </section>
+      <section id="skills" class="slide-section">
+        <h2 data-txt="skills">Skills</h2>
+        <ul class="skills-list">
+          <li data-txt="skills_cyber"><strong>Cybersecurity:</strong> Ethical Hacking, Penetration Testing, Vulnerability Analysis, Incident Response, SIEM, Digital Forensics, OSINT, Threat Detection, Risk Management, Governance, Evidence Handling, Forensic Analysis, Linux Security.</li>
+          <li data-txt="skills_btc"><strong>Bitcoin:</strong> Lightning Node Operation, Bitcoin Security, On-chain Analysis, Open Protocols, Privacy, Risk Mitigation, Bitcoin forensics.</li>
+          <li data-txt="skills_cloud"><strong>Cloud & Infra:</strong> AWS Cloud Practitioner, AWS CloudFormation, Infrastructure as Code.</li>
+          <li data-txt="skills_prog"><strong>Programming & Scripting:</strong> Python, Bash, Django, Git, Databases (SQL), Web Development.</li>
+          <li data-txt="skills_languages"><strong>Languages:</strong> English (Fluent), Spanish (Fluent).</li>
+          <li data-txt="skills_other"><strong>Other:</strong> Community Building, Content Creation, Customer Service Excellence.</li>
+        </ul>
+      </section>
+      <section id="experience" class="slide-section">
+        <h2 data-txt="experience">Experience</h2>
+        <div id="experienceContent"></div>
+      </section>
+      <section id="education" class="slide-section">
+        <h2 data-txt="education">Education</h2>
+        <div class="education-item">
+          <h3>Upgrade Hub</h3>
+          <p data-txt="edu_title">Full Time Bootcamp, Cybersecurity, Ethical Hacking & Cloud</p>
+          <p>Jan 2024 - May 2024</p>
+          <p data-txt="edu_desc">Completed an intensive bootcamp focused on cybersecurity, ethical hacking, and cloud technologies. Gained hands-on experience with tools like Kali, Metasploit, AWS, and real-world cyber defense scenarios.</p>
+        </div>
+      </section>
+      <section id="software" class="slide-section">
+        <h2 data-txt="software">Software</h2>
+        <ul class="software-list" id="softwareList"></ul>
+      </section>
+      <section id="tools" class="slide-section">
+        <h2 data-txt="tools">Tools</h2>
+        <ul class="tools-list" id="toolsList"></ul>
+      </section>
+      <section id="contact" class="slide-section">
+        <h2 data-txt="contact">Contact</h2>
+        <p data-txt="contact_1">Ready to join your team or collaborate? Reach out via email:</p>
+        <a href="mailto:jrf91@proton.me" class="contact-email">jrf91@proton.me</a>
+        <p data-txt="contact_2">You can also connect with me on <a href="https://www.linkedin.com/in/jimblogic/" target="_blank">LinkedIn</a> or see my public Bitcoin node at <a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" target="_blank">Amboss</a>.</p>
+      </section>
+    </div>
+    <div class="slider-controls vertical">
+      <button id="prevSection" aria-label="Previous Section">&uarr;</button>
+      <button id="nextSection" aria-label="Next Section">&darr;</button>
+    </div>
+    <div class="slider-controls horizontal">
+      <button id="prevSectionH" aria-label="Previous Section">&larr;</button>
+      <button id="nextSectionH" aria-label="Next Section">&rarr;</button>
+    </div>
+  </main>
+</div>
+<script src="./assets/js/script.js?v=6.0.0"></script>
+<script src="./assets/js/translate.js?v=6.0.0"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+// --- Section Navigation Logic ---
+const slides = document.querySelectorAll('.slide-section');
+let currentSlide = 0;
+function showSlide(idx) {
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === idx);
+    s.setAttribute('tabindex', i === idx ? 0 : -1);
+  });
+  // Scroll to keep section centered on desktop
+  if (window.innerWidth > 800) {
+    slides[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
-@keyframes bgmove {
-  0% { background-position: 0% 0%, 100% 100%; }
-  100% { background-position: 10% 8%, 85% 90%; }
+function nextSection() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
 }
-.container {
-  display: flex;
-  min-height: 100vh;
-  position: relative;
-  z-index: 1;
+function prevSection() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
 }
-.sidebar {
-  background: #232526;
-  border-radius: 0 28px 28px 0;
-  box-shadow: 0 4px 24px #000a;
-  width: 320px;
-  min-width: 240px;
-  max-width: 370px;
-  padding: 24px 16px 16px 16px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-right: 2px solid #282a2e;
-}
-.sidebar-info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.avatar-bg {
-  background: 
-    linear-gradient(120deg, #232526 70%, transparent 100%),
-    url('https://www.svgrepo.com/show/261971/circuit-board.svg') center center/110% 110% no-repeat;
-  border-radius: 28px;
-  margin: 0 auto 18px auto;
-  max-width: 260px;
-  width: 100%;
-  padding: 26px 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 24px #0008;
-  opacity: 0.95;
-}
-@media (max-width: 1200px) {
-  .avatar-bg {
-    max-width: 200px;
-    padding: 13px 0;
-    background-size: 120% 120%;
-    opacity: 0.97;
+document.getElementById('nextSection').onclick = nextSection;
+document.getElementById('prevSection').onclick = prevSection;
+document.getElementById('nextSectionH').onclick = nextSection;
+document.getElementById('prevSectionH').onclick = prevSection;
+document.querySelectorAll('.navbar-link').forEach((btn, idx) => {
+  btn.onclick = () => { currentSlide = idx; showSlide(currentSlide); };
+});
+function updateArrows() {
+  if (window.innerWidth <= 800) {
+    document.querySelector('.slider-controls.vertical').style.display = 'none';
+    document.querySelector('.slider-controls.horizontal').style.display = 'flex';
+  } else {
+    document.querySelector('.slider-controls.vertical').style.display = 'flex';
+    document.querySelector('.slider-controls.horizontal').style.display = 'none';
   }
 }
-@media (max-width: 900px) {
-  .avatar-bg {
-    max-width: 160px;
-    padding: 11px 0;
-    background-size: 140% 140%;
-    opacity: 0.99;
+window.addEventListener('resize', updateArrows);
+updateArrows();
+// Desktop: scroll wheel or arrow keys
+window.addEventListener('keydown', (e) => {
+  if (window.innerWidth > 800) {
+    if (["ArrowDown", "PageDown"].includes(e.key)) { nextSection(); e.preventDefault(); }
+    if (["ArrowUp", "PageUp"].includes(e.key)) { prevSection(); e.preventDefault(); }
+  } else {
+    if (e.key === "ArrowLeft") { prevSection(); e.preventDefault(); }
+    if (e.key === "ArrowRight") { nextSection(); e.preventDefault(); }
   }
-}
-@media (max-width: 700px) {
-  .avatar-bg {
-    max-width: 94vw;
-    padding: 7px 0;
-    background-size: 170% 170%;
-    opacity: 1;
+});
+// Mobile swipe (horizontal)
+let startX = null;
+document.getElementById('sectionsSlider').addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+document.getElementById('sectionsSlider').addEventListener('touchend', e => {
+  if (startX !== null) {
+    const endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) prevSection();
+    else if (startX - endX > 50) nextSection();
+    startX = null;
   }
-}
-.avatar-box img {
-  width: 225px !important;
-  height: 225px !important;
-  display: block;
-  margin: 0 auto;
-  background: #232526;
-  border-radius: 18%;
-  object-fit: cover;
-  box-shadow: 0 2px 18px #000a;
-  border: 4px solid #f7931a;
-}
-.main-name {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.5em;
-  margin-bottom: 0.2em;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-.info-content {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.title {
-  font-size: 1.06em;
-  color: #ffae42;
-  font-weight: 500;
-}
-.separator {
-  width: 90%;
-  height: 1px;
-  background: #2e2e2e;
-  margin: 16px 0;
-}
-.contacts-list,
-.social-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
-.icon-box {
-  min-width: 32px;
-  color: #f7931a;
-  opacity: 0.9;
-  font-size: 1.23em;
-  margin-right: 8px;
-}
-.contact-info {
-  flex: 1 1 auto;
-}
-.contact-title {
-  font-size: 0.94em;
-  color: #bbb;
-  margin-bottom: 2px;
-}
-.contact-link, address {
-  font-size: 1em;
-  color: #f7931a;
-  text-decoration: underline;
-  font-style: normal;
-  word-break: break-all;
-}
-address {
-  color: #e2e2e2 !important;
-  font-style: italic;
-}
-.social-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 14px 0;
-  gap: 18px;
-}
-.social-item .social-link {
-  display: flex;
-  align-items: center;
-}
-.social-icon {
-  width: 32px;
-  height: 32px;
-  background: #232526;
-  border-radius: 8px;
-  padding: 2px;
-  box-shadow: 0 0 6px #0005;
-  filter: none;
-  transition: filter 0.2s;
-  border: 1.5px solid #f7931a;
-}
-.social-link:hover .social-icon {
-  filter: drop-shadow(0 0 8px #f7931a) brightness(1.08);
-}
-.navbar {
-  margin-top: 16px;
-  width: 100%;
-}
-.navbar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px;
-}
-.navbar-link {
-  display: inline-block;
-  padding: 6px 16px;
-  color: #fff;
-  background: #222426;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background 0.2s, color 0.2s;
-  font-weight: 500;
-  box-shadow: 0 2px 8px #0003;
-  border: 1.5px solid #f7931a55;
-  cursor: pointer;
-}
-.navbar-link:hover {
-  background: #f7931a;
-  color: #181a1b;
-}
-.main-content {
-  flex: 1 1 auto;
-  padding: 32px 32px 32px 0;
-  max-width: 1100px;
-}
-
-/* SLIDER effect for sections */
-.sections-slider {
-  display: flex;
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
-  min-height: 75vh;
-}
-.slide-section {
-  flex: 0 0 100%;
-  max-width: 900px;
-  min-width: 100vw;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(100vw);
-  transition: transform 0.5s cubic-bezier(0.7,0.1,0.3,0.9), opacity 0.4s;
-  z-index: 2;
-  background: #232526ed;
-  border-radius: 22px;
-  box-shadow: 0 4px 24px #0007;
-  margin: 24px auto;
-  padding: 28px 24px 28px 32px;
-  border-left: 4px solid #f7931a;
-}
-.slide-section.active {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: all;
-}
-.slider-controls {
-  display: flex;
-  gap: 2vw;
-  justify-content: center;
-  margin: 0.5em 0 0.5em 0;
-}
-.slider-controls button {
-  background: #24282d;
-  color: #f7931a;
-  border: 2px solid #f7931a;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 2em;
-  cursor: pointer;
-  box-shadow: 0 2px 10px #f7931a22;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-}
-.slider-controls button:hover {
-  background: #f7931a;
-  color: #24282d;
-  border-color: #fff;
-}
-
-.certificate-list img,
-.software-list img,
-.tools-list img {
-  width: 72px;
-  height: 72px;
-  max-width: 84px;
-  max-height: 84px;
-  object-fit: contain;
-  background: #181a1b;
-  border-radius: 12px;
-  margin-right: 16px;
-  transition: filter 0.2s;
-  filter: none;
-  border: 2px solid #f7931a;
-  box-shadow: 0 1px 8px #f7931a33;
-}
-.skills-list {
-  padding-left: 20px;
-}
-h2, h3, strong {
-  color: #fff;
-  text-shadow: 0 2px 5px #0008;
-}
-h2 {
-  font-size: 1.3em;
-  margin-bottom: 0.6em;
-  border-left: 5px solid #f7931a;
-  padding-left: 12px;
-  letter-spacing: 0.01em;
-}
-h3 {
-  font-size: 1.1em;
-}
-ul {
-  color: #f0f0f0;
-}
-a {
-  color: #f7931a;
-}
-a:hover {
-  color: #fff;
-  text-shadow: 0 0 6px #f7931a88;
-}
-
-/* Hide scroll-to-top/bottom buttons if present */
-#scrollToTopBtn, #scrollToBottomBtn { display: none !important; }
-
-/* Responsive tweaks for mobile */
-@media (max-width: 800px) {
-  .slide-section {
-    min-width: 100vw;
-    max-width: 98vw;
-    border-radius: 12px;
-    padding: 10px 4vw;
-    margin: 10px auto;
+});
+// Desktop mouse wheel for snapping
+document.getElementById('sectionsSlider').addEventListener('wheel', e => {
+  if (window.innerWidth > 800) {
+    if (e.deltaY > 9) nextSection();
+    if (e.deltaY < -9) prevSection();
+    e.preventDefault();
   }
-}
+});
+showSlide(currentSlide);
+</script>
+</body>
+</html>
