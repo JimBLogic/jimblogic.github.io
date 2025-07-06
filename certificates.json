@@ -66,12 +66,6 @@
     "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png"
   },
   {
-    "name": "Introduction to Bash",
-    "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png"
-  },
-  {
     "name": "Introduction to Threat Hunting",
     "issuer": "Security Blue Team",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
@@ -94,53 +88,5 @@
     "issuer": "IBM",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/ibm.svg",
     "badgeLocal": "ibm.jpg"
-  },
-  {
-    "name": "Prepare for AWS Certified Cloud Practitioner (CLF-C02)",
-    "issuer": "LinkedIn",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": ""
-  },
-  {
-    "name": "The Cybersecurity Threat Landscape",
-    "issuer": "LinkedIn",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": ""
-  },
-  {
-    "name": "ISO 27001:2022-Compliant Cybersecurity",
-    "issuer": "LinkedIn",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": ""
-  },
-  {
-    "name": "Introduction to Virtual Machines",
-    "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Virtual Machines-course.png"
-  },
-  {
-    "name": "Introduction to Vulnerability Management",
-    "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Vulnerability Management-course.png"
-  },
-  {
-    "name": "Introduction to Mental Health in Cybersecurity",
-    "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Mental Health in Cybersecurity-course.png"
-  },
-  {
-    "name": "AWS SimuLearn Cloud Practitioner 12h",
-    "issuer": "SimuLearn",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
-    "badgeLocal": "assets/Images/Profilepicandother/AWS SimuLearn Cloud Practitioner 12h.png"
-  },
-  {
-    "name": "UpgradeHub Cert",
-    "issuer": "UpgradeHub",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/upgradehub.svg",
-    "badgeLocal": "UpgradeHub/upgradehubcert.png"
   }
 ]
