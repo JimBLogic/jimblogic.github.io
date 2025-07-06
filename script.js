@@ -1,7 +1,16 @@
-function imgWebThenLocal(web, local, alt) {
-  // Try web first, fallback to local asset
-  if (!web) return `<img src="${local}" alt="${alt}" loading="lazy">`;
-  return `<img src="${web}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${local}'">`;
+function imgLocalThenOnline(local, fallback, alt, prefix = "") {
+  // Local first (if exists), then web, then default
+  const defaultImg = "./assets/Images/default.png";
+  let tag = "";
+  if (local) {
+    const localPath = prefix + local;
+    tag = `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback || defaultImg}';">`;
+  } else if (fallback) {
+    tag = `<img src="${fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${defaultImg}';">`;
+  } else {
+    tag = `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
+  }
+  return tag;
 }
 
 function renderCertList(jsonFile, listId) {
@@ -12,7 +21,7 @@ function renderCertList(jsonFile, listId) {
       if (!el || !Array.isArray(data)) return;
       el.innerHTML = data.map(cert => {
         return `<li>
-          ${imgWebThenLocal(cert.badgeWeb, "assets/Images/" + cert.badgeLocal, cert.name)}
+          ${imgLocalThenOnline(cert.badgeLocal, cert.badgeWeb, cert.name, "assets/Images/")}
           <div>
             <strong>${cert.name}</strong><br>
             <span>${cert.issuer}</span>
@@ -31,7 +40,7 @@ function renderList(jsonFile, listId, folder) {
       if (!el || !Array.isArray(data)) return;
       el.innerHTML = data.map(item => {
         return `<li>
-          ${imgWebThenLocal(item.iconWeb, `assets/${folder}/` + item.icon, item.name)}
+          ${imgLocalThenOnline(item.icon, item.iconWeb, item.name, `assets/${folder}/`)}
           <div>
             <strong>${item.name}</strong><br>
             <span>${item.description || ""}</span>
