@@ -1,67 +1,67 @@
 [
   {
     "name": "SIEM",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/splunk.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/splunk.svg",
     "icon": "splunk.png",
     "description": "Security Information and Event Management"
   },
   {
     "name": "fcrackzip",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
     "icon": "fcrackzip.png",
     "description": "ZIP password recovery tool"
   },
   {
     "name": "steghide",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
     "icon": "steghide.png",
     "description": "Steganography tool"
   },
   {
     "name": "Firewall",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
     "icon": "firewall.png",
     "description": "Network security system"
   },
   {
     "name": "Databases",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/database.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/database.svg",
     "icon": "database.png",
     "description": "SQL, data storage and management"
   },
   {
     "name": "Wireshark",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wireshark.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/wireshark.svg",
     "icon": "wireshark.png",
     "description": "Network protocol analyzer"
   },
   {
     "name": "Suricata",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png ",
     "icon": "suricata.png",
     "description": "Network threat detection tool"
   },
   {
     "name": "Greenbone",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png ",
     "icon": "greenbone.png",
     "description": "Vulnerability management"
   },
   {
     "name": "tcpdump",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
     "icon": "tcpdump.png",
     "description": "Network traffic analyzer"
   },
   {
     "name": "Windows Registry",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
     "icon": "windows_registry.png",
     "description": "Windows system registry analysis"
   },
   {
     "name": "Chronicle",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png ",
     "icon": "chronicle.png",
     "description": "Cloud security analytics"
   }
