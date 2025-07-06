@@ -1,6 +1,6 @@
 function imgLocalThenOnline(local, fallback, alt, prefix = "") {
-  // Fix: If no local, try fallback; if no fallback, show default placeholder
-  const defaultImg = "./assets/Images/default.png"; // Place a visible default icon here!
+  // If local exists, use it with fallback to web, then to default placeholder
+  const defaultImg = "./assets/Images/default.png"; // You must add this file!
   if (local) {
     const localPath = prefix + local;
     return `<img src="${localPath}" alt="${alt}" loading="lazy" 
