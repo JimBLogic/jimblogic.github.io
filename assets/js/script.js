@@ -94,9 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let touchStartY = 0;
   let touchEndY = 0;
   let currentSectionIndex = 0;
+  let isSwipeEnabled = window.innerWidth <= 768;
+
+  // Update swipe availability on resize
+  window.addEventListener('resize', () => {
+    isSwipeEnabled = window.innerWidth <= 768;
+  });
+
+  function updateCurrentSection() {
+    // Find which section is currently in view
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = window.scrollY + rect.top;
+      const sectionBottom = sectionTop + rect.height;
+      
+      if (scrollPos >= sectionTop && scrollPos <= sectionBottom) {
+        currentSectionIndex = index;
+      }
+    });
+  }
 
   function handleSwipe() {
-    const swipeThreshold = 50;
+    if (!isSwipeEnabled) return;
+    
+    const swipeThreshold = 80;
     const swipeDistance = touchStartY - touchEndY;
     
     if (Math.abs(swipeDistance) > swipeThreshold) {
@@ -111,8 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (sections[currentSectionIndex]) {
         sections[currentSectionIndex].scrollIntoView({ 
           behavior: 'smooth', 
-          block: 'start' 
+          block: 'center' 
         });
+        
+        // Add visual feedback
+        const targetSection = sections[currentSectionIndex];
+        targetSection.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          targetSection.style.transform = '';
+        }, 300);
       }
     }
   }
@@ -120,12 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add touch events for mobile
   if ('ontouchstart' in window) {
     document.addEventListener('touchstart', (e) => {
+      if (!isSwipeEnabled) return;
       touchStartY = e.changedTouches[0].screenY;
+      updateCurrentSection();
     });
     
     document.addEventListener('touchend', (e) => {
+      if (!isSwipeEnabled) return;
       touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
     });
   }
+
+  // Update current section on scroll
+  window.addEventListener('scroll', () => {
+    updateCurrentSection();
+  });
 });

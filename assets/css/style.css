@@ -527,26 +527,59 @@ a:hover {
   }
 
   .main-section {
-    margin: 18px 1vw;
-    padding: 20px 4vw;
-    max-width: 92vw;
+    margin: 20px 2vw;
+    padding: 24px 5vw;
+    max-width: 90vw;
+    border-radius: 18px;
+  }
+
+  .main-section:not(:last-child) {
+    margin-bottom: 60px;
   }
 
   .sidebar {
     position: static;
     height: auto;
-    padding: 20px 4vw;
+    padding: 20px 5vw;
     border-radius: 0 0 18px 18px;
-    max-width: 92vw;
+    max-width: 90vw;
   }
 
   .avatar-bg {
     max-width: 180px;
   }
 
+  .circuit-banner {
+    max-width: 180px;
+    height: 60px;
+  }
+
   .avatar-box img {
     width: 150px !important;
     height: 150px !important;
+  }
+
+  .certificate-list img,
+  .software-list img,
+  .tools-list img {
+    width: 48px;
+    height: 48px;
+    max-width: 56px;
+    max-height: 56px;
+  }
+
+  .navbar-link {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .navbar-link ion-icon {
+    font-size: 1.1em;
+  }
+
+  h2 ion-icon {
+    font-size: 1.2em;
+    padding: 6px;
   }
 
   .main-name {
@@ -627,6 +660,12 @@ a:hover {
   flex-direction: column;
   gap: 12px;
   z-index: 1000;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-buttons:hover {
+  opacity: 1;
 }
 
 .scroll-btn {
@@ -634,7 +673,7 @@ a:hover {
   height: 50px;
   border: none;
   border-radius: 50%;
-  background: rgba(35, 37, 38, 0.9);
+  background: rgba(35, 37, 38, 0.95);
   color: var(--accent);
   cursor: pointer;
   display: flex;
@@ -652,6 +691,7 @@ a:hover {
   color: #000;
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+  border-color: var(--accent);
 }
 
 .scroll-btn:active {
@@ -663,3 +703,32 @@ a:hover {
     display: none;
   }
 }
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.certificate-list li,
+.software-list li,
+.tools-list li {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.certificate-list li:nth-child(1) { animation-delay: 0.1s; }
+.certificate-list li:nth-child(2) { animation-delay: 0.2s; }
+.certificate-list li:nth-child(3) { animation-delay: 0.3s; }
+.certificate-list li:nth-child(4) { animation-delay: 0.4s; }
+.certificate-list li:nth-child(5) { animation-delay: 0.5s; }
