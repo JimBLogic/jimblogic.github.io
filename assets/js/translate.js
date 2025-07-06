@@ -1,7 +1,7 @@
 const translations = {
   en: {
     main_name: "Jaime Ramsden de Frutos",
-    title: "Cybersecurity Analyst · Ethical Hacker · Cloud Security Enthusiast",
+    title: "Cybersecurity Analyst · Ethical Hacker · Bitcoin Enthusiast",
     email: "Email",
     location: "Location",
     location_value: "Balearic Islands, Spain",
@@ -15,11 +15,11 @@ const translations = {
     tools: "Tools",
     contact: "Contact",
     contact_1: "Ready to collaborate? Reach out via email:",
-    contact_2: "Or connect via <a href=' https://www.linkedin.com/in/jimblogic/ ' target='_blank'>LinkedIn</a>",
+    contact_2: "Or connect via <a href=' https://www.linkedin.com/in/jimblogic/ ' target='_blank'>LinkedIn</a>"
   },
   es: {
     main_name: "Jaime R. de Frutos",
-    title: "Analista de Ciberseguridad · Hacker Ético · Entusiasta de la Nube",
+    title: "Analista de Ciberseguridad · Hacker Ético · Entusiasta de Bitcoin",
     email: "Correo",
     location: "Ubicación",
     location_value: "Islas Baleares, España",
@@ -37,7 +37,7 @@ const translations = {
   },
   ca: {
     main_name: "Jaime R. de Frutos",
-    title: "Analista de Ciberseguretat · Hacker Ètic · Entusiasta del núvol",
+    title: "Analista de Ciberseguretat · Hacker Ètic · Entusiasta de Bitcoin",
     email: "Correu",
     location: "Ubicació",
     location_value: "Illes Balears, Espanya",
