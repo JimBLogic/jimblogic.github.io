@@ -64,5 +64,17 @@
     "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png ",
     "icon": "chronicle.png",
     "description": "Cloud security analytics"
+  },
+  {
+    "name": "TryHackMe",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/tryhackme.svg",
+    "icon": "thm.png",
+    "description": "Penetration testing platform"
+  },
+  {
+    "name": "Hack The Box",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/hackthebox.svg",
+    "icon": "tryhackmehackthebox.jpg",
+    "description": "CTF and penetration testing lab"
   }
 ]
