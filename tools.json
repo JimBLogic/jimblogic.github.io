@@ -5,11 +5,6 @@
     "icon": "wireshark.png"
   },
   {
-    "name": "Suricata",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png ",
-    "icon": "suricata.png"
-  },
-  {
     "name": "tcpdump",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
     "icon": "tcpdump.png"
@@ -18,21 +13,6 @@
     "name": "Splunk",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/splunk.svg",
     "icon": "splunk.png"
-  },
-  {
-    "name": "Chronicle",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png ",
-    "icon": "chronicle.png"
-  },
-  {
-    "name": "Greenbone",
-    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png ",
-    "icon": "greenbone.png"
-  },
-  {
-    "name": "TryHackMe",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/tryhackme.svg",
-    "icon": "thm.png"
   },
   {
     "name": "Windows Registry Analysis",
