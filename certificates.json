@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Defensive Security Operations",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-security-security-operations.png"
+  },
+  {
+    "name": "Career Essentials in Cybersecurity",
+    "issuer": "Microsoft & LinkedIn",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
+    "badgeLocal": ""
+  },
+  {
+    "name": "Career Essentials in GitHub Professional Certificate",
+    "issuer": "GitHub",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/github.svg",
+    "badgeLocal": "software/github.png"
+  },
+  {
+    "name": "Data Backup and Recovery Basics",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-security-program-management-and-oversight.png"
+  },
+  {
+    "name": "Ethical Hacking: Cloud Computing",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
+    "badgeLocal": "cybrary/cybrary-cert-security-security-architecture.png"
+  },
+  {
+    "name": "Ethical Hacking: Cryptography",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-cryptography-basics.png"
+  },
+  {
+    "name": "Ethical Hacking: Web Application Hacking",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.png"
+  },
+  {
+    "name": "Threat Modeling",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-access-control-basics.png"
+  },
+  {
+    "name": "OSINT",
+    "issuer": "Cybrary",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "cybrary/cybrary-cert-security-general-security-concepts.png"
+  },
+  {
+    "name": "KCCS - Knowledge of Cybersecurity Skills",
+    "issuer": "Mossé Cyber Security Institute",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
+    "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png"
+  },
+  {
+    "name": "Blue Team Junior Analyst Pathway Bundle",
+    "issuer": "Security Blue Team",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+    "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png"
+  },
+  {
+    "name": "Introduction to Threat Hunting",
+    "issuer": "Security Blue Team",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+    "badgeLocal": "SecurityBlueTeam/Introduction to Threat Hunting-course.png"
+  },
+  {
+    "name": "Introduction to Digital Forensics",
+    "issuer": "Security Blue Team",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+    "badgeLocal": "SecurityBlueTeam/Introduction to Digital Forensics-course.png"
+  },
+  {
+    "name": "CS120: Bitcoin for Developers I",
+    "issuer": "Saylor Academy",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/bitcoin.svg",
+    "badgeLocal": ""
+  },
+  {
+    "name": "Web Development with Python",
+    "issuer": "IBM",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/ibm.svg",
+    "badgeLocal": "ibm.jpg"
+  }
+]

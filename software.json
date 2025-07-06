@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Python",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/python.svg",
+    "icon": "python.png"
+  },
+  {
+    "name": "Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linux.svg",
+    "icon": "linux.png"
+  },
+  {
+    "name": "Git",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/git.svg",
+    "icon": "github.png"
+  },
+  {
+    "name": "Bash",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+    "icon": "gnubash.png"
+  },
+  {
+    "name": "Django",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/django.svg",
+    "icon": "django.png"
+  },
+  {
+    "name": "AWS CloudFormation",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
+    "icon": "amazonaws.png"
+  },
+  {
+    "name": "Metasploit",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
+    "icon": "metasploit.png"
+  },
+  {
+    "name": "Kali Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
+    "icon": "kalilinux.png"
+  },
+  {
+    "name": "Trello",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/trello.svg",
+    "icon": "trello.png"
+  },
+  {
+    "name": "Vercel",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/vercel.svg",
+    "icon": "vercel.png"
+  }
+]
