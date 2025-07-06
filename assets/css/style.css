@@ -9,11 +9,13 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
   background: var(--dark);
   min-height: 100vh;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -34,6 +36,7 @@ body {
   filter: brightness(1.12) blur(1px) contrast(1.12);
   transition: filter 0.4s;
 }
+
 @keyframes bgmove {
   0% { background-position: 0% 0%, 100% 100%, 0 0, 0 0; }
   100% { background-position: 10% 8%, 85% 90%, 40px 0, 0 40px; }
@@ -57,6 +60,7 @@ body {
   flex-direction: column;
   align-items: center;
   border-right: 1px solid #282a2e;
+  z-index: 10;
 }
 
 .avatar-bg {
@@ -64,12 +68,13 @@ body {
   border-radius: 28px;
   max-width: 240px;
   width: 100%;
-  padding: 17px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 24px #0008;
 }
+
 .avatar-box img {
   width: 200px !important;
   height: 200px !important;
@@ -90,6 +95,7 @@ body {
   border-left: 4px solid var(--accent);
   transition: all 0.3s ease;
 }
+
 @media (max-width: 700px) {
   .container { flex-direction: column; }
   .main-section {
@@ -132,6 +138,7 @@ body {
   background: #2e2e2e;
   margin: 16px 0;
 }
+
 .contacts-list {
   list-style: none;
 }
@@ -170,8 +177,10 @@ address {
   border-radius: 8px;
   box-shadow: 0 0 6px #0005;
 }
-.social-link:hover .social-icon {
-  filter: drop-shadow(0 0 8px #f7931a) brightness(1.15);
+.linkedin-icon path,
+.github-icon path,
+.bitcoin-icon path {
+  fill: #fff;
 }
 
 .navbar-link:hover,
@@ -203,10 +212,25 @@ address {
 .skills-list {
   padding-left: 18px;
 }
-.h2 {
-  font-size: 1.18em;
-  margin-bottom: 0.6em;
-  border-left: 5px solid var(--accent);
-  padding-left: 12px;
-  letter-spacing: 0.01em;
+
+.about-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 24px 0;
+}
+.about-buttons button {
+  background: var(--accent);
+  color: black;
+  border: none;
+  border-radius: 28px;
+  padding: 6px 14px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.about-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 12px #0006;
 }
