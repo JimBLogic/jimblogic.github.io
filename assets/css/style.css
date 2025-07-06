@@ -9,6 +9,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Poppins', sans-serif;
   color: white;
@@ -174,10 +177,40 @@ address {
   filter: drop-shadow(0 0 8px #f7931a) brightness(1.15);
 }
 
-.navbar-link:hover,
+.navbar {
+  width: 100%;
+  margin-top: 20px;
+}
+.navbar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.navbar-link {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.94em;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+}
+.navbar-link:hover {
+  background: var(--accent);
+  color: black;
+  border-color: var(--accent);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(247, 147, 26, 0.3);
+}
 .navbar-link.active {
   background: var(--accent);
   color: black;
+  border-color: var(--accent);
+  font-weight: 600;
 }
 
 .certificate-list li,
@@ -203,10 +236,75 @@ address {
 .skills-list {
   padding-left: 18px;
 }
-.h2 {
+.skills-list li {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+h2 {
   font-size: 1.18em;
   margin-bottom: 0.6em;
   border-left: 5px solid var(--accent);
   padding-left: 12px;
   letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+h3 {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+.education-item {
+  background: rgba(40, 42, 46, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--accent);
+}
+.main-section p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.main-section a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.main-section a:hover {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(247, 147, 26, 0.5);
+  text-decoration: underline;
+}
+
+.contact-content {
+  max-width: 600px;
+}
+.contact-intro {
+  font-size: 1.1em;
+  margin-bottom: 24px;
+  color: #f0f0f0;
+}
+.contact-methods {
+  margin: 20px 0;
+}
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(40, 42, 46, 0.3);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+.contact-method strong {
+  min-width: 120px;
+  color: #fff;
+}
+.contact-footer {
+  margin-top: 24px;
+  font-style: italic;
+  color: #ccc;
+  font-size: 0.95em;
 }
