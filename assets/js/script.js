@@ -1,20 +1,14 @@
 function imgLocalThenOnline(local, fallback, alt, prefix = "") {
-  // If local exists, use it with fallback to web, then to default placeholder
-  const defaultImg = "./assets/Images/default.png"; // You must add this file!
+  const defaultImg = "./assets/Images/default.png";
   if (local) {
     const localPath = prefix + local;
-    return `<img src="${localPath}" alt="${alt}" loading="lazy" 
-      onerror="this.onerror=null;this.src='${fallback || defaultImg}';"
-    >`;
+    return `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback || defaultImg}';">`;
+  } else if (fallback) {
+    return `<img src="${fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${defaultImg}';">`;
+  } else {
+    return `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
   }
-  if (fallback) {
-    return `<img src="${fallback}" alt="${alt}" loading="lazy"
-      onerror="this.onerror=null;this.src='${defaultImg}';"
-    >`;
-  }
-  return `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
 }
-
 function renderCertList(jsonFile, listId) {
   fetch(jsonFile)
     .then(r => r.json())
@@ -33,7 +27,6 @@ function renderCertList(jsonFile, listId) {
       }).join('');
     });
 }
-
 function renderList(jsonFile, listId, folder) {
   fetch(jsonFile)
     .then(r => r.json())
@@ -51,7 +44,6 @@ function renderList(jsonFile, listId, folder) {
       }).join('');
     });
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   renderCertList('./certificates.json', 'certificateList');
   renderList('./software.json', 'softwareList', "software");
