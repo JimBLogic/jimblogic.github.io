@@ -214,4 +214,67 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     updateCurrentSection();
   });
+
+  // Enhanced desktop wheel scrolling for section-based navigation
+  let isScrolling = false;
+  let scrollTimeout;
+  
+  if (window.innerWidth > 768) {
+    let lastScrollTime = 0;
+    
+    window.addEventListener('wheel', (e) => {
+      const currentTime = Date.now();
+      
+      // Throttle scroll events to make them feel more intentional
+      if (currentTime - lastScrollTime < 100) {
+        return;
+      }
+      
+      lastScrollTime = currentTime;
+      
+      // Clear any existing scroll timeout
+      clearTimeout(scrollTimeout);
+      
+      // If not currently scrolling, handle the scroll
+      if (!isScrolling) {
+        isScrolling = true;
+        
+        const delta = e.deltaY;
+        updateCurrentSection();
+        
+        let targetIndex = currentSectionIndex;
+        
+        if (delta > 0 && currentSectionIndex < sections.length - 1) {
+          // Scroll down
+          targetIndex = currentSectionIndex + 1;
+        } else if (delta < 0 && currentSectionIndex > 0) {
+          // Scroll up  
+          targetIndex = currentSectionIndex - 1;
+        }
+        
+        if (targetIndex !== currentSectionIndex) {
+          e.preventDefault();
+          currentSectionIndex = targetIndex;
+          
+          sections[currentSectionIndex].scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+          
+          // Add visual feedback
+          const targetSection = sections[currentSectionIndex];
+          targetSection.style.transform = 'scale(1.005)';
+          targetSection.style.transition = 'transform 0.4s ease';
+          setTimeout(() => {
+            targetSection.style.transform = '';
+          }, 400);
+        }
+      }
+      
+      // Reset scrolling flag after a delay
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 800);
+    }, { passive: false });
+  }
 });
