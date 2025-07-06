@@ -8,7 +8,7 @@
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <title>JimBLogic | Aspiring Junior Cybersecurity Analyst & Bitcoiner</title>
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=4.1.1">
+  <link rel="stylesheet" href="./assets/css/style.css?v=5.1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -151,12 +151,11 @@
     </div>
   </main>
 </div>
-<script src="./assets/js/script.js?v=4.1.1"></script>
-<script src="./assets/js/translate.js?v=4.1.1"></script>
+<script src="./assets/js/script.js?v=5.0.0"></script>
+<script src="./assets/js/translate.js?v=5.0.0"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
-/* SLIDER LOGIC: */
 const slides = document.querySelectorAll('.slide-section');
 let currentSlide = 0;
 function showSlide(idx) {
@@ -170,14 +169,12 @@ document.getElementById('prevSection').onclick = () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   showSlide(currentSlide);
 };
-// Navbar click
 document.querySelectorAll('.navbar-link').forEach((btn, idx) => {
   btn.onclick = () => {
     currentSlide = idx;
     showSlide(currentSlide);
   }
 });
-// Swipe (mobile)
 let startX = null;
 document.getElementById('sectionsSlider').addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
