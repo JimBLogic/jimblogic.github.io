@@ -1,52 +1,42 @@
 [
   {
-    "name": "Python",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/python.svg",
-    "icon": "python.png"
+    "name": "Wireshark",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/wireshark.svg",
+    "icon": "wireshark.png"
   },
   {
-    "name": "Linux",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linux.svg",
-    "icon": "linux.png"
+    "name": "Suricata",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Suricata_IDPS_logo.png ",
+    "icon": "suricata.png"
   },
   {
-    "name": "Git",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/git.svg",
-    "icon": "github.png"
-  },
-  {
-    "name": "Bash",
+    "name": "tcpdump",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "icon": "gnubash.png"
+    "icon": "tcpdump.png"
   },
   {
-    "name": "Django",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/django.svg",
-    "icon": "django.png"
+    "name": "Splunk",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/splunk.svg",
+    "icon": "splunk.png"
   },
   {
-    "name": "AWS CloudFormation",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/amazonaws.svg",
-    "icon": "amazonaws.png"
+    "name": "Chronicle",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Google_Chronicle_logo.png ",
+    "icon": "chronicle.png"
   },
   {
-    "name": "Metasploit",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/metasploit.svg",
-    "icon": "metasploit.png"
+    "name": "Greenbone",
+    "iconWeb": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Greenbone_logo.png ",
+    "icon": "greenbone.png"
   },
   {
-    "name": "Kali Linux",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/kalilinux.svg",
-    "icon": "kalilinux.png"
+    "name": "TryHackMe",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/tryhackme.svg",
+    "icon": "thm.png"
   },
   {
-    "name": "Trello",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/trello.svg",
-    "icon": "trello.png"
-  },
-  {
-    "name": "Vercel",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/vercel.svg",
-    "icon": "vercel.png"
+    "name": "Windows Registry Analysis",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
+    "icon": "windows_registry.png"
   }
 ]
