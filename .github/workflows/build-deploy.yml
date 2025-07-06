@@ -1,14 +1,11 @@
 name: Deploy Static Site
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -17,7 +14,8 @@ jobs:
         run: |
           mkdir deploy
           shopt -s extglob
-          cp -r !(.git|.github|README.md|LICENSE|.gitignore|.deploy-ignore) deploy
+          cp -r !(.git|.github|README.md|LICENSE|.gitignore|.nojekyll) deploy/
+          cp .nojekyll deploy/
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
