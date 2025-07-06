@@ -40,13 +40,5 @@
     "icon": "kalilinux.png"
   },
   {
-    "name": "Trello",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/trello.svg",
-    "icon": "trello.png"
-  },
-  {
-    "name": "Vercel",
-    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/vercel.svg",
-    "icon": "vercel.png"
   }
 ]
