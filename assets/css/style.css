@@ -17,19 +17,20 @@ html {
 
 @media (min-width: 769px) {
   html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
   
   .main-content {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
   
   .main-section {
     scroll-snap-align: start;
-    min-height: 100vh;
+    min-height: auto;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
   }
   
@@ -113,18 +114,6 @@ body {
 }
 
 .avatar-bg {
-  background: linear-gradient(120deg, #232526 70%, transparent 100%);
-  border-radius: 28px;
-  max-width: 240px;
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 24px #0008;
-}
-
-.circuit-banner {
   background: 
     linear-gradient(135deg, rgba(35, 37, 38, 0.95) 0%, rgba(35, 37, 38, 0.7) 100%),
     repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(247, 147, 26, 0.1) 8px, rgba(247, 147, 26, 0.1) 10px),
@@ -133,21 +122,20 @@ body {
     radial-gradient(circle at 80% 80%, rgba(247, 147, 26, 0.15) 2px, transparent 2px),
     radial-gradient(circle at 40% 60%, rgba(247, 147, 26, 0.1) 1px, transparent 1px);
   background-size: 20px 20px, 20px 20px, 30px 30px, 25px 25px, 15px 15px;
-  border-radius: 20px;
+  border-radius: 28px;
   max-width: 240px;
   width: 100%;
-  height: 80px;
-  margin: 16px 0;
+  padding: 20px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(247, 147, 26, 0.2);
   position: relative;
   overflow: hidden;
 }
 
-.circuit-banner::before {
+.avatar-bg::before {
   content: '';
   position: absolute;
   top: 0;
@@ -157,6 +145,8 @@ body {
   background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.1), transparent);
   animation: circuitGlow 3s infinite;
 }
+
+
 
 @keyframes circuitGlow {
   0% { left: -100%; }
@@ -170,6 +160,8 @@ body {
   border-radius: 18%;
   border: 3px solid var(--accent);
   box-shadow: 0 2px 18px #000a;
+  position: relative;
+  z-index: 2;
 }
 
 .main-name {
@@ -208,8 +200,8 @@ body {
   background: #232526dd;
   border-radius: 22px;
   box-shadow: 0 4px 32px #0008;
-  margin: 60px 0 60px 40px;
-  padding: 36px 32px 32px 38px;
+  margin: 30px 0 30px 40px;
+  padding: 24px 28px 20px 32px;
   max-width: 720px;
   min-width: 200px;
   border-left: 4px solid var(--accent);
@@ -226,7 +218,7 @@ body {
 
 @media (min-width: 769px) {
   .main-section {
-    margin: 20px 0 20px 40px;
+    margin: 15px 0 15px 40px;
   }
 }
 
