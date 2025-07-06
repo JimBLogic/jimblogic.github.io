@@ -69,6 +69,10 @@
     "name": "Introduction to Bash",
     "issuer": "Security Blue Team",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
+<<<<<<< copilot/fix-18d0aac6-24a3-4a39-aa96-94a19c98a940
+    "badgeLocal": "SecurityBlueTeam/Introduction to Bash-course.png"
+=======
     "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png"
+>>>>>>> main
   }
 ]
