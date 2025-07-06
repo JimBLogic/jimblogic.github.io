@@ -1,7 +1,7 @@
 const translations = {
   en: {
     main_name: "Jaime Ramsden de Frutos",
-    title: "Cybersecurity Analyst · Ethical Hacker · Bitcoin Enthusiast",
+    title: "Junior Cybersecurity Analyst | Ethical Hacker | Cloud Security Expert",
     email: "Email",
     location: "Location",
     location_value: "Balearic Islands, Spain",
@@ -19,7 +19,7 @@ const translations = {
   },
   es: {
     main_name: "Jaime R. de Frutos",
-    title: "Analista de Ciberseguridad · Hacker Ético · Entusiasta de Bitcoin",
+    title: "Analista de Ciberseguridad | Hacker Ético | Experto en Seguridad Cloud",
     email: "Correo",
     location: "Ubicación",
     location_value: "Islas Baleares, España",
