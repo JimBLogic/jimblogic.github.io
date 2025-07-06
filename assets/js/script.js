@@ -75,4 +75,57 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.addEventListener('scroll', updateActiveNav);
   updateActiveNav(); // Set initial active state
+
+  // Scroll buttons functionality
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const scrollBottomBtn = document.getElementById('scrollBottom');
+  
+  if (scrollTopBtn && scrollBottomBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    scrollBottomBtn.addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  }
+
+  // Mobile swipe functionality
+  let touchStartY = 0;
+  let touchEndY = 0;
+  let currentSectionIndex = 0;
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const swipeDistance = touchStartY - touchEndY;
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0 && currentSectionIndex < sections.length - 1) {
+        // Swipe up - next section
+        currentSectionIndex++;
+      } else if (swipeDistance < 0 && currentSectionIndex > 0) {
+        // Swipe down - previous section
+        currentSectionIndex--;
+      }
+      
+      if (sections[currentSectionIndex]) {
+        sections[currentSectionIndex].scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+    }
+  }
+
+  // Add touch events for mobile
+  if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.changedTouches[0].screenY;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    });
+  }
 });
