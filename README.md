@@ -89,134 +89,122 @@ This portfolio showcases the skills, certifications, and projects of Jaime Ramsd
 ## Project Structure
 ```
 jimblogic.github.io/
-├──.vscode/
-│   └── settings.json
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── images/
-│   │   ├── certs/
-│   │   │   ├── aws/
-│   │   │   │   ├── Introduction to Python pt1.png
-│   │   │   │   └── Introduction to Python pt2.png
-│   │   │   ├── cybrary/
-│   │   │   │   ├── cybrary-cert-access-control-basics.png
-│   │   │   │   ├── cybrary-cert-cryptography-basics.png
-│   │   │   │   ├── cybrary-cert-firewall-basics.png
-│   │   │   │   ├── cybrary-cert-group-policy-basics.png
-│   │   │   │   ├── cybrary-cert-ip-addressing-basics.png
-│   │   │   │   ├── cybrary-cert-patching-basics.png
-│   │   │   │   ├── cybrary-cert-security-general-security-concepts.png
-│   │   │   │   ├── cybrary-cert-security-security-architecture.png
-│   │   │   │   ├── cybrary-cert-security-security-operations.png
-│   │   │   │   ├── cybrary-cert-security-security-program-management-and-oversight.png
-│   │   │   │   ├── cybrary-cert-security-threats-vulnerabilities-and-mitigations.png
-│   │   │   │   ├── cybrary-cert-vulnerability-scanner-basics.png
-│   │   │   │   └── cybrary-cert-welcome-to-cybrary.png
-│   │   │   ├── MosseCyberSecurityInstitute/
-│   │   │   │   └── KCCS - Knowledge of Cybersecurity Skills.png
-│   │   │   ├── SecurityBlueTeam/
-│   │   │   │   ├── Blue Team Junior Analyst Pathway Bundle-btja.png
-│   │   │   │   ├── Introduction to Dark Web Operations-course.png
-│   │   │   │   ├── Introduction to Digital Forensics-course.png
-│   │   │   │   ├── Introduction to Network Analysis-course.jpg
-│   │   │   │   ├── Introduction to OSINT-course.png
-│   │   │   │   ├── Introduction to PowerShell-course.png
-│   │   │   │   ├── Introduction to Python.PNG
-│   │   │   │   ├── Introduction to Threat Hunting-course.png
-│   │   │   │   ├── Introduction to Virtual Machines-course.jpg
-│   │   │   │   ├── Introduction to Vulnerability Management-course.png
-│   │   │   │   └── Mental Health in Cybersecurity-course.png
-│   │   │   └── UpgradeHub/
-│   │   │       └── upgradehubcert.png
-│   │   ├── Profilepicandother/
+├── .github/workflows
+│   └── build-deploy.yml
+├── UpgradeHub
+│   ├── upgradehubcert.png
+├── assets
+│   ├── Images
+│   │   ├── Profilepicandother
+│   │   │   ├── my-avatar.png
 │   │   │   ├── AWS SimuLearn Cloud Practitioner 12h.png
 │   │   │   ├── blueteam.png
 │   │   │   ├── credly.png
 │   │   │   ├── cybrary.jpg
+│   │   │   ├── dot.txt
 │   │   │   ├── ibm.jpg
 │   │   │   ├── incident.png
 │   │   │   ├── logo.png
-│   │   │   ├── my-avatar.png
-│   │   │   ├── sql.png 
-│   │   │   ├── tryhackme_badges.png
+│   │   │   ├── sql.png
+│   │   │   ├── tryhackme badges.png
 │   │   │   ├── tryhackme.png
 │   │   │   ├── tryhackmehackthebox.jpg
 │   │   │   └── vulnerableanalysis.png
-│   │   ├── software/
-│   │   │   ├── discord.png
-│   │   │   ├── github.png
-│   │   │   ├── google_workspace.png
-│   │   │   ├── ios.png
-│   │   │   ├── linux.png
-│   │   │   ├── python.png
-│   │   │   ├── slack.png
-│   │   │   ├── sql.png
-│   │   │   ├── trello.png
-│   │   │   ├── vercel.png
-│   │   │   ├── windows.png
-│   │   │   └── zendesk.png
-│   │   └── tools/
-│   │       ├── chronicle.png
-│   │       ├── chronicle.svg
-│   │       ├── greenbone.png
-│   │       ├── greenbone.svg
-│   │       ├── Logo-Suricata-horiz-R.png
-│   │       ├── splunk.png
-│   │       ├── splunk.svg
-│   │       ├── suricata.png
-│   │       ├── suricata.svg
-│   │       ├── tcpdump.png
-│   │       ├── tcpdump.svg
-│   │       ├── thm.png
-│   │       ├── thm.svg
-│   │       ├── windows_registry.png
-│   │       ├── windows_registry.svg
-│   │       ├── wireshark.png
-│   │       └── wireshark.svg 
-│   ├── js/
-│   │   └── script.js 
-│   └── pdfs/
-│       ├── aws/
-│       │   ├── 156_3_6860342_1735817985_AWS Course Completion Certificate.pdf
-│       │   └── 18443_5_6860342_1735810643_AWS Skill Builder Course Completion Certificate.pdf
-│       ├── cybrary/
-│       │   ├── cybrary-cert-access-control-basics.pdf
-│       │   ├── cybrary-cert-cryptography-basics.pdf
-│       │   ├── cybrary-cert-firewall-basics.pdf
-│       │   ├── cybrary-cert-group-policy-basics.pdf
-│       │   ├── cybrary-cert-ip-addressing-basics.pdf
-│       │   ├── cybrary-cert-patching-basics.pdf
-│       │   ├── cybrary-cert-security-general-security-concepts.pdf
-│       │   ├── cybrary-cert-security-security-architecture.pdf
-│       │   ├── cybrary-cert-security-security-operations.pdf
-│       │   ├── cybrary-cert-security-security-program-management-and-oversight.pdf
-│       │   ├── cybrary-cert-security-threats-vulnerabilities-and-mitigations.pdf
-│       │   ├── cybrary-cert-vulnerability-scanner-basics.pdf
-│       │   └── cybrary-cert-welcome-to-cybrary.pdf
-│       ├── IBM/
-│       │   └── python 60h.pdf
-│       ├── SecurityBlueTeam/
-│       │   ├── Blue Team Junior Analyst Pathway Bundle-btja.pdf
-│       │   ├── Introduction to Dark Web Operations-course.pdf
-│       │   ├── Introduction to Digital Forensics-course.pdf
-│       │   ├── Introduction to Network Analysis-course.pdf
-│       │   ├── Introduction to OSINT-course.pdf
-│       │   ├── Introduction to PowerShell-course.pdf
-│       │   ├── Introduction to Python-course.pdf
-│       │   ├── Introduction to Threat Hunting-course.pdf
-│       │   ├── Introduction to Virtual Machines-course.pdf
-│       │   ├── Introduction to Vulnerability Management-course.pdf
-│       │   └── Mental Health in Cybersecurity-course.pdf
-│       ├── UpgradeHub/
-│       │   └── UpgradeHub Cert.pdf
-│       └── Jaime Ramsden de Frutos CV.pdf
+│   ├── certs
+│   │   ├── MosseCyberSecurityInstitute
+│   │   │   └── KCCS - Knowledge of Cybersecurity Skills.png
+│   │   └── SecurityBlueTeam
+│   │       ├── Blue Team Junior Analyst Pathway Bundle-btja.png
+│   │       ├── Introduction to Dark Web Operations-course.png
+│   │       ├── Introduction to Digital Forensics-course.png
+│   │       ├── Introduction to Network Analysis-course.jpg
+│   │       ├── Introduction to OSINT-course.png
+│   │       ├── Introduction to PowerShell-course.png
+│   │       ├── Introduction to Python.PNG
+│   │       ├── Introduction to Threat Hunting-course.png
+│   │       ├── Introduction to Virtual Machines-course.jpg
+│   │       └── Introduction to Vulnerability Management-course.png
+│   ├── aws
+│   │   ├── Introduction to Python pt1.png
+│   │   └── Introduction to Python pt2.png
+│   ├── cybrary
+│   │   ├── cybrary-cert-access-control-basics.png
+│   │   ├── cybrary-cert-cryptography-basics.png
+│   │   ├── cybrary-cert-firewall-basics.png
+│   │   ├── cybrary-cert-group-policy-basics.png
+│   │   ├── cybrary-cert-ip-addressing-basics.png
+│   │   ├── cybrary-cert-patching-basics.png
+│   │   ├── cybrary-cert-security-general-security-concepts.png
+│   │   ├── cybrary-cert-security-security-architecture.png
+│   │   ├── cybrary-cert-security-security-operations.png
+│   │   ├── cybrary-cert-security-security-program-management-and-oversight.png
+│   │   ├── cybrary-cert-security-threats-vulnerabilities-and-mitigations.png
+│   │   ├── cybrary-cert-vulnerability-scanner-basics.png
+│   │   └── cybrary-cert-welcome-to-cybrary.png
+│   ├── software
+│   │   ├── discord.png
+│   │   ├── github.png
+│   │   ├── google_workspace.png
+│   │   ├── ios.png
+│   │   ├── linux.png
+│   │   ├── python.png
+│   │   ├── slack.png
+│   │   ├── sql.png
+│   │   ├── trello.png
+│   │   ├── vercel.png
+│   │   ├── windows.png
+│   │   └── zendesk.png
+│   └── tools
+│       ├── Logo-Suricata-horiz-R.png
+│       ├── chronicle.png
+│       ├── chronicle.svg
+│       ├── greenbone.png
+│       ├── greenbone.svg
+│       ├── splunk.png
+│       ├── splunk.svg
+│       ├── suricata.png
+│       ├── suricata.svg
+│       ├── tcpdump.png
+│       ├── tcpdump.svg
+│       ├── thm.png
+│       ├── thm.svg
+│       ├── windows_registry.png
+│       ├── windows_registry.svg
+│       ├── wireshark.png
+│       └── wireshark.svg
+├── css
+│   └── style.css
+├── js
+│   ├── script.js
+│   └── translate.js
+├── pdfs
+│   ├── IBM
+│   │   └── python 60h.pdf
+│   ├── SecurityBlueTeam
+│   │   ├── Blue Team Junior Analyst Pathway Bundle-btja.pdf
+│   │   ├── Introduction to Dark Web Operations-course.pdf
+│   │   ├── Introduction to Digital Forensics-course.pdf
+│   │   ├── Introduction to Network Analysis-course.pdf
+│   │   ├── Introduction to OSINT-course.pdf
+│   │   ├── Introduction to PowerShell-course.pdf
+│   │   ├── Introduction to Python-course.pdf
+│   │   ├── Introduction to Threat Hunting-course.pdf
+│   │   ├── Introduction to Virtual Machines-course.pdf
+│   │   └── Mental Health in Cybersecurity-course.pdf
+│   ├── UpgradeHub
+│   │   └── UpgradeHub Cert.pdf
+│   └── Jaime Ramsden de Frutos CV.pdf
+├── .github/workflows/build-deploy.yml
+├── .gitignore
+├── .nojekyll
 ├── LICENSE
 ├── README.md
 ├── certificates.json
 ├── index.html
+├── script.js
+├── software.json
+├── style.css
 └── tools.json
-└── software.json
 ```
 ## License
 
