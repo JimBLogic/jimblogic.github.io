@@ -79,6 +79,40 @@ body {
   box-shadow: 0 0 24px #0008;
 }
 
+.circuit-banner {
+  background: 
+    linear-gradient(135deg, rgba(35, 37, 38, 0.95) 0%, rgba(35, 37, 38, 0.7) 100%),
+    url('https://www.svgrepo.com/show/432994/circuit-board.svg') center center/cover no-repeat;
+  border-radius: 20px;
+  max-width: 240px;
+  width: 100%;
+  height: 80px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(247, 147, 26, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.circuit-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.1), transparent);
+  animation: circuitGlow 3s infinite;
+}
+
+@keyframes circuitGlow {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
 .avatar-box img {
   width: 200px !important;
   height: 200px !important;
@@ -261,13 +295,21 @@ body {
 }
 
 .navbar-link {
-  display: block;
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
   color: #bbb;
   text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.2s;
+  border-radius: 8px;
+  transition: all 0.3s;
   font-size: 0.95em;
+  font-weight: 400;
+}
+
+.navbar-link ion-icon {
+  font-size: 1.2em;
+  transition: transform 0.3s;
 }
 
 .navbar-link:hover,
@@ -275,6 +317,13 @@ body {
   background: var(--accent);
   color: #000;
   font-weight: 500;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+}
+
+.navbar-link:hover ion-icon,
+.navbar-link.active ion-icon {
+  transform: scale(1.1);
 }
 
 /* Main Content Styles */
@@ -285,26 +334,39 @@ body {
 }
 
 .main-section {
-  background: rgba(35, 37, 38, 0.9);
+  background: rgba(35, 37, 38, 0.95);
   border-radius: 22px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
-  margin: 60px 0 60px 40px;
-  padding: 36px 32px 32px 38px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  margin: 80px 0 80px 40px;
+  padding: 40px 36px 36px 42px;
   max-width: 720px;
   min-width: 200px;
-  border-left: 4px solid var(--accent);
-  transition: all 0.3s ease;
+  border-left: 6px solid var(--accent);
+  transition: all 0.4s ease;
   position: relative;
   z-index: 2;
+  border: 1px solid rgba(247, 147, 26, 0.1);
+}
+
+.main-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 22px 22px 0 0;
 }
 
 .main-section:not(:last-child) {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 .main-section:hover {
-  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px) scale(1.02);
+  border-left-color: #fff;
 }
 
 h2 {
@@ -315,6 +377,18 @@ h2 {
   letter-spacing: 0.01em;
   color: #fff;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2 ion-icon {
+  font-size: 1.3em;
+  color: var(--accent);
+  background: rgba(247, 147, 26, 0.1);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(247, 147, 26, 0.2);
 }
 
 h3 {
@@ -402,16 +476,24 @@ a:hover {
 .certificate-list img,
 .software-list img,
 .tools-list img {
-  width: 36px;
-  height: 36px;
-  max-width: 44px;
-  max-height: 44px;
+  width: 56px;
+  height: 56px;
+  max-width: 64px;
+  max-height: 64px;
   object-fit: contain;
   background: var(--dark);
-  border-radius: 8px;
-  margin-right: 12px;
+  border-radius: 12px;
+  margin-right: 16px;
   border: 2px solid var(--accent);
-  box-shadow: 0 1px 6px rgba(247, 147, 26, 0.2);
+  box-shadow: 0 3px 12px rgba(247, 147, 26, 0.3);
+  transition: all 0.3s ease;
+}
+
+.certificate-list img:hover,
+.software-list img:hover,
+.tools-list img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(247, 147, 26, 0.5);
 }
 
 .skills-list {
@@ -445,26 +527,59 @@ a:hover {
   }
 
   .main-section {
-    margin: 18px 1vw;
-    padding: 20px 4vw;
-    max-width: 92vw;
+    margin: 20px 2vw;
+    padding: 24px 5vw;
+    max-width: 90vw;
+    border-radius: 18px;
+  }
+
+  .main-section:not(:last-child) {
+    margin-bottom: 60px;
   }
 
   .sidebar {
     position: static;
     height: auto;
-    padding: 20px 4vw;
+    padding: 20px 5vw;
     border-radius: 0 0 18px 18px;
-    max-width: 92vw;
+    max-width: 90vw;
   }
 
   .avatar-bg {
     max-width: 180px;
   }
 
+  .circuit-banner {
+    max-width: 180px;
+    height: 60px;
+  }
+
   .avatar-box img {
     width: 150px !important;
     height: 150px !important;
+  }
+
+  .certificate-list img,
+  .software-list img,
+  .tools-list img {
+    width: 48px;
+    height: 48px;
+    max-width: 56px;
+    max-height: 56px;
+  }
+
+  .navbar-link {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .navbar-link ion-icon {
+    font-size: 1.1em;
+  }
+
+  h2 ion-icon {
+    font-size: 1.2em;
+    padding: 6px;
   }
 
   .main-name {
@@ -534,3 +649,86 @@ a:hover {
     font-size: 0.8em;
   }
 }
+
+/* Scroll Navigation Buttons */
+.scroll-buttons {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-buttons:hover {
+  opacity: 1;
+}
+
+.scroll-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(35, 37, 38, 0.95);
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(247, 147, 26, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-btn:hover {
+  background: var(--accent);
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(247, 147, 26, 0.4);
+  border-color: var(--accent);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .scroll-buttons {
+    display: none;
+  }
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.certificate-list li,
+.software-list li,
+.tools-list li {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.certificate-list li:nth-child(1) { animation-delay: 0.1s; }
+.certificate-list li:nth-child(2) { animation-delay: 0.2s; }
+.certificate-list li:nth-child(3) { animation-delay: 0.3s; }
+.certificate-list li:nth-child(4) { animation-delay: 0.4s; }
+.certificate-list li:nth-child(5) { animation-delay: 0.5s; }
