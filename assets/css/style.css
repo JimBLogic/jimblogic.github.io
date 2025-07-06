@@ -25,7 +25,7 @@ body {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: 
+  background:
     radial-gradient(circle at 5% 10%, #dbe0e3 0, #a8a8a8 20%, #474747 65%, transparent 100%),
     radial-gradient(circle at 95% 80%, #f7931a33 0, #383838 50%, transparent 100%),
     repeating-linear-gradient(120deg, #86868622 0 2px, transparent 2px 24px),
@@ -62,7 +62,7 @@ body {
 .avatar-bg {
   background: linear-gradient(120deg, #232526 70%, transparent 100%);
   border-radius: 28px;
-  max-width: 170px;
+  max-width: 240px;
   width: 100%;
   padding: 17px 0;
   display: flex;
@@ -71,8 +71,8 @@ body {
   box-shadow: 0 0 24px #0008;
 }
 .avatar-box img {
-  width: 120px !important;
-  height: 120px !important;
+  width: 200px !important;
+  height: 200px !important;
   object-fit: cover;
   border-radius: 18%;
   border: 3px solid var(--accent);
