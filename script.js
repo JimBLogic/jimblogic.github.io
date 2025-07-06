@@ -1,16 +1,13 @@
 function imgLocalThenOnline(local, fallback, alt, prefix = "") {
-  // Local first (if exists), then web, then default
   const defaultImg = "./assets/Images/default.png";
-  let tag = "";
   if (local) {
     const localPath = prefix + local;
-    tag = `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback || defaultImg}';">`;
+    return `<img src="${localPath}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${fallback || defaultImg}';">`;
   } else if (fallback) {
-    tag = `<img src="${fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${defaultImg}';">`;
+    return `<img src="${fallback}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${defaultImg}';">`;
   } else {
-    tag = `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
+    return `<img src="${defaultImg}" alt="${alt}" loading="lazy">`;
   }
-  return tag;
 }
 
 function renderCertList(jsonFile, listId) {
@@ -55,3 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderList('./software.json', 'softwareList', "software");
   renderList('./tools.json', 'toolsList', "tools");
 });
+
+// (You can add similar renderExperience logic for your experience section, using a JSON or inline.)
