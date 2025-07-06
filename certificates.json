@@ -3,154 +3,132 @@
     "name": "Defensive Security Operations",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-security-operations.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-security-security-operations.png"
   },
   {
     "name": "Career Essentials in Cybersecurity",
     "issuer": "Microsoft & LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/microsoft.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Career Essentials in GitHub Professional Certificate",
     "issuer": "GitHub",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/github.svg",
-    "badgeLocal": "software/github.png",
-    "link": ""
+    "badgeLocal": "software/github.png"
   },
   {
     "name": "Cybersecurity Awareness: Cybersecurity Terminology",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Cybersecurity Foundations",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Cybersecurity Foundations: Governance, Risk, and Compliance (GRC)",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Data Backup and Recovery Basics",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-program-management-and-oversight.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-security-program-management-and-oversight.png"
   },
   {
     "name": "Ethical Hacking: Cloud Computing",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-security-architecture.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-security-security-architecture.png"
   },
   {
     "name": "Ethical Hacking: Cryptography",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-cryptography-basics.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-cryptography-basics.png"
   },
   {
     "name": "Ethical Hacking: Mobile Platform, IoT, and OT Hacking",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-welcome-to-cybrary.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-welcome-to-cybrary.png"
   },
   {
     "name": "Ethical Hacking: Web Application Hacking",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.png"
   },
   {
     "name": "Ethical Hacking: Wireless Network Hacking",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-vulnerability-scanner-basics.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-vulnerability-scanner-basics.png"
   },
   {
     "name": "ISO 27001:2022-Compliant Cybersecurity",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Introduction to Bash",
     "issuer": "Security Blue Team",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png",
-    "link": ""
+    "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png"
   },
   {
     "name": "OSINT",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-general-security-concepts.png",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-security-general-security-concepts.png"
   },
   {
-    "name": "Prepare for the AWS Certified Cloud Practitioner (CLF-C02) Certification",
+    "name": "Prepare for AWS Certified Cloud Practitioner (CLF-C02)",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "The Cybersecurity Threat Landscape",
     "issuer": "LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/linkedin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
     "name": "Threat Modeling",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-access-control-basics.png",
-    "link": ""
-  },
-  {
-    "name": "Web Development with Python",
-    "issuer": "IBM",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/ibm.svg",
-    "badgeLocal": "ibm.jpg",
-    "link": ""
+    "badgeLocal": "cybrary/cybrary-cert-access-control-basics.png"
   },
   {
     "name": "CS120: Bitcoin for Developers I",
     "issuer": "Saylor Academy",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/bitcoin.svg",
-    "badgeLocal": "",
-    "link": ""
+    "badgeLocal": ""
   },
   {
-    "name": "KCCS - KNOWLEDGE OF CYBERSECURITY SKILLS",
+    "name": "KCCS - Knowledge of Cybersecurity Skills",
     "issuer": "Mossé Cyber Security Institute",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/security.svg",
-    "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png",
-    "link": ""
+    "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png"
   },
   {
     "name": "Blue Team Junior Analyst Pathway Bundle",
     "issuer": "Security Blue Team",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
-    "link": ""
+    "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png"
+  },
+  {
+    "name": "Web Development with Python",
+    "issuer": "IBM",
+    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/ibm.svg",
+    "badgeLocal": "ibm.jpg"
   }
 ]
