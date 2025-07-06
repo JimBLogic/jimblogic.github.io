@@ -66,27 +66,5 @@
     "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png"
   },
   {
-    "name": "Introduction to Threat Hunting",
+    "name": "Introduction to Bash",
     "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Threat Hunting-course.png"
-  },
-  {
-    "name": "Introduction to Digital Forensics",
-    "issuer": "Security Blue Team",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/gnubash.svg",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Digital Forensics-course.png"
-  },
-  {
-    "name": "CS120: Bitcoin for Developers I",
-    "issuer": "Saylor Academy",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/bitcoin.svg",
-    "badgeLocal": ""
-  },
-  {
-    "name": "Web Development with Python",
-    "issuer": "IBM",
-    "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons @v11/icons/ibm.svg",
-    "badgeLocal": "ibm.jpg"
-  }
-]
