@@ -17,7 +17,7 @@ function renderCertList(jsonFile, listId) {
       if (!el || !Array.isArray(data)) return;
       el.innerHTML = data.map(cert => {
         return `<li>
-          ${imgLocalThenOnline(cert.badgeLocal, cert.badgeWeb, cert.name, "./assets/Images/")}
+          ${imgLocalThenOnline(cert.badgeLocal, cert.badgeWeb, cert.name, "./assets/Images/certs/")}
           <div>
             <strong>${cert.name}</strong><br>
             <span>${cert.issuer}</span>
@@ -36,7 +36,7 @@ function renderList(jsonFile, listId, folder) {
       if (!el || !Array.isArray(data)) return;
       el.innerHTML = data.map(item => {
         return `<li>
-          ${imgLocalThenOnline(item.icon, item.iconWeb, item.name, `./assets/images/${folder}/`)}
+          ${imgLocalThenOnline(item.icon, item.iconWeb, item.name, `./assets/Images/${folder}/`)}
           <div>
             <strong>${item.name}</strong><br>
             <span>${item.description || ""}</span>
