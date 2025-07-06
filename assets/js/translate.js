@@ -18,7 +18,7 @@ const translations = {
     tools: "Tools",
     contact: "Contact",
     contact_1: "Ready to collaborate? Reach out via email:",
-    contact_2: "Or connect via <a href=' https://www.linkedin.com/in/jimblogic/ ' target='_blank'>LinkedIn</a> or view my Bitcoin node at <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f ' target='_blank'>Amboss</a>."
+    contact_2: "Or connect via <a href=' https://www.linkedin.com/in/jimblogic/ ' target='_blank'>LinkedIn</a> or view my public Bitcoin node at <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f ' target='_blank'>Amboss</a>."
   },
   es: {
     main_name: "Jaime R. de Frutos",
@@ -60,7 +60,7 @@ const translations = {
     tools: "Eines",
     contact: "Contacte",
     contact_1: "Preparat per col·laborar? Escriu-me:",
-    contact_2: "O troba el meu node públic a <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f ' target='_blank'>Amboss</a>."
+    contact_2: "També pots contactar per <a href='https://www.linkedin.com/in/jimblogic/ ' target='_blank'>LinkedIn</a> o veure el meu node públic a <a href='https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f ' target='_blank'>Amboss</a>."
   }
 };
 
