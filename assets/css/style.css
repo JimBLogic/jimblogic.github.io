@@ -381,13 +381,19 @@ body {
 }
 
 .lang-switch {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 10;
+  z-index: 999;
   display: flex;
   gap: 6px;
+  background: rgba(24, 26, 27, 0.85);
+  padding: 6px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+
 .lang-switch button {
   padding: 4px 8px;
   background: #222;
@@ -396,7 +402,9 @@ body {
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
+
 .lang-switch button:hover {
   background: var(--accent);
   color: black;
