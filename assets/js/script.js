@@ -120,13 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Enhanced mobile swipe functionality
+  // Enhanced mobile swipe functionality - only for deliberate section navigation
   let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
   let currentSectionIndex = 0;
-  let isSwipeEnabled = window.innerWidth <= 1024; // Increased threshold for tablets
+  let isSwipeEnabled = window.innerWidth <= 1024;
+  let touchStartTime = 0;
+  let isScrolling = false;
 
   // Update swipe availability on resize
   window.addEventListener('resize', () => {
@@ -134,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function updateCurrentSection() {
-    // Find which section is currently in view
-    const scrollPos = window.scrollY + window.innerHeight / 2;
+    // Find which section is currently in view with better detection
+    const scrollPos = window.scrollY + window.innerHeight * 0.3; // Use 30% of viewport for better detection
     sections.forEach((section, index) => {
       const rect = section.getBoundingClientRect();
       const sectionTop = window.scrollY + rect.top;
@@ -148,71 +150,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleSwipe() {
-    if (!isSwipeEnabled) return;
+    if (!isSwipeEnabled || isScrolling) return;
     
-    const swipeThreshold = 50; // Reduced threshold for more responsive swipes
+    const swipeThreshold = 80; // Increased threshold to avoid accidental triggers
+    const timeThreshold = 300; // Maximum time for a swipe gesture
     const deltaX = touchStartX - touchEndX;
     const deltaY = touchStartY - touchEndY;
+    const swipeTime = Date.now() - touchStartTime;
     
-    // Determine swipe direction
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      // Horizontal swipe
-      if (Math.abs(deltaX) > swipeThreshold) {
-        if (deltaX > 0) {
-          // Swipe left - next section
-          if (currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-          }
-        } else {
-          // Swipe right - previous section
-          if (currentSectionIndex > 0) {
-            currentSectionIndex--;
-          }
+    // Only trigger on quick, deliberate swipes
+    if (swipeTime > timeThreshold) return;
+    
+    // Horizontal swipes for section navigation
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) {
+        // Swipe left - next section
+        if (currentSectionIndex < sections.length - 1) {
+          currentSectionIndex++;
+          navigateToSection();
         }
-        navigateToSection();
+      } else {
+        // Swipe right - previous section
+        if (currentSectionIndex > 0) {
+          currentSectionIndex--;
+          navigateToSection();
+        }
       }
-    } else {
-      // Vertical swipe
-      if (Math.abs(deltaY) > swipeThreshold) {
-        if (deltaY > 0) {
-          // Swipe up - next section
-          if (currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-          }
-        } else {
-          // Swipe down - previous section
-          if (currentSectionIndex > 0) {
-            currentSectionIndex--;
-          }
+    }
+    // For vertical swipes, allow natural scrolling unless it's a very deliberate gesture
+    else if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > swipeThreshold * 1.5) {
+      if (deltaY > 0) {
+        // Strong swipe up - next section
+        if (currentSectionIndex < sections.length - 1) {
+          currentSectionIndex++;
+          navigateToSection();
         }
-        navigateToSection();
+      } else {
+        // Strong swipe down - previous section
+        if (currentSectionIndex > 0) {
+          currentSectionIndex--;
+          navigateToSection();
+        }
       }
     }
   }
   
   function navigateToSection() {
     if (sections[currentSectionIndex]) {
-      sections[currentSectionIndex].scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+      // Smoother navigation with better positioning
+      const targetSection = sections[currentSectionIndex];
+      const targetOffset = targetSection.offsetTop - 20; // Small offset for better visibility
+      
+      window.scrollTo({ 
+        top: targetOffset,
+        behavior: 'smooth'
       });
       
-      // Add visual feedback
-      const targetSection = sections[currentSectionIndex];
+      // Enhanced visual feedback
       targetSection.style.transform = 'scale(1.02)';
-      targetSection.style.transition = 'transform 0.3s ease';
+      targetSection.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+      targetSection.style.boxShadow = '0 10px 30px rgba(247, 147, 26, 0.2)';
+      
       setTimeout(() => {
         targetSection.style.transform = '';
-      }, 300);
+        targetSection.style.boxShadow = '';
+      }, 400);
     }
   }
-  // Add touch events for mobile
+  // Add touch events for mobile with improved detection
   if ('ontouchstart' in window) {
     document.addEventListener('touchstart', (e) => {
       if (!isSwipeEnabled) return;
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
+      touchStartTime = Date.now();
+      isScrolling = false;
       updateCurrentSection();
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      if (!isSwipeEnabled) return;
+      // Detect if user is scrolling naturally
+      const currentX = e.changedTouches[0].screenX;
+      const currentY = e.changedTouches[0].screenY;
+      const deltaX = Math.abs(currentX - touchStartX);
+      const deltaY = Math.abs(currentY - touchStartY);
+      
+      // If user is scrolling more than swiping, mark as scrolling
+      if (deltaY > deltaX && deltaY > 10) {
+        isScrolling = true;
+      }
     });
     
     document.addEventListener('touchend', (e) => {
@@ -223,9 +250,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Update current section on scroll
+  // Update current section on scroll with smooth transitions
+  let scrollTimeout;
   window.addEventListener('scroll', () => {
     updateCurrentSection();
+    
+    // Clear any existing timeout
+    clearTimeout(scrollTimeout);
+    
+    // Add a subtle visual indicator when scrolling stops
+    scrollTimeout = setTimeout(() => {
+      const currentSection = sections[currentSectionIndex];
+      if (currentSection) {
+        currentSection.style.transition = 'transform 0.2s ease';
+        currentSection.style.transform = 'scale(1.005)';
+        setTimeout(() => {
+          currentSection.style.transform = '';
+        }, 200);
+      }
+    }, 150);
   });
 
   // Disable aggressive wheel scroll hijacking - allow natural scrolling
