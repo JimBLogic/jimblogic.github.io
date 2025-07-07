@@ -11,21 +11,21 @@
     "issuer": "Microsoft & LinkedIn",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg",
     "badgeLocal": "",
-    "link": "https://www.linkedin.com/learning/certificates/89a2c5ef70f7f65e8a06e0fb5c0f05c5b6a3b3f5f4a8e3f5f4a8e3f5f4a8e3f5"
+    "link": "https://www.linkedin.com/learning/paths/career-essentials-in-cybersecurity-by-microsoft-and-linkedin"
   },
   {
     "name": "Career Essentials in GitHub Professional Certificate",
     "issuer": "GitHub",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg",
     "badgeLocal": "software/github.png",
-    "link": "https://www.linkedin.com/learning/certificates/github-professional-certificate"
+    "link": "https://www.linkedin.com/learning/paths/career-essentials-in-github-copilot-professional-certificate"
   },
   {
     "name": "Data Backup and Recovery Basics",
     "issuer": "Cybrary",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
-    "badgeLocal": "cybrary/cybrary-cert-security-program-management-and-oversight.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-program-management-and-oversight.pdf"
+    "badgeLocal": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/Images/certs/cybrary/cybrary-cert-security-security-program-management-and-oversight.png",
+    "link": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/cybrary/cybrary-cert-security-security-program-management-and-oversight.pdf"
   },
   {
     "name": "Ethical Hacking: Cloud Computing",
@@ -67,6 +67,8 @@
     "issuer": "Mossé Cyber Security Institute",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/security.svg",
     "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png"
+    "link": "https://www.mosse-institute.com/knowledge-tests/kccs-knowledge-of-cybersecurity-skills.html"
+    
   },
   {
     "name": "Blue Team Junior Analyst Pathway Bundle",
