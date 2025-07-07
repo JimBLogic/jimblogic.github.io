@@ -1,7 +1,7 @@
 const translations = {
   en: {
     main_name: "Jaime Ramsden de Frutos",
-    title: "Junior Cybersecurity Analyst | Ethical Hacker | Cloud Security Expert",
+    title: "Junior Cybersecurity Analyst | Ethical Hacker | AWS Cloud Practitioner",
     email: "Email",
     location: "Location",
     location_value: "Balearic Islands, Spain",
@@ -19,7 +19,7 @@ const translations = {
   },
   es: {
     main_name: "Jaime R. de Frutos",
-    title: "Analista de Ciberseguridad | Hacker Ético | Experto en Seguridad Cloud",
+    title: "Analista de Ciberseguridad | Hacker Ético | AWS Cloud Practitioner",
     email: "Correo",
     location: "Ubicación",
     location_value: "Islas Baleares, España",
@@ -37,7 +37,7 @@ const translations = {
   },
   ca: {
     main_name: "Jaime R. de Frutos",
-    title: "Analista de Ciberseguretat · Hacker Ètic · Entusiasta de Bitcoin",
+    title: "Analista de Ciberseguretat · Hacker Ètic · AWS Cloud Practitioner",
     email: "Correu",
     location: "Ubicació",
     location_value: "Illes Balears, Espanya",
