@@ -762,10 +762,10 @@ a:hover {
   .certificate-list img,
   .software-list img,
   .tools-list img {
-    width: 48px;
-    height: 48px;
-    max-width: 56px;
-    max-height: 56px;
+    width: 65px;
+    height: 65px;
+    max-width: 70px;
+    max-height: 70px;
   }
 
   .navbar-link {
