@@ -48,6 +48,13 @@ body {
 @media (max-width: 1024px) {
   html {
     scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .main-section {
@@ -413,8 +420,21 @@ body {
   .sidebar {
     position: static;
     height: auto;
+    overflow: visible;
     padding: 10px 2vw;
     border-radius: 0 0 18px 18px;
+  }
+  
+  .navbar {
+    flex: none;
+    overflow: visible;
+  }
+  
+  .navbar-list {
+    max-height: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 }
 
