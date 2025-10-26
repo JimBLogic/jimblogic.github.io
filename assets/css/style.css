@@ -194,6 +194,50 @@ body {
   }
 }
 
+/* Additional electrical flow effects */
+.bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    /* Flowing electrical current */
+    repeating-linear-gradient(15deg, transparent 0, transparent 18px, #00ff4408 18px, #00ff4408 22px, transparent 22px, transparent 40px),
+    repeating-linear-gradient(105deg, transparent 0, transparent 15px, #f7931a08 15px, #f7931a08 18px, transparent 18px, transparent 35px);
+  animation: electricalFlow 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes electricalFlow {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Glowing circuit nodes */
+.bg-animation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 10% 10%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
+    radial-gradient(circle at 90% 20%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
+    radial-gradient(circle at 30% 70%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
+    radial-gradient(circle at 70% 90%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
+    radial-gradient(circle at 50% 30%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
+    radial-gradient(circle at 20% 60%, #f7931aaa 0, #f7931a40 1px, transparent 2px);
+  animation: nodeGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes nodeGlow {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.1); }
+}
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -210,6 +254,7 @@ body {
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -217,7 +262,16 @@ body {
   z-index: 10;
 }
 
+.sidebar-info {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .avatar-bg {
+  flex-shrink: 0;
   background: 
     linear-gradient(135deg, rgba(35, 37, 38, 0.85) 0%, rgba(35, 37, 38, 0.6) 100%),
     repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(247, 147, 26, 0.25) 6px, rgba(247, 147, 26, 0.25) 8px),
@@ -480,6 +534,10 @@ body {
 .navbar {
   width: 100%;
   margin-top: 20px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-list {
@@ -487,6 +545,31 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) #1a1a1a;
+  max-height: 120px;
+}
+
+.navbar-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.navbar-list::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.navbar-list::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.navbar-list::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
 }
 
 .navbar-link {
