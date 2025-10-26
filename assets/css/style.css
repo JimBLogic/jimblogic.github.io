@@ -168,19 +168,19 @@ body {
 
 @keyframes motherboardFlow {
   0% { 
-    background-position: 0% 0%, 100% 100%, 0 0, 0 0, 0 0, 0 0, 20px 20px, 40px 10px, 10px 40px, 0% 0%; 
+    background-position: 0% 0%, 100% 100%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0% 0%; 
   }
   25% { 
-    background-position: 15% 10%, 85% 90%, 8px 4px, 12px 8px, 4px 12px, 2px 1px, 22px 18px, 38px 12px, 12px 38px, 15% 10%; 
+    background-position: 25% 25%, 75% 75%, 10px 10px, 15px 15px, 20px 20px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 25% 25%; 
   }
   50% { 
-    background-position: 30% 20%, 70% 80%, 16px 8px, 24px 16px, 8px 24px, 4px 2px, 24px 16px, 36px 14px, 14px 36px, 30% 20%; 
+    background-position: 50% 50%, 50% 50%, 20px 20px, 30px 30px, 40px 40px, 2px 2px, 2px 2px, 2px 2px, 2px 2px, 50% 50%; 
   }
   75% { 
-    background-position: 45% 30%, 55% 70%, 24px 12px, 36px 24px, 12px 36px, 6px 3px, 26px 14px, 34px 16px, 16px 34px, 45% 30%; 
+    background-position: 75% 75%, 25% 25%, 30px 30px, 45px 45px, 60px 60px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 75% 75%; 
   }
   100% { 
-    background-position: 60% 40%, 40% 60%, 32px 16px, 48px 32px, 16px 48px, 8px 4px, 28px 12px, 32px 18px, 18px 32px, 60% 40%; 
+    background-position: 100% 100%, 0% 0%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%; 
   }
 }
 
@@ -209,14 +209,14 @@ body {
     repeating-linear-gradient(15deg, transparent 0, transparent 18px, #00ff4408 18px, #00ff4408 22px, transparent 22px, transparent 40px),
     repeating-linear-gradient(105deg, transparent 0, transparent 15px, #f7931a08 15px, #f7931a08 18px, transparent 18px, transparent 35px);
   animation: electricalFlow 12s linear infinite;
-  opacity: 0.5;
+  opacity: 0.7;
   will-change: transform;
   transform: translateZ(0);
 }
 
 @keyframes electricalFlow {
-  0% { transform: translate3d(-50%, -50%, 0); }
-  100% { transform: translate3d(50%, 50%, 0); }
+  0% { transform: translate3d(-100%, -100%, 0); }
+  100% { transform: translate3d(100%, 100%, 0); }
 }
 
 /* Glowing circuit nodes */
@@ -302,17 +302,11 @@ body {
   0% { 
     background-position: 0% 0%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
   }
-  25% { 
-    background-position: 0% 0%, 4px 4px, 3px 3px, 6px 6px, 5px 5px, 4px 4px, 3px 3px, 2px 2px, 2px 2px;
-  }
   50% { 
-    background-position: 0% 0%, 8px 8px, 6px 6px, 12px 12px, 10px 10px, 8px 8px, 6px 6px, 4px 4px, 4px 4px;
-  }
-  75% { 
-    background-position: 0% 0%, 12px 12px, 9px 9px, 18px 18px, 15px 15px, 12px 12px, 9px 9px, 6px 6px, 6px 6px;
+    background-position: 0% 0%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
   }
   100% { 
-    background-position: 0% 0%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
+    background-position: 0% 0%, 30px 30px, 30px 30px, 50px 50px, 40px 40px, 36px 36px, 24px 24px, 20px 20px, 16px 16px;
   }
 }
 
@@ -323,10 +317,11 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.4), transparent);
-  animation: circuitGlow 4s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.6), transparent);
+  animation: circuitGlow 3s ease-in-out infinite;
   will-change: left;
   transform: translateZ(0);
+  z-index: 1;
 }
 
 .avatar-bg::after {
