@@ -4,11 +4,14 @@
 
 This portfolio showcases the skills, certifications, and projects of Jaime Ramsden de Frutos, a dedicated cybersecurity professional with a strong background in IT and programming. The portfolio includes various sections such as About, Portfolio, and Certifications, highlighting Jaime's expertise and achievements.
 
+Projects are populated dynamically from the public GitHub repositories under the account `@JimBLogic` using the GitHub REST API on page load (client-side). Only non-fork repositories are displayed, sorted by stars and recent updates, and cached in the browser for one hour.
+
 ## Sections
 
 1. **About**
 2. **Portfolio**
 3. **Certifications**
+4. **Projects** (auto-fetched from GitHub)
 
 ## PDF Index
 

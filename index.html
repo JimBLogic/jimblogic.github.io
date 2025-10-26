@@ -59,7 +59,7 @@
           <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
           <div class="contact-info">
             <p class="contact-title" data-txt="email">Email</p>
-            <a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a>
+            <a href="mailto:jrf91@pm.me" class="contact-link">jrf91@pm.me</a>
           </div>
         </li>
         <li class="contact-item">
@@ -118,8 +118,17 @@
           <li><a class="navbar-link" href="#education" data-txt="education">
             <ion-icon name="school-outline"></ion-icon><span>Education</span>
           </a></li>
+          <li><a class="navbar-link" href="#passion" data-txt="passion">
+            <ion-icon name="heart-outline"></ion-icon><span>Passion</span>
+          </a></li>
           <li><a class="navbar-link" href="#software" data-txt="software">
             <ion-icon name="desktop-outline"></ion-icon><span>Software</span>
+          </a></li>
+          <li><a class="navbar-link" href="#journey" data-txt="journey">
+            <ion-icon name="map-outline"></ion-icon><span>Learning Journey</span>
+          </a></li>
+          <li><a class="navbar-link" href="#projects" data-txt="projects">
+            <ion-icon name="folder-open-outline"></ion-icon><span>Projects</span>
           </a></li>
           <li><a class="navbar-link" href="#tools" data-txt="tools">
             <ion-icon name="build-outline"></ion-icon><span>Tools</span>
@@ -138,20 +147,28 @@
     <section id="about" class="main-section">
       <h2 data-txt="about"><ion-icon name="person-circle-outline"></ion-icon>About Me</h2>
       <div class="about-buttons">
-        <button>Cybersecurity</button>
-        <button>Cloud Security</button>
-        <button>Penetration Testing</button>
-        <button>Digital Forensics</button>
-        <button>OSINT</button>
-        <button>Bitcoin</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_1">Cybersecurity</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_2">Cloud Security</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_3">Penetration Testing</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_4">Digital Forensics</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_5">OSINT</button>
+        <button onclick="document.getElementById('passion').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_6">Bitcoin</button>
       </div>
-      <p>I'm an aspiring junior cybersecurity analyst with hands-on training in ethical hacking, cloud security, and digital forensics. I recently completed a full-time bootcamp at <a href="./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" target="_blank">UpgradeHub</a>, where I gained real-world experience using Kali Linux, Metasploit, AWS, Splunk, Wireshark, and more.</p>
-      <p><strong>Looking for:</strong> An entry-level or junior cybersecurity position where I can keep learning and contribute to meaningful projects.</p>
+      <p data-txt="about_p1">I'm an aspiring junior cybersecurity analyst with hands-on training in ethical hacking, cloud security, and digital forensics. I recently completed a full-time bootcamp at <a href="./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" target="_blank">UpgradeHub</a>, where I gained real-world experience using Kali Linux, Metasploit, AWS, Splunk, Wireshark, and more.</p>
+      <p><strong data-txt="about_p2_label">Looking for:</strong> <span data-txt="about_p2">An entry-level or junior cybersecurity position where I can keep learning and contribute to meaningful projects.</span></p>
+      <p><span data-txt="about_p3">Learning journeys and certificates hosted on GitHub:</span> 
+        <a href="https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates" target="_blank" rel="noopener">Security Blue Team</a>,
+        <a href="https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs" target="_blank" rel="noopener">Cybrary</a>,
+        <a href="https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute" target="_blank" rel="noopener">AWS · IBM Skills Build · MCSI</a>,
+        <a href="https://github.com/JimBLogic/TryHackme-HackTheBox" target="_blank" rel="noopener">TryHackMe · HackTheBox</a>.
+      </p>
+      <div id="profileHighlights" class="profile-highlights"></div>
     </section>
 
     <!-- Certifications -->
     <section id="certifications" class="main-section">
       <h2 data-txt="certifications"><ion-icon name="medal-outline"></ion-icon>Certifications</h2>
+      <div id="certFilters" class="filters"></div>
       <ul class="certificate-list" id="certificateList">
         <!-- Certificates loaded via JavaScript -->
       </ul>
@@ -160,14 +177,15 @@
     <!-- Skills -->
     <section id="skills" class="main-section">
       <h2 data-txt="skills"><ion-icon name="code-slash-outline"></ion-icon>Skills</h2>
+      <p data-txt="skills_intro" style="margin-bottom: 1.5em; color: #ccc;">Throughout my cybersecurity journey, I've developed expertise across multiple domains. Each skill represents countless hours of hands-on practice, lab work, and real-world application.</p>
       <ul class="skills-list">
-        <li><strong>Security Frameworks:</strong> NIST Cybersecurity Framework, ISO 27001</li>
-        <li><strong>Network Security:</strong> Network analysis, IDS/IPS, Firewall configuration</li>
-        <li><strong>Digital Forensics:</strong> Evidence collection, Data recovery, Incident response</li>
-        <li><strong>Cloud Security:</strong> AWS Security, CloudFormation, IAM</li>
-        <li><strong>Penetration Testing:</strong> Vulnerability assessment, Ethical hacking, OSINT</li>
-        <li><strong>Programming:</strong> Python, Bash scripting, SQL</li>
-        <li><strong>Threat Analysis:</strong> Malware analysis, Threat hunting, Risk assessment</li>
+        <li><strong data-txt="skills_1_title">Security Frameworks:</strong> <span data-txt="skills_1_desc">NIST Cybersecurity Framework, ISO 27001 - Understanding organizational security postures and compliance requirements</span></li>
+        <li><strong data-txt="skills_2_title">Network Security:</strong> <span data-txt="skills_2_desc">Network analysis, IDS/IPS configuration, Firewall management - Protecting perimeter defenses and monitoring traffic patterns</span></li>
+        <li><strong data-txt="skills_3_title">Digital Forensics:</strong> <span data-txt="skills_3_desc">Evidence collection, Data recovery, Incident response - Investigating security breaches and preserving digital evidence</span></li>
+        <li><strong data-txt="skills_4_title">Cloud Security:</strong> <span data-txt="skills_4_desc">AWS Security best practices, CloudFormation IaC, IAM policies - Securing cloud infrastructure and implementing least privilege access</span></li>
+        <li><strong data-txt="skills_5_title">Penetration Testing:</strong> <span data-txt="skills_5_desc">Vulnerability assessment, Ethical hacking methodologies, OSINT reconnaissance - Thinking like an attacker to strengthen defenses</span></li>
+        <li><strong data-txt="skills_6_title">Programming:</strong> <span data-txt="skills_6_desc">Python automation, Bash scripting, SQL database queries - Building tools and automating security workflows</span></li>
+        <li><strong data-txt="skills_7_title">Threat Analysis:</strong> <span data-txt="skills_7_desc">Malware analysis techniques, Threat hunting procedures, Risk assessment - Proactively identifying and mitigating threats</span></li>
       </ul>
     </section>
 
@@ -175,14 +193,49 @@
     <section id="education" class="main-section">
       <h2 data-txt="education"><ion-icon name="school-outline"></ion-icon>Education</h2>
       <div class="education-item">
-        <h3>Cybersecurity Bootcamp</h3>
-        <p><strong>UpgradeHub</strong> | 2024</p>
-        <p>Intensive full-time program covering ethical hacking, cloud security, digital forensics, and incident response. Hands-on experience with industry-standard tools and real-world scenarios.</p>
+        <h3 data-txt="edu_bootcamp_title">Cybersecurity Bootcamp</h3>
+        <p><strong data-txt="edu_bootcamp_org">UpgradeHub</strong> | <span data-txt="edu_bootcamp_date">2024</span></p>
+        <p data-txt="edu_bootcamp_desc">Intensive full-time program covering ethical hacking, cloud security, digital forensics, and incident response. Hands-on experience with industry-standard tools and real-world scenarios.</p>
       </div>
       <div class="education-item">
-        <h3>Continuous Learning</h3>
-        <p><strong>Cybrary, Security Blue Team, IBM</strong> | Ongoing</p>
-        <p>Active engagement in cybersecurity learning platforms to stay current with emerging threats and security technologies.</p>
+        <h3 data-txt="edu_continuous_title">Continuous Learning</h3>
+        <p><strong data-txt="edu_continuous_org">Cybrary, Security Blue Team, IBM</strong> | <span data-txt="edu_continuous_date">Ongoing</span></p>
+        <p data-txt="edu_continuous_desc">Active engagement in cybersecurity learning platforms to stay current with emerging threats and security technologies.</p>
+      </div>
+    </section>
+
+    <!-- Passion & Interests -->
+    <section id="passion" class="main-section">
+      <h2 data-txt="passion"><ion-icon name="heart-outline"></ion-icon>Passion & Interests</h2>
+      <p data-txt="passion_intro" style="margin-bottom: 1.5em; color: #ccc;">Beyond technical skills, I'm driven by curiosity and a commitment to financial sovereignty and privacy.</p>
+      
+      <div class="passion-grid">
+        <div class="passion-card">
+          <ion-icon name="logo-bitcoin" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;"></ion-icon>
+          <h3 data-txt="passion_bitcoin_title">Bitcoin & Financial Sovereignty</h3>
+          <p data-txt="passion_bitcoin_desc">Running my own Bitcoin Lightning node to support the decentralized network and promote financial freedom. I believe in self-custody, peer-to-peer transactions, and the importance of sound money principles.</p>
+          <p><a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" target="_blank" rel="noopener" data-txt="passion_bitcoin_link">View my Lightning Node →</a></p>
+        </div>
+        
+        <div class="passion-card">
+          <ion-icon name="shield-checkmark-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;"></ion-icon>
+          <h3 data-txt="passion_privacy_title">Privacy & Open Source</h3>
+          <p data-txt="passion_privacy_desc">Advocate for digital privacy and open-source software. I use privacy-focused tools like Proton Mail, contribute to open-source projects, and believe everyone deserves control over their personal data.</p>
+        </div>
+        
+        <div class="passion-card">
+          <ion-icon name="book-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;"></ion-icon>
+          <h3 data-txt="passion_learning_title">Continuous Learning</h3>
+          <p data-txt="passion_learning_desc">Cybersecurity is ever-evolving, and I'm passionate about staying ahead. From capture-the-flag competitions to reading security research papers, I'm always expanding my knowledge and testing new techniques.</p>
+          <p><a href="#journey" data-txt="passion_learning_link">Explore my learning journey →</a></p>
+        </div>
+        
+        <div class="passion-card">
+          <ion-icon name="globe-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;"></ion-icon>
+          <h3 data-txt="passion_community_title">Community & Collaboration</h3>
+          <p data-txt="passion_community_desc">I believe in sharing knowledge and helping others grow. Whether it's documenting my learning journey on GitHub or mentoring newcomers, I'm committed to building a stronger security community.</p>
+          <p><a href="https://github.com/JimBLogic" target="_blank" rel="noopener" data-txt="passion_community_link">View my GitHub →</a></p>
+        </div>
       </div>
     </section>
 
@@ -191,6 +244,23 @@
       <h2 data-txt="software"><ion-icon name="desktop-outline"></ion-icon>Software</h2>
       <ul class="software-list" id="softwareList">
         <!-- Software loaded via JavaScript -->
+      </ul>
+    </section>
+
+    <!-- Learning Journey -->
+    <section id="journey" class="main-section">
+      <h2 data-txt="journey"><ion-icon name="map-outline"></ion-icon>Learning Journey</h2>
+      <div class="journey-grid" id="journeyGrid"></div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="main-section">
+      <h2 data-txt="projects"><ion-icon name="folder-open-outline"></ion-icon>Projects</h2>
+      <div style="margin: 8px 0 12px 0;">
+        <button id="projectsToggle" class="filter-btn" data-txt="projects_expand">Expand</button>
+      </div>
+      <ul class="projects-list" id="projectsList">
+        <!-- Projects loaded via JavaScript from GitHub API -->
       </ul>
     </section>
 
@@ -206,22 +276,17 @@
     <section id="contact" class="main-section">
       <h2 data-txt="contact"><ion-icon name="mail-outline"></ion-icon>Contact</h2>
       <p data-txt="contact_1">Ready to collaborate? Reach out via email:</p>
-      <p><a href="mailto:jrf91@proton.me" class="contact-link">jrf91@proton.me</a></p>
+  <p><a href="mailto:jrf91@pm.me" class="contact-link">jrf91@pm.me</a></p>
       <p data-txt="contact_2">Or connect via <a href="https://www.linkedin.com/in/jimblogic/" target="_blank">LinkedIn</a></p>
     </section>
     
   </main>
 </div>
 
-<!-- Scroll Navigation Buttons -->
-<div class="scroll-buttons">
-  <button class="scroll-btn scroll-top" id="scrollTop" title="Scroll to top">
-    <ion-icon name="chevron-up-outline"></ion-icon>
-  </button>
-  <button class="scroll-btn scroll-bottom" id="scrollBottom" title="Scroll to bottom">
-    <ion-icon name="chevron-down-outline"></ion-icon>
-  </button>
-</div>
+<!-- Scroll to Top Button (only visible when scrolled down) -->
+<button class="scroll-btn scroll-top" id="scrollTop" title="Scroll to top">
+  <ion-icon name="chevron-up-outline"></ion-icon>
+</button>
 
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/translate.js"></script>
