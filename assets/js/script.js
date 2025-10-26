@@ -213,6 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.navbar-link');
   const navbarList = document.querySelector('.navbar-list');
   let lastActiveId = '';
+  // Disable automatic nav scrolling on small screens to avoid fighting touch scroll
+  const isMobileView = () => window.matchMedia('(max-width: 700px)').matches;
   
   function updateActiveNav() {
     let current = '';
@@ -234,21 +236,23 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.toggle('active', isActive);
       });
 
-      // Smart-scroll the nav list so active stays visible
-      const activeLink = Array.from(navLinks).find(l => l.classList.contains('active'));
-      if (navbarList && activeLink) {
-        const ids = Array.from(sections, s => s.id);
-        const idx = ids.indexOf(current);
+      // Smart-scroll the nav list so active stays visible — but NOT on mobile
+      if (!isMobileView()) {
+        const activeLink = Array.from(navLinks).find(l => l.classList.contains('active'));
+        if (navbarList && activeLink) {
+          const ids = Array.from(sections, s => s.id);
+          const idx = ids.indexOf(current);
 
-        // When near top sections, show the top of the list so avatar is visible
-        if (idx <= 1) {
-          navbarList.scrollTo({ top: 0, behavior: 'smooth' });
-        // When near last sections, bias to bottom
-        } else if (idx >= ids.length - 2) {
-          navbarList.scrollTo({ top: navbarList.scrollHeight, behavior: 'smooth' });
-        } else {
-          // Otherwise keep it near the active item without big jumps
-          activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+          // When near top sections, show the top of the list so avatar is visible
+          if (idx <= 1) {
+            navbarList.scrollTo({ top: 0, behavior: 'smooth' });
+          // When near last sections, bias to bottom
+          } else if (idx >= ids.length - 2) {
+            navbarList.scrollTo({ top: navbarList.scrollHeight, behavior: 'smooth' });
+          } else {
+            // Otherwise keep it near the active item without big jumps
+            activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+          }
         }
       }
     }
