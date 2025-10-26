@@ -24,15 +24,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* IMPORTANT: Always allow background animations for this site.
+   The following media query previously disabled animations when
+   the OS had "Reduce motion" enabled, which made the background
+   look static. We intentionally do NOT reduce animations here. */
 
 html {
   scroll-behavior: smooth;
