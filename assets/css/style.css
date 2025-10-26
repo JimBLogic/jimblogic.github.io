@@ -148,51 +148,35 @@ body {
     radial-gradient(circle at 20% 20%, #2d4a2a 0, #1a2e1a 30%, transparent 60%),
     radial-gradient(circle at 80% 80%, #3a3a3a 0, #2a2a2a 25%, transparent 50%),
     /* Circuit traces */
-    repeating-linear-gradient(0deg, transparent 0, transparent 8px, #00ff4420 8px, #00ff4420 10px, transparent 10px, transparent 25px),
-    repeating-linear-gradient(90deg, transparent 0, transparent 12px, #f7931a15 12px, #f7931a15 14px, transparent 14px, transparent 30px),
-    repeating-linear-gradient(45deg, transparent 0, transparent 20px, #2d4a2a25 20px, #2d4a2a25 22px, transparent 22px, transparent 45px),
+    repeating-linear-gradient(0deg, transparent 0, transparent 8px, #00ff4440 8px, #00ff4440 10px, transparent 10px, transparent 25px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 12px, #f7931a30 12px, #f7931a30 14px, transparent 14px, transparent 30px),
+    repeating-linear-gradient(45deg, transparent 0, transparent 20px, #2d4a2a40 20px, #2d4a2a40 22px, transparent 22px, transparent 45px),
     /* Electrical nodes */
-    radial-gradient(circle at 15% 35%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 85% 15%, #f7931a 0, #f7931a40 2px, transparent 3px),
-    radial-gradient(circle at 25% 85%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 75% 65%, #f7931a 0, #f7931a40 2px, transparent 3px),
+    radial-gradient(circle at 15% 35%, #00ff88 0, #00ff4460 2px, transparent 3px),
+    radial-gradient(circle at 85% 15%, #f7931a 0, #f7931a60 2px, transparent 3px),
+    radial-gradient(circle at 25% 85%, #00ff88 0, #00ff4460 2px, transparent 3px),
+    radial-gradient(circle at 75% 65%, #f7931a 0, #f7931a60 2px, transparent 3px),
     /* Base metallic texture */
     linear-gradient(135deg, #232526 0%, #1a1a1a 50%, #2a2a2a 100%);
   background-size: 100% 100%, 100% 100%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
-  animation: motherboardFlow 20s cubic-bezier(0.4, 0, 0.2, 1) infinite, electricalPulse 4s ease-in-out infinite alternate;
-  /* Performance optimizations */
-  will-change: background-position, filter;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  animation: motherboardFlow 15s linear infinite, electricalPulse 3s ease-in-out infinite alternate;
 }
 
 @keyframes motherboardFlow {
   0% { 
-    background-position: 0% 0%, 100% 100%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0% 0%; 
-  }
-  25% { 
-    background-position: 25% 25%, 75% 75%, 10px 10px, 15px 15px, 20px 20px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 25% 25%; 
-  }
-  50% { 
-    background-position: 50% 50%, 50% 50%, 20px 20px, 30px 30px, 40px 40px, 2px 2px, 2px 2px, 2px 2px, 2px 2px, 50% 50%; 
-  }
-  75% { 
-    background-position: 75% 75%, 25% 25%, 30px 30px, 45px 45px, 60px 60px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 75% 75%; 
+    background-position: 0% 0%, 0% 0%, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%; 
   }
   100% { 
-    background-position: 100% 100%, 0% 0%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%; 
+    background-position: 100% 100%, 100% 100%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%; 
   }
 }
 
 @keyframes electricalPulse {
   0% { 
-    filter: brightness(1.08) contrast(1.12) hue-rotate(0deg); 
-  }
-  50% { 
-    filter: brightness(1.18) contrast(1.18) hue-rotate(3deg); 
+    filter: brightness(1.0) contrast(1.1) hue-rotate(0deg); 
   }
   100% { 
-    filter: brightness(1.13) contrast(1.22) hue-rotate(5deg); 
+    filter: brightness(1.3) contrast(1.3) hue-rotate(10deg); 
   }
 }
 
@@ -200,23 +184,20 @@ body {
 .bg-animation::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   background:
-    /* Flowing electrical current */
-    repeating-linear-gradient(15deg, transparent 0, transparent 18px, #00ff4408 18px, #00ff4408 22px, transparent 22px, transparent 40px),
-    repeating-linear-gradient(105deg, transparent 0, transparent 15px, #f7931a08 15px, #f7931a08 18px, transparent 18px, transparent 35px);
-  animation: electricalFlow 12s linear infinite;
-  opacity: 0.7;
-  will-change: transform;
-  transform: translateZ(0);
+    repeating-linear-gradient(45deg, transparent 0, transparent 20px, #00ff4420 20px, #00ff4420 22px, transparent 22px, transparent 50px),
+    repeating-linear-gradient(135deg, transparent 0, transparent 20px, #f7931a20 20px, #f7931a20 22px, transparent 22px, transparent 50px);
+  animation: electricalFlow 10s linear infinite;
+  opacity: 0.8;
 }
 
 @keyframes electricalFlow {
-  0% { transform: translate3d(-100%, -100%, 0); }
-  100% { transform: translate3d(100%, 100%, 0); }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(50px, 50px) rotate(360deg); }
 }
 
 /* Glowing circuit nodes */
@@ -228,20 +209,18 @@ body {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 10% 10%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 90% 20%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 30% 70%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 70% 90%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 50% 30%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 20% 60%, #f7931aaa 0, #f7931a40 1px, transparent 2px);
-  animation: nodeGlow 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
-  will-change: opacity, transform;
-  transform: translateZ(0);
+    radial-gradient(circle at 10% 10%, #00ff88dd 0, #00ff4480 2px, transparent 4px),
+    radial-gradient(circle at 90% 20%, #f7931add 0, #f7931a80 2px, transparent 4px),
+    radial-gradient(circle at 30% 70%, #00ff88dd 0, #00ff4480 2px, transparent 4px),
+    radial-gradient(circle at 70% 90%, #f7931add 0, #f7931a80 2px, transparent 4px),
+    radial-gradient(circle at 50% 30%, #00ff88dd 0, #00ff4480 2px, transparent 4px),
+    radial-gradient(circle at 20% 60%, #f7931add 0, #f7931a80 2px, transparent 4px);
+  animation: nodeGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes nodeGlow {
-  0% { opacity: 0.3; transform: scale(1) translateZ(0); }
-  100% { opacity: 0.7; transform: scale(1.08) translateZ(0); }
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.3); }
 }
 
 .container {
@@ -279,7 +258,7 @@ body {
     radial-gradient(circle at 60% 20%, rgba(247, 147, 26, 0.25) 0, rgba(247, 147, 26, 0.25) 1px, transparent 1.5px),
     radial-gradient(circle at 15% 80%, rgba(247, 147, 26, 0.25) 0, rgba(247, 147, 26, 0.25) 1px, transparent 1.5px);
   background-size: 100% 100%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
-  animation: avatarCircuitFlow 8s ease-in-out infinite;
+  animation: avatarCircuitFlow 6s linear infinite;
   border-radius: 28px;
   max-width: 240px;
   width: 100%;
@@ -294,16 +273,11 @@ body {
   border: 2px solid rgba(247, 147, 26, 0.4);
   position: relative;
   overflow: hidden;
-  will-change: background-position;
-  transform: translateZ(0);
 }
 
 @keyframes avatarCircuitFlow {
   0% { 
-    background-position: 0% 0%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
-  }
-  50% { 
-    background-position: 0% 0%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
+    background-position: 0% 0%, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
   }
   100% { 
     background-position: 0% 0%, 30px 30px, 30px 30px, 50px 50px, 40px 40px, 36px 36px, 24px 24px, 20px 20px, 16px 16px;
@@ -317,10 +291,8 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.6), transparent);
-  animation: circuitGlow 3s ease-in-out infinite;
-  will-change: left;
-  transform: translateZ(0);
+  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.8), transparent);
+  animation: circuitGlow 2s ease-in-out infinite;
   z-index: 1;
 }
 
@@ -331,24 +303,25 @@ body {
   left: -5px;
   right: -5px;
   bottom: -5px;
-  background: conic-gradient(from 0deg, rgba(247, 147, 26, 0.1), rgba(247, 147, 26, 0.35), rgba(247, 147, 26, 0.1));
+  background: conic-gradient(
+    from 0deg,
+    rgba(247, 147, 26, 0.2),
+    rgba(247, 147, 26, 0.8),
+    rgba(247, 147, 26, 0.2)
+  );
   border-radius: 32px;
   z-index: -1;
-  animation: rotateGlow 10s linear infinite;
-  will-change: transform;
-  transform: translateZ(0);
+  animation: rotateGlow 8s linear infinite;
 }
-
-
 
 @keyframes circuitGlow {
   0% { left: -100%; }
-  100% { left: 100%; }
+  100% { left: 200%; }
 }
 
 @keyframes rotateGlow {
-  0% { transform: rotate(0deg) translateZ(0); }
-  100% { transform: rotate(360deg) translateZ(0); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .avatar-box img {
