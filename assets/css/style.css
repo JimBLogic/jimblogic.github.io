@@ -144,98 +144,21 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    /* Metal and green PCB base */
-    radial-gradient(circle at 20% 20%, #2d4a2a 0, #1a2e1a 30%, transparent 60%),
-    radial-gradient(circle at 80% 80%, #3a3a3a 0, #2a2a2a 25%, transparent 50%),
-    /* Circuit traces */
-    repeating-linear-gradient(0deg, transparent 0, transparent 8px, #00ff4420 8px, #00ff4420 10px, transparent 10px, transparent 25px),
-    repeating-linear-gradient(90deg, transparent 0, transparent 12px, #f7931a15 12px, #f7931a15 14px, transparent 14px, transparent 30px),
-    repeating-linear-gradient(45deg, transparent 0, transparent 20px, #2d4a2a25 20px, #2d4a2a25 22px, transparent 22px, transparent 45px),
-    /* Electrical nodes */
-    radial-gradient(circle at 15% 35%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 85% 15%, #f7931a 0, #f7931a40 2px, transparent 3px),
-    radial-gradient(circle at 25% 85%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 75% 65%, #f7931a 0, #f7931a40 2px, transparent 3px),
-    /* Base metallic texture */
-    linear-gradient(135deg, #232526 0%, #1a1a1a 50%, #2a2a2a 100%);
-  background-size: 100% 100%, 100% 100%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
-  animation: motherboardFlow 12s ease-in-out infinite, electricalPulse 3s ease-in-out infinite alternate;
-  filter: brightness(1.1) contrast(1.15);
+    radial-gradient(circle at 5% 10%, #dbe0e3 0, #a8a8a8 20%, #474747 65%, transparent 100%),
+    radial-gradient(circle at 95% 80%, #f7931a33 0, #383838 50%, transparent 100%),
+    repeating-linear-gradient(120deg, #86868622 0 2px, transparent 2px 24px),
+    repeating-linear-gradient(-60deg, #f7931a11 0 3px, transparent 3px 32px);
+  animation: bgmove 20s ease-in-out infinite;
+  filter: brightness(1.12) blur(1px) contrast(1.12);
   transition: filter 0.4s;
 }
 
-@keyframes motherboardFlow {
-  0% {
-    background-position: 0% 0%, 100% 100%, 0 0, 0 0, 0 0, 0 0, 20px 20px, 40px 10px, 10px 40px, 0% 0%;
-  }
-  25% {
-    background-position: 25% 15%, 75% 85%, 10px 5px, 15px 10px, 5px 15px, 2px 1px, 22px 18px, 38px 12px, 12px 38px, 25% 15%;
-  }
-  50% {
-    background-position: 50% 30%, 50% 70%, 20px 10px, 30px 20px, 10px 30px, 4px 2px, 24px 16px, 36px 14px, 14px 36px, 50% 30%;
-  }
-  75% {
-    background-position: 75% 45%, 25% 55%, 30px 15px, 45px 30px, 15px 45px, 6px 3px, 26px 14px, 34px 16px, 16px 34px, 75% 45%;
-  }
-  100% {
-    background-position: 100% 60%, 0% 40%, 40px 20px, 60px 40px, 20px 60px, 8px 4px, 28px 12px, 32px 18px, 18px 32px, 100% 60%;
-  }
-}
-
-@keyframes electricalPulse {
-  0% {
-    filter: brightness(1.1) contrast(1.15) hue-rotate(0deg);
-  }
-  50% {
-    filter: brightness(1.2) contrast(1.2) hue-rotate(5deg);
-  }
-  100% {
-    filter: brightness(1.3) contrast(1.25) hue-rotate(10deg);
-  }
-}
-
-/* Additional electrical flow effects */
-.bg-animation::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    /* Flowing electrical current */
-    repeating-linear-gradient(15deg, transparent 0, transparent 18px, #00ff4408 18px, #00ff4408 22px, transparent 22px, transparent 40px),
-    repeating-linear-gradient(105deg, transparent 0, transparent 15px, #f7931a08 15px, #f7931a08 18px, transparent 18px, transparent 35px);
-  animation: electricalFlow 8s linear infinite;
-  opacity: 0.6;
-}
-
-@keyframes electricalFlow {
-  0% { transform: translateX(-100%) translateY(-100%); }
-  100% { transform: translateX(100%) translateY(100%); }
-}
-
-/* Glowing circuit nodes */
-.bg-animation::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 10% 10%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 90% 20%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 30% 70%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 70% 90%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 50% 30%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 20% 60%, #f7931aaa 0, #f7931a40 1px, transparent 2px);
-  animation: nodeGlow 4s ease-in-out infinite alternate;
-}
-
-@keyframes nodeGlow {
-  0% { opacity: 0.3; transform: scale(1); }
-  100% { opacity: 0.8; transform: scale(1.1); }
+@keyframes bgmove {
+  0% { background-position: 0% 0%, 100% 100%, 0 0, 0 0; }
+  25% { background-position: 20% 10%, 80% 90%, 15px 5px, 5px 15px; }
+  50% { background-position: 40% 20%, 60% 70%, 30px 10px, 10px 30px; }
+  75% { background-position: 60% 30%, 40% 50%, 45px 15px, 15px 45px; }
+  100% { background-position: 80% 40%, 20% 30%, 60px 20px, 20px 60px; }
 }
 
 .container {
