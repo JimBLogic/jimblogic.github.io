@@ -160,8 +160,6 @@ body {
     linear-gradient(135deg, #232526 0%, #1a1a1a 50%, #2a2a2a 100%);
   background-size: 100% 100%, 100% 100%, 40px 40px, 60px 60px, 80px 80px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
   animation: motherboardFlow 20s cubic-bezier(0.4, 0, 0.2, 1) infinite, electricalPulse 4s ease-in-out infinite alternate;
-  filter: brightness(1.1) contrast(1.15);
-  transition: filter 0.4s;
   /* Performance optimizations */
   will-change: background-position, filter;
   transform: translateZ(0);
@@ -188,13 +186,13 @@ body {
 
 @keyframes electricalPulse {
   0% { 
-    filter: brightness(1.05) contrast(1.1) hue-rotate(0deg); 
+    filter: brightness(1.08) contrast(1.12) hue-rotate(0deg); 
   }
   50% { 
-    filter: brightness(1.15) contrast(1.15) hue-rotate(3deg); 
+    filter: brightness(1.18) contrast(1.18) hue-rotate(3deg); 
   }
   100% { 
-    filter: brightness(1.1) contrast(1.2) hue-rotate(5deg); 
+    filter: brightness(1.13) contrast(1.22) hue-rotate(5deg); 
   }
 }
 
@@ -275,12 +273,13 @@ body {
     repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(247, 147, 26, 0.25) 6px, rgba(247, 147, 26, 0.25) 8px),
     repeating-linear-gradient(0deg, transparent, transparent 6px, rgba(247, 147, 26, 0.2) 6px, rgba(247, 147, 26, 0.2) 8px),
     repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(247, 147, 26, 0.15) 12px, rgba(247, 147, 26, 0.15) 14px),
-    radial-gradient(circle at 20% 20%, rgba(247, 147, 26, 0.4) 3px, transparent 3px),
-    radial-gradient(circle at 80% 80%, rgba(247, 147, 26, 0.4) 3px, transparent 3px),
-    radial-gradient(circle at 40% 60%, rgba(247, 147, 26, 0.3) 2px, transparent 2px),
-    radial-gradient(circle at 60% 20%, rgba(247, 147, 26, 0.25) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 15% 80%, rgba(247, 147, 26, 0.25) 1.5px, transparent 1.5px);
-  background-size: 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
+    radial-gradient(circle at 20% 20%, rgba(247, 147, 26, 0.4) 0, rgba(247, 147, 26, 0.4) 2px, transparent 3px),
+    radial-gradient(circle at 80% 80%, rgba(247, 147, 26, 0.4) 0, rgba(247, 147, 26, 0.4) 2px, transparent 3px),
+    radial-gradient(circle at 40% 60%, rgba(247, 147, 26, 0.3) 0, rgba(247, 147, 26, 0.3) 1.5px, transparent 2px),
+    radial-gradient(circle at 60% 20%, rgba(247, 147, 26, 0.25) 0, rgba(247, 147, 26, 0.25) 1px, transparent 1.5px),
+    radial-gradient(circle at 15% 80%, rgba(247, 147, 26, 0.25) 0, rgba(247, 147, 26, 0.25) 1px, transparent 1.5px);
+  background-size: 100% 100%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
+  animation: avatarCircuitFlow 8s ease-in-out infinite;
   border-radius: 28px;
   max-width: 240px;
   width: 100%;
@@ -295,6 +294,26 @@ body {
   border: 2px solid rgba(247, 147, 26, 0.4);
   position: relative;
   overflow: hidden;
+  will-change: background-position;
+  transform: translateZ(0);
+}
+
+@keyframes avatarCircuitFlow {
+  0% { 
+    background-position: 0% 0%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  25% { 
+    background-position: 0% 0%, 4px 4px, 3px 3px, 6px 6px, 5px 5px, 4px 4px, 3px 3px, 2px 2px, 2px 2px;
+  }
+  50% { 
+    background-position: 0% 0%, 8px 8px, 6px 6px, 12px 12px, 10px 10px, 8px 8px, 6px 6px, 4px 4px, 4px 4px;
+  }
+  75% { 
+    background-position: 0% 0%, 12px 12px, 9px 9px, 18px 18px, 15px 15px, 12px 12px, 9px 9px, 6px 6px, 6px 6px;
+  }
+  100% { 
+    background-position: 0% 0%, 15px 15px, 15px 15px, 25px 25px, 20px 20px, 18px 18px, 12px 12px, 10px 10px, 8px 8px;
+  }
 }
 
 .avatar-bg::before {
@@ -304,8 +323,10 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.3), transparent);
-  animation: circuitGlow 4s infinite;
+  background: linear-gradient(90deg, transparent, rgba(247, 147, 26, 0.4), transparent);
+  animation: circuitGlow 4s ease-in-out infinite;
+  will-change: left;
+  transform: translateZ(0);
 }
 
 .avatar-bg::after {
@@ -315,10 +336,12 @@ body {
   left: -5px;
   right: -5px;
   bottom: -5px;
-  background: conic-gradient(from 0deg, rgba(247, 147, 26, 0.1), rgba(247, 147, 26, 0.3), rgba(247, 147, 26, 0.1));
+  background: conic-gradient(from 0deg, rgba(247, 147, 26, 0.1), rgba(247, 147, 26, 0.35), rgba(247, 147, 26, 0.1));
   border-radius: 32px;
   z-index: -1;
-  animation: rotateGlow 8s linear infinite;
+  animation: rotateGlow 10s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 
@@ -329,8 +352,8 @@ body {
 }
 
 @keyframes rotateGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg) translateZ(0); }
+  100% { transform: rotate(360deg) translateZ(0); }
 }
 
 .avatar-box img {
