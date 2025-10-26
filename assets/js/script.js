@@ -211,23 +211,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active navigation based on scroll position
   const sections = document.querySelectorAll('.main-section');
   const navLinks = document.querySelectorAll('.navbar-link');
+  const navbarList = document.querySelector('.navbar-list');
+  let lastActiveId = '';
   
   function updateActiveNav() {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
       if (scrollY >= (sectionTop - 200)) {
         current = section.getAttribute('id');
       }
     });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
+
+    if (!current) return;
+
+    // Only react when active section changed
+    if (current !== lastActiveId) {
+      lastActiveId = current;
+
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${current}`;
+        link.classList.toggle('active', isActive);
+      });
+
+      // Smart-scroll the nav list so active stays visible
+      const activeLink = Array.from(navLinks).find(l => l.classList.contains('active'));
+      if (navbarList && activeLink) {
+        const ids = Array.from(sections, s => s.id);
+        const idx = ids.indexOf(current);
+
+        // When near top sections, show the top of the list so avatar is visible
+        if (idx <= 1) {
+          navbarList.scrollTo({ top: 0, behavior: 'smooth' });
+        // When near last sections, bias to bottom
+        } else if (idx >= ids.length - 2) {
+          navbarList.scrollTo({ top: navbarList.scrollHeight, behavior: 'smooth' });
+        } else {
+          // Otherwise keep it near the active item without big jumps
+          activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
       }
-    });
+    }
   }
   
   // Use passive event listener for better scroll performance
