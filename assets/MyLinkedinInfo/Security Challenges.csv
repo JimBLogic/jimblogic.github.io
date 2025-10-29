@@ -1,0 +1,37 @@
+Challenge Date,IP Address,User Agent,Country,Challenge Type
+Tue Jan 02 15:17:20 UTC 2024,88.22.138.237,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",Spain,CAPTCHA_CHALLENGE
+Tue Jan 02 15:17:29 UTC 2024,88.22.138.237,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",Spain,CAPTCHA_CHALLENGE
+Tue Jan 02 15:17:30 UTC 2024,88.22.138.237,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",Spain,EMAIL_PIN_CHALLENGE
+Tue Jan 02 15:17:57 UTC 2024,88.22.138.237,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",Spain,EMAIL_PIN_CHALLENGE
+Wed Jan 03 11:04:47 UTC 2024,92.58.109.24,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15",Spain,EMAIL_PIN_CHALLENGE
+Wed Jan 03 11:05:09 UTC 2024,92.58.109.24,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15",Spain,EMAIL_PIN_CHALLENGE
+Thu Mar 21 16:17:55 UTC 2024,88.23.86.195,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",Spain,EMAIL_PIN_CHALLENGE
+Wed Mar 27 12:37:13 UTC 2024,88.23.86.195,LIAuthLibrary:0.0.3 com.linkedin.android:4.1.921 Google_Pixel 6a:android_14,Spain,EMAIL_PIN_CHALLENGE
+Wed Mar 27 12:37:38 UTC 2024,88.23.86.195,LIAuthLibrary:0.0.3 com.linkedin.android:4.1.921 Google_Pixel 6a:android_14,Spain,EMAIL_PIN_CHALLENGE
+Sat Apr 06 07:44:31 UTC 2024,2a02:9130:853b:8ea8:17c3:9aec:eb38:1c68,"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",Spain,CAPTCHA_CHALLENGE
+Sat Apr 06 07:44:31 UTC 2024,2a02:9130:853b:8ea8:17c3:9aec:eb38:1c68,"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",Spain,CAPTCHA_CHALLENGE
+Sat Apr 06 07:44:55 UTC 2024,2a02:9130:853b:8ea8:17c3:9aec:eb38:1c68,"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",Spain,CAPTCHA_CHALLENGE
+Mon Jul 29 20:54:08 UTC 2024,88.23.91.215,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",Spain,EMAIL_PIN_CHALLENGE
+Mon Jul 29 20:54:08 UTC 2024,88.23.91.215,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",Spain,EMAIL_PIN_CHALLENGE
+Wed Aug 07 08:44:08 UTC 2024,88.23.91.215,"Mozilla/5.0 (Linux; Android 14; Pixel 6a Build/AP2A.240705.004; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/127.0.6533.84 Mobile Safari/537.36 [LinkedInApp]/1.44.58",Spain,EMAIL_PIN_CHALLENGE
+Wed Aug 07 08:44:24 UTC 2024,88.23.91.215,"Mozilla/5.0 (Linux; Android 14; Pixel 6a Build/AP2A.240705.004; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/127.0.6533.84 Mobile Safari/537.36 [LinkedInApp]/1.44.58",Spain,EMAIL_PIN_CHALLENGE
+Thu Mar 20 18:11:26 UTC 2025,191.30.98.23,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Brazil,CAPTCHA_CHALLENGE
+Thu Mar 20 18:11:26 UTC 2025,191.30.98.23,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Brazil,CAPTCHA_CHALLENGE
+Thu Mar 20 18:12:16 UTC 2025,201.83.124.20,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Brazil,CAPTCHA_CHALLENGE
+Thu Mar 20 18:12:16 UTC 2025,201.83.124.20,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Brazil,CAPTCHA_CHALLENGE
+Thu Mar 20 22:17:08 UTC 2025,37.212.1.162,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Belarus,CAPTCHA_CHALLENGE
+Thu Mar 20 22:17:08 UTC 2025,37.212.1.162,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",Belarus,CAPTCHA_CHALLENGE
+Sat May 24 19:02:26 UTC 2025,156.253.164.170,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sat May 24 19:02:26 UTC 2025,156.253.164.170,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sat May 24 20:07:34 UTC 2025,154.213.163.30,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",United States,CAPTCHA_CHALLENGE
+Sat May 24 20:07:34 UTC 2025,154.213.163.30,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",United States,CAPTCHA_CHALLENGE
+Sat May 24 22:29:01 UTC 2025,156.228.104.229,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sat May 24 22:29:01 UTC 2025,156.228.104.229,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sat May 24 22:29:11 UTC 2025,156.242.43.172,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sat May 24 22:29:11 UTC 2025,156.242.43.172,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sun May 25 05:09:09 UTC 2025,156.253.170.54,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sun May 25 05:09:09 UTC 2025,156.253.170.54,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sun May 25 08:03:42 UTC 2025,156.228.119.211,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Sun May 25 08:03:42 UTC 2025,156.228.119.211,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Mon Jun 16 20:35:46 UTC 2025,156.228.80.161,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
+Mon Jun 16 20:35:46 UTC 2025,156.228.80.161,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",South Africa,CAPTCHA_CHALLENGE
