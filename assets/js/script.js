@@ -69,6 +69,10 @@ function renderCertListFiltered(listId, issuer) {
       ? `<li style="cursor: pointer;" onclick="window.open('${cert.link}', '_blank')">${listContent}</li>`
       : `<li>${listContent}</li>`;
   }).join('');
+  // Re-run collapsible initialization in case this injected content created long sections
+  try {
+    if (window.reinitCollapsibles) setTimeout(window.reinitCollapsibles, 50);
+  } catch (e) { /* ignore */ }
 }
 
 function buildCertFilters() {
@@ -436,3 +440,103 @@ window.onLanguageChanged = function(lang) {
     renderProfileHighlights('profileHighlights', 'JimBLogic');
   } catch (e) { /* no-op */ }
 };
+
+// Collapsible sections initializer
+(function() {
+  const COLLAPSE_THRESHOLD = 520; // px
+
+  function wrapSectionBody(sec) {
+    let body = sec.querySelector('.section-body');
+    const title = sec.querySelector('.section-title');
+    if (!body) {
+      body = document.createElement('div');
+      body.className = 'section-body';
+
+      // Move nodes that are not the title into the body
+      const nodes = [];
+      Array.from(sec.children).forEach(child => {
+        if (child === title) return;
+        if (child.classList && child.classList.contains('section-toggle')) return;
+        nodes.push(child);
+      });
+      nodes.forEach(n => body.appendChild(n));
+
+      if (title && title.nextSibling) {
+        title.parentNode.insertBefore(body, title.nextSibling);
+      } else {
+        sec.appendChild(body);
+      }
+    }
+    return body;
+  }
+
+  function createToggle(sec, body, fullHeight) {
+    // Don't create if already present
+    if (sec.querySelector('.section-toggle')) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'section-toggle';
+    btn.type = 'button';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Show more';
+
+    const fade = document.createElement('div');
+    fade.className = 'section-fade';
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        // collapse
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Show more';
+        body.style.maxHeight = `${Math.min(COLLAPSE_THRESHOLD, fullHeight)}px`;
+        sec.classList.remove('expanded');
+        fade.style.display = '';
+      } else {
+        // expand
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Show less';
+        body.style.maxHeight = `${fullHeight}px`;
+        sec.classList.add('expanded');
+        fade.style.display = 'none';
+      }
+      // smooth scroll to keep the section header visible when expanding
+      setTimeout(() => {
+        sec.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 200);
+    });
+
+    sec.appendChild(fade);
+    sec.appendChild(btn);
+  }
+
+  window.reinitCollapsibles = function() {
+    const sections = document.querySelectorAll('.main-section');
+    sections.forEach(sec => {
+      const body = wrapSectionBody(sec);
+      if (!body) return;
+      // Allow layout to settle
+      const fullHeight = body.scrollHeight;
+      if (fullHeight > COLLAPSE_THRESHOLD) {
+        sec.classList.add('collapsible');
+        // Set initial collapsed max-height if not expanded
+        if (!sec.classList.contains('expanded')) {
+          body.style.maxHeight = `${Math.min(COLLAPSE_THRESHOLD, fullHeight)}px`;
+        }
+        body.style.overflow = 'hidden';
+        body.style.transition = 'max-height 350ms ease';
+        createToggle(sec, body, fullHeight);
+      }
+    });
+  };
+
+  // Auto-run on initial load if DOM is ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(() => { try { window.reinitCollapsibles(); } catch (e) {} }, 50);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => { try { window.reinitCollapsibles(); } catch (e) {} }, 50);
+    });
+  }
+
+})();
