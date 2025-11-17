@@ -1,0 +1,45 @@
+name: CI — Lint & Accessibility
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 3 * * 0' # weekly run
+
+jobs:
+  html-lint-and-a11y:
+    name: HTML lint & Accessibility (axe)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install global tools
+        run: |
+          npm install -g htmlhint @axe-core/cli
+
+      - name: Run HTMLHint
+        run: |
+          echo "Running htmlhint on HTML files..."
+          htmlhint "**/*.html"
+
+      - name: Run axe accessibility audit against live site
+        env:
+          TARGET_URL: https://jimblogic.github.io/
+        run: |
+          echo "Running axe CLI against $TARGET_URL"
+          axe "$TARGET_URL" --save=axe-results.json
+
+      - name: Upload axe report
+        uses: actions/upload-artifact@v4
+        with:
+          name: axe-results
+          path: axe-results.json
