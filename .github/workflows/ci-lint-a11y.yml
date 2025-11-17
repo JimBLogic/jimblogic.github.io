@@ -25,7 +25,8 @@ jobs:
 
       - name: Install tools
         run: |
-          npm install -g htmlhint @axe-core/cli stylelint stylelint-config-standard eslint
+          npm install -g htmlhint @axe-core/cli \
+            stylelint stylelint-config-standard eslint
 
       - name: Run HTMLHint
         run: htmlhint "**/*.html" || true
