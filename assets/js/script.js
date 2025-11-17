@@ -211,6 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
       renderProjectsView('projectsList');
     });
   }
+
+  // Ensure toggle has initial ARIA state and updates when renderProjectsView runs
+  if (projectsToggle) {
+    projectsToggle.setAttribute('aria-controls', 'projectsList');
+    projectsToggle.setAttribute('aria-expanded', PROJECTS_EXPANDED ? 'true' : 'false');
+  }
   
   // Active navigation based on scroll position
   const sections = document.querySelectorAll('.main-section');
@@ -323,6 +329,19 @@ function repoToListItem(repo) {
     `<span class="badge badge-star">⭐ ${stars}</span>`
   ].filter(Boolean).join(' ');
 
+  // Mark repo as featured if it appears in MANUAL_PROJECTS (by URL or name)
+  let featuredBadgeHtml = '';
+  try {
+    if (Array.isArray(window && window.MANUAL_PROJECTS ? window.MANUAL_PROJECTS : MANUAL_PROJECTS)) {
+      const key = (repo && (repo.html_url || repo.name) || '').toString().toLowerCase();
+      const found = (window.MANUAL_PROJECTS || MANUAL_PROJECTS).some(m => {
+        const mk = (m && (m.html_url || m.name) || '').toString().toLowerCase();
+        return mk && key && mk === key;
+      });
+      if (found) featuredBadgeHtml = `<span class="badge badge-featured">Featured</span>`;
+    }
+  } catch (e) { /* ignore */ }
+
   const topicsHtml = topics.length
     ? `<div class="topics">${topics.map(t => `<span class="topic">${t}</span>`).join('')}</div>`
     : '';
@@ -330,7 +349,7 @@ function repoToListItem(repo) {
   const listContent = `
     ${imgLocalThenOnline('', avatar, name)}
     <div>
-      <strong>${name}</strong><br>
+      <strong>${name} ${featuredBadgeHtml}</strong><br>
       <span>${desc}</span>
       <div class="badges">${infoBadges}</div>
       ${topicsHtml}
@@ -443,6 +462,7 @@ function renderProjectsView(listId) {
     toggleBtn.setAttribute('data-txt', key);
     toggleBtn.textContent = t(key);
     toggleBtn.style.display = (unique && unique.length) ? 'inline-block' : 'none';
+    toggleBtn.setAttribute('aria-expanded', PROJECTS_EXPANDED ? 'true' : 'false');
   }
 }
 

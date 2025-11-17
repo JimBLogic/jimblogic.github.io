@@ -20,6 +20,7 @@
   <meta name="twitter:title" content="JimBLogic | Cybersecurity Portfolio" />
   <meta name="twitter:description" content="Junior Cybersecurity Analyst | Ethical Hacker | AWS Cloud Practitioner" />
   <meta name="twitter:image" content="https://jimblogic.github.io/assets/Images/Profilepicandother/my-avatar.png" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;">
   
   <title>JimBLogic | Cybersecurity Portfolio - Jaime Ramsden de Frutos</title>
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
@@ -27,8 +28,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- Structured data for SEO and rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jaime Ramsden de Frutos",
+    "url": "https://jimblogic.github.io/",
+    "sameAs": [
+      "https://github.com/JimBLogic",
+      "https://www.linkedin.com/in/jimblogic/"
+    ],
+    "jobTitle": "Junior Cybersecurity Analyst",
+    "email": "mailto:jrf91@pm.me",
+    "knowsAbout": ["cybersecurity","ethical hacking","cloud security","digital forensics","OSINT"]
+  }
+  </script>
+  <link rel="canonical" href="https://jimblogic.github.io/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "CyberDailyLog",
+    "url": "https://github.com/JimBLogic/CyberDailyLog",
+    "description": "Personal cyber-security habit tracker with daily-intel reports, CSV validation, pre-commit hooks, and CI.",
+    "programmingLanguage": "PowerShell, Python",
+    "codeRepository": "https://github.com/JimBLogic/CyberDailyLog",
+    "license": "https://opensource.org/licenses/MIT",
+    "creator": {
+      "@type": "Person",
+      "name": "Jaime Ramsden de Frutos",
+      "url": "https://jimblogic.github.io/"
+    }
+  }
+  </script>
 </head>
 <body>
+
+<!-- Skip link for keyboard users -->
+<a class="skip-link" href="#maincontent">Skip to main content</a>
 
 <div class="bg-animation"></div>
 
@@ -40,7 +78,7 @@
 
 <div class="container">
 
-  <aside class="sidebar">
+  <aside class="sidebar" role="complementary" aria-label="Sidebar">
     <div class="sidebar-info">
       <div class="avatar-bg">
         <figure class="avatar-box">
@@ -113,7 +151,7 @@
     </div>
   </aside>
 
-  <main class="main-content">
+  <main id="maincontent" class="main-content" role="main" aria-label="Main content">
 
     <!-- About -->
     <section id="about" class="main-section">
@@ -228,7 +266,7 @@
     <section id="projects" class="main-section">
       <h2 data-txt="projects"><ion-icon name="folder-open-outline"></ion-icon>Projects</h2>
       <div style="margin: 8px 0 12px 0;">
-        <button id="projectsToggle" class="filter-btn" data-txt="projects_expand">Expand</button>
+        <button id="projectsToggle" class="filter-btn" data-txt="projects_expand" aria-controls="projectsList" aria-expanded="false">Expand</button>
       </div>
       <ul class="projects-list" id="projectsList">
         <!-- Projects loaded via JavaScript from GitHub API -->
@@ -261,5 +299,17 @@
 
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/translate.js"></script>
+  <!-- Footer -->
+  <footer role="contentinfo" class="site-footer" style="max-width:720px;margin:24px 40px;padding:16px;border-radius:12px;background:rgba(0,0,0,0.25);color:#ddd;display:flex;flex-direction:column;gap:8px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <small>© 2025 Jaime Ramsden de Frutos · <a href="LICENSE" style="color:var(--accent);">MIT License</a></small>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="https://pages.github.com/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Powered by GitHub Pages</a>
+      </div>
+    </div>
+    <div style="font-size:0.9em;color:#bbb">View source on <a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener" style="color:var(--accent)">GitHub</a></div>
+  </footer>
 </body>
 </html>
