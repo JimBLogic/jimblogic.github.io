@@ -1,12 +1,14 @@
-name: CI — Lint & Accessibility
+name: CI - Lint & Accessibility
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
   schedule:
-    - cron: '0 3 * * 0' # weekly run
+    - cron: '0 3 * * 0'
 
 jobs:
   html-lint-and-a11y:
