@@ -10,10 +10,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Deploy 🚀
+      - name: Deploy
         run: |
           echo "No deployment configured in this workflow."
           echo "To enable deployment, replace this step with a deploy action."
