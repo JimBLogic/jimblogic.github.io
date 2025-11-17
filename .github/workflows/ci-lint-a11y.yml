@@ -25,10 +25,20 @@ jobs:
 
       - name: Install tools
         run: |
-          npm install -g htmlhint @axe-core/cli
+          npm install -g htmlhint @axe-core/cli stylelint stylelint-config-standard eslint
 
       - name: Run HTMLHint
         run: htmlhint "**/*.html" || true
+
+      - name: Run Stylelint (CSS)
+        run: |
+          # lint CSS files; continue on error so CI shows results
+          stylelint "assets/css/**/*.css" || true
+
+      - name: Run ESLint (JS)
+        run: |
+          # lint site JS files
+          eslint js --ext .js || true
 
       - name: Run axe accessibility audit
         run: axe https://jimblogic.github.io/ --save=axe-results.json || true
