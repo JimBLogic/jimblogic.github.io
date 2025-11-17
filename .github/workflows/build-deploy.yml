@@ -1,5 +1,7 @@
+---
 name: Build and Deploy
-on:
+
+'on':
   push:
     branches:
       - main
@@ -13,5 +15,5 @@ jobs:
       - name: Deploy 🚀
         run: |
           echo "No deployment configured in this workflow."
-          echo "To enable deployment, replace this step with the action you prefer (pages, gh-pages, rsync, etc)."
+          echo "To enable deployment, replace this step with a deploy action."
 
