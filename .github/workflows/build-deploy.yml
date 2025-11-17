@@ -11,4 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy 🚀
-        
+        run: |
+          echo "No deployment configured in this workflow."
+          echo "To enable deployment, replace this step with the action you prefer (pages, gh-pages, rsync, etc)."
+
