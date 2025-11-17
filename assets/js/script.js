@@ -402,17 +402,39 @@ function renderGitHubProjects(username, listId) {
 let PROJECTS_EXPANDED = false;
 const PROJECTS_CACHE = { repos: [], latest: null };
 
+// Manual featured projects to ensure important repos are always shown
+const MANUAL_PROJECTS = [
+  {
+    html_url: 'https://github.com/JimBLogic/CyberDailyLog',
+    name: 'CyberDailyLog',
+    description: 'Personal cyber-security habit tracker with automated daily-intel reports, CSV validation, pre-commit hooks, and CI. Stores daily-log CSV, news-scan markdown, and automation scripts.',
+    language: 'PowerShell / Python',
+    stargazers_count: 0,
+    topics: ['daily-log','csv-validation','automation','cybersecurity','github-actions'],
+    owner: { avatar_url: 'https://github.com/JimBLogic.png' }
+  }
+];
+
 function renderProjectsView(listId) {
   const el = document.getElementById(listId);
   if (!el) return;
   const toggleBtn = document.getElementById('projectsToggle');
 
+  // Merge manual featured projects with fetched repos, deduplicate by URL/name
+  const combined = [ ...(MANUAL_PROJECTS || []), ...(PROJECTS_CACHE.repos || []) ];
+  const unique = [];
+  const seen = new Set();
+  combined.forEach(r => {
+    const key = ((r && (r.html_url || r.name)) || '').toString().toLowerCase();
+    if (key && !seen.has(key)) { seen.add(key); unique.push(r); }
+  });
+
   // Decide which items to render
   if (!PROJECTS_EXPANDED) {
-    const item = PROJECTS_CACHE.latest || PROJECTS_CACHE.repos[0] || null;
+    const item = unique[0] || PROJECTS_CACHE.latest || PROJECTS_CACHE.repos[0] || null;
     el.innerHTML = item ? repoToListItem(item) : '';
   } else {
-    el.innerHTML = (PROJECTS_CACHE.repos || []).map(repoToListItem).join('');
+    el.innerHTML = (unique || []).map(repoToListItem).join('');
   }
 
   // Update toggle button label and visibility
@@ -420,7 +442,7 @@ function renderProjectsView(listId) {
     const key = PROJECTS_EXPANDED ? 'projects_collapse' : 'projects_expand';
     toggleBtn.setAttribute('data-txt', key);
     toggleBtn.textContent = t(key);
-    toggleBtn.style.display = (PROJECTS_CACHE.latest || (PROJECTS_CACHE.repos && PROJECTS_CACHE.repos.length)) ? 'inline-block' : 'none';
+    toggleBtn.style.display = (unique && unique.length) ? 'inline-block' : 'none';
   }
 }
 
