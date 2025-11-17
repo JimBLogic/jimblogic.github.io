@@ -5,6 +5,7 @@ name: Build and Deploy
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -16,4 +17,3 @@ jobs:
         run: |
           echo "No deployment configured in this workflow."
           echo "To enable deployment, replace this step with a deploy action."
-
