@@ -18,6 +18,10 @@ export default defineConfig({
       targets: [
         { src: 'assets', dest: '.' },
         { src: 'pdfs', dest: '.' },
+        // Copy data JSON files used by runtime fetches
+        { src: 'certificates.json', dest: '.' },
+        { src: 'software.json', dest: '.' },
+        { src: 'tools.json', dest: '.' },
         { src: 'robots.txt', dest: '.' },
         { src: 'sitemap.xml', dest: '.' }
       ]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Python",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/python.svg",
+    "icon": "python.png",
+    "description": "Programming language",
+    "link": "https://www.python.org/"
+  },
+  {
+    "name": "Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg",
+    "icon": "linux.png",
+    "description": "Operating system",
+    "link": "https://www.linux.org/"
+  },
+  {
+    "name": "Git",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg",
+    "icon": "github.png",
+    "description": "Version control system",
+    "link": "https://git-scm.com/"
+  },
+  {
+    "name": "Bash",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
+    "icon": "gnubash.png",
+    "description": "Unix shell and command language",
+    "link": "https://www.gnu.org/software/bash/"
+  },
+  {
+    "name": "Django",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
+    "icon": "django.png",
+    "description": "Python web framework",
+    "link": "https://www.djangoproject.com/"
+  },
+  {
+    "name": "AWS CloudFormation",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
+    "icon": "amazonaws.png",
+    "description": "Cloud infrastructure as code",
+    "link": "https://aws.amazon.com/cloudformation/"
+  },
+  {
+    "name": "Metasploit",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
+    "icon": "metasploit.png",
+    "description": "Exploit development & penetration testing",
+    "link": "https://www.metasploit.com/"
+  },
+  {
+    "name": "Kali Linux",
+    "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
+    "icon": "kalilinux.png",
+    "description": "Penetration testing distribution",
+    "link": "https://www.kali.org/"
+  }
+]
