@@ -302,7 +302,8 @@ async function setLang(lang) {
   }
 }
 
-document.querySelectorAll('.lang-switch button').forEach(btn => {
+// Bind only to language buttons, not other controls in the toolbar
+document.querySelectorAll('.lang-switch button[data-lang]').forEach(btn => {
   btn.addEventListener('click', () => setLang(btn.dataset.lang));
 });
 
