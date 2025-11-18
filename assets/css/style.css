@@ -593,6 +593,39 @@ body {
   color: black;
 }
 
+/* Reposition toolbar on desktop so it clears the fixed sidebar */
+@media (min-width: 900px) {
+  .lang-switch {
+    left: calc(260px + 16px);
+    right: auto;
+  }
+}
+
+/* Icon-only theme toggle, with accessible state via aria-pressed */
+#themeToggle,
+.lang-switch #themeToggle {
+  font-size: 0; /* hide text visually */
+  line-height: 1;
+  width: 36px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+#themeToggle::after,
+.lang-switch #themeToggle::after {
+  content: "🌙";
+  font-size: 16px;
+}
+#themeToggle[aria-pressed="true"]::after,
+.lang-switch #themeToggle[aria-pressed="true"]::after {
+  content: "☀️";
+}
+
+/* Hide the top-right placeholder menu button for now */
+.site-header .hamburger { display: none; }
+
 .separator {
   width: 90%;
   height: 1px;
