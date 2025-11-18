@@ -14,14 +14,6 @@
   --text: #f0f0f0;
 }
 
-/* Light theme overrides */
-[data-theme="light"] {
-  --bg: #f7f8fa;
-  --text: #111213;
-  --gray: #ffffff;
-  --gray-box: rgba(255,255,255,0.85);
-}
-
 /* Skip link visible when focused (keyboard users) */
 .skip-link {
   position: absolute;
@@ -88,24 +80,6 @@ body {
   position: relative;
   /* Better scroll performance */
   -webkit-overflow-scrolling: touch;
-}
-
-/* Component tweaks under light theme */
-[data-theme="light"] .sidebar {
-  background: rgba(255,255,255,0.94);
-  border-right: 1px solid #e6e6e6;
-}
-[data-theme="light"] .main-section {
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(0,0,0,0.08);
-}
-[data-theme="light"] .lang-switch {
-  background: rgba(255,255,255,0.92);
-}
-[data-theme="light"] .lang-switch button {
-  background: #fff;
-  color: var(--accent);
-  border: 1px solid #e6e6e6;
 }
 
 /* Mobile/Tablet: Natural scrolling without forced snapping */
@@ -625,28 +599,6 @@ body {
     left: calc(260px + 16px);
     right: auto;
   }
-}
-
-/* Icon-only theme toggle, with accessible state via aria-pressed */
-#themeToggle,
-.lang-switch #themeToggle {
-  font-size: 0; /* hide text visually */
-  line-height: 1;
-  width: 36px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-#themeToggle::after,
-.lang-switch #themeToggle::after {
-  content: "🌙";
-  font-size: 16px;
-}
-#themeToggle[aria-pressed="true"]::after,
-.lang-switch #themeToggle[aria-pressed="true"]::after {
-  content: "☀️";
 }
 
 /* Hide the top-right placeholder menu button for now */

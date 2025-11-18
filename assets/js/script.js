@@ -209,24 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch (_) {}
 
-  // Theme toggle
-  try {
-    const key = 'theme';
-    const btn = document.getElementById('themeToggle');
-    const apply = (val) => {
-      document.documentElement.setAttribute('data-theme', val);
-      localStorage.setItem(key, val);
-      if (btn) btn.setAttribute('aria-pressed', String(val === 'dark'));
-    };
-    const stored = localStorage.getItem(key);
-    if (stored) apply(stored);
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
-        apply(cur === 'dark' ? 'light' : 'dark');
-      });
-    }
-  } catch (_) {}
+  // Removed theme toggle and related state — design uses a single theme
 
   renderCertList('./certificates.json', 'certificateList');
   renderList('./software.json', 'softwareList', "software");
