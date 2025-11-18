@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
@@ -14,8 +13,6 @@ export default defineConfig({
     }
   },
   plugins: [
-    // Minify HTML/CSS/JS
-    ViteMinifyPlugin({}),
     // Copy static assets unchanged
     viteStaticCopy({
       targets: [

@@ -7,6 +7,10 @@
   <meta name="keywords" content="cybersecurity, ethical hacking, penetration testing, digital forensics, cloud security, AWS, Python, Linux, OSINT, threat analysis" />
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <meta name="robots" content="index, follow" />
+<header class="site-header" role="banner" style="display:flex;justify-content:flex-end;gap:8px;padding:8px 12px;background:transparent;">
+  <button id="navToggle" class="hamburger" aria-controls="navList" aria-expanded="false" aria-label="Menu">Menu</button>
+</header>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
@@ -327,8 +331,8 @@
 <!-- Plausible analytics (manual mode; only fires after consent) -->
 <script id="plausible" defer data-domain="jimblogic.github.io" src="https://plausible.io/js/script.js" data-manual></script>
 
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/translate.js"></script>
+<script type="module" src="./assets/js/translate.js" defer></script>
+<script type="module" src="./assets/js/script.js" defer></script>
   <!-- Footer -->
   <footer role="contentinfo" class="site-footer" style="max-width:720px;margin:24px 40px;padding:16px;border-radius:12px;background:rgba(0,0,0,0.25);color:#ddd;display:flex;flex-direction:column;gap:8px;">
     <div style="display:flex;justify-content:space-between;align-items:center;">
