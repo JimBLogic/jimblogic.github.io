@@ -1,3 +1,4 @@
+// Attempt to load locales from JSON files first; fallback to built-in translations
 const translations = {
   en: {
     main_name: "Jaime Ramsden de Frutos",
@@ -252,47 +253,58 @@ if (typeof window !== 'undefined') {
   window.translations = translations;
 }
 
+async function loadLocale(lang) {
+  try {
+    const res = await fetch(`./assets/locales/${lang}.json`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (_e) { return null; }
+}
+
 // Helper to get translation for current language
 function t(key) {
   const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
-  return (translations[lang] && translations[lang][key]) || (translations.en && translations.en[key]) || key;
+  return (window.translations && window.translations[lang] && window.translations[lang][key]) ||
+         (window.translations && window.translations.en && window.translations.en[key]) || key;
 }
 
-function setLang(lang) {
-  document.querySelectorAll("[data-txt]").forEach(el => {
-    const key = el.getAttribute("data-txt");
-    if (translations[lang] && translations[lang][key]) {
-      const translation = translations[lang][key];
-      
-      // Check if element has ion-icon children (section headings or navbar)
-      const hasIcon = el.querySelector('ion-icon');
-      const hasSpan = el.querySelector('span');
-      
-      if (hasIcon && hasSpan) {
-        // For navbar links with icon + span, update only the span text
-        el.querySelector('span').textContent = translation;
-      } else if (hasIcon) {
-        // For headings with icons, preserve the icon and update text
-        const icon = el.querySelector('ion-icon').cloneNode(true);
-        el.innerHTML = '';
-        el.appendChild(icon);
-        el.appendChild(document.createTextNode(translation));
-      } else if (key === 'contact_2' || translation.includes('<a')) {
-        // For elements with HTML content (like links), use innerHTML
-        el.innerHTML = translation;
-      } else {
-        // For simple text elements, use textContent
-        el.textContent = translation;
-      }
+async function setLang(lang) {
+  lang = (lang || 'en').toLowerCase();
+  // Try external locale file first
+  const dict = await loadLocale(lang);
+  if (dict && typeof window !== 'undefined') {
+    window.translations = window.translations || {};
+    window.translations[lang] = { ...(window.translations[lang] || {}), ...dict };
+  }
+
+  document.querySelectorAll('[data-txt]').forEach(el => {
+    const key = el.getAttribute('data-txt');
+    const translation = t(key);
+    if (!translation) return;
+    const hasIcon = el.querySelector('ion-icon');
+    const hasSpan = el.querySelector('span');
+    if (hasIcon && hasSpan) {
+      el.querySelector('span').textContent = translation;
+    } else if (hasIcon) {
+      const icon = el.querySelector('ion-icon').cloneNode(true);
+      el.innerHTML = '';
+      el.appendChild(icon);
+      el.appendChild(document.createTextNode(translation));
+    } else if (key === 'contact_2' || String(translation).includes('<a')) {
+      el.innerHTML = translation;
+    } else {
+      el.textContent = translation;
     }
   });
-  document.documentElement.setAttribute("lang", lang);
-  // Notify dynamic sections to update language-dependent labels
+  document.documentElement.setAttribute('lang', lang);
   if (typeof window !== 'undefined' && typeof window.onLanguageChanged === 'function') {
-    try { window.onLanguageChanged(lang); } catch (e) { /* ignore */ }
+    try { window.onLanguageChanged(lang); } catch (e) {}
   }
 }
 
 document.querySelectorAll('.lang-switch button').forEach(btn => {
   btn.addEventListener('click', () => setLang(btn.dataset.lang));
 });
+
+// Initialize to current or default language
+setLang(document.documentElement.getAttribute('lang') || 'en');

@@ -197,6 +197,37 @@ function renderList(jsonFile, listId, folder) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile nav toggle (hamburger)
+  try {
+    const navToggle = document.getElementById('navToggle');
+    const navbar = document.querySelector('.navbar');
+    if (navToggle && navbar) {
+      navToggle.addEventListener('click', () => {
+        const open = navbar.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  } catch (_) {}
+
+  // Theme toggle
+  try {
+    const key = 'theme';
+    const btn = document.getElementById('themeToggle');
+    const apply = (val) => {
+      document.documentElement.setAttribute('data-theme', val);
+      localStorage.setItem(key, val);
+      if (btn) btn.setAttribute('aria-pressed', String(val === 'dark'));
+    };
+    const stored = localStorage.getItem(key);
+    if (stored) apply(stored);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        apply(cur === 'dark' ? 'light' : 'dark');
+      });
+    }
+  } catch (_) {}
+
   renderCertList('./certificates.json', 'certificateList');
   renderList('./software.json', 'softwareList', "software");
   renderList('./tools.json', 'toolsList', "tools");
@@ -290,6 +321,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Consent banner for Plausible analytics (opt-in)
+(function() {
+  try {
+    const el = document.getElementById('consent');
+    if (!el) return;
+    const key = 'consent-analytics';
+    const prior = localStorage.getItem(key);
+    if (prior) {
+      if (prior === 'yes' && window.plausible) window.plausible('pageview');
+      return; // do not show banner again
+    }
+    // show banner
+    el.style.display = 'flex';
+    const allow = document.getElementById('consent-accept');
+    const deny = document.getElementById('consent-decline');
+    if (allow) allow.addEventListener('click', () => {
+      localStorage.setItem(key, 'yes');
+      el.remove();
+      if (window.plausible) window.plausible('pageview');
+    });
+    if (deny) deny.addEventListener('click', () => {
+      localStorage.setItem(key, 'no');
+      el.remove();
+    });
+  } catch (_) {}
+})();
 
 // Fetch concise highlights from GitHub profile README
 function renderProfileHighlights(containerId, username) {

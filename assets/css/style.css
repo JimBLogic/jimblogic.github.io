@@ -10,6 +10,8 @@
   --max-width-section: 680px;
   --padding-section: 24px;
   --radius: 16px;
+  --bg: #181a1b;
+  --text: #f0f0f0;
 }
 
 /* Skip link visible when focused (keyboard users) */
@@ -72,8 +74,8 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #f0f0f0;
-  background: var(--dark);
+  color: var(--text);
+  background: var(--bg);
   overflow-x: hidden;
   position: relative;
   /* Better scroll performance */
@@ -166,8 +168,8 @@ body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: white;
-  background: var(--dark);
+  color: var(--text);
+  background: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -1124,6 +1126,27 @@ a:hover {
   .social-list {
     justify-content: center;
   }
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mobile hamburger and collapsible nav */
+.site-header { position: sticky; top: 0; z-index: 50; }
+.hamburger { font-size: 1.2rem; padding: 10px 12px; background: rgba(0,0,0,0.3); color: var(--accent); border: 1px solid rgba(247,147,26,0.35); border-radius: 8px; }
+@media (max-width: 700px) {
+  .navbar { display: none; }
+  .navbar.open { display: block; }
 }
 
 /* Project-specific badges and topics */

@@ -7,6 +7,8 @@
   <meta name="keywords" content="cybersecurity, ethical hacking, penetration testing, digital forensics, cloud security, AWS, Python, Linux, OSINT, threat analysis" />
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="JimBLogic | Cybersecurity Portfolio" />
@@ -76,6 +78,20 @@
   <button data-lang="ca">CA</button>
 </div>
 
+  <!-- Site entity structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "JimBLogic Portfolio",
+    "url": "https://jimblogic.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://jimblogic.github.io/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 <div class="container">
 
   <aside class="sidebar" role="complementary" aria-label="Sidebar">
@@ -88,6 +104,7 @@
                loading="eager"
                onerror="this.style.display='none'; console.error('Avatar image failed to load');">
         </figure>
+  <button id="themeToggle" class="btn" aria-pressed="false" style="margin-left:6px;">Toggle theme</button>
       </div>
       <h1 class="main-name" data-txt="main_name">Jaime Ramsden de Frutos</h1>
       <p class="title" data-txt="title">Junior Cybersecurity Analyst | Ethical Hacker | AWS Cloud Practitioner</p>
@@ -152,6 +169,7 @@
   </aside>
 
   <main id="maincontent" class="main-content" role="main" aria-label="Main content">
+    <h1 class="sr-only">JimBLogic — Cybersecurity Portfolio</h1>
 
     <!-- About -->
     <section id="about" class="main-section">
@@ -296,6 +314,18 @@
   <button class="scroll-btn scroll-top" id="scrollTop" title="Scroll to top">
   <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
 </button>
+
+<!-- Consent banner for analytics (opt-in) -->
+<div id="consent" role="dialog" aria-live="polite" aria-modal="true" aria-label="Analytics consent" class="consent" style="display:none;">
+  <p style="margin:0;">Allow anonymous analytics to improve the site?</p>
+  <div style="display:flex; gap:8px;">
+    <button id="consent-accept" class="btn">Allow</button>
+    <button id="consent-decline" class="btn">No thanks</button>
+  </div>
+</div>
+
+<!-- Plausible analytics (manual mode; only fires after consent) -->
+<script id="plausible" defer data-domain="jimblogic.github.io" src="https://plausible.io/js/script.js" data-manual></script>
 
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/translate.js"></script>

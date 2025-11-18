@@ -1,0 +1,41 @@
+{
+  "name": "jimblogic-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run optimize:images && npm run purgecss",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .js && stylelint \"**/*.{css,scss}\"",
+    "format": "prettier --write .",
+    "audit": "lhci autorun || echo \"LHCI warnings ignored\"",
+    "optimize:images": "imagemin assets/Images/*/* --out-dir=dist/assets/Images || exit 0",
+    "to:webp": "echo Add cwebp conversion here if installed",
+    "purgecss": "purgecss --css dist/assets/css/*.css --content dist/**/*.html dist/**/*.js --output dist/assets/css/ || exit 0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@testing-library/dom": "^10.4.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "html-minifier": "^4.0.0",
+    "imagemin": "^9.0.0",
+    "imagemin-cli": "^7.0.1",
+    "lighthouse-ci": "^0.13.0",
+    "playwright": "^1.48.2",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "purgecss": "^6.0.0",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1",
+    "svgo": "^3.3.2",
+    "vite": "^5.4.10",
+    "vite-plugin-minify": "^1.6.1",
+    "vite-plugin-static-copy": "^1.0.6",
+    "vitest": "^2.1.3"
+  }
+}
