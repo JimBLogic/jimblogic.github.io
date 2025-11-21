@@ -313,7 +313,13 @@ async function setLang(lang) {
 
 // Bind only to language buttons, not other controls in the toolbar
 document.querySelectorAll('.lang-switch button[data-lang]').forEach(btn => {
-  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  btn.addEventListener('click', (e) => {
+    const lang = btn.dataset.lang;
+    setLang(lang);
+    // Optionally, visually mark active
+    document.querySelectorAll('.lang-switch button[data-lang]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
 });
 
 // Initialize to current or default language
