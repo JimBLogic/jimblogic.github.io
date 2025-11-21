@@ -564,17 +564,17 @@ body {
 }
 
 .lang-switch {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
+  position: relative;
   display: flex;
   gap: 6px;
+  justify-content: center;
   background: rgba(24, 26, 27, 0.85);
   padding: 6px 10px;
+  margin: 12px auto 16px;
   border-radius: 10px;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  max-width: fit-content;
 }
 
 .lang-switch button {
@@ -593,13 +593,7 @@ body {
   color: black;
 }
 
-/* Reposition toolbar on desktop so it clears the fixed sidebar */
-@media (min-width: 900px) {
-  .lang-switch {
-    left: calc(260px + 16px);
-    right: auto;
-  }
-}
+/* Language toolbar stays in sidebar on all screen sizes */
 
 /* Hide the top-right placeholder menu button for now */
 .site-header .hamburger { display: none; }
