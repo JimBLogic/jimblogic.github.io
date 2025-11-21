@@ -526,7 +526,7 @@ window.onLanguageChanged = function(lang) {
 
 // Collapsible sections initializer
 (function() {
-  const COLLAPSE_THRESHOLD = 520; // px
+  const COLLAPSE_THRESHOLD = 680; // px - increased for better content visibility
 
   function wrapSectionBody(sec) {
     let body = sec.querySelector('.section-body');
@@ -561,7 +561,8 @@ window.onLanguageChanged = function(lang) {
     btn.className = 'section-toggle';
     btn.type = 'button';
     btn.setAttribute('aria-expanded', 'false');
-    btn.textContent = 'Show more';
+    btn.setAttribute('data-txt', 'show_more');
+    btn.textContent = t('show_more');
 
     const fade = document.createElement('div');
     fade.className = 'section-fade';
@@ -571,14 +572,16 @@ window.onLanguageChanged = function(lang) {
       if (expanded) {
         // collapse
         btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Show more';
+        btn.setAttribute('data-txt', 'show_more');
+        btn.textContent = t('show_more');
         body.style.maxHeight = `${Math.min(COLLAPSE_THRESHOLD, fullHeight)}px`;
         sec.classList.remove('expanded');
         fade.style.display = '';
       } else {
         // expand
         btn.setAttribute('aria-expanded', 'true');
-        btn.textContent = 'Show less';
+        btn.setAttribute('data-txt', 'show_less');
+        btn.textContent = t('show_less');
         body.style.maxHeight = `${fullHeight}px`;
         sec.classList.add('expanded');
         fade.style.display = 'none';

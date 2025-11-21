@@ -20,5 +20,7 @@
   "filter_all": "All",
   "open": "Open",
   "projects_expand": "Expand",
-  "projects_collapse": "Collapse"
+  "projects_collapse": "Collapse",
+  "show_more": "Show more",
+  "show_less": "Show less"
 }

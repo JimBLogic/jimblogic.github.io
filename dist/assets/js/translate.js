@@ -80,7 +80,10 @@ const translations = {
     open: "Open",
     // Projects toggle
     projects_expand: "Expand",
-    projects_collapse: "Collapse"
+    projects_collapse: "Collapse",
+    // Section toggle
+    show_more: "Show more",
+    show_less: "Show less"
   },
   es: {
     main_name: "Jaime R. de Frutos",
@@ -161,8 +164,11 @@ const translations = {
     filter_all: "Todos",
     open: "Abrir",
     // Projects toggle
-    projects_expand: "Expandir",
-    projects_collapse: "Contraer"
+    projects_expand: "Ver todos",
+    projects_collapse: "Ver menos",
+    // Section toggle
+    show_more: "Ver más",
+    show_less: "Ver menos"
   },
   ca: {
     main_name: "Jaime R. de Frutos",
@@ -243,8 +249,11 @@ const translations = {
     filter_all: "Tots",
     open: "Obrir",
     // Projects toggle
-    projects_expand: "Expandir",
-    projects_collapse: "Contraure"
+    projects_expand: "Veure tots",
+    projects_collapse: "Veure menys",
+    // Section toggle
+    show_more: "Veure més",
+    show_less: "Veure menys"
   }
 };
 

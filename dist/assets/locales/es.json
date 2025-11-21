@@ -1,12 +1,12 @@
 {
-  "main_name": "Jaime R. de Frutos",
-  "title": "Analista de Ciberseguridad | Hacker Ético | AWS Cloud Practitioner",
-  "about": "Sobre Mí",
-  "skills": "Habilidades",
-  "education": "Educación",
+  "main_name": "Jaime Ramsden de Frutos",
+  "title": "Analista Junior de Ciberseguridad | Hacker Ético | AWS Cloud Practitioner",
+  "about": "Acerca de Mí",
+  "skills": "Competencias",
+  "education": "Formación",
   "passion": "Pasión e Intereses",
   "software": "Software",
-  "journey": "Ruta de Aprendizaje",
+  "journey": "Trayectoria de Aprendizaje",
   "projects": "Proyectos",
   "tools": "Herramientas",
   "contact": "Contacto",
@@ -19,6 +19,8 @@
   "certificates": "certificados",
   "filter_all": "Todos",
   "open": "Abrir",
-  "projects_expand": "Expandir",
-  "projects_collapse": "Contraer"
+  "projects_expand": "Ver todos",
+  "projects_collapse": "Ver menos",
+  "show_more": "Ver más",
+  "show_less": "Ver menos"
 }
