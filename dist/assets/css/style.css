@@ -1828,20 +1828,32 @@ a:hover {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
   
   .bg-animation {
-    animation: none;
-    filter: brightness(1.1) contrast(1.15);
+    animation-duration: 24s !important;
+    animation-timing-function: ease-in-out !important;
+    filter: brightness(1.08) contrast(1.12);
   }
   
   .bg-animation::before,
   .bg-animation::after {
-    animation: none;
+    animation-duration: 42s !important;
+    animation-timing-function: linear !important;
+  }
+
+  .main-section,
+  .passion-card,
+  .certificate-list li,
+  .software-list li,
+  .tools-list li,
+  .projects-list li,
+  .btn,
+  .navbar-link,
+  .social-link,
+  .avatar-box img {
+    transition-duration: 0.18s !important;
   }
 }
 
