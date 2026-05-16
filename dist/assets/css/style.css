@@ -76,6 +76,9 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--text);
   background: var(--bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
   overflow-x: hidden;
   position: relative;
   /* Better scroll performance */
@@ -184,57 +187,32 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    /* Metal and green PCB base */
-    radial-gradient(circle at 20% 20%, #2d4a2a 0, #1a2e1a 30%, transparent 60%),
-    radial-gradient(circle at 80% 80%, #3a3a3a 0, #2a2a2a 25%, transparent 50%),
-    /* Circuit traces */
-  repeating-linear-gradient(0deg, transparent 0, transparent 24px, #00ff4420 24px, #00ff4420 30px, transparent 30px, transparent 75px),
-  repeating-linear-gradient(90deg, transparent 0, transparent 36px, #f7931a15 36px, #f7931a15 42px, transparent 42px, transparent 90px),
-  repeating-linear-gradient(45deg, transparent 0, transparent 60px, #2d4a2a25 60px, #2d4a2a25 66px, transparent 66px, transparent 135px),
-    /* Electrical nodes */
-    radial-gradient(circle at 15% 35%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 85% 15%, #f7931a 0, #f7931a40 2px, transparent 3px),
-    radial-gradient(circle at 25% 85%, #00ff88 0, #00ff4440 2px, transparent 3px),
-    radial-gradient(circle at 75% 65%, #f7931a 0, #f7931a40 2px, transparent 3px),
-    /* Base metallic texture */
-    linear-gradient(135deg, #232526 0%, #1a1a1a 50%, #2a2a2a 100%);
-  background-size: 100% 100%, 100% 100%, 80px 80px, 120px 120px, 160px 160px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 100% 100%;
-  animation: motherboardFlow 24s ease-in-out infinite, electricalPulse 6s ease-in-out infinite alternate;
+    radial-gradient(circle at 18% 18%, rgba(0, 255, 136, 0.34) 0, rgba(0, 255, 136, 0.16) 18%, transparent 42%),
+    radial-gradient(circle at 78% 22%, rgba(247, 147, 26, 0.28) 0, rgba(247, 147, 26, 0.1) 16%, transparent 40%),
+    radial-gradient(circle at 72% 78%, rgba(0, 255, 136, 0.18) 0, rgba(0, 255, 136, 0.08) 14%, transparent 38%),
+    radial-gradient(circle at 26% 74%, rgba(247, 147, 26, 0.18) 0, rgba(247, 147, 26, 0.08) 14%, transparent 36%),
+    linear-gradient(135deg, #232526 0%, #17191a 46%, #242625 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  /* Reduced to single animation for better performance */
+  animation: electricalPulse 8s ease-in-out infinite alternate;
   filter: brightness(1.1) contrast(1.15);
   transition: filter 0.4s;
-}
-
-@keyframes motherboardFlow {
-  0% {
-    background-position: 0% 0%, 100% 100%, 0 0, 0 0, 0 0, 0 0, 20px 20px, 40px 10px, 10px 40px, 0% 0%;
-  }
-  25% {
-    background-position: 25% 15%, 75% 85%, 10px 5px, 15px 10px, 5px 15px, 2px 1px, 22px 18px, 38px 12px, 12px 38px, 25% 15%;
-  }
-  50% {
-    background-position: 50% 30%, 50% 70%, 20px 10px, 30px 20px, 10px 30px, 4px 2px, 24px 16px, 36px 14px, 14px 36px, 50% 30%;
-  }
-  75% {
-    background-position: 75% 45%, 25% 55%, 30px 15px, 45px 30px, 15px 45px, 6px 3px, 26px 14px, 34px 16px, 16px 34px, 75% 45%;
-  }
-  100% {
-    background-position: 100% 60%, 0% 40%, 80px 40px, 120px 80px, 40px 120px, 8px 4px, 28px 12px, 32px 18px, 18px 32px, 100% 60%;
-  }
+  will-change: filter;
+  contain: layout style paint;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes electricalPulse {
   0% {
-    filter: brightness(1.05) contrast(1.08) hue-rotate(0deg);
-  }
-  50% {
-    filter: brightness(1.08) contrast(1.12) hue-rotate(3deg);
+    filter: brightness(1.08) contrast(1.12);
   }
   100% {
-    filter: brightness(1.12) contrast(1.15) hue-rotate(6deg);
+    filter: brightness(1.12) contrast(1.15);
   }
 }
 
-/* Additional electrical flow effects */
+/* Additional electrical flow effects - optimized */
 .bg-animation::before {
   content: '';
   position: absolute;
@@ -243,19 +221,20 @@ body {
   right: 0;
   bottom: 0;
   background:
-    /* Flowing electrical current */
-    repeating-linear-gradient(15deg, transparent 0, transparent 18px, #00ff4408 18px, #00ff4408 22px, transparent 22px, transparent 40px),
-    repeating-linear-gradient(105deg, transparent 0, transparent 15px, #f7931a08 15px, #f7931a08 18px, transparent 18px, transparent 35px);
-  animation: electricalFlow 16s linear infinite;
-  opacity: 0.55;
+    repeating-linear-gradient(15deg, transparent 0, transparent 18px, rgba(0, 255, 136, 0.09) 18px, rgba(0, 255, 136, 0.09) 22px, transparent 22px, transparent 42px),
+    repeating-linear-gradient(-15deg, transparent 0, transparent 28px, rgba(247, 147, 26, 0.07) 28px, rgba(247, 147, 26, 0.07) 32px, transparent 32px, transparent 64px);
+  animation: electricalFlow 24s linear infinite;
+  opacity: 0.36;
+  will-change: transform;
+  mix-blend-mode: screen;
 }
 
 @keyframes electricalFlow {
-  0% { transform: translateX(-100%) translateY(-100%); }
-  100% { transform: translateX(100%) translateY(100%); }
+  0% { transform: translate(-100%, -100%); }
+  100% { transform: translate(100%, 100%); }
 }
 
-/* Glowing circuit nodes */
+/* Glowing circuit nodes - optimized */
 .bg-animation::after {
   content: '';
   position: absolute;
@@ -264,18 +243,17 @@ body {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 10% 10%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 90% 20%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 30% 70%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 70% 90%, #f7931aaa 0, #f7931a40 1px, transparent 2px),
-    radial-gradient(circle at 50% 30%, #00ff88aa 0, #00ff4440 1px, transparent 2px),
-    radial-gradient(circle at 20% 60%, #f7931aaa 0, #f7931a40 1px, transparent 2px);
-  animation: nodeGlow 8s ease-in-out infinite alternate;
+    radial-gradient(circle at 10% 12%, rgba(0, 255, 136, 0.95) 0, rgba(0, 255, 136, 0.45) 1px, transparent 2px),
+    radial-gradient(circle at 88% 18%, rgba(247, 147, 26, 0.95) 0, rgba(247, 147, 26, 0.45) 1px, transparent 2px),
+    radial-gradient(circle at 48% 34%, rgba(0, 255, 136, 0.9) 0, rgba(0, 255, 136, 0.38) 1px, transparent 2px),
+    radial-gradient(circle at 28% 82%, rgba(247, 147, 26, 0.8) 0, rgba(247, 147, 26, 0.35) 1px, transparent 2px);
+  animation: nodeGlow 10s ease-in-out infinite alternate;
+  will-change: opacity;
 }
 
 @keyframes nodeGlow {
-  0% { opacity: 0.25; transform: scale(1); }
-  100% { opacity: 0.75; transform: scale(1.06); }
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
 }
 
 .container {
@@ -447,6 +425,25 @@ body {
 
 .main-section {
   background: rgba(35, 37, 38, 0.88);
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.075;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(247, 147, 26, 0.16), transparent 34%),
+      url('../Images/Profilepicandother/logo.png') center 12vh / min(58vw, 760px) no-repeat;
+    filter: saturate(0.85) contrast(1.08);
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    body {
+      min-height: -webkit-fill-available;
+    }
+  }
   border-radius: 22px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
   margin: 30px 0 30px 40px;
@@ -775,6 +772,56 @@ body {
   margin-left: 260px;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(0, 255, 136, 0.18) 0, rgba(0, 255, 136, 0.08) 18%, transparent 40%),
+    radial-gradient(circle at 76% 20%, rgba(247, 147, 26, 0.16) 0, rgba(247, 147, 26, 0.08) 16%, transparent 38%),
+    linear-gradient(90deg, transparent 0, transparent 48%, rgba(0, 255, 136, 0.08) 49.5%, rgba(247, 147, 26, 0.08) 50.5%, transparent 52%, transparent 100%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 54px, rgba(0, 255, 136, 0.05) 54px, rgba(0, 255, 136, 0.05) 56px, transparent 56px, transparent 108px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 72px, rgba(247, 147, 26, 0.04) 72px, rgba(247, 147, 26, 0.04) 74px, transparent 74px, transparent 144px);
+  filter: blur(14px) saturate(1.1);
+  opacity: 0.58;
+  transform: translate3d(0, 0, 0);
+  animation: chipDrift 28s ease-in-out infinite alternate;
+}
+
+.main-content::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 42%, rgba(0, 255, 136, 0.08) 0, transparent 26%),
+    radial-gradient(circle at 66% 58%, rgba(247, 147, 26, 0.07) 0, transparent 24%),
+    linear-gradient(180deg, transparent 0, rgba(0, 0, 0, 0.02) 40%, rgba(0, 0, 0, 0.08) 100%);
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  animation: chipPulse 9s ease-in-out infinite alternate;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes chipDrift {
+  0% { transform: translate3d(-1.5%, -0.6%, 0); }
+  100% { transform: translate3d(1.5%, 0.8%, 0); }
+}
+
+@keyframes chipPulse {
+  0% { opacity: 0.22; }
+  100% { opacity: 0.4; }
 }
 
 .main-section {
@@ -1034,41 +1081,81 @@ a:hover {
 
 /* Mobile Responsiveness */
 @media (max-width: 700px) {
+  body {
+    padding-top: calc(60px + env(safe-area-inset-top));
+  }
+
+  body::before {
+    opacity: 0.035;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(247, 147, 26, 0.1), transparent 36%),
+      url('../Images/Profilepicandother/logo.png') center 10vh / min(72vw, 420px) no-repeat;
+  }
+
   .container {
     flex-direction: column;
+    min-height: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .main-content {
+    flex: 1 1 auto;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
   }
 
   .main-section {
-    margin: 20px 2vw;
-    padding: 24px 5vw;
-    max-width: 90vw;
-    border-radius: 18px;
+    margin: 20px auto;
+    padding: 20px 16px;
+    max-width: calc(100% - 32px);
+    width: 100%;
+    border-radius: 12px;
+    border-left: 3px solid #f7931a;
   }
 
   .main-section:not(:last-child) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+  }
+
+  .main-section:first-of-type {
+    margin-top: 20px;
   }
 
   .sidebar {
     position: static;
     height: auto;
-    padding: 20px 5vw;
-    border-radius: 0 0 18px 18px;
-    max-width: 90vw;
+    width: 100% !important;
+    padding: 16px 12px;
+    border-radius: 0;
+    border-right: none;
+    border-bottom: 1px solid #282a2e;
+    max-width: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+    flex-shrink: 0;
+  }
+
+  .sidebar-info {
+    width: 100%;
   }
 
   .avatar-bg {
-    max-width: 180px;
+    max-width: 140px;
+    width: 140px;
+    padding: 12px 0;
+    margin: 0 auto 12px auto;
   }
 
   .circuit-banner {
-    max-width: 180px;
-    height: 60px;
+    max-width: 140px;
+    height: 50px;
   }
 
   .avatar-box img {
-    width: 150px !important;
-    height: 150px !important;
+    width: 100px !important;
+    height: 100px !important;
   }
 
   .certificate-list img,
@@ -1115,21 +1202,54 @@ a:hover {
   .navbar-list {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
+    width: 100%;
   }
 
   .navbar-link {
-    padding: 6px 10px;
-    font-size: 0.85em;
+    padding: 6px 8px;
+    font-size: 0.75em;
+    flex: 0 1 auto;
+  }
+
+  .navbar-link span {
+    display: none;
+  }
+
+  .navbar-link ion-icon {
+    font-size: 1.3em;
   }
 
   .about-buttons {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about-buttons button {
+    font-size: 0.85em;
+    padding: 6px 10px;
   }
 
   .social-list {
     justify-content: center;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .contacts-list {
+    width: 100%;
+  }
+
+  .contact-item {
+    flex-wrap: wrap;
+  }
+
+  .separator {
+    margin: 12px 0;
   }
 }
 
@@ -1147,11 +1267,106 @@ a:hover {
 }
 
 /* Mobile hamburger and collapsible nav */
-.site-header { position: sticky; top: 0; z-index: 50; }
-.hamburger { font-size: 1.2rem; padding: 10px 12px; background: rgba(0,0,0,0.3); color: var(--accent); border: 1px solid rgba(247,147,26,0.35); border-radius: 8px; }
+.site-header { 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  background: rgba(24, 26, 27, 0.98);
+  padding: 12px;
+  border-bottom: 1px solid #282a2e;
+}
+
+.site-header .hamburger { 
+  display: none;
+  font-size: 1.4rem; 
+  padding: 8px 12px; 
+  background: rgba(247, 147, 26, 0.15); 
+  color: var(--accent); 
+  border: 1px solid rgba(247, 147, 26, 0.4); 
+  border-radius: 6px;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+.hamburger:hover {
+  background: rgba(247, 147, 26, 0.25);
+}
+
 @media (max-width: 700px) {
-  .navbar { display: none; }
-  .navbar.open { display: block; }
+  .site-header { 
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .site-header .hamburger { 
+    display: block;
+  }
+  
+  .navbar { 
+    position: fixed;
+    top: calc(60px + env(safe-area-inset-top));
+    left: 0;
+    right: 0;
+    background: rgba(24, 26, 27, 0.98);
+    border-bottom: 1px solid #282a2e;
+    max-height: calc(100dvh - 60px - env(safe-area-inset-top));
+    overflow-y: auto;
+    display: none;
+    z-index: 99;
+  }
+  
+  .navbar.open { 
+    display: block;
+  }
+  
+  .navbar-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 8px;
+  }
+  
+  .navbar-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  
+  .navbar-link span {
+    display: inline;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .main-section:hover,
+  .passion-card:hover,
+  .certificate-list li:hover,
+  .software-list li:hover,
+  .tools-list li:hover,
+  .projects-list li:hover,
+  .btn:hover,
+  .navbar-link:hover,
+  .social-link:hover,
+  .avatar-box img:hover {
+    transform: none;
+  }
+
+  .bg-animation::before {
+    animation-duration: 28s;
+    opacity: 0.24;
+  }
+
+  .bg-animation::after {
+    animation-duration: 14s;
+    opacity: 0.42;
+  }
 }
 
 /* Consent banner styling */
@@ -1458,3 +1673,63 @@ a:hover {
 .certificate-list li:nth-child(3) { animation-delay: 0.3s; }
 .certificate-list li:nth-child(4) { animation-delay: 0.4s; }
 .certificate-list li:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============================================
+   Performance & Accessibility Optimizations
+============================================= */
+
+/* Reduce motion for users with motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .bg-animation {
+    animation: none;
+    filter: brightness(1.1) contrast(1.15);
+  }
+  
+  .bg-animation::before,
+  .bg-animation::after {
+    animation: none;
+  }
+}
+
+/* Reduce paint areas for complex elements */
+.certificate-list,
+.software-list,
+.tools-list,
+.projects-list {
+  contain: content;
+}
+
+/* Optimize sidebar scrolling */
+.sidebar {
+  contain: layout;
+}
+
+/* GPU acceleration for animations */
+.navbar-link,
+.social-link,
+.filter-btn {
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Performance hint for interactive elements */
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Reduce jank from large images */
+img {
+  contain: layout style;
+}

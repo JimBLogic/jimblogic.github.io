@@ -23,35 +23,35 @@
   {
     "name": "Bash",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg",
-    "icon": "gnubash.png",
+    "icon": "",
     "description": "Unix shell and command language",
     "link": "https://www.gnu.org/software/bash/"
   },
   {
     "name": "Django",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
-    "icon": "django.png",
+    "icon": "",
     "description": "Python web framework",
     "link": "https://www.djangoproject.com/"
   },
   {
     "name": "AWS CloudFormation",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
-    "icon": "amazonaws.png",
+    "icon": "",
     "description": "Cloud infrastructure as code",
     "link": "https://aws.amazon.com/cloudformation/"
   },
   {
     "name": "Metasploit",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/metasploit.svg",
-    "icon": "metasploit.png",
+    "icon": "",
     "description": "Exploit development & penetration testing",
     "link": "https://www.metasploit.com/"
   },
   {
     "name": "Kali Linux",
     "iconWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kalilinux.svg",
-    "icon": "kalilinux.png",
+    "icon": "",
     "description": "Penetration testing distribution",
     "link": "https://www.kali.org/"
   }
