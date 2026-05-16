@@ -3,6 +3,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   root: '.',
+  base: './',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -17,7 +18,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         { src: 'assets', dest: '.' },
-        { src: 'pdfs', dest: '.' },
+        { src: 'UpgradeHub', dest: '.' },
         // Copy data JSON files used by runtime fetches
         { src: 'certificates.json', dest: '.' },
         { src: 'software.json', dest: '.' },
