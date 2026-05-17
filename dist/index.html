@@ -7,10 +7,6 @@
   <meta name="keywords" content="cybersecurity, ethical hacking, penetration testing, digital forensics, cloud security, AWS, Python, Linux, OSINT, threat analysis" />
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <meta name="robots" content="index, follow" />
-<header class="site-header" role="banner">
-  <button id="navToggle" class="hamburger" aria-controls="navList" aria-expanded="false" aria-label="Menu">Menu</button>
-</header>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
@@ -26,10 +22,11 @@
   <meta name="twitter:title" content="JimBLogic | Cybersecurity Portfolio" />
   <meta name="twitter:description" content="Junior Cybersecurity Analyst | Ethical Hacker | AWS Cloud Practitioner" />
   <meta name="twitter:image" content="https://jimblogic.github.io/assets/Images/Profilepicandother/my-avatar.png" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; img-src 'self' https: data: blob:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net; connect-src 'self' https://raw.githubusercontent.com https://api.github.com https://plausible.io;">
   
   <title>JimBLogic | Cybersecurity Portfolio - Jaime Ramsden de Frutos</title>
-  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
+  <meta name="build-version" content="aa223a0" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -67,13 +64,17 @@
     }
   }
   </script>
-  <script type="module" crossorigin src="./assets/index-BriPnQaT.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DI-2UqWe.css">
+  <script type="module" crossorigin src="./assets/index-DhW0DYn9.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C7bQiWKT.css">
 </head>
 <body>
 
 <!-- Skip link for keyboard users -->
 <a class="skip-link" href="#maincontent">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <button id="navToggle" class="hamburger" aria-controls="navList" aria-expanded="false" aria-label="Menu">Menu</button>
+</header>
 
 <div class="bg-animation"></div>
 
@@ -102,11 +103,10 @@
     <div class="sidebar-info">
       <div class="avatar-bg">
         <figure class="avatar-box">
-          <img src="./assets/my-avatar-B0vKPoMn.png"
+          <img id="avatarImg" src="./assets/my-avatar-B0vKPoMn.png"
                alt="Jaime Ramsden de Frutos - Cybersecurity Professional"
                width="240" height="240"
-               loading="eager"
-               onerror="this.style.display='none'; console.error('Avatar image failed to load');">
+               loading="eager">
         </figure>
       </div>
       <h1 class="main-name" data-txt="main_name">Jaime Ramsden de Frutos</h1>
@@ -131,7 +131,7 @@
           <div class="icon-box"><ion-icon name="document-outline" aria-hidden="true"></ion-icon></div>
           <div class="contact-info">
             <p class="contact-title" data-txt="resume">Resume</p>
-            <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" target="_blank" class="contact-link" data-txt="openpdf">Open PDF</a>
+            <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" target="_blank" rel="noopener noreferrer" class="contact-link" data-txt="openpdf">Open PDF</a>
           </div>
         </li>
       </ul>
@@ -178,14 +178,14 @@
     <section id="about" class="main-section">
       <h2 data-txt="about"><ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>About Me</h2>
       <div class="about-buttons">
-        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_1">Cybersecurity</button>
-        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_2">Cloud Security</button>
-        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_3">Penetration Testing</button>
-        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_4">Digital Forensics</button>
-        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_5">OSINT</button>
-        <button onclick="document.getElementById('passion').scrollIntoView({behavior:'smooth'})" data-txt="about_btn_6">Bitcoin</button>
+        <button data-scroll-target="skills" data-txt="about_btn_1">Cybersecurity</button>
+        <button data-scroll-target="skills" data-txt="about_btn_2">Cloud Security</button>
+        <button data-scroll-target="skills" data-txt="about_btn_3">Penetration Testing</button>
+        <button data-scroll-target="skills" data-txt="about_btn_4">Digital Forensics</button>
+        <button data-scroll-target="skills" data-txt="about_btn_5">OSINT</button>
+        <button data-scroll-target="passion" data-txt="about_btn_6">Bitcoin</button>
       </div>
-      <p data-txt="about_p1">I'm an aspiring junior cybersecurity analyst with hands-on training in ethical hacking, cloud security, and digital forensics. I recently completed a full-time bootcamp at <a href="./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" target="_blank">UpgradeHub</a>, where I gained real-world experience using Kali Linux, Metasploit, AWS, Splunk, Wireshark, and more.</p>
+      <p data-txt="about_p1">I'm an aspiring junior cybersecurity analyst with hands-on training in ethical hacking, cloud security, and digital forensics. I recently completed a full-time bootcamp at <a href="./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" target="_blank" rel="noopener noreferrer">UpgradeHub</a>, where I gained real-world experience using Kali Linux, Metasploit, AWS, Splunk, Wireshark, and more.</p>
       <p><strong data-txt="about_p2_label">Looking for:</strong> <span data-txt="about_p2">An entry-level or junior cybersecurity position where I can keep learning and contribute to meaningful projects.</span></p>
       <p><span data-txt="about_p3">Learning journeys and certificates hosted on GitHub:</span> 
         <a href="https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates" target="_blank" rel="noopener">Security Blue Team</a>,
@@ -207,7 +207,7 @@
     <!-- Skills -->
     <section id="skills" class="main-section">
       <h2 data-txt="skills"><ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon>Skills</h2>
-      <p data-txt="skills_intro" style="margin-bottom: 1.5em; color: #ccc;">Throughout my cybersecurity journey, I've developed expertise across multiple domains. Each skill represents countless hours of hands-on practice, lab work, and real-world application.</p>
+      <p data-txt="skills_intro" class="section-intro">Throughout my cybersecurity journey, I've developed expertise across multiple domains. Each skill represents countless hours of hands-on practice, lab work, and real-world application.</p>
       <ul class="skills-list">
         <li><strong data-txt="skills_1_title">Security Frameworks:</strong> <span data-txt="skills_1_desc">NIST Cybersecurity Framework, ISO 27001 - Understanding organizational security postures and compliance requirements</span></li>
         <li><strong data-txt="skills_2_title">Network Security:</strong> <span data-txt="skills_2_desc">Network analysis, IDS/IPS configuration, Firewall management - Protecting perimeter defenses and monitoring traffic patterns</span></li>
@@ -237,31 +237,31 @@
     <!-- Passion & Interests -->
     <section id="passion" class="main-section">
       <h2 data-txt="passion"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon>Passion & Interests</h2>
-      <p data-txt="passion_intro" style="margin-bottom: 1.5em; color: #ccc;">Beyond technical skills, I'm driven by curiosity and a commitment to financial sovereignty and privacy.</p>
+      <p data-txt="passion_intro" class="section-intro">Beyond technical skills, I'm driven by curiosity and a commitment to financial sovereignty and privacy.</p>
       
       <div class="passion-grid">
         <div class="passion-card">
-          <ion-icon name="logo-bitcoin" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;" aria-hidden="true"></ion-icon>
+          <ion-icon name="logo-bitcoin" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_bitcoin_title">Bitcoin & Financial Sovereignty</h3>
           <p data-txt="passion_bitcoin_desc">Running my own Bitcoin Lightning node to support the decentralized network and promote financial freedom. I believe in self-custody, peer-to-peer transactions, and the importance of sound money principles.</p>
           <p><a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" target="_blank" rel="noopener" data-txt="passion_bitcoin_link">View my Lightning Node →</a></p>
         </div>
         
         <div class="passion-card">
-          <ion-icon name="shield-checkmark-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;" aria-hidden="true"></ion-icon>
+          <ion-icon name="shield-checkmark-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_privacy_title">Privacy & Open Source</h3>
           <p data-txt="passion_privacy_desc">Advocate for digital privacy and open-source software. I use privacy-focused tools like Proton Mail, contribute to open-source projects, and believe everyone deserves control over their personal data.</p>
         </div>
         
         <div class="passion-card">
-          <ion-icon name="book-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;" aria-hidden="true"></ion-icon>
+          <ion-icon name="book-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_learning_title">Continuous Learning</h3>
           <p data-txt="passion_learning_desc">Cybersecurity is ever-evolving, and I'm passionate about staying ahead. From capture-the-flag competitions to reading security research papers, I'm always expanding my knowledge and testing new techniques.</p>
           <p><a href="#journey" data-txt="passion_learning_link">Explore my learning journey →</a></p>
         </div>
         
         <div class="passion-card">
-          <ion-icon name="globe-outline" style="font-size: 2.5em; color: var(--accent); margin-bottom: 0.5em;" aria-hidden="true"></ion-icon>
+          <ion-icon name="globe-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_community_title">Community & Collaboration</h3>
           <p data-txt="passion_community_desc">I believe in sharing knowledge and helping others grow. Whether it's documenting my learning journey on GitHub or mentoring newcomers, I'm committed to building a stronger security community.</p>
           <p><a href="https://github.com/JimBLogic" target="_blank" rel="noopener" data-txt="passion_community_link">View my GitHub →</a></p>
@@ -286,7 +286,7 @@
     <!-- Projects -->
     <section id="projects" class="main-section">
       <h2 data-txt="projects"><ion-icon name="folder-open-outline" aria-hidden="true"></ion-icon>Projects</h2>
-      <div style="margin: 8px 0 12px 0;">
+      <div class="projects-toggle-wrap">
         <button id="projectsToggle" class="filter-btn" data-txt="projects_expand" aria-controls="projectsList" aria-expanded="false">Expand</button>
       </div>
       <ul class="projects-list" id="projectsList">
@@ -307,7 +307,7 @@
       <h2 data-txt="contact"><ion-icon name="mail-outline" aria-hidden="true"></ion-icon>Contact</h2>
       <p data-txt="contact_1">Ready to collaborate? Reach out via email:</p>
   <p><a href="mailto:jrf91@pm.me" class="contact-link">jrf91@pm.me</a></p>
-      <p data-txt="contact_2">Or connect via <a href="https://www.linkedin.com/in/jimblogic/" target="_blank">LinkedIn</a></p>
+      <p data-txt="contact_2">Or connect via <a href="https://www.linkedin.com/in/jimblogic/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
     </section>
     
   </main>
@@ -319,11 +319,11 @@
 </button>
 
 <!-- Consent banner for analytics (opt-in) -->
-<div id="consent" role="dialog" aria-live="polite" aria-modal="true" aria-label="Analytics consent" class="consent" style="display:none;">
-  <p style="margin:0;">Allow anonymous analytics to improve the site?</p>
-  <div style="display:flex; gap:8px;">
-    <button id="consent-accept" class="btn">Allow</button>
-    <button id="consent-decline" class="btn">No thanks</button>
+<div id="consent" role="dialog" aria-live="polite" aria-modal="true" aria-label="Analytics consent" class="consent" hidden>
+  <p>Allow anonymous analytics to improve the site?</p>
+  <div>
+    <button id="consent-accept" class="btn" type="button">Allow</button>
+    <button id="consent-decline" class="btn" type="button">No thanks</button>
   </div>
 </div>
 
@@ -331,16 +331,12 @@
 <script id="plausible" defer data-domain="jimblogic.github.io" src="https://plausible.io/js/script.js" data-manual></script>
 
   <!-- Footer -->
-  <footer role="contentinfo" class="site-footer" style="max-width:720px;margin:24px 40px;padding:16px;border-radius:12px;background:rgba(0,0,0,0.25);color:#ddd;display:flex;flex-direction:column;gap:8px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div>
-        <small>© 2025 Jaime Ramsden de Frutos · <a href="LICENSE" style="color:var(--accent);">MIT License</a></small>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <a href="https://pages.github.com/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Powered by GitHub Pages</a>
-      </div>
+  <footer role="contentinfo" class="site-footer">
+    <div class="site-footer-row">
+      <small>© 2025 Jaime Ramsden de Frutos · <a href="LICENSE" class="footer-link">MIT License</a></small>
+      <a href="https://pages.github.com/" target="_blank" rel="noopener" class="footer-link">Powered by GitHub Pages</a>
     </div>
-    <div style="font-size:0.9em;color:#bbb">View source on <a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener" style="color:var(--accent)">GitHub</a></div>
+    <div class="site-footer-source">View source on <a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener" class="footer-link">GitHub</a></div>
   </footer>
 </body>
 </html>

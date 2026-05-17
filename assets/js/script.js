@@ -13,14 +13,13 @@ function imgLocalThenOnline(local, fallback, alt, prefix = "") {
   const backupIcon = `https://img.icons8.com/fluency/48/${alt.toLowerCase().replace(/\s+/g, '-')}.png`;
   const letterIcon = createIconSvg(alt);
   
+  // Use data attributes for fallback sources to avoid inline JS (CSP friendly)
+  const fb = fallback ? fallback : backupIcon;
+  const encodedLetter = encodeURIComponent(letterIcon);
   if (local) {
-    return `<img src="${prefix + local}" alt="${alt}" loading="lazy" 
-            onerror="this.onerror=null; this.src='${fallback || backupIcon}'; 
-            this.onerror = function() { this.src='${letterIcon}'; }">`;
+    return `<img src="${prefix + local}" alt="${alt}" loading="lazy" data-fallback="${fb}" data-letter="${encodedLetter}">`;
   } else if (fallback) {
-    return `<img src="${fallback}" alt="${alt}" loading="lazy" 
-            onerror="this.onerror=null; this.src='${backupIcon}'; 
-            this.onerror = function() { this.src='${letterIcon}'; }">`;
+    return `<img src="${fallback}" alt="${alt}" loading="lazy" data-fallback="${fb}" data-letter="${encodedLetter}">`;
   } else {
     return `<img src="${letterIcon}" alt="${alt}" loading="lazy">`;
   }
@@ -66,8 +65,8 @@ function renderCertListFiltered(listId, issuer) {
       </div>
     `;
     return cert.link
-      ? `<li style="cursor: pointer;" onclick="window.open('${cert.link}', '_blank')">${listContent}</li>`
-      : `<li>${listContent}</li>`;
+    ? `<li class="clickable" data-href="${cert.link}">${listContent}</li>`
+    : `<li>${listContent}</li>`;
   }).join('');
   // Re-run collapsible initialization in case this injected content created long sections
   try {
@@ -87,13 +86,16 @@ function buildCertFilters() {
   }).join('');
   filterEl.innerHTML = btns;
   // Avoid stacking multiple listeners on rebuilds
-  filterEl.onclick = (e) => {
-    const btn = e.target.closest('button[data-filter]');
-    if (!btn) return;
-    filterEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderCertListFiltered('certificateList', btn.dataset.filter);
-  };
+  if (!filterEl.dataset.bound) {
+    filterEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-filter]');
+      if (!btn) return;
+      filterEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCertListFiltered('certificateList', btn.dataset.filter);
+    });
+    filterEl.dataset.bound = '1';
+  }
   // Restore current filter selection
   const activeBtn = filterEl.querySelector(`button[data-filter="${CURRENT_FILTER}"]`) || filterEl.querySelector('button');
   if (activeBtn) activeBtn.classList.add('active');
@@ -159,12 +161,12 @@ function renderLearningJourney(gridId) {
     const count = p.manualCount ? '' : (countBy[p.key] || 0);
     const img = imgLocalThenOnline(p.imgLocal || '', p.imgWeb || '', p.name);
     return `
-      <div class="journey-card" onclick="window.open('${p.link}', '_blank')">
+      <div class="journey-card" data-href="${p.link}">
         <div class="journey-thumb">${img}</div>
         <div class="journey-meta">
           <div class="journey-title">${p.name}</div>
           <div class="journey-count">${count !== '' ? `${count} ${t('certificates')}` : ''}</div>
-          <div><a href="${p.link}" target="_blank" rel="noopener">${t('open')}</a></div>
+          <div><a href="${p.link}" target="_blank" rel="noopener noreferrer">${t('open')}</a></div>
         </div>
       </div>
     `;
@@ -188,7 +190,7 @@ function renderList(jsonFile, listId, folder) {
         `;
         
         if (item.link) {
-          return `<li style="cursor: pointer;" onclick="window.open('${item.link}', '_blank')">${listContent}</li>`;
+          return `<li class="clickable" data-href="${item.link}">${listContent}</li>`;
         } else {
           return `<li>${listContent}</li>`;
         }
@@ -240,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastActiveId = '';
   // Disable automatic nav scrolling on small screens to avoid fighting touch scroll
   const isMobileView = () => window.matchMedia('(max-width: 700px)').matches;
-  const isDesktopDualPane = () => window.matchMedia('(min-width: 701px)').matches;
+  const isDesktopDualPane = () => window.matchMedia('(min-width: 1025px)').matches;
   const getScrollTop = () => {
     if (isDesktopDualPane() && mainContent) {
       return mainContent.scrollTop;
@@ -326,6 +328,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Delegated click handler for elements with `data-href` (replaces inline onclick)
+  document.addEventListener('click', (e) => {
+    try {
+      const clickTarget = e.target.closest && e.target.closest('[data-href]');
+      if (clickTarget) {
+        const href = clickTarget.dataset && clickTarget.dataset.href;
+        if (href) {
+          window.open(href, '_blank', 'noopener');
+          return;
+        }
+      }
+      const scrollBtn = e.target.closest && e.target.closest('button[data-scroll-target]');
+      if (scrollBtn) {
+        const tgt = scrollBtn.dataset && scrollBtn.dataset.scrollTarget;
+        if (tgt) {
+          const el = document.getElementById(tgt);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } catch (err) { /* ignore delegated errors */ }
+  });
+
+  // Avatar image error handling (moved from inline onerror)
+  try {
+    const avatar = document.getElementById('avatarImg');
+    if (avatar) {
+      avatar.addEventListener('error', () => {
+        avatar.style.display = 'none';
+        console.error('Avatar image failed to load');
+      });
+    }
+  } catch (e) { /* ignore */ }
+  // Global delegated image fallback handler for images using data-fallback/data-letter
+  try {
+    document.addEventListener('error', (ev) => {
+      try {
+        const tgt = ev.target;
+        if (!tgt || tgt.tagName !== 'IMG') return;
+        const fb = tgt.dataset && tgt.dataset.fallback;
+        const letter = tgt.dataset && tgt.dataset.letter;
+        if (fb && tgt.src !== fb) {
+          tgt.src = fb;
+          return;
+        }
+        if (letter) {
+          tgt.src = decodeURIComponent(letter);
+          return;
+        }
+      } catch (_) {}
+    }, true);
+  } catch (e) { /* ignore */ }
 });
 
 // Consent banner for Plausible analytics (opt-in)
@@ -336,22 +390,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const key = 'consent-analytics';
     const prior = localStorage.getItem(key);
     if (prior) {
-      if (prior === 'yes' && window.plausible) window.plausible('pageview');
+      if (prior === 'yes' && typeof window.plausible === 'function') window.plausible('pageview');
       return; // do not show banner again
     }
     // show banner
-    el.style.display = 'flex';
-    const allow = document.getElementById('consent-accept');
-    const deny = document.getElementById('consent-decline');
-    if (allow) allow.addEventListener('click', () => {
-      localStorage.setItem(key, 'yes');
+    el.hidden = false;
+
+    const setConsent = (value) => {
+      localStorage.setItem(key, value);
       el.remove();
-      if (window.plausible) window.plausible('pageview');
-    });
-    if (deny) deny.addEventListener('click', () => {
-      localStorage.setItem(key, 'no');
-      el.remove();
-    });
+      if (value === 'yes' && typeof window.plausible === 'function') window.plausible('pageview');
+    };
+
+    const handleConsentEvent = (event) => {
+      const target = event.target && event.target.closest ? event.target.closest('#consent-accept, #consent-decline') : null;
+      if (!target) return;
+      event.preventDefault();
+      setConsent(target.id === 'consent-accept' ? 'yes' : 'no');
+    };
+
+    document.addEventListener('click', handleConsentEvent, { passive: false });
+    document.addEventListener('pointerup', handleConsentEvent, { passive: false });
   } catch (_) {}
 })();
 
@@ -422,7 +481,7 @@ function repoToListItem(repo) {
   `;
 
   return htmlUrl
-    ? `<li style="cursor:pointer" onclick="window.open('${htmlUrl}', '_blank')">${listContent}</li>`
+    ? `<li class="clickable" data-href="${htmlUrl}">${listContent}</li>`
     : `<li>${listContent}</li>`;
 }
 
