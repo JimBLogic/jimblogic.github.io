@@ -236,15 +236,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.main-section');
   const navLinks = document.querySelectorAll('.navbar-link');
   const navbarList = document.querySelector('.navbar-list');
+  const mainContent = document.querySelector('.main-content');
   let lastActiveId = '';
   // Disable automatic nav scrolling on small screens to avoid fighting touch scroll
   const isMobileView = () => window.matchMedia('(max-width: 700px)').matches;
+  const isDesktopDualPane = () => window.matchMedia('(min-width: 701px)').matches;
+  const getScrollTop = () => {
+    if (isDesktopDualPane() && mainContent) {
+      return mainContent.scrollTop;
+    }
+
+    return window.scrollY;
+  };
   
   function updateActiveNav() {
     let current = '';
+    const scrollTop = getScrollTop();
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      if (scrollY >= (sectionTop - 200)) {
+      if (scrollTop >= (sectionTop - 200)) {
         current = section.getAttribute('id');
       }
     });
@@ -283,6 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Use passive event listener for better scroll performance
+  if (mainContent) {
+    mainContent.addEventListener('scroll', updateActiveNav, { passive: true });
+  }
   window.addEventListener('scroll', updateActiveNav, { passive: true });
   updateActiveNav(); // Set initial active state
 
@@ -291,16 +305,25 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (scrollTopBtn) {
     // Show/hide button based on scroll position
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+    const updateScrollTopButton = () => {
+      if (getScrollTop() > 300) {
         scrollTopBtn.classList.add('visible');
       } else {
         scrollTopBtn.classList.remove('visible');
       }
-    }, { passive: true });
+    };
+
+    if (mainContent) {
+      mainContent.addEventListener('scroll', updateScrollTopButton, { passive: true });
+    }
+    window.addEventListener('scroll', updateScrollTopButton, { passive: true });
     
     scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (isDesktopDualPane() && mainContent) {
+        mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 });

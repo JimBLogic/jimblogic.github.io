@@ -85,6 +85,26 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+@media (min-width: 701px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .container {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .main-content {
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+  }
+}
+
 /* Mobile/Tablet: Natural scrolling without forced snapping */
 @media (max-width: 1024px) {
   html {
@@ -112,6 +132,73 @@ body {
   .main-section:hover {
     background: rgba(35, 37, 38, 0.5);
     border-color: rgba(247, 147, 26, 0.2);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .container {
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .sidebar {
+    width: min(300px, 34vw);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 28px 16px;
+  }
+
+  .main-section {
+    max-width: none;
+    margin: 22px 0;
+    padding: 30px 26px 26px;
+  }
+
+  .navbar-list {
+    max-height: 180px;
+  }
+
+  .main-content::before {
+    animation-duration: 34s;
+    opacity: 0.42;
+  }
+
+  .main-content::after {
+    animation-duration: 14s;
+    opacity: 0.26;
+  }
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+  .site-header {
+    padding: 8px 10px;
+  }
+
+  .sidebar {
+    padding: 8px 2vw;
+  }
+
+  .main-content {
+    padding: 20px 14px;
+  }
+
+  .main-section {
+    margin: 12px 1.5vw;
+    padding: 20px 4vw;
+  }
+
+  .navbar {
+    max-height: calc(100dvh - 48px - env(safe-area-inset-top));
+  }
+
+  .bg-animation::before {
+    animation-duration: 14s;
+  }
+
+  .main-content::before {
+    animation-duration: 16s;
   }
 }
 
@@ -201,6 +288,22 @@ body {
   contain: layout style paint;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 701px) {
+  .bg-animation {
+    animation: electricalPulse 16s ease-in-out infinite alternate;
+  }
+
+  .bg-animation::before {
+    animation: electricalFlow 54s linear infinite;
+    opacity: 0.28;
+  }
+
+  .bg-animation::after {
+    animation: nodeGlow 18s ease-in-out infinite alternate;
+    opacity: 0.45;
+  }
 }
 
 @keyframes electricalPulse {
@@ -508,6 +611,32 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .bg-animation::before {
+    animation-duration: 18s;
+    opacity: 0.3;
+  }
+
+  .bg-animation::after {
+    animation-duration: 8s;
+    opacity: 0.5;
+  }
+
+  .main-content::before {
+    background:
+      radial-gradient(circle at 22% 18%, rgba(0, 255, 136, 0.14) 0, rgba(0, 255, 136, 0.07) 14%, transparent 34%),
+      radial-gradient(circle at 76% 20%, rgba(247, 147, 26, 0.12) 0, rgba(247, 147, 26, 0.06) 12%, transparent 32%),
+      linear-gradient(90deg, transparent 0, transparent 46%, rgba(0, 255, 136, 0.08) 47.5%, rgba(247, 147, 26, 0.08) 50%, transparent 52.5%, transparent 100%),
+      repeating-linear-gradient(0deg, transparent 0, transparent 36px, rgba(0, 255, 136, 0.06) 36px, rgba(0, 255, 136, 0.06) 38px, transparent 38px, transparent 74px),
+      repeating-linear-gradient(90deg, transparent 0, transparent 48px, rgba(247, 147, 26, 0.05) 48px, rgba(247, 147, 26, 0.05) 50px, transparent 50px, transparent 96px);
+    animation-duration: 20s;
+    opacity: 0.45;
+  }
+
+  .main-content::after {
+    animation-duration: 11s;
+    opacity: 0.3;
+  }
 }
 
 /* Collapsible sections: show concise preview and allow expansion
@@ -770,8 +899,8 @@ body {
   flex: 1;
   padding: 40px 20px;
   margin-left: 260px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: visible;
+  overflow-x: clip;
   position: relative;
   isolation: isolate;
 }
@@ -807,6 +936,22 @@ body {
   mix-blend-mode: screen;
   opacity: 0.35;
   animation: chipPulse 9s ease-in-out infinite alternate;
+}
+
+@media (min-width: 701px) {
+  .main-content::before,
+  .main-content::after {
+    opacity: 0.28;
+    transform: none;
+  }
+
+  .main-content::before {
+    animation: chipDrift 46s ease-in-out infinite alternate;
+  }
+
+  .main-content::after {
+    animation: chipPulse 18s ease-in-out infinite alternate;
+  }
 }
 
 .main-content > * {
@@ -1359,13 +1504,13 @@ a:hover {
   }
 
   .bg-animation::before {
-    animation-duration: 28s;
-    opacity: 0.24;
+    animation-duration: 18s;
+    opacity: 0.28;
   }
 
   .bg-animation::after {
-    animation-duration: 14s;
-    opacity: 0.42;
+    animation-duration: 8s;
+    opacity: 0.5;
   }
 }
 
@@ -1683,20 +1828,32 @@ a:hover {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
   
   .bg-animation {
-    animation: none;
-    filter: brightness(1.1) contrast(1.15);
+    animation-duration: 24s !important;
+    animation-timing-function: ease-in-out !important;
+    filter: brightness(1.08) contrast(1.12);
   }
   
   .bg-animation::before,
   .bg-animation::after {
-    animation: none;
+    animation-duration: 42s !important;
+    animation-timing-function: linear !important;
+  }
+
+  .main-section,
+  .passion-card,
+  .certificate-list li,
+  .software-list li,
+  .tools-list li,
+  .projects-list li,
+  .btn,
+  .navbar-link,
+  .social-link,
+  .avatar-box img {
+    transition-duration: 0.18s !important;
   }
 }
 
@@ -1732,4 +1889,24 @@ a,
 /* Reduce jank from large images */
 img {
   contain: layout style;
+}
+
+@media (min-width: 701px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .container {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .main-content {
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: clip;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+  }
 }
