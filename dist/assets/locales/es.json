@@ -1,6 +1,6 @@
 {
   "main_name": "Jaime Ramsden de Frutos",
-  "title": "Analista Junior de Ciberseguridad | Ethical Hacker | AWS Cloud Practitioner",
+  "title": "Candidato a Analista SOC Junior / Blue Team",
   "about": "Acerca de Mí",
   "skills": "Competencias",
   "education": "Formación",
@@ -22,5 +22,21 @@
   "projects_expand": "Ver todos",
   "projects_collapse": "Ver menos",
   "show_more": "Ver más",
-  "show_less": "Ver menos"
+  "show_less": "Ver menos",
+  "hero_eyebrow": "Candidato a Analista SOC Junior / Blue Team",
+  "hero_statement": "Ayudo a convertir logs, señales de red y procedimientos documentados en acciones defensivas claras. Mi principal prueba práctica es un homelab con Raspberry Pi 4 centrado en monitorización, backups, servicios Docker y hardening Linux.",
+  "hero_projects": "Ver pruebas de trabajo",
+  "hero_certifications": "Ver certificados",
+  "focus": "Enfoque actual",
+  "focus_lab_title": "Homelab defensivo con Raspberry Pi 4",
+  "focus_lab_desc": "Actualmente construyo un pequeño laboratorio blue-team para hardening Linux, servicios Docker, monitorización, revisión de logs, backups probados y visibilidad de red.",
+  "focus_soc_title": "Fundamentos SOC",
+  "focus_soc_desc": "Practico triaje de alertas, notas de incidente, bases de forense digital, flujos OSINT y lectura de inteligencia de amenazas sin exagerar experiencia profesional.",
+  "focus_cloud_title": "Fundamentos cloud AWS",
+  "focus_cloud_desc": "Me preparo como candidato AWS Cloud Practitioner reforzando IAM, responsabilidad compartida, control de costes y bases seguras de cloud.",
+  "about_btn_2": "Fundamentos AWS",
+  "about_btn_3": "Blue Team",
+  "about_p2": "Un puesto inicial SOC, Blue Team u operaciones de seguridad donde pueda triar alertas, documentar hallazgos, aprender de analistas senior y aportar trabajo defensivo fiable.",
+  "skills_intro": "Mis habilidades son junior, prácticas y basadas en laboratorio: suficientes para contribuir con cuidado, hacer buenas preguntas y seguir mejorando con trabajo documentado.",
+  "projects_intro": "Los repositorios reales se cargan desde GitHub. El elemento destacado muestra prueba práctica de trabajo; el laboratorio activo se marca honestamente como en construcción."
 }

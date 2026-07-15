@@ -2050,3 +2050,112 @@ img {
     scrollbar-gutter: stable;
   }
 }
+
+/* Incremental modernization: recruiter-first hero and consistent focus cards */
+.hero-panel {
+  margin: 0 0 22px;
+  padding: 24px;
+  border: 1px solid rgba(247, 147, 26, 0.32);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(247, 147, 26, 0.16), rgba(35, 37, 38, 0.86));
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-statement {
+  font-size: clamp(1.15rem, 2.3vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.hero-actions,
+.focus-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.hero-actions {
+  grid-template-columns: repeat(auto-fit, minmax(170px, max-content));
+}
+
+.btn-link {
+  align-items: center;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: #121212;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  text-decoration: none;
+}
+
+.btn-link:hover,
+.btn-link:focus-visible {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-link-secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.focus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.focus-card,
+.passion-card,
+.education-item,
+.projects-list li,
+.software-list li,
+.tools-list li,
+.certificate-list li {
+  border-color: rgba(247, 147, 26, 0.18);
+}
+
+.focus-card {
+  background: rgba(24, 26, 27, 0.72);
+  border: 1px solid rgba(247, 147, 26, 0.18);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.focus-card h3 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.focus-card p,
+.section-intro,
+.main-section p,
+.skills-list li {
+  line-height: 1.72;
+}
+
+.navbar-link {
+  min-height: 44px;
+}
+
+@media (max-width: 900px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+}

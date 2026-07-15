@@ -1,6 +1,6 @@
 {
   "main_name": "Jaime Ramsden de Frutos",
-  "title": "Analista Junior de Ciberseguretat | Ethical Hacker | AWS Cloud Practitioner",
+  "title": "Candidat a Analista SOC Junior / Blue Team",
   "about": "Sobre mi",
   "skills": "Competències",
   "education": "Formació",
@@ -22,5 +22,21 @@
   "projects_expand": "Veure tots",
   "projects_collapse": "Veure menys",
   "show_more": "Veure més",
-  "show_less": "Veure menys"
+  "show_less": "Veure menys",
+  "hero_eyebrow": "Candidat a Analista SOC Junior / Blue Team",
+  "hero_statement": "Ajudo a convertir logs, senyals de xarxa i procediments documentats en accions defensives clares. La meva prova principal és un homelab amb Raspberry Pi 4 centrat en monitoratge, còpies de seguretat, serveis Docker i hardening Linux.",
+  "hero_projects": "Veure proves de feina",
+  "hero_certifications": "Veure certificats",
+  "focus": "Enfocament actual",
+  "focus_lab_title": "Homelab defensiu amb Raspberry Pi 4",
+  "focus_lab_desc": "Actualment construeixo un petit laboratori blue-team per a hardening Linux, serveis Docker, monitoratge, revisió de logs, còpies provades i visibilitat de xarxa.",
+  "focus_soc_title": "Fonaments SOC",
+  "focus_soc_desc": "Practico triatge d’alertes, notes d’incident, bases de forense digital, fluxos OSINT i lectura d’intel·ligència d’amenaces sense exagerar experiència professional.",
+  "focus_cloud_title": "Fonaments cloud AWS",
+  "focus_cloud_desc": "Em preparo com a candidat AWS Cloud Practitioner reforçant IAM, responsabilitat compartida, control de costos i bases segures de cloud.",
+  "about_btn_2": "Fonaments AWS",
+  "about_btn_3": "Blue Team",
+  "about_p2": "Un lloc inicial SOC, Blue Team o operacions de seguretat on pugui triar alertes, documentar troballes, aprendre d’analistes sènior i aportar feina defensiva fiable.",
+  "skills_intro": "Les meves habilitats són junior, pràctiques i basades en laboratori: suficients per contribuir amb cura, fer bones preguntes i continuar millorant amb feina documentada.",
+  "projects_intro": "Els repositoris reals es carreguen des de GitHub. L’element destacat mostra prova pràctica de feina; el laboratori actiu es marca honestament com en construcció."
 }

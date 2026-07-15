@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "audit": "echo Run Lighthouse CI locally if installed",
     "to:webp": "echo Add cwebp conversion here if installed",
-    "purgecss": "echo Skip PurgeCSS (handled by Vite/CSS splitting)"
+    "purgecss": "echo \"Skip PurgeCSS (handled by Vite/CSS splitting)\""
   },
   "devDependencies": {
     "@playwright/test": "^1.48.2",

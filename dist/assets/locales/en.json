@@ -1,6 +1,6 @@
 {
   "main_name": "Jaime Ramsden de Frutos",
-  "title": "Junior Cybersecurity Analyst | Ethical Hacker | AWS Cloud Practitioner",
+  "title": "Junior SOC Analyst / Blue Team Candidate",
   "about": "About Me",
   "skills": "Skills",
   "education": "Education",
@@ -22,5 +22,22 @@
   "projects_expand": "Expand",
   "projects_collapse": "Collapse",
   "show_more": "Show more",
-  "show_less": "Show less"
+  "show_less": "Show less",
+  "hero_eyebrow": "Junior SOC Analyst / Blue Team candidate",
+  "hero_statement": "I help teams turn logs, network signals and documented procedures into clear defensive action. My flagship proof of work is a Raspberry Pi 4 homelab focused on monitoring, backups, Docker services and Linux hardening.",
+  "hero_projects": "View proof of work",
+  "hero_certifications": "Review certificates",
+  "focus": "Current Focus",
+  "focus_lab_title": "Raspberry Pi 4 defensive homelab",
+  "focus_lab_desc": "Currently building a small blue-team lab for Linux hardening, Dockerized services, monitoring, log review, tested backups and network visibility.",
+  "focus_soc_title": "SOC foundations",
+  "focus_soc_desc": "Practicing alert triage, incident notes, digital forensics basics, OSINT workflows and threat-intelligence reading without overstating production experience.",
+  "focus_cloud_title": "AWS cloud foundations",
+  "focus_cloud_desc": "Preparing as an AWS Cloud Practitioner candidate while reinforcing IAM, shared responsibility, billing awareness and secure cloud basics.",
+  "about_btn_2": "AWS Foundations",
+  "about_btn_3": "Blue Team",
+  "about_p1": "I'm a junior SOC Analyst / Blue Team candidate building practical defensive skills through a Raspberry Pi 4 homelab, Linux administration, Docker services, network monitoring, log review, backups and hardening. I completed a full-time cybersecurity bootcamp at <a href='./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf' target='_blank'>UpgradeHub</a> and continue studying digital forensics, incident response, OSINT, threat intelligence and AWS cloud foundations.",
+  "about_p2": "An entry-level SOC, Blue Team or security operations role where I can triage alerts, document findings, learn from senior analysts and contribute reliable defensive work.",
+  "skills_intro": "My skills are junior-level, practical and lab-driven: enough to contribute carefully, ask good questions and keep improving through documented hands-on work.",
+  "projects_intro": "Real repositories are loaded from GitHub. The featured item is selected to show practical proof of work; active lab work is marked honestly as currently building."
 }
