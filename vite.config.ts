@@ -24,7 +24,8 @@ export default defineConfig({
         { src: 'software.json', dest: '.' },
         { src: 'tools.json', dest: '.' },
         { src: 'robots.txt', dest: '.' },
-        { src: 'sitemap.xml', dest: '.' }
+        { src: 'sitemap.xml', dest: '.' },
+        { src: 'LICENSE', dest: '.' }
       ]
     })
   ]
