@@ -38,16 +38,27 @@ function t(key) {
 let CERT_DATA = [];
 let CURRENT_FILTER = 'ALL'; // Store current filter selection
 
+function fetchJsonArray(jsonFile) {
+  return fetch(jsonFile)
+    .then(r => { if (!r.ok) throw new Error(`Local content failed: ${jsonFile}`); return r.json(); })
+    .then(data => { if (!Array.isArray(data)) throw new Error(`Invalid local content: ${jsonFile}`); return data; });
+}
+
+function localContentFallback(listId, sectionKey) {
+  const el = document.getElementById(listId);
+  if (!el) return;
+  el.innerHTML = `<li><div><strong>${t(sectionKey)}</strong><br><span>${t('content_error')}</span></div></li>`;
+}
+
 function renderCertList(jsonFile, listId) {
-  fetch(jsonFile)
-    .then(r => r.json())
+  fetchJsonArray(jsonFile)
     .then(data => {
-      if (!Array.isArray(data)) return;
       CERT_DATA = data;
       buildCertFilters();
       renderCertListFiltered(listId, CURRENT_FILTER);
       renderLearningJourney('journeyGrid');
-    });
+    })
+    .catch(() => localContentFallback(listId, 'certifications'));
 }
 
 function renderCertListFiltered(listId, issuer) {
@@ -173,12 +184,11 @@ function renderLearningJourney(gridId) {
   }).join('');
 }
 
-function renderList(jsonFile, listId, folder) {
-  fetch(jsonFile)
-    .then(r => r.json())
+function renderList(jsonFile, listId, folder, sectionKey = folder) {
+  fetchJsonArray(jsonFile)
     .then(data => {
       const el = document.getElementById(listId);
-      if (!el || !Array.isArray(data)) return;
+      if (!el) return;
       el.innerHTML = data.map(item => {
         const listContent = `
           ${imgLocalThenOnline(item.icon, item.iconWeb, item.name, `./assets/Images/${folder}/`)}
@@ -195,7 +205,8 @@ function renderList(jsonFile, listId, folder) {
           return `<li>${listContent}</li>`;
         }
       }).join('');
-    });
+    })
+    .catch(() => localContentFallback(listId, sectionKey));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -214,8 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Removed theme toggle and related state — design uses a single theme
 
   renderCertList('./certificates.json', 'certificateList');
-  renderList('./software.json', 'softwareList', "software");
-  renderList('./tools.json', 'toolsList', "tools");
+  renderList('./software.json', 'softwareList', "software", 'software');
+  renderList('./tools.json', 'toolsList', "tools", 'tools');
   renderGitHubProjects('JimBLogic', 'projectsList');
   renderProfileHighlights('profileHighlights', 'JimBLogic');
   
@@ -516,9 +527,9 @@ function renderGitHubProjects(username, listId) {
 
   const url = `https://api.github.com/users/${encodeURIComponent(username)}/repos?per_page=100&sort=updated`;
   fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } })
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error(`GitHub repositories failed: ${r.status}`); return r.json(); })
     .then(list => {
-      if (!Array.isArray(list)) return;
+      if (!Array.isArray(list)) throw new Error('Invalid GitHub repositories payload');
       // Filter only original repos (non-forks)
       const nonFork = list.filter(r => r && r.fork === false);
       // Compute latest updated repo from the full non-fork list
@@ -593,7 +604,7 @@ function renderProjectsView(listId) {
 }
 
 // Language change hook (called from translate.js) to re-render dynamic, language-dependent UI
-window.onLanguageChanged = function(lang) {
+window.onLanguageChanged = function(_lang) {
   try {
     if (Array.isArray(CERT_DATA) && CERT_DATA.length) {
       buildCertFilters();
@@ -601,8 +612,8 @@ window.onLanguageChanged = function(lang) {
       renderLearningJourney('journeyGrid');
     }
     // Re-render other dynamic sections to update labels
-    renderList('./software.json', 'softwareList', "software");
-    renderList('./tools.json', 'toolsList', "tools");
+    renderList('./software.json', 'softwareList', "software", 'software');
+    renderList('./tools.json', 'toolsList', "tools", 'tools');
     // Preserve projects expanded/collapsed state and just refresh view text
     renderProjectsView('projectsList');
     renderProfileHighlights('profileHighlights', 'JimBLogic');

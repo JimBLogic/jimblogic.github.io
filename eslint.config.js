@@ -3,7 +3,7 @@ import prettier from 'eslint-config-prettier';
 
 export default [
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**']
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'playwright-report/**', 'test-results/**', 'reports/**']
   },
   js.configs.recommended,
   prettier,
@@ -18,11 +18,14 @@ export default [
         URL: 'readonly',
         console: 'readonly',
         setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        PerformanceObserver: 'readonly',
         IntersectionObserver: 'readonly',
         localStorage: 'readonly',
         navigator: 'readonly',
         sessionStorage: 'readonly',
         module: 'readonly',
+        process: 'readonly',
         require: 'readonly'
       }
     },

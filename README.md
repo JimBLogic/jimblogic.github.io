@@ -90,3 +90,7 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 ## Contact
 
 Professional email: <jrf91@pm.me>
+
+## QA and deployment
+
+See [docs/qa-and-deployment.md](docs/qa-and-deployment.md) for local validation, browser QA, production auditing, and gated GitHub Pages deployment.
