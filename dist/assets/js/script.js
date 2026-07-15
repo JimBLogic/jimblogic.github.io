@@ -40,13 +40,21 @@ let CURRENT_FILTER = 'ALL'; // Store current filter selection
 
 function renderCertList(jsonFile, listId) {
   fetch(jsonFile)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to load ${jsonFile}: ${r.status}`);
+      return r.json();
+    })
     .then(data => {
-      if (!Array.isArray(data)) return;
+      if (!Array.isArray(data)) throw new Error(`Invalid list payload from ${jsonFile}`);
       CERT_DATA = data;
       buildCertFilters();
       renderCertListFiltered(listId, CURRENT_FILTER);
       renderLearningJourney('journeyGrid');
+    })
+    .catch(error => {
+      console.error(error);
+      const el = document.getElementById(listId);
+      if (el) el.innerHTML = `<li><div><strong>${escapeHtml(t('certifications'))}</strong><br><span>${escapeHtml(t('github_error'))}</span></div></li>`;
     });
 }
 
@@ -175,10 +183,14 @@ function renderLearningJourney(gridId) {
 
 function renderList(jsonFile, listId, folder) {
   fetch(jsonFile)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to load ${jsonFile}: ${r.status}`);
+      return r.json();
+    })
     .then(data => {
       const el = document.getElementById(listId);
-      if (!el || !Array.isArray(data)) return;
+      if (!el) return;
+      if (!Array.isArray(data)) throw new Error(`Invalid list payload from ${jsonFile}`);
       el.innerHTML = data.map(item => {
         const listContent = `
           ${imgLocalThenOnline(item.icon, item.iconWeb, item.name, `./assets/Images/${folder}/`)}
@@ -195,6 +207,11 @@ function renderList(jsonFile, listId, folder) {
           return `<li>${listContent}</li>`;
         }
       }).join('');
+    })
+    .catch(error => {
+      console.error(error);
+      const el = document.getElementById(listId);
+      if (el) el.innerHTML = `<li><div><strong>${escapeHtml(t('tools'))}</strong><br><span>${escapeHtml(t('github_error'))}</span></div></li>`;
     });
 }
 
@@ -516,9 +533,12 @@ function renderGitHubProjects(username, listId) {
 
   const url = `https://api.github.com/users/${encodeURIComponent(username)}/repos?per_page=100&sort=updated`;
   fetch(url, { headers: { 'Accept': 'application/vnd.github+json' } })
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to load GitHub repositories: ${r.status}`);
+      return r.json();
+    })
     .then(list => {
-      if (!Array.isArray(list)) return;
+      if (!Array.isArray(list)) throw new Error('Invalid GitHub repositories payload');
       // Filter only original repos (non-forks)
       const nonFork = list.filter(r => r && r.fork === false);
       // Compute latest updated repo from the full non-fork list

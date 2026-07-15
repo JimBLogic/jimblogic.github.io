@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { openHome, assertNoHorizontalOverflow, assertNoRuntimeErrors } from './helpers';
+import { openHome, assertNoHorizontalOverflow, mockOptionalExternalServices } from './helpers';
 
 const viewports = [
   { width: 320, height: 568 }, { width: 390, height: 844 }, { width: 768, height: 1024 }, { width: 1366, height: 768 }, { width: 1920, height: 1080 }
@@ -9,7 +9,8 @@ const langs = ['en', 'es', 'ca'];
 for (const viewport of viewports) for (const lang of langs) {
   test(`responsive ${lang} ${viewport.width}x${viewport.height}`, async ({ page }) => {
     await page.setViewportSize(viewport);
-    await openHome(page, lang);
+    await mockOptionalExternalServices(page);
+    const guard = await openHome(page, lang);
     await assertNoHorizontalOverflow(page);
     await expect(page.getByRole('heading').first()).toBeVisible();
     await expect(page.getByRole('link', { name: /proof|proyectos|projectes|work|cert/i }).first()).toBeVisible();
@@ -26,6 +27,6 @@ for (const viewport of viewports) for (const lang of langs) {
       }));
     });
     expect(cardsOverlap).toBeFalsy();
-    await assertNoRuntimeErrors();
+    await guard.assertClean();
   });
 }

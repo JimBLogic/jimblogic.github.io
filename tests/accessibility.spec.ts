@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { openHome, assertNoRuntimeErrors } from './helpers';
+import { openHome, mockOptionalExternalServices } from './helpers';
 
 test('automated accessibility gates for landmarks, keyboard, menu state and axe severity', async ({ page }) => {
-  await openHome(page);
+  await mockOptionalExternalServices(page);
+  const guard = await openHome(page);
   await expect(page.locator('main#maincontent')).toBeVisible();
   await expect(page.locator('.skip-link')).toHaveAttribute('href', '#maincontent');
   await page.keyboard.press('Tab');
@@ -27,5 +28,5 @@ test('automated accessibility gates for landmarks, keyboard, menu state and axe 
     severe = [];
   }
   expect(severe, JSON.stringify(severe, null, 2)).toEqual([]);
-  await assertNoRuntimeErrors();
+  await guard.assertClean();
 });

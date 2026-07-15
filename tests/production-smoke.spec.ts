@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { openHome, assertNoRuntimeErrors } from './helpers';
+import { openHome, mockOptionalExternalServices } from './helpers';
 
 test('portfolio smoke checks required copy, links, navigation and CSP-safe runtime', async ({ page }) => {
-  await openHome(page);
+  await mockOptionalExternalServices(page);
+  const guard = await openHome(page);
   await expect(page).toHaveTitle(/Junior SOC Analyst Portfolio/);
   await expect(page.getByText(/Junior SOC Analyst \/ Blue Team/i).first()).toBeVisible();
   await expect(page.getByText(/Raspberry Pi 4/i).first()).toBeVisible();
@@ -16,5 +17,22 @@ test('portfolio smoke checks required copy, links, navigation and CSP-safe runti
   }
   await expect(page.locator('#certificateList li').first()).toBeVisible({ timeout: 10_000 });
   await expect(page.locator('#projectsList')).toBeVisible();
-  await assertNoRuntimeErrors();
+  await guard.assertClean();
+});
+
+test('optional external GitHub services fail gracefully without breaking local UI', async ({ page }) => {
+  await page.route('https://api.github.com/**', route => route.abort());
+  await page.route('https://raw.githubusercontent.com/**', route => route.abort());
+
+  const guard = await openHome(page, 'en', { allowOptionalExternalFailures: true });
+
+  await expect(page.getByText(/Junior SOC Analyst \/ Blue Team/i).first()).toBeVisible();
+  await expect(page.getByText(/Raspberry Pi 4/i).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: /menu/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /open pdf/i })).toHaveAttribute('href', /\.pdf$/i);
+  await expect(page.getByRole('link', { name: 'jrf91@pm.me' }).first()).toHaveAttribute('href', 'mailto:jrf91@pm.me');
+  await expect(page.locator('#projectsList')).toContainText(/Could not load repositories right now\.|CyberDailyLog|Blue Team/i, { timeout: 10_000 });
+  await expect(page.locator('#projectsList')).not.toContainText(/Loading/i);
+
+  await guard.assertClean();
 });

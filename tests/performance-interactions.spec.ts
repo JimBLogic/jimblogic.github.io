@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { openHome, clickAndMeasure, assertNoRuntimeErrors } from './helpers';
+import { openHome, clickAndMeasure, mockOptionalExternalServices } from './helpers';
 
 test('interactions respond without double-clicks, flicker or long blocking tasks', async ({ page }) => {
-  await openHome(page);
+  await mockOptionalExternalServices(page);
+  const guard = await openHome(page);
   const timings: Record<string, number> = {};
   timings.language = await clickAndMeasure(page, 'button[data-lang="es"], [data-lang="es"]');
   await expect(page.locator('html')).toHaveAttribute('lang', /es/i);
@@ -33,5 +34,5 @@ test('interactions respond without double-clicks, flicker or long blocking tasks
   }));
   expect(longTasks).toBeLessThan(3);
   console.log(`Measured interaction timings (ms): ${JSON.stringify(timings)}`);
-  await assertNoRuntimeErrors();
+  await guard.assertClean();
 });
