@@ -185,7 +185,7 @@ function renderList(jsonFile, listId, folder) {
           <div>
             <strong>${item.name}</strong><br>
             <span>${item.description || ""}</span>
-            ${item.link ? ` - <a href="${item.link}" target="_blank">${t('learn_more')}</a>` : ''}
+            ${item.link ? ` - <a href="${item.link}" target="_blank" rel="noopener noreferrer">${t('learn_more')}</a>` : ''}
           </div>
         `;
         
@@ -443,12 +443,15 @@ function repoToListItem(repo) {
   const name = repo.name || 'Repository';
   const desc = repo.description || '';
   const lang = repo.language || '';
+  const safeName = escapeHtml(name);
+  const safeDesc = escapeHtml(desc);
+  const safeLang = escapeHtml(lang);
   const stars = repo.stargazers_count || 0;
   const topics = Array.isArray(repo.topics) ? repo.topics.slice(0, 6) : [];
   const avatar = (repo.owner && repo.owner.avatar_url) ? repo.owner.avatar_url : '';
 
   const infoBadges = [
-    lang ? `<span class="badge badge-lang">${lang}</span>` : '',
+    safeLang ? `<span class="badge badge-lang">${safeLang}</span>` : '',
     `<span class="badge badge-star">⭐ ${stars}</span>`
   ].filter(Boolean).join(' ');
 
@@ -466,17 +469,17 @@ function repoToListItem(repo) {
   } catch (e) { /* ignore */ }
 
   const topicsHtml = topics.length
-    ? `<div class="topics">${topics.map(t => `<span class="topic">${t}</span>`).join('')}</div>`
+    ? `<div class="topics">${topics.map(t => `<span class="topic">${escapeHtml(t)}</span>`).join('')}</div>`
     : '';
 
   const listContent = `
-    ${imgLocalThenOnline('', avatar, name)}
+    ${imgLocalThenOnline('', avatar, safeName)}
     <div>
-      <strong>${name} ${featuredBadgeHtml}</strong><br>
-      <span>${desc}</span>
+      <strong>${safeName} ${featuredBadgeHtml}</strong><br>
+      <span>${safeDesc}</span>
       <div class="badges">${infoBadges}</div>
       ${topicsHtml}
-      ${htmlUrl ? ` - <a href="${htmlUrl}" target="_blank" rel="noopener">${t('view_repo')}</a>` : ''}
+      ${htmlUrl ? ` - <a href="${htmlUrl}" target="_blank" rel="noopener noreferrer">${t('view_repo')}</a>` : ''}
     </div>
   `;
 
@@ -590,7 +593,7 @@ function renderProjectsView(listId) {
 }
 
 // Language change hook (called from translate.js) to re-render dynamic, language-dependent UI
-window.onLanguageChanged = function(lang) {
+window.onLanguageChanged = function(_lang) {
   try {
     if (Array.isArray(CERT_DATA) && CERT_DATA.length) {
       buildCertFilters();
