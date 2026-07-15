@@ -4,3 +4,7 @@
 secrets/*
 config/*.json
 node_modules/
+
+# Ignore generated PDF copies emitted by Vite static copy
+dist/assets/*.pdf
+dist/assets/pdfs/*.pdf
