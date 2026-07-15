@@ -81,7 +81,7 @@ For link and asset checks, parse `index.html` and JSON data sources to verify lo
 
 ## Deployment
 
-The repository includes build and deployment configuration for GitHub Pages. Do not remove `.github/workflows/`, build configuration, CSP metadata or production assets when making incremental content updates.
+The repository contains a placeholder GitHub Actions deployment workflow, but automated GitHub Pages deployment is not currently configured in that workflow. Before changing the deployment model, verify whether GitHub Pages serves the repository root, the `dist/` directory, or another configured source in the repository settings.
 
 ## License
 
