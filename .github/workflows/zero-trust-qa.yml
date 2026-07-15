@@ -1,0 +1,62 @@
+name: Zero Trust QA
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CI: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: JavaScript syntax checks
+        run: |
+          node --check assets/js/script.js
+          node --check assets/js/translate.js
+          node --check scripts/validate-local.mjs
+          node --check scripts/audit-production.mjs
+      - run: npm run validate:local
+      - run: npm run lint
+      - name: Locale JSON validation and parity
+        run: node scripts/validate-local.mjs
+      - name: Source-to-dist and internal asset validation
+        run: node scripts/validate-local.mjs
+      - name: Unexpected binary-diff detection
+        run: |
+          git diff --exit-code -- '*.pdf' '*.png' '*.jpg' '*.jpeg' '*.gif' '*.webp' '*.woff' '*.woff2'
+          git diff --check
+      - name: Install axe and Chromium
+        run: |
+          npm install --no-save @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Playwright Chromium tests
+        run: npm run test:e2e:chromium
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          if-no-files-found: ignore
+      - name: Upload Playwright traces and videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results/
+          if-no-files-found: ignore

@@ -8,11 +8,15 @@
     "prebuild": "node scripts/generate-build-version.mjs",
     "build": "vite build && npm run purgecss",
     "preview": "vite preview --port 4173",
-    "lint": "eslint . --ext .js && stylelint \"**/*.{css,scss}\"",
+    "lint": "eslint . --ext .js && stylelint \"style.css\" \"assets/css/**/*.css\"",
     "format": "prettier --write .",
     "audit": "echo Run Lighthouse CI locally if installed",
     "to:webp": "echo Add cwebp conversion here if installed",
-    "purgecss": "echo \"Skip PurgeCSS (handled by Vite/CSS splitting)\""
+    "purgecss": "echo \"Skip PurgeCSS (handled by Vite/CSS splitting)\"",
+    "validate:local": "node scripts/validate-local.mjs",
+    "audit:production": "node scripts/audit-production.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:chromium": "playwright test --project=chromium"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.2",
