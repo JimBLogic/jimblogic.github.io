@@ -8,14 +8,20 @@
     "prebuild": "node scripts/generate-build-version.mjs",
     "build": "vite build && npm run purgecss",
     "preview": "vite preview --port 4173",
-    "lint": "eslint . --ext .js && stylelint \"**/*.{css,scss}\"",
+    "lint": "eslint assets/js scripts tests --ext .js,.mjs,.ts && stylelint \"style.css\"",
     "format": "prettier --write .",
     "audit": "echo Run Lighthouse CI locally if installed",
     "to:webp": "echo Add cwebp conversion here if installed",
     "purgecss": "echo \"Skip PurgeCSS (handled by Vite/CSS splitting)\"",
-    "test": "npm run lint && npm run build"
+    "test": "npm run lint && npm run build && npm run validate:local",
+    "validate:local": "node scripts/validate-local.mjs",
+    "audit:production": "node scripts/audit-production.mjs",
+    "test:unit": "npm run validate:local",
+    "test:e2e": "playwright test",
+    "test:e2e:chromium": "playwright test --project=chromium"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.2",
     "@playwright/test": "^1.48.2",
     "@testing-library/dom": "^10.4.0",
     "autoprefixer": "^10.4.20",

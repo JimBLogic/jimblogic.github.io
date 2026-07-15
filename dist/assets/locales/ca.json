@@ -87,5 +87,6 @@
   "edu_continuous_title": "Aprenentatge continu",
   "edu_continuous_org": "Cybrary, Security Blue Team, IBM",
   "edu_continuous_date": "En curs",
-  "edu_continuous_desc": "Participació activa en plataformes d’aprenentatge de ciberseguretat per mantenir-me al dia en conceptes defensius, eines i tecnologies de seguretat."
+  "edu_continuous_desc": "Participació activa en plataformes d’aprenentatge de ciberseguretat per mantenir-me al dia en conceptes defensius, eines i tecnologies de seguretat.",
+  "content_error": "No s’ha pogut carregar aquest contingut."
 }
