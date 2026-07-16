@@ -1,21 +1,14 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-const hardenGeneratedHtml = {
-  name: 'harden-generated-html',
-  transformIndexHtml: {
-    order: 'post',
-    handler(html) {
-      const withPlausible = html.replace(
-        "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;",
-        "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
-      );
-
-      return withPlausible.replace(
-        '</head>',
-        '  <link rel="stylesheet" href="./assets/css/qa-fixes.css?v=%VITE_BUILD_VERSION%">\n</head>'
-      );
-    }
+const appendQaStylesheet = {
+  name: 'append-qa-stylesheet',
+  enforce: 'post',
+  transformIndexHtml(html) {
+    return html.replace(
+      '</head>',
+      '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">\n</head>'
+    );
   }
 };
 
@@ -32,7 +25,7 @@ export default defineConfig({
     }
   },
   plugins: [
-    hardenGeneratedHtml,
+    appendQaStylesheet,
     // Copy only explicitly public static assets unchanged.
     viteStaticCopy({
       targets: [
