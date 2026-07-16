@@ -213,26 +213,26 @@ function initializeScrollSidebarUx() {
     window.requestAnimationFrame(updateScrollButtonLabel);
   });
 
-  new MutationObserver(updateScrollButtonLabel).observe(document.documentElement, {
+  new window.MutationObserver(updateScrollButtonLabel).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ['lang']
   });
 
   if (consent) {
-    new MutationObserver(updateConsentOffset).observe(consent, {
+    new window.MutationObserver(updateConsentOffset).observe(consent, {
       attributes: true,
       attributeFilter: ['hidden', 'style', 'class']
     });
-    if ('ResizeObserver' in window) new ResizeObserver(updateConsentOffset).observe(consent);
+    if ('ResizeObserver' in window) new window.ResizeObserver(updateConsentOffset).observe(consent);
   }
 
-  new MutationObserver(updateConsentOffset).observe(document.body, {
+  new window.MutationObserver(updateConsentOffset).observe(document.body, {
     childList: true,
     subtree: true
   });
 
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(requestScrollStateUpdate, {
+    const observer = new window.IntersectionObserver(requestScrollStateUpdate, {
       root: null,
       rootMargin: '-15% 0px -65% 0px',
       threshold: [0, 0.01, 0.25, 0.5]
