@@ -18,16 +18,8 @@ for (const size of sizes) {
       await page.locator(`button[data-lang="${lang}"]`).click();
       await expect(page.getByRole('heading').first()).toBeVisible();
 
-      await page.addStyleTag({
-        content: `
-          *,
-          *::before,
-          *::after {
-            animation: none !important;
-            transition: none !important;
-            scroll-behavior: auto !important;
-          }
-        `
+      await page.evaluate(() => {
+        document.documentElement.classList.add('qa-stable');
       });
 
       if (size.width < 700) {
