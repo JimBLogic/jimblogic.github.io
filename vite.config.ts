@@ -10,9 +10,18 @@ const hardenGeneratedHtml = {
       "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
     );
 
-    return withPlausibleCsp.replace(
+    const withUxStyles = withPlausibleCsp.replace(
       '</head>',
-      '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">\n</head>'
+      [
+        '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">',
+        '  <link rel="stylesheet" href="./assets/css/scroll-sidebar-ux.css">',
+        '</head>'
+      ].join('\n')
+    );
+
+    return withUxStyles.replace(
+      '</body>',
+      '  <script type="module" src="./assets/js/scroll-sidebar-ux.js"></script>\n</body>'
     );
   }
 };
