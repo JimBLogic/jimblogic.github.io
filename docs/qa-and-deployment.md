@@ -1,41 +1,73 @@
 # QA and deployment
 
-The repository keeps `dist/` committed because GitHub Pages serves the built portfolio and reviewers can diff generated output against source changes. Every build in CI is followed by `npm run validate:local` and `git diff --exit-code` so stale committed output fails.
-
 ## Architecture
 
-- `zero-trust-qa.yml` runs on pull requests, pushes to `main`, and manual dispatch with `contents: read` only.
-- `pages-deploy.yml` deploys only after the `Zero-trust QA` workflow succeeds on `main`, or by manual dispatch. Only the deploy job receives `pages: write` and `id-token: write`.
-- Production audit runs after deployment so pull requests are not blocked by an older live site.
+A single workflow, `.github/workflows/site-qa-pages.yml`, owns QA and Pages deployment. The `qa` job checks out source, installs with `npm ci`, runs syntax checks and lint, builds `dist` exactly once, validates that generated output, installs Chromium, runs Playwright/Axe against the already-built `dist` via Vite preview, and uploads the same tested `dist` as the Pages artifact only on `main` push or `workflow_dispatch` on `main`.
 
-## Local setup
+`deploy` has `needs: qa` and no checkout/build steps. It consumes the Pages artifact uploaded by `qa`. `production-audit` runs after deployment and requires the live page to expose the expected build version.
 
-Use Node.js 24 and install reproducible dependencies with `npm ci`.
+## Local commands
 
-Commands:
+```bash
+npm ci
+node --check assets/js/script.js
+node --check assets/js/translate.js
+node --check scripts/generate-build-version.mjs
+node --check scripts/validate-local.mjs
+node --check scripts/audit-production.mjs
+npm run lint
+npm run build
+npm run validate:local
+npx playwright install --with-deps chromium
+npm run test:e2e:ci
+npm test
+git diff --check
+git status --short
+```
 
-- `npm run lint` checks source JavaScript/scripts/tests and `style.css`.
-- `npm run build` regenerates `dist/`.
-- `npm run validate:local` checks locales, source-to-dist parity, required content, same-origin references, build fingerprints, and malformed HTML endings.
-- `npx playwright install chromium` installs the browser for UI tests.
-- `npm run test:e2e:chromium` runs smoke, responsive, accessibility, degraded-network, and interaction tests.
-- `npm run audit:production` writes `reports/production-audit.json` for `https://jimblogic.github.io/`.
+## Build version
+
+CI sets `VITE_BUILD_VERSION` to `github.sha`; `scripts/generate-build-version.mjs` sanitizes that to the first 12 safe characters. Local builds without `VITE_BUILD_VERSION` hash authoritative source inputs with SHA-256 and use the first 12 hex characters. No git command, timestamp, or random fallback is used.
+
+## Deployment gating
+
+Deployment is allowed only when `needs.qa.result == 'success'`, `github.ref == 'refs/heads/main'`, and the event is `push` or `workflow_dispatch`. Pull requests never deploy. Manual dispatch on a non-main ref validates but does not deploy.
+
+## Permissions and actions
+
+Workflow-level permissions are `contents: read`. Only `deploy` has `pages: write` and `id-token: write`. Actions are pinned to full commit SHAs with release comments.
 
 ## Artifacts
 
-On browser failure, CI uploads `playwright-report/` and `test-results/` once with 10-day retention. Production audit reports are retained for 14 days.
+On QA failure, one compact diagnostic artifact includes `playwright-report/` and `test-results/`. On main, one Pages artifact is uploaded from the already tested `dist/`.
 
-## Common failures
+## Production audit
 
-- Locale parity: add new translation keys to EN, ES, and CA.
-- Dist parity: run `npm run build`, inspect `git diff`, and commit generated `dist/` updates.
-- Browser setup: run `npx playwright install chromium` locally; CI installs Chromium explicitly.
-- Production audit: confirm the latest deployment has completed before diagnosing copy or asset failures.
+Run:
 
-## GitHub Pages settings
+```bash
+node scripts/audit-production.mjs --url https://jimblogic.github.io/ --expected-version <expected-12-char-version>
+```
 
-Repository owner must set Settings → Pages → Source to GitHub Actions. Do not deploy the repository root; the workflow uploads `dist/`.
+The audit uses cache-busted requests, timeouts, retries, build-version equality, required/obsolete copy checks, same-origin CSS/JS status and content-type checks, and writes `reports/production-audit.json`.
+
+## Repository settings required
+
+1. Settings → Pages → Source: GitHub Actions.
+2. Protect `main`.
+3. Require the `qa` status check.
+4. Do not allow merging while checks are pending or failing.
+5. Require branches to be up to date where appropriate.
+6. Restrict direct pushes to `main` where appropriate.
+
+These settings must be changed in GitHub; this repository patch does not claim to have changed them.
+
+## Troubleshooting
+
+- If validation fails, run `npm run build && npm run validate:local` and inspect the JSON error list.
+- If Playwright fails, open `playwright-report/` or `test-results/` from the failure artifact.
+- If deployment succeeds but production audit fails, wait for Pages propagation and verify the expected build-version in production HTML.
 
 ## Rollback
 
-Revert the PR commit on `main` and let the gated deploy workflow publish the reverted `dist/`. If Pages settings are broken, restore the previous GitHub Actions Pages source configuration before re-running deployment.
+Revert the repair commit, restore the previous workflow files, and restore tracked `dist/` only if an emergency static deployment is required. Prefer rerunning the artifact workflow after fixing the root cause.
