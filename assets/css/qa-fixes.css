@@ -9,3 +9,11 @@
 .footer-link:focus-visible {
   color: #fff;
 }
+
+html.qa-stable *,
+html.qa-stable *::before,
+html.qa-stable *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
