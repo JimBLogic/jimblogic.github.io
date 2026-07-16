@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 
 export const mockRepos = [
-  { html_url:'https://github.com/JimBLogic/CyberDailyLog', name:'CyberDailyLog', description:'Raspberry Pi 4 defensive homelab and cyber-security habit tracker', language:'PowerShell', stargazers_count:1, topics:['blue-team','raspberry-pi'], fork:false, updated_at:'2026-01-01T00:00:00Z', owner:{avatar_url:'https://github.com/JimBLogic.png'} }
+  { html_url:'https://github.com/JimBLogic/CyberDailyLog', name:'CyberDailyLog', description:'Blue Team daily intelligence reports, defensive lab notes and SOC practice automation', language:'PowerShell', stargazers_count:1, topics:['blue-team','raspberry-pi'], fork:false, updated_at:'2026-01-01T00:00:00Z', owner:{avatar_url:'https://github.com/JimBLogic.png'} }
 ];
 
 export async function installNetworkGuards(page, degraded = false) {
@@ -27,8 +27,8 @@ export async function openHome(page, degraded = false) {
       errors.push(msg.text());
     }
   });
-  await page.goto('/');
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('main')).toBeVisible();
-  await page.waitForLoadState('networkidle');
+  await expect(page.locator('#certificateList li').first()).toBeVisible();
   return { ...guard, assertNoPageErrors: () => expect(errors, 'page/console errors').toEqual([]) };
 }

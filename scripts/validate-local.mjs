@@ -1,50 +1,68 @@
 import { readFile, stat } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
+const argDist = process.argv.find((a, i) => process.argv[i - 1] === '--dist-dir');
+const distDir = path.resolve(root, argDist || process.env.DIST_DIR || 'dist');
 const errors = [];
-const warn = [];
-const must = (ok, msg) => { if (!ok) errors.push(msg); };
-const json = async p => JSON.parse(await readFile(path.join(root,p),'utf8'));
-const files = ['index.html','dist/index.html','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json','dist/assets/locales/en.json','dist/assets/locales/es.json','dist/assets/locales/ca.json','certificates.json','software.json','tools.json','dist/certificates.json','dist/software.json','dist/tools.json'];
-for (const f of files) must(existsSync(path.join(root,f)), `Missing required file: ${f}`);
+const fail = msg => errors.push(msg);
+const rel = p => path.relative(root, p) || '.';
+const join = (...p) => path.join(...p);
+const mustExist = async p => { if (!existsSync(p)) fail(`Missing required file: ${rel(p)}`); else if ((await stat(p)).size === 0) fail(`Zero-byte generated file: ${rel(p)}`); };
+const read = p => readFile(p, 'utf8');
+const readJson = async p => JSON.parse(await read(p));
+const stable = value => JSON.stringify(value);
 
-const locales = Object.fromEntries(await Promise.all(['en','es','ca'].map(async l => [l, await json(`assets/locales/${l}.json`)])));
-const keys = Object.fromEntries(Object.entries(locales).map(([l,o]) => [l, Object.keys(o).sort()]));
-for (const l of ['es','ca']) {
-  must(JSON.stringify(keys.en) === JSON.stringify(keys[l]), `Locale key parity failed: en vs ${l}`);
+for (const f of ['index.html','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json','certificates.json','software.json','tools.json','assets/Jamie Ramsden CV.pdf']) await mustExist(join(root, f));
+for (const f of ['index.html','certificates.json','software.json','tools.json','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json']) await mustExist(join(distDir, f));
+
+let html = '';
+try { html = await read(join(distDir, 'index.html')); } catch { html = ''; }
+if (!/<html[\s>]/i.test(html) || !/<\/html>\s*$/i.test(html)) fail('Generated HTML is not structurally complete');
+if ((html.match(/<\/html>/gi) || []).length !== 1) fail('Duplicate or missing closing HTML tag in generated HTML');
+if (/%VITE_[A-Z0-9_]+%/.test(html)) fail('Generated HTML contains unresolved Vite placeholders');
+
+const locales = {};
+for (const lang of ['en','es','ca']) {
+  try { locales[lang] = await readJson(join(root, `assets/locales/${lang}.json`)); } catch (e) { fail(`Invalid source locale ${lang}: ${e.message}`); }
 }
-for (const l of ['en','es','ca']) {
-  const built = await json(`dist/assets/locales/${l}.json`);
-  must(JSON.stringify(locales[l]) === JSON.stringify(built), `Built locale differs from source: ${l}`);
+const enKeys = Object.keys(locales.en || {}).sort();
+for (const lang of ['es','ca']) if (stable(enKeys) !== stable(Object.keys(locales[lang] || {}).sort())) fail(`Locale key parity failed: en vs ${lang}`);
+for (const lang of ['en','es','ca']) {
+  try { if (stable(locales[lang]) !== stable(await readJson(join(distDir, `assets/locales/${lang}.json`)))) fail(`Generated locale differs from source: ${lang}`); } catch (e) { fail(`Invalid generated locale ${lang}: ${e.message}`); }
 }
-for (const [f, label] of [['certificates.json','certificates'],['software.json','software'],['tools.json','tools']]) {
-  const src = await json(f); const dst = await json(`dist/${f}`);
-  must(Array.isArray(src), `${label} must be an array`);
-  must(JSON.stringify(src) === JSON.stringify(dst), `Built ${f} differs from source`);
+for (const file of ['certificates.json','software.json','tools.json']) {
+  try { if (stable(await readJson(join(root,file))) !== stable(await readJson(join(distDir,file)))) fail(`Generated ${file} differs from source`); } catch (e) { fail(`Invalid JSON parity for ${file}: ${e.message}`); }
 }
-const html = await readFile('index.html','utf8');
-const distHtml = await readFile('dist/index.html','utf8');
-for (const needle of ['Junior SOC Analyst / Blue Team','Raspberry Pi 4','Current Focus','mailto:jrf91@pm.me','https://github.com/JimBLogic','https://www.linkedin.com/in/jimblogic/']) {
-  must(html.includes(needle) || distHtml.includes(needle), `Required portfolio copy/link missing: ${needle}`);
+
+const version = process.env.VITE_BUILD_VERSION?.toLowerCase().replace(/[^0-9a-z._-]/g, '').slice(0, 12);
+const meta = html.match(/<meta name="build-version" content="([^"]+)"/i);
+if (!meta) fail('Generated build-version meta tag is missing');
+else if (version && meta[1] !== version) fail(`Generated build-version ${meta[1]} does not match expected ${version}`);
+
+
+const privateNames = ['MyLinkedinInfo','SearchQueries.csv','ImportedContacts.csv','Email Addresses.csv','PhoneNumbers.csv','Logins.csv','messages.csv','Job Applications.csv'];
+const generatedPaths = existsSync(distDir) ? readdirSync(distDir, { recursive: true, withFileTypes: true })
+  .filter(d => d.isFile() || d.isDirectory())
+  .map(d => path.relative(distDir, path.join(d.parentPath || d.path, d.name)).replaceAll('\\', '/')) : [];
+for (const name of privateNames) {
+  const lower = name.toLowerCase();
+  if (generatedPaths.some(generated => generated.toLowerCase().includes(lower))) fail(`Private LinkedIn export marker found in generated artifact: ${name}`);
+  if (html.toLowerCase().includes(lower)) fail(`Private LinkedIn export marker referenced by generated HTML: ${name}`);
 }
-for (const obsolete of ['Senior SOC Analyst','production SOC analyst']) {
-  must(!html.includes(obsolete) && !distHtml.includes(obsolete), `Obsolete copy found: ${obsolete}`);
-}
-must(!/<\/html>\s*<\/html>/i.test(html + distHtml), 'Malformed duplicate HTML ending found');
-const buildVersion = distHtml.match(/<meta name="build-version" content="([^"]+)"/);
-must(buildVersion && /^(\d{4}-\d{2}-\d{2}T|[0-9a-f]{7,40})/.test(buildVersion[1]), 'Build fingerprint missing or invalid');
-const assetRefs = [...distHtml.matchAll(/(?:src|href)="\.\/([^"?#]+)(?:\?[^"]*)?"/g)].map(m => m[1]).filter(v => !v.startsWith('#'));
-for (const ref of assetRefs) must(existsSync(path.join(root,'dist',ref)), `Same-origin asset/link missing in dist: ${ref}`);
-must(assetRefs.some(r => /^assets\/index-.*\.js$/.test(r)), 'Hashed built JavaScript not referenced');
-must(assetRefs.some(r => /^assets\/index-.*\.css$/.test(r)) || distHtml.includes('assets/css/style.css'), 'Built CSS not referenced');
-try {
-  const status = execFileSync('git',['status','--porcelain','--untracked-files=no','dist','certificates.json','software.json','tools.json','assets/locales','index.html','style.css','assets/js'],{encoding:'utf8'}).trim();
-  if (status) warn.push(`Tracked source/dist changes are present (expected while editing, fatal in CI clean-tree step): ${status.split('\n').join('; ')}`);
-} catch (e) { warn.push('Git status check unavailable'); }
-for (const f of files) await stat(path.join(root,f));
-const report = { ok: errors.length === 0, errors, warnings: warn };
-console.log(JSON.stringify(report,null,2));
+
+const refs = [...html.matchAll(/(?:src|href)="(?:\.\/|\/)?([^"#:]+)(?:#[^"]*)?"/g)].map(m => m[1]).filter(r => !/^https?:|^mailto:|^tel:/.test(r));
+const assetsDir = join(distDir, 'assets');
+const assets = existsSync(assetsDir) ? readdirSync(assetsDir, { recursive: true, withFileTypes: true }).filter(d => d.isFile()).map(d => path.join(d.parentPath || d.path, d.name)) : [];
+if (!refs.some(r => /^assets\/index-[\w-]+\.js$/.test(r))) fail('Hashed JavaScript bundle is not referenced');
+if (!refs.some(r => /^assets\/index-[\w-]+\.css$/.test(r))) fail('Hashed CSS bundle is not referenced');
+for (const ref of refs) if (!ref.startsWith('#') && !existsSync(join(distDir, decodeURIComponent(ref)))) fail(`Same-origin generated reference is missing: ${ref}`);
+for (const ref of refs.filter(r => /\.pdf$/i.test(r))) if (!existsSync(join(distDir, decodeURIComponent(ref)))) fail(`PDF/CV reference missing: ${ref}`);
+for (const f of assets) if ((await stat(f)).size === 0) fail(`Zero-byte generated file: ${rel(f)}`);
+for (const needle of ['Junior SOC Analyst / Blue Team','Raspberry Pi 4','Current Focus','mailto:jrf91@pm.me','github.com/JimBLogic','linkedin.com/in/jimblogic']) if (!html.includes(needle)) fail(`Missing source-derived content in generated HTML: ${needle}`);
+if (html.includes('Senior SOC Analyst') || html.includes('production SOC analyst')) fail('Generated HTML contains obsolete positioning copy');
+
+const report = { ok: errors.length === 0, distDir: rel(distDir), errors };
+console.log(JSON.stringify(report, null, 2));
 if (errors.length) process.exit(1);

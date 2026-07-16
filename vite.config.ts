@@ -17,7 +17,13 @@ export default defineConfig({
     // Copy static assets unchanged
     viteStaticCopy({
       targets: [
-        { src: 'assets', dest: '.' },
+        { src: 'assets/Images', dest: 'assets' },
+        { src: 'assets/css', dest: 'assets' },
+        { src: 'assets/js', dest: 'assets' },
+        { src: 'assets/locales', dest: 'assets' },
+        { src: 'assets/pdfs', dest: 'assets' },
+        { src: 'assets/Jamie Ramsden CV.pdf', dest: 'assets' },
+        { src: 'assets/Jamie Ramsden Cover Letter.pdf', dest: 'assets' },
         { src: 'UpgradeHub', dest: '.' },
         // Copy data JSON files used by runtime fetches
         { src: 'certificates.json', dest: '.' },

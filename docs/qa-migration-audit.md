@@ -23,7 +23,7 @@ Network access to GitHub was blocked from this container (`CONNECT tunnel failed
 ## Obsolete, broken, unsafe, or conflicting items
 
 - `.github/workflows/build-deploy.yml` was a placeholder that never deployed.
-- `.github/workflows/ci-lint-a11y.yml` installed global tools and hid failures with `|| true`.
+- `.github/workflows/ci-lint-a11y.yml` used non-project tool installation and hid failures with shell-error masking.
 - Repeating the same local validator under multiple CI step names would be noisy and was avoided.
 - Binary validation that only checks discovered `dist/` files for existence is ineffective; the replacement uses build validation plus `git diff --exit-code`.
 - Local JSON load failures must not show the GitHub repositories fallback.
