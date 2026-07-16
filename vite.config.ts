@@ -3,16 +3,19 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const hardenGeneratedHtml = {
   name: 'harden-generated-html',
-  transformIndexHtml(html) {
-    return html
-      .replace(
+  transformIndexHtml: {
+    order: 'post',
+    handler(html) {
+      const withPlausible = html.replace(
         "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;",
         "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
-      )
-      .replace(
-        '<link rel="stylesheet" href="./assets/css/style.css?v=%VITE_BUILD_VERSION%">',
-        '<link rel="stylesheet" href="./assets/css/style.css?v=%VITE_BUILD_VERSION%">\n  <link rel="stylesheet" href="./assets/css/qa-fixes.css?v=%VITE_BUILD_VERSION%">'
       );
+
+      return withPlausible.replace(
+        '</head>',
+        '  <link rel="stylesheet" href="./assets/css/qa-fixes.css?v=%VITE_BUILD_VERSION%">\n</head>'
+      );
+    }
   }
 };
 
