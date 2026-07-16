@@ -91,7 +91,6 @@ function initializeScrollSidebarUx() {
   let condensed = false;
   let animationFrame = 0;
   let activeSectionId = '';
-  let previousScrollTop = 0;
 
   function updateScrollButtonLabel() {
     if (!scrollButton) return;
@@ -162,34 +161,42 @@ function initializeScrollSidebarUx() {
 
     const scroller = scrollingElement();
     const scrollTop = scroller.scrollTop;
-    const scrollingDown = scrollTop >= previousScrollTop;
-    previousScrollTop = scrollTop;
     const atDocumentEnd = scrollTop + window.innerHeight >= scroller.scrollHeight - 4;
+
+    if (scrollTop <= 2) {
+      setActiveSection(sections[0].id);
+      return;
+    }
 
     if (atDocumentEnd) {
       setActiveSection(sections.at(-1).id);
       return;
     }
 
-    const visibleSections = sections
+    /* A stable reading line avoids direction-dependent oscillation and makes
+       mouse, keyboard, scrollbar and programmatic scrolling resolve identically. */
+    const readingLine = Math.min(Math.max(window.innerHeight * 0.35, 96), 260);
+    const containingSection = sections.find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= readingLine && rect.bottom > readingLine;
+    });
+
+    if (containingSection) {
+      setActiveSection(containingSection.id);
+      return;
+    }
+
+    const nearestSection = sections
       .map(section => {
         const rect = section.getBoundingClientRect();
-        const visibleTop = Math.max(0, rect.top);
-        const visibleBottom = Math.min(window.innerHeight, rect.bottom);
-        return {
-          section,
-          visibleHeight: Math.max(0, visibleBottom - visibleTop)
-        };
+        const distance = rect.bottom < readingLine
+          ? readingLine - rect.bottom
+          : rect.top - readingLine;
+        return { section, distance: Math.max(0, distance) };
       })
-      .filter(candidate => candidate.visibleHeight >= 16);
+      .sort((first, second) => first.distance - second.distance)[0]?.section;
 
-    if (!visibleSections.length) return;
-
-    /* When scrolling down, the newly entered lower section is the most useful
-       navigation signal. When scrolling up, prefer the upper visible section.
-       This also handles browser/Playwright nearest-edge scrolling correctly. */
-    const activeCandidate = scrollingDown ? visibleSections.at(-1) : visibleSections[0];
-    setActiveSection(activeCandidate.section.id);
+    if (nearestSection) setActiveSection(nearestSection.id);
   }
 
   function updateScrollState() {
@@ -213,6 +220,7 @@ function initializeScrollSidebarUx() {
     link.addEventListener('click', () => {
       const sectionId = link.getAttribute('href')?.slice(1);
       if (sectionId) setActiveSection(sectionId);
+      window.requestAnimationFrame(requestScrollStateUpdate);
     });
   });
 
@@ -227,7 +235,10 @@ function initializeScrollSidebarUx() {
 
   document.querySelector('.lang-switch')?.addEventListener('click', event => {
     if (!event.target.closest('button[data-lang]')) return;
-    window.requestAnimationFrame(updateScrollButtonLabel);
+    window.requestAnimationFrame(() => {
+      updateScrollButtonLabel();
+      requestScrollStateUpdate();
+    });
   });
 
   new window.MutationObserver(updateScrollButtonLabel).observe(document.documentElement, {
@@ -251,14 +262,15 @@ function initializeScrollSidebarUx() {
   if ('IntersectionObserver' in window) {
     const observer = new window.IntersectionObserver(requestScrollStateUpdate, {
       root: null,
-      rootMargin: '0px',
-      threshold: [0, 0.01, 0.1, 0.25, 0.5]
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: [0, 0.01, 0.25, 0.5]
     });
     sections.forEach(section => observer.observe(section));
   }
 
   window.addEventListener('scroll', requestScrollStateUpdate, { passive: true });
   window.addEventListener('resize', requestScrollStateUpdate, { passive: true });
+  window.addEventListener('hashchange', requestScrollStateUpdate);
   desktopMedia.addEventListener('change', requestScrollStateUpdate);
   reduceMotion.addEventListener('change', requestScrollStateUpdate);
 
