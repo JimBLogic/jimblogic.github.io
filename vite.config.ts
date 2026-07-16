@@ -1,6 +1,22 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
+const hardenGeneratedHtml = {
+  name: 'harden-generated-html',
+  enforce: 'post',
+  transformIndexHtml(html) {
+    const withPlausibleCsp = html.replace(
+      "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;",
+      "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
+    );
+
+    return withPlausibleCsp.replace(
+      '</head>',
+      '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">\n</head>'
+    );
+  }
+};
+
 export default defineConfig({
   root: '.',
   base: './',
@@ -14,10 +30,17 @@ export default defineConfig({
     }
   },
   plugins: [
-    // Copy static assets unchanged
+    hardenGeneratedHtml,
+    // Copy only explicitly public static assets unchanged.
     viteStaticCopy({
       targets: [
-        { src: 'assets', dest: '.' },
+        { src: 'assets/Images', dest: '.' },
+        { src: 'assets/css', dest: '.' },
+        { src: 'assets/js', dest: '.' },
+        { src: 'assets/locales', dest: '.' },
+        { src: 'assets/pdfs', dest: '.' },
+        { src: 'assets/Jamie Ramsden CV.pdf', dest: '.' },
+        { src: 'assets/Jamie Ramsden Cover Letter.pdf', dest: '.' },
         { src: 'UpgradeHub', dest: '.' },
         // Copy data JSON files used by runtime fetches
         { src: 'certificates.json', dest: '.' },

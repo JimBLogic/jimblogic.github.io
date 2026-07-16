@@ -16,3 +16,10 @@ reports/
 
 # Generated PDF copies from dist builds
 dist/assets/pdfs/**/*.pdf
+
+# Generated Vite build output
+dist/
+
+# Private LinkedIn export data must never be committed or deployed
+assets/MyLinkedinInfo/
+**/MyLinkedinInfo/

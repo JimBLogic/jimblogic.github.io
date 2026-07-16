@@ -1,0 +1,147 @@
+name: Site QA and Pages
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-qa-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+
+jobs:
+  qa:
+    name: QA tested Pages artifact
+    runs-on: ubuntu-latest
+    outputs:
+      build_version: ${{ steps.build_version.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7 verified release
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2 verified release
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Syntax check JavaScript and scripts
+        run: |
+          node --check assets/js/script.js
+          node --check assets/js/translate.js
+          node --check scripts/generate-build-version.mjs
+          node --check scripts/validate-local.mjs
+          node --check scripts/audit-production.mjs
+          node --check scripts/validate-build-version-canonical.mjs
+          node --check scripts/validate-artifact-privacy.mjs
+          node --check scripts/local-reference-utils.mjs
+          node --check scripts/test-local-reference-utils.mjs
+      - name: Lint source
+        run: npm run lint
+      - name: Resolve canonical build version
+        id: build_version
+        shell: bash
+        run: |
+          VERSION="${GITHUB_SHA::12}"
+          echo "VITE_BUILD_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Build generated distribution once
+        run: npm run build
+      - name: Test local reference parser
+        run: npm run test:validator-refs
+      - name: Generate distribution manifest
+        shell: bash
+        run: find dist -type f -printf '%P\n' | LC_ALL=C sort > dist-manifest.txt
+      - name: Validate generated output
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run validate:local 2>&1 | tee validation-output.log
+      - name: Verify canonical build version
+        run: node scripts/validate-build-version-canonical.mjs --dist-dir dist --source-version "$GITHUB_SHA"
+      - name: Enforce generated artifact privacy
+        run: |
+          test ! -e dist/assets/MyLinkedinInfo
+          node scripts/validate-artifact-privacy.mjs --dist-dir dist
+      - name: Verify tracked source stayed clean after build
+        run: |
+          git diff --exit-code
+          git status --porcelain --untracked-files=no
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run Chromium Playwright and Axe QA
+        run: npm run test:e2e:ci
+      - name: Verify tracked source stayed clean after browser QA
+        run: |
+          git diff --exit-code
+          git status --porcelain --untracked-files=no
+      - name: Upload Playwright failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3 verified release
+        with:
+          name: playwright-failure-diagnostics
+          path: |
+            validation-output.log
+            dist-manifest.txt
+            playwright-report/
+            test-results/
+          retention-days: 10
+          if-no-files-found: ignore
+      - name: Configure Pages
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0 verified release
+      - name: Upload tested Pages artifact
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1 verified release
+        with:
+          path: dist
+  deploy:
+    name: Deploy tested artifact
+    needs: qa
+    if: ${{ needs.qa.result == 'success' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy tested Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@d6f0a3c8e1cfa9bf4f23135a08848de91a0fcb19 # v4.0.5 verified release
+  production-audit:
+    name: Production audit
+    needs: [qa, deploy]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7 verified release
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2 verified release
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit deployed production site
+        run: node scripts/audit-production.mjs --url https://jimblogic.github.io/ --expected-version "${{ needs.qa.outputs.build_version }}"
+      - name: Upload production audit report
+        if: always()
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3 verified release
+        with:
+          name: production-audit-report
+          path: reports/production-audit.json
+          retention-days: 14
+          if-no-files-found: error

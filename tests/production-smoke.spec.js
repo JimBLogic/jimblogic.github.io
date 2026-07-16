@@ -7,14 +7,23 @@ test('renders portfolio smoke content without same-origin failures', async ({ pa
   await expect(page.getByText(/Junior SOC Analyst \/ Blue Team/i).first()).toBeVisible();
   await expect(page.getByText(/Raspberry Pi 4/i).first()).toBeVisible();
   await expect(page.getByRole('heading', { name: /Current Focus/i })).toBeVisible();
-  await expect(page.locator('a[href="mailto:jrf91@pm.me"]')).toBeVisible();
+
+  const emailLinks = page.locator('a[href="mailto:jrf91@pm.me"]');
+  await expect(emailLinks).not.toHaveCount(0);
+  await expect(emailLinks.first()).toBeVisible();
+
   await expect(page.locator('a[href*="github.com/JimBLogic"]').first()).toBeVisible();
   await expect(page.locator('a[href*="linkedin.com/in/jimblogic"]')).toBeVisible();
   await expect(page.locator('a[href$="CV.pdf"]').first()).toBeVisible();
-  for (const h of ['Skills','Education','Software','Projects','Tools','Contact']) await expect(page.getByRole('heading', { name: new RegExp(h, 'i') })).toBeVisible();
+
+  for (const heading of ['Skills', 'Education', 'Software', 'Projects', 'Tools', 'Contact']) {
+    await expect(page.getByRole('heading', { name: new RegExp(heading, 'i') })).toBeVisible();
+  }
+
   await expect(page.locator('#certificateList li').first()).toBeVisible();
   await expect(page.locator('#projectsList li').first()).toContainText(/CyberDailyLog|Raspberry/i);
-  guard.assertNoSameOriginFailures(); guard.assertNoPageErrors();
+  guard.assertNoSameOriginFailures();
+  guard.assertNoPageErrors();
 });
 
 test('degraded optional GitHub network shows fallback but local content survives', async ({ page }) => {
