@@ -20,6 +20,10 @@ Tracked `dist/` contained Vite-generated HTML/CSS/JS plus files copied by `vite-
 
 No hand-maintained file was found only in `dist/`; therefore tracked `dist/` contents were removed from Git after the source parity check.
 
+## Why the diff deletes many `dist/` lines
+
+The large deletion count is intentional generated-output removal, not source-code removal. The deleted lines were committed Vite output and copied static artifacts under `dist/`. The authoritative source files remain in `index.html`, `style.css`, `assets/`, `UpgradeHub/`, root JSON files, `robots.txt`, `sitemap.xml`, and `LICENSE`. Future `dist/` content is produced by `npm run build` and uploaded as the GitHub Pages artifact after passing QA.
+
 ## Migration decision
 
 `dist/` is now an ignored generated Vite output directory. GitHub Pages must deploy the artifact uploaded by the QA job, not committed build output.
