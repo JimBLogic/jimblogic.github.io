@@ -4,6 +4,12 @@
   --scroll-top-consent-offset: 0px;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 html {
   scrollbar-color: var(--ux-scrollbar-thumb) var(--ux-scrollbar-track);
   scrollbar-width: thin;
@@ -29,9 +35,10 @@ html::-webkit-scrollbar-thumb:hover {
 
 /* `100vw` includes the native scrollbar width on desktop. The existing fixed
    background already uses inset: 0, so auto width keeps it flush without the
-   16px horizontal overflow and clips its oversized decorative pseudo-elements. */
+   scrollbar-width overflow and clips its oversized decorative pseudo-elements. */
 .bg-animation {
   width: auto !important;
+  max-width: 100%;
   overflow: hidden;
 }
 
@@ -96,14 +103,22 @@ html::-webkit-scrollbar-thumb:hover {
   }
 
   .container {
+    width: 100%;
+    max-width: 100%;
     height: auto !important;
     min-height: 100vh;
+    margin: 0;
     overflow: visible !important;
   }
 
   .main-content {
+    flex: 0 0 calc(100% - 260px);
+    width: calc(100% - 260px);
+    max-width: calc(100% - 260px);
+    min-width: 0;
     height: auto !important;
     min-height: 100vh;
+    margin-left: 260px;
     overflow: visible !important;
     overscroll-behavior: auto !important;
     scrollbar-gutter: auto !important;
