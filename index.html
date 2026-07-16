@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="JimBLogic - Junior SOC Analyst / Blue Team candidate with Raspberry Pi 4 defensive homelab, Linux, Docker, networking, monitoring and AWS cloud foundations" />
-  <meta name="keywords" content="cybersecurity, ethical hacking, penetration testing, digital forensics, cloud security, AWS, Python, Linux, OSINT, threat analysis" />
+  <meta name="description" content="JimBLogic - Junior SOC Analyst / Blue Team candidate with Raspberry Pi 4 defensive homelab, automated CyberDailyLog intelligence, Linux, Docker, networking, monitoring and AWS cloud foundations" />
+  <meta name="keywords" content="cybersecurity, blue team, SOC analyst, threat intelligence, CyberDailyLog, digital forensics, cloud security, AWS, Python, Linux, OSINT" />
   <meta name="author" content="Jaime Ramsden de Frutos" />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="JimBLogic | Cybersecurity Portfolio" />
-  <meta property="og:description" content="Junior SOC Analyst / Blue Team candidate documenting defensive homelab work, logs, monitoring, hardening, digital forensics foundations and AWS cloud learning." />
+  <meta property="og:description" content="Junior SOC Analyst / Blue Team candidate documenting defensive homelab work, automated daily threat intelligence, monitoring, hardening and AWS cloud learning." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jimblogic.github.io" />
   <meta property="og:image" content="https://jimblogic.github.io/assets/Images/Profilepicandother/my-avatar.png" />
 
-  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="JimBLogic | Cybersecurity Portfolio" />
   <meta name="twitter:description" content="Junior SOC Analyst / Blue Team Candidate" />
@@ -28,10 +26,12 @@
   <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bitcoin.svg" type="image/svg+xml">
   <meta name="build-version" content="%VITE_BUILD_VERSION%" />
   <link rel="stylesheet" href="./assets/css/style.css?v=%VITE_BUILD_VERSION%">
+  <link rel="stylesheet" href="./assets/css/scroll-sidebar-ux.css?v=%VITE_BUILD_VERSION%">
+  <link rel="stylesheet" href="./assets/css/cyberdailylog.css?v=%VITE_BUILD_VERSION%">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- Structured data for SEO and rich results -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,7 +44,7 @@
     ],
     "jobTitle": "Junior SOC Analyst / Blue Team Candidate",
     "email": "mailto:jrf91@pm.me",
-    "knowsAbout": ["SOC analysis","blue team operations","Linux","Docker","network monitoring","digital forensics","incident response","OSINT","AWS cloud foundations"]
+    "knowsAbout": ["SOC analysis","blue team operations","threat intelligence","Linux","Docker","network monitoring","digital forensics","incident response","OSINT","AWS cloud foundations"]
   }
   </script>
   <link rel="canonical" href="https://jimblogic.github.io/" />
@@ -54,8 +54,8 @@
     "@type": "SoftwareSourceCode",
     "name": "CyberDailyLog",
     "url": "https://github.com/JimBLogic/CyberDailyLog",
-    "description": "Blue Team intelligence and defensive lab reporting project with daily-intel reports, CSV validation, pre-commit hooks, and CI.",
-    "programmingLanguage": "PowerShell, Python",
+    "description": "Automated, source-backed 24-hour Blue Team intelligence pipeline with reproducible reports and a compact public portfolio feed.",
+    "programmingLanguage": "Python",
     "codeRepository": "https://github.com/JimBLogic/CyberDailyLog",
     "license": "https://opensource.org/licenses/MIT",
     "creator": {
@@ -68,7 +68,6 @@
 </head>
 <body>
 
-<!-- Skip link for keyboard users -->
 <a class="skip-link" href="#maincontent">Skip to main content</a>
 
 <header class="site-header" role="banner">
@@ -77,22 +76,21 @@
 
 <div class="bg-animation"></div>
 
-  <!-- Site entity structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "JimBLogic Portfolio",
-    "url": "https://jimblogic.github.io/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://jimblogic.github.io/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "JimBLogic Portfolio",
+  "url": "https://jimblogic.github.io/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://jimblogic.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
   }
-  </script>
-<div class="container">
+}
+</script>
 
+<div class="container">
   <aside class="sidebar" role="complementary" aria-label="Sidebar">
     <div class="lang-switch">
       <button data-lang="en">EN</button>
@@ -140,9 +138,11 @@
           <li><a class="navbar-link active" href="#about" data-txt="about">
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon><span>About</span>
           </a></li>
-          <!-- Certifications removed from sidebar nav (kept on page) -->
           <li><a class="navbar-link" href="#focus" data-txt="focus">
             <ion-icon name="radio-outline" aria-hidden="true"></ion-icon><span>Current Focus</span>
+          </a></li>
+          <li><a class="navbar-link" href="#cyberdailylog">
+            <ion-icon name="pulse-outline" aria-hidden="true"></ion-icon><span>CyberDailyLog</span>
           </a></li>
           <li><a class="navbar-link" href="#skills" data-txt="skills">
             <ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon><span>Skills</span>
@@ -176,7 +176,6 @@
   <main id="maincontent" class="main-content" role="main" aria-label="Main content">
     <h1 class="sr-only">JimBLogic — Cybersecurity Portfolio</h1>
 
-    <!-- About -->
     <section id="about" class="main-section">
       <h2 data-txt="about"><ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>About Me</h2>
       <div class="hero-panel">
@@ -205,8 +204,6 @@
       </p>
     </section>
 
-
-    <!-- Current Focus -->
     <section id="focus" class="main-section">
       <h2 data-txt="focus"><ion-icon name="radio-outline" aria-hidden="true"></ion-icon>Current Focus</h2>
       <div class="focus-grid">
@@ -225,16 +222,29 @@
       </div>
     </section>
 
-    <!-- Certifications -->
+    <section id="cyberdailylog" class="main-section cyberdailylog-section" aria-labelledby="cyberdailylogTitle">
+      <div class="cyberdailylog-heading">
+        <div>
+          <p id="cyberdailylogEyebrow" class="cyberdailylog-eyebrow">Automated Blue Team intelligence</p>
+          <h2 id="cyberdailylogTitle"><ion-icon name="pulse-outline" aria-hidden="true"></ion-icon><span id="cyberdailylogTitleText">CyberDailyLog</span></h2>
+        </div>
+        <span id="cyberdailylogStatus" class="cyberdailylog-status" data-state="loading" aria-live="polite">Loading feed</span>
+      </div>
+      <p id="cyberdailylogIntro" class="cyberdailylog-intro">A daily, source-backed intelligence pipeline that collects, validates and prioritises defensive developments. This compact view updates automatically while the complete report remains auditable on GitHub.</p>
+      <div id="cyberdailylogFeed" class="cyberdailylog-feed" aria-live="polite" aria-busy="true"></div>
+      <div class="cyberdailylog-actions">
+        <a id="cyberdailylogReportLink" class="btn-link" href="https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/latest.md" target="_blank" rel="noopener noreferrer">Read full daily brief</a>
+        <a id="cyberdailylogRepositoryLink" class="btn-link btn-link-secondary" href="https://github.com/JimBLogic/CyberDailyLog" target="_blank" rel="noopener noreferrer">View automation repository</a>
+      </div>
+      <p id="cyberdailylogNote" class="cyberdailylog-note">Loading the bundled verified snapshot.</p>
+    </section>
+
     <section id="certifications" class="main-section">
       <h2 data-txt="certifications"><ion-icon name="medal-outline" aria-hidden="true"></ion-icon>Certifications</h2>
       <div id="certFilters" class="filters"></div>
-      <ul class="certificate-list" id="certificateList">
-        <!-- Certificates loaded via JavaScript -->
-      </ul>
+      <ul class="certificate-list" id="certificateList"></ul>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="main-section">
       <h2 data-txt="skills"><ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon>Skills</h2>
       <p data-txt="skills_intro" class="section-intro">My skills are junior-level, practical and lab-driven: enough to contribute carefully, ask good questions and keep improving through documented hands-on work.</p>
@@ -249,7 +259,6 @@
       </ul>
     </section>
 
-    <!-- Education -->
     <section id="education" class="main-section">
       <h2 data-txt="education"><ion-icon name="school-outline" aria-hidden="true"></ion-icon>Education</h2>
       <div class="education-item">
@@ -264,11 +273,9 @@
       </div>
     </section>
 
-    <!-- Passion & Interests -->
     <section id="passion" class="main-section">
       <h2 data-txt="passion"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon>Passion & Interests</h2>
       <p data-txt="passion_intro" class="section-intro">Beyond technical skills, I'm driven by curiosity and a commitment to financial sovereignty and privacy.</p>
-
       <div class="passion-grid">
         <div class="passion-card">
           <ion-icon name="logo-bitcoin" class="passion-icon" aria-hidden="true"></ion-icon>
@@ -276,20 +283,17 @@
           <p data-txt="passion_bitcoin_desc">Running my own Bitcoin Lightning node to support the decentralized network and promote financial freedom. I believe in self-custody, peer-to-peer transactions, and the importance of sound money principles.</p>
           <p><a href="https://amboss.space/es/node/02ec23c7c0c1adb58a46f6ca5a5acbcebfb2972ede2ed6ba73de605fda5288509f" target="_blank" rel="noopener" data-txt="passion_bitcoin_link">View my Lightning Node →</a></p>
         </div>
-
         <div class="passion-card">
           <ion-icon name="shield-checkmark-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_privacy_title">Privacy & Open Source</h3>
           <p data-txt="passion_privacy_desc">Advocate for digital privacy and open-source software. I use privacy-focused tools like Proton Mail, contribute to open-source projects, and believe everyone deserves control over their personal data.</p>
         </div>
-
         <div class="passion-card">
           <ion-icon name="book-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_learning_title">Continuous Learning</h3>
           <p data-txt="passion_learning_desc">Cybersecurity is ever-evolving, and I'm passionate about staying ahead. From capture-the-flag competitions to reading security research papers, I'm always expanding my knowledge and testing new techniques.</p>
           <p><a href="#journey" data-txt="passion_learning_link">Explore my learning journey →</a></p>
         </div>
-
         <div class="passion-card">
           <ion-icon name="globe-outline" class="passion-icon" aria-hidden="true"></ion-icon>
           <h3 data-txt="passion_community_title">Community & Collaboration</h3>
@@ -299,57 +303,41 @@
       </div>
     </section>
 
-    <!-- Software -->
     <section id="software" class="main-section">
       <h2 data-txt="software"><ion-icon name="desktop-outline" aria-hidden="true"></ion-icon>Software</h2>
-      <ul class="software-list" id="softwareList">
-        <!-- Software loaded via JavaScript -->
-      </ul>
+      <ul class="software-list" id="softwareList"></ul>
     </section>
 
-    <!-- Learning Journey -->
     <section id="journey" class="main-section">
       <h2 data-txt="journey"><ion-icon name="map-outline" aria-hidden="true"></ion-icon>Learning Journey</h2>
       <div class="journey-grid" id="journeyGrid"></div>
     </section>
 
-    <!-- Projects -->
     <section id="projects" class="main-section">
       <h2 data-txt="projects"><ion-icon name="folder-open-outline" aria-hidden="true"></ion-icon>Projects</h2>
       <p class="section-intro" data-txt="projects_intro">Real repositories are loaded from GitHub. The featured item is selected to show practical proof of work; active lab work is marked honestly as currently building.</p>
       <div class="projects-toggle-wrap">
         <button id="projectsToggle" class="filter-btn" data-txt="projects_expand" aria-controls="projectsList" aria-expanded="false">Expand</button>
       </div>
-      <ul class="projects-list" id="projectsList">
-        <!-- Projects loaded via JavaScript from GitHub API -->
-      </ul>
+      <ul class="projects-list" id="projectsList"></ul>
     </section>
 
-    <!-- Tools -->
     <section id="tools" class="main-section">
       <h2 data-txt="tools"><ion-icon name="build-outline" aria-hidden="true"></ion-icon>Tools</h2>
-      <ul class="tools-list" id="toolsList">
-        <!-- Tools loaded via JavaScript -->
-      </ul>
+      <ul class="tools-list" id="toolsList"></ul>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="main-section">
       <h2 data-txt="contact"><ion-icon name="mail-outline" aria-hidden="true"></ion-icon>Contact</h2>
       <p data-txt="contact_1">Ready to collaborate? Reach out via email:</p>
-  <p><a href="mailto:jrf91@pm.me" class="contact-link">jrf91@pm.me</a></p>
+      <p><a href="mailto:jrf91@pm.me" class="contact-link">jrf91@pm.me</a></p>
       <p data-txt="contact_2">Or connect via <a href="https://www.linkedin.com/in/jimblogic/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
     </section>
-
   </main>
 </div>
 
-<!-- Scroll to Top Button (only visible when scrolled down) -->
-  <button class="scroll-btn scroll-top" id="scrollTop" title="Scroll to top">
-  <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
-</button>
+<button class="scroll-btn scroll-top" id="scrollTop" type="button" title="Scroll to top" aria-label="Scroll to top"></button>
 
-<!-- Consent banner for analytics (opt-in) -->
 <div id="consent" role="dialog" aria-live="polite" aria-modal="true" aria-label="Analytics consent" class="consent" hidden>
   <p>Allow anonymous analytics to improve the site?</p>
   <div>
@@ -358,18 +346,18 @@
   </div>
 </div>
 
-<!-- Plausible analytics (manual mode; only fires after consent) -->
 <script id="plausible" defer data-domain="jimblogic.github.io" src="https://plausible.io/js/script.js" data-manual></script>
-
 <script type="module" src="./assets/js/translate.js?v=%VITE_BUILD_VERSION%" defer></script>
 <script type="module" src="./assets/js/script.js?v=%VITE_BUILD_VERSION%" defer></script>
-  <!-- Footer -->
-  <footer role="contentinfo" class="site-footer">
-    <div class="site-footer-row">
-      <small>© 2025 Jaime Ramsden de Frutos · <a href="LICENSE" class="footer-link">MIT License</a></small>
-      <a href="https://pages.github.com/" target="_blank" rel="noopener" class="footer-link">Powered by GitHub Pages</a>
-    </div>
-    <div class="site-footer-source">View source on <a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener" class="footer-link">GitHub</a></div>
-  </footer>
+<script type="module" src="./assets/js/cyberdailylog-feed.js?v=%VITE_BUILD_VERSION%" defer></script>
+<script type="module" src="./assets/js/site-ux.js?v=%VITE_BUILD_VERSION%" defer></script>
+
+<footer role="contentinfo" class="site-footer">
+  <div class="site-footer-row">
+    <small>© 2025 Jaime Ramsden de Frutos · <a href="LICENSE" class="footer-link">MIT License</a></small>
+    <a href="https://pages.github.com/" target="_blank" rel="noopener" class="footer-link">Powered by GitHub Pages</a>
+  </div>
+  <div class="site-footer-source">View source on <a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener" class="footer-link">GitHub</a></div>
+</footer>
 </body>
 </html>

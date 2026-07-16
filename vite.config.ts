@@ -10,18 +10,9 @@ const hardenGeneratedHtml = {
       "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
     );
 
-    const withUxStyles = withPlausibleCsp.replace(
+    return withPlausibleCsp.replace(
       '</head>',
-      [
-        '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">',
-        '  <link rel="stylesheet" href="./assets/css/scroll-sidebar-ux.css">',
-        '</head>'
-      ].join('\n')
-    );
-
-    return withUxStyles.replace(
-      '</body>',
-      '  <script type="module" src="./assets/js/scroll-sidebar-ux.js"></script>\n</body>'
+      ['  <link rel="stylesheet" href="./assets/css/qa-fixes.css">', '</head>'].join('\n')
     );
   }
 };
@@ -48,6 +39,7 @@ export default defineConfig({
         { src: 'assets/js', dest: '.' },
         { src: 'assets/locales', dest: '.' },
         { src: 'assets/pdfs', dest: '.' },
+        { src: 'assets/data', dest: '.' },
         { src: 'assets/Jamie Ramsden CV.pdf', dest: '.' },
         { src: 'assets/Jamie Ramsden Cover Letter.pdf', dest: '.' },
         { src: 'UpgradeHub', dest: '.' },
