@@ -1,0 +1,11 @@
+.footer-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #fff;
+}
