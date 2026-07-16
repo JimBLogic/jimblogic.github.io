@@ -1,6 +1,21 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
+const hardenGeneratedHtml = {
+  name: 'harden-generated-html',
+  transformIndexHtml(html) {
+    return html
+      .replace(
+        "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net;",
+        "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
+      )
+      .replace(
+        '<link rel="stylesheet" href="./assets/css/style.css?v=%VITE_BUILD_VERSION%">',
+        '<link rel="stylesheet" href="./assets/css/style.css?v=%VITE_BUILD_VERSION%">\n  <link rel="stylesheet" href="./assets/css/qa-fixes.css?v=%VITE_BUILD_VERSION%">'
+      );
+  }
+};
+
 export default defineConfig({
   root: '.',
   base: './',
@@ -14,6 +29,7 @@ export default defineConfig({
     }
   },
   plugins: [
+    hardenGeneratedHtml,
     // Copy only explicitly public static assets unchanged.
     viteStaticCopy({
       targets: [
