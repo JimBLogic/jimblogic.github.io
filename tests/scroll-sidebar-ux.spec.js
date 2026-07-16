@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { openHome } from './helpers';
 
-const sectionIds = ['about', 'focus', 'skills', 'education', 'passion', 'software', 'journey', 'projects', 'tools', 'contact'];
+const sectionIds = ['about', 'focus', 'cyberdailylog', 'skills', 'education', 'passion', 'software', 'journey', 'projects', 'tools', 'contact'];
 const languageLabels = {
   en: 'Scroll to top',
   es: 'Volver arriba',
@@ -138,7 +138,7 @@ for (const lang of ['en', 'es', 'ca']) {
     const guard = await stablePage(page);
     await page.locator(`button[data-lang="${lang}"]`).click();
 
-    for (const id of ['projects', 'tools', 'contact']) {
+    for (const id of ['cyberdailylog', 'projects', 'tools', 'contact']) {
       await scrollToSection(page, id);
       const link = page.locator(`.navbar-link[href="#${id}"]`);
       await expect(link).toHaveAttribute('aria-current', 'location');
