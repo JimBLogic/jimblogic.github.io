@@ -248,7 +248,7 @@ async function initializeFeed() {
   }
 }
 
-new MutationObserver(mutations => {
+new window.MutationObserver(mutations => {
   if (mutations.some(mutation => mutation.attributeName === 'lang')) translateStaticUi();
 }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
