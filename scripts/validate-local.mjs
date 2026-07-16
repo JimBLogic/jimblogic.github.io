@@ -1,6 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
+import { resolveLocalReferences } from './local-reference-utils.mjs';
 
 const root = process.cwd();
 const argDist = process.argv.find((a, i) => process.argv[i - 1] === '--dist-dir');
@@ -52,13 +53,15 @@ for (const name of privateNames) {
   if (html.toLowerCase().includes(lower)) fail(`Private LinkedIn export marker referenced by generated HTML: ${name}`);
 }
 
-const refs = [...html.matchAll(/(?:src|href)="(?:\.\/|\/)?([^"#:]+)(?:#[^"]*)?"/g)].map(m => m[1]).filter(r => !/^https?:|^mailto:|^tel:/.test(r));
+const { references: localRefs, errors: localRefErrors } = resolveLocalReferences(html, distDir);
+for (const error of localRefErrors) fail(error);
+const refs = localRefs.map(ref => ref.pathname);
 const assetsDir = join(distDir, 'assets');
 const assets = existsSync(assetsDir) ? readdirSync(assetsDir, { recursive: true, withFileTypes: true }).filter(d => d.isFile()).map(d => path.join(d.parentPath || d.path, d.name)) : [];
 if (!refs.some(r => /^assets\/index-[\w-]+\.js$/.test(r))) fail('Hashed JavaScript bundle is not referenced');
 if (!refs.some(r => /^assets\/index-[\w-]+\.css$/.test(r))) fail('Hashed CSS bundle is not referenced');
-for (const ref of refs) if (!ref.startsWith('#') && !existsSync(join(distDir, decodeURIComponent(ref)))) fail(`Same-origin generated reference is missing: ${ref}`);
-for (const ref of refs.filter(r => /\.pdf$/i.test(r))) if (!existsSync(join(distDir, decodeURIComponent(ref)))) fail(`PDF/CV reference missing: ${ref}`);
+for (const ref of localRefs) if (!existsSync(ref.absolutePath)) fail(`Same-origin generated reference is missing: ${ref.pathname}`);
+for (const ref of localRefs.filter(r => /\.pdf$/i.test(r.pathname))) if (!existsSync(ref.absolutePath)) fail(`PDF/CV reference missing: ${ref.pathname}`);
 for (const f of assets) if ((await stat(f)).size === 0) fail(`Zero-byte generated file: ${rel(f)}`);
 for (const needle of ['Junior SOC Analyst / Blue Team','Raspberry Pi 4','Current Focus','mailto:jrf91@pm.me','github.com/JimBLogic','linkedin.com/in/jimblogic']) if (!html.includes(needle)) fail(`Missing source-derived content in generated HTML: ${needle}`);
 if (html.includes('Senior SOC Analyst') || html.includes('production SOC analyst')) fail('Generated HTML contains obsolete positioning copy');

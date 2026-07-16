@@ -21,7 +21,8 @@
     "test:e2e:local": "npm run build && playwright test",
     "test:e2e:ci": "playwright test --project=chromium",
     "validate:version": "node scripts/validate-build-version-canonical.mjs --dist-dir dist",
-    "validate:privacy": "node scripts/validate-artifact-privacy.mjs --dist-dir dist"
+    "validate:privacy": "node scripts/validate-artifact-privacy.mjs --dist-dir dist",
+    "test:validator-refs": "node scripts/test-local-reference-utils.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.2",

@@ -40,6 +40,8 @@ jobs:
           node --check scripts/audit-production.mjs
           node --check scripts/validate-build-version-canonical.mjs
           node --check scripts/validate-artifact-privacy.mjs
+          node --check scripts/local-reference-utils.mjs
+          node --check scripts/test-local-reference-utils.mjs
       - name: Lint source
         run: npm run lint
       - name: Resolve canonical build version
@@ -47,6 +49,8 @@ jobs:
         run: echo "VITE_BUILD_VERSION=${GITHUB_SHA::12}" >> "$GITHUB_ENV"
       - name: Build generated distribution once
         run: npm run build
+      - name: Test local reference parser
+        run: npm run test:validator-refs
       - name: Validate generated output
         run: npm run validate:local
       - name: Verify canonical build version
