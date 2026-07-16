@@ -27,6 +27,14 @@ html::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
 
+/* `100vw` includes the native scrollbar width on desktop. The existing fixed
+   background already uses inset: 0, so auto width keeps it flush without the
+   16px horizontal overflow and clips its oversized decorative pseudo-elements. */
+.bg-animation {
+  width: auto !important;
+  overflow: hidden;
+}
+
 .main-section {
   scroll-margin-top: 24px;
 }
