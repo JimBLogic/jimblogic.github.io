@@ -91,6 +91,7 @@ function initializeScrollSidebarUx() {
   let condensed = false;
   let animationFrame = 0;
   let activeSectionId = '';
+  let previousScrollTop = 0;
 
   function updateScrollButtonLabel() {
     if (!scrollButton) return;
@@ -159,20 +160,36 @@ function initializeScrollSidebarUx() {
   function updateActiveSection() {
     if (!sections.length) return;
 
-    const scrollTop = scrollingElement().scrollTop;
-    const viewportAnchor = Math.min(220, window.innerHeight * 0.32);
-    const atDocumentEnd = scrollTop + window.innerHeight >= scrollingElement().scrollHeight - 4;
-    let active = sections[0].id;
+    const scroller = scrollingElement();
+    const scrollTop = scroller.scrollTop;
+    const scrollingDown = scrollTop >= previousScrollTop;
+    previousScrollTop = scrollTop;
+    const atDocumentEnd = scrollTop + window.innerHeight >= scroller.scrollHeight - 4;
 
     if (atDocumentEnd) {
-      active = sections.at(-1).id;
-    } else {
-      sections.forEach(section => {
-        if (section.getBoundingClientRect().top <= viewportAnchor) active = section.id;
-      });
+      setActiveSection(sections.at(-1).id);
+      return;
     }
 
-    setActiveSection(active);
+    const visibleSections = sections
+      .map(section => {
+        const rect = section.getBoundingClientRect();
+        const visibleTop = Math.max(0, rect.top);
+        const visibleBottom = Math.min(window.innerHeight, rect.bottom);
+        return {
+          section,
+          visibleHeight: Math.max(0, visibleBottom - visibleTop)
+        };
+      })
+      .filter(candidate => candidate.visibleHeight >= 16);
+
+    if (!visibleSections.length) return;
+
+    /* When scrolling down, the newly entered lower section is the most useful
+       navigation signal. When scrolling up, prefer the upper visible section.
+       This also handles browser/Playwright nearest-edge scrolling correctly. */
+    const activeCandidate = scrollingDown ? visibleSections.at(-1) : visibleSections[0];
+    setActiveSection(activeCandidate.section.id);
   }
 
   function updateScrollState() {
@@ -234,8 +251,8 @@ function initializeScrollSidebarUx() {
   if ('IntersectionObserver' in window) {
     const observer = new window.IntersectionObserver(requestScrollStateUpdate, {
       root: null,
-      rootMargin: '-15% 0px -65% 0px',
-      threshold: [0, 0.01, 0.25, 0.5]
+      rootMargin: '0px',
+      threshold: [0, 0.01, 0.1, 0.25, 0.5]
     });
     sections.forEach(section => observer.observe(section));
   }
