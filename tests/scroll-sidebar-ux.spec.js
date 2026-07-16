@@ -28,24 +28,35 @@ async function scrollToSection(page, id) {
 test('document owns desktop scrolling without horizontal overflow', async ({ page }) => {
   const guard = await stablePage(page);
 
-  const initial = await page.evaluate(() => ({
-    scrollingElement: document.scrollingElement?.tagName,
-    scrollY: window.scrollY,
-    mainClientHeight: document.querySelector('.main-content')?.clientHeight,
-    mainScrollHeight: document.querySelector('.main-content')?.scrollHeight,
-    mainOverflowY: window.getComputedStyle(document.querySelector('.main-content')).overflowY,
-    containerClientHeight: document.querySelector('.container')?.clientHeight,
-    containerScrollHeight: document.querySelector('.container')?.scrollHeight,
-    containerOverflowY: window.getComputedStyle(document.querySelector('.container')).overflowY,
-    horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
-  }));
+  const initial = await page.evaluate(() => {
+    const probeScrollOwnership = selector => {
+      const element = document.querySelector(selector);
+      const originalScrollTop = element.scrollTop;
+      element.scrollTop = 100;
+      const retainedScrollTop = element.scrollTop;
+      element.scrollTop = originalScrollTop;
+
+      return {
+        overflowY: window.getComputedStyle(element).overflowY,
+        retainedScrollTop
+      };
+    };
+
+    return {
+      scrollingElement: document.scrollingElement?.tagName,
+      scrollY: window.scrollY,
+      main: probeScrollOwnership('.main-content'),
+      container: probeScrollOwnership('.container'),
+      horizontalOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
+    };
+  });
 
   expect(initial.scrollingElement).toBe('HTML');
-  expect(initial.mainOverflowY).not.toBe('auto');
-  expect(initial.containerOverflowY).not.toBe('auto');
+  expect(['auto', 'scroll', 'overlay']).not.toContain(initial.main.overflowY);
+  expect(['auto', 'scroll', 'overlay']).not.toContain(initial.container.overflowY);
+  expect(initial.main.retainedScrollTop).toBe(0);
+  expect(initial.container.retainedScrollTop).toBe(0);
   expect(initial.horizontalOverflow).toBeLessThanOrEqual(2);
-  expect(initial.mainScrollHeight - initial.mainClientHeight).toBeLessThanOrEqual(2);
-  expect(initial.containerScrollHeight - initial.containerClientHeight).toBeLessThanOrEqual(2);
 
   await page.mouse.wheel(0, 900);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(initial.scrollY);
