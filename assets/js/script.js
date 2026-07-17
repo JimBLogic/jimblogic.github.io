@@ -563,10 +563,10 @@ const MANUAL_PROJECTS = [
   {
     html_url: 'https://github.com/JimBLogic/CyberDailyLog',
     name: 'CyberDailyLog',
-    description: 'Personal cyber-security habit tracker with automated daily-intel reports, CSV validation, pre-commit hooks, and CI. Stores daily-log CSV, news-scan markdown, and automation scripts.',
-    language: 'PowerShell / Python',
+    description: 'Automated, source-backed 24-hour Blue Team intelligence pipeline with source-health validation, deterministic prioritisation, reproducible daily reports, and a compact public portfolio feed.',
+    language: 'Python',
     stargazers_count: 0,
-    topics: ['daily-log','csv-validation','automation','cybersecurity','github-actions'],
+    topics: ['blue-team','threat-intelligence','automation','cybersecurity','github-actions'],
     owner: { avatar_url: 'https://github.com/JimBLogic.png' }
   }
 ];
