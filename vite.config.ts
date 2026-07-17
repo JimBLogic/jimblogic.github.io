@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
+const buildVersion = process.env.VITE_BUILD_VERSION || 'dev';
+
 const hardenGeneratedHtml = {
   name: 'harden-generated-html',
   enforce: 'post',
@@ -10,9 +12,21 @@ const hardenGeneratedHtml = {
       "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
     );
 
-    return withPlausibleCsp.replace(
+    const withStabilityStyles = withPlausibleCsp.replace(
       '</head>',
-      ['  <link rel="stylesheet" href="./assets/css/qa-fixes.css">', '</head>'].join('\n')
+      [
+        '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">',
+        `  <link rel="stylesheet" href="./assets/css/stability-hotfix.css?v=${buildVersion}">`,
+        '</head>'
+      ].join('\n')
+    );
+
+    return withStabilityStyles.replace(
+      '</body>',
+      [
+        `  <script type="module" src="./assets/js/stability-hotfix.js?v=${buildVersion}"></script>`,
+        '</body>'
+      ].join('\n')
     );
   }
 };
