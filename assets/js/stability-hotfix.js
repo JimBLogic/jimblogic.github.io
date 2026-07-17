@@ -51,7 +51,7 @@ function initializeStableConsent() {
   };
 
   const handleConsent = event => {
-    const target = event.target instanceof Element
+    const target = event.target?.closest
       ? event.target.closest('#consent-accept, #consent-decline')
       : null;
     if (!target) return;
