@@ -33,5 +33,5 @@
 
   { "name": "Python 60h", "issuer": "IBM", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg", "badgeLocal": "", "link": "./assets/pdfs/IBM/python%2060h.pdf" },
 
-  { "name": "Cybersecurity Bootcamp (UpgradeHub)", "issuer": "UpgradeHub", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/graduated.svg", "badgeLocal": "", "link": "./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" }
+  { "name": "Cybersecurity Bootcamp (UpgradeHub)", "issuer": "UpgradeHub", "badgeWeb": "./UpgradeHub/upgradehubcert.png", "badgeLocal": "", "link": "./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf" }
 ]
