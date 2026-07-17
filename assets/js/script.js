@@ -530,8 +530,19 @@ function renderGitHubProjects(username, listId) {
     .then(r => { if (!r.ok) throw new Error(`GitHub repositories failed: ${r.status}`); return r.json(); })
     .then(list => {
       if (!Array.isArray(list)) throw new Error('Invalid GitHub repositories payload');
-      // Filter only original repos (non-forks)
-      const nonFork = list.filter(r => r && r.fork === false);
+      // Keep the recruiter view focused on original, portfolio-relevant work.
+      const excludedRepos = new Set([
+        'github-slideshow',
+        'hello-world',
+        'jimblogic',
+        'jimblogic.github.io',
+        'projects',
+        'skills-communicate-using-markdown',
+        'skills-introduction-to-github'
+      ]);
+      const nonFork = list.filter(r =>
+        r && r.fork === false && !excludedRepos.has((r.name || '').toLowerCase())
+      );
       // Compute latest updated repo from the full non-fork list
       const latestUpdated = nonFork.slice().sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))[0] || null;
       // Build display list (top by stars, then updated), limit to 12
