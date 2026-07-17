@@ -179,12 +179,36 @@
     <section id="about" class="main-section">
       <h2 data-txt="about"><ion-icon name="person-circle-outline" aria-hidden="true"></ion-icon>About Me</h2>
       <div class="hero-panel">
-        <p class="eyebrow" data-txt="hero_eyebrow">Junior SOC Analyst / Blue Team candidate</p>
-        <p class="hero-statement" data-txt="hero_statement">I am building the skills to turn logs, network signals and documented procedures into clear defensive findings. My flagship proof of work is a Raspberry Pi 4 homelab focused on monitoring, tested backups, Docker services and Linux hardening.</p>
-        <div class="hero-actions" aria-label="Portfolio shortcuts">
+        <p class="eyebrow" data-txt="hero_eyebrow">Junior SOC Analyst / Blue Team candidate · Balearic Islands, Spain</p>
+        <p class="hero-statement" data-txt="hero_statement">I am looking for an entry-level SOC, Blue Team or security-operations role where I can triage alerts, document findings and keep learning from senior analysts. My proof of work is public: CyberDailyLog, a Raspberry Pi defensive homelab, Linux/Docker practice and certificate-backed labs.</p>
+        <div class="hero-actions" aria-label="Primary portfolio shortcuts">
           <a href="#projects" class="btn-link" data-txt="hero_projects">View proof of work</a>
-          <a href="#certifications" class="btn-link btn-link-secondary" data-txt="hero_certifications">Review certificates</a>
+          <a href="./assets/pdfs/Jaime Ramsden de Frutos CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-link btn-link-secondary" data-txt="hero_cv">Open CV</a>
+          <a href="mailto:jrf91@pm.me" class="btn-link btn-link-secondary" data-txt="hero_contact">Email Jaime</a>
         </div>
+        <p class="hero-proof-links" aria-label="External proof links">
+          <a href="https://github.com/JimBLogic" target="_blank" rel="noopener noreferrer" data-txt="hero_github">GitHub evidence</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/JimBLogic/TryHackme-HackTheBox" target="_blank" rel="noopener noreferrer" data-txt="hero_tryhackme">TryHackMe / HTB</a>
+        </p>
+        <dl class="proof-strip" aria-label="Recruiter snapshot">
+          <div>
+            <dt data-txt="proof_role_label">Target role</dt>
+            <dd data-txt="proof_role_value">Junior SOC / Blue Team</dd>
+          </div>
+          <div>
+            <dt data-txt="proof_location_label">Location</dt>
+            <dd data-txt="proof_location_value">Balearic Islands, Spain · remote/hybrid roles considered</dd>
+          </div>
+          <div>
+            <dt data-txt="proof_evidence_label">Best evidence</dt>
+            <dd data-txt="proof_evidence_value">CyberDailyLog, homelab, GitHub labs</dd>
+          </div>
+          <div>
+            <dt data-txt="proof_learning_label">Current learning</dt>
+            <dd data-txt="proof_learning_value">AWS Cloud Practitioner foundations</dd>
+          </div>
+        </dl>
       </div>
       <div class="about-buttons">
         <button data-scroll-target="skills" data-txt="about_btn_1">Cybersecurity</button>
@@ -315,7 +339,30 @@
 
     <section id="projects" class="main-section">
       <h2 data-txt="projects"><ion-icon name="folder-open-outline" aria-hidden="true"></ion-icon>Projects</h2>
-      <p class="section-intro" data-txt="projects_intro">Real repositories are loaded from GitHub. The featured item is selected to show practical proof of work; active lab work is marked honestly as currently building.</p>
+      <p class="section-intro" data-txt="projects_intro">Start here for interview evidence. These repositories and lab summaries show what was built, how it relates to defensive work and where the reviewer can inspect the source.</p>
+      <h3 class="subsection-title" data-txt="project_case_studies">Featured proof of work</h3>
+      <div class="case-study-grid">
+        <article class="case-study-card">
+          <h3 data-txt="case_cyber_title">CyberDailyLog — daily defensive intelligence pipeline</h3>
+          <ul>
+            <li data-txt="case_cyber_purpose">Purpose: practise source-backed security monitoring and prioritisation from public advisories and vulnerability data.</li>
+            <li data-txt="case_cyber_built">Built: automated collection, validation and compact portfolio feed with a bundled fallback snapshot.</li>
+            <li data-txt="case_cyber_relevance">Defensive relevance: demonstrates triage thinking, repeatable reporting, safe rendering of untrusted feed text and GitHub-auditable output.</li>
+            <li data-txt="case_cyber_status">Current status: active portfolio project; not a production SOC feed.</li>
+          </ul>
+          <a href="https://github.com/JimBLogic/CyberDailyLog" target="_blank" rel="noopener noreferrer" class="inline-evidence-link" data-txt="view_repo">View Repo</a>
+        </article>
+        <article class="case-study-card">
+          <h3 data-txt="case_homelab_title">Raspberry Pi defensive homelab</h3>
+          <ul>
+            <li data-txt="case_homelab_purpose">Purpose: learn practical Linux administration, networking, monitoring and recovery on a small always-on lab.</li>
+            <li data-txt="case_homelab_built">Built: Docker service practice, hardening routines, log review, backup checks and network-visibility exercises.</li>
+            <li data-txt="case_homelab_relevance">Defensive relevance: supports conversations about least privilege, service exposure, resilience and troubleshooting.</li>
+            <li data-txt="case_homelab_status">Current status: in progress and documented as hands-on learning rather than professional operations.</li>
+          </ul>
+          <a href="https://github.com/JimBLogic" target="_blank" rel="noopener noreferrer" class="inline-evidence-link" data-txt="hero_github">GitHub evidence</a>
+        </article>
+      </div>
       <div class="projects-toggle-wrap">
         <button id="projectsToggle" class="filter-btn" data-txt="projects_expand" aria-controls="projectsList" aria-expanded="false">Expand</button>
       </div>
