@@ -1,6 +1,7 @@
 [
   
   { "name": "Access Control Basics", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-access-control-basics.png", "link": "./assets/pdfs/cybrary/cybrary-cert-access-control-basics.pdf" },
+  { "name": "Data Backup and Recovery Basics", "issuer": "Cybrary", "badgeWeb": "./assets/Images/Profilepicandother/cybrary.jpg", "badgeLocal": "", "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-data-backup-and-recovery.pdf" },
   { "name": "Cryptography Basics", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-cryptography-basics.png", "link": "./assets/pdfs/cybrary/cybrary-cert-cryptography-basics.pdf" },
   { "name": "Firewall Basics", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-firewall-basics.png", "link": "./assets/pdfs/cybrary/cybrary-cert-firewall-basics.pdf" },
   { "name": "Group Policy Basics", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-group-policy-basics.png", "link": "./assets/pdfs/cybrary/cybrary-cert-group-policy-basics.pdf" },
