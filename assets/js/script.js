@@ -90,7 +90,7 @@ function buildCertFilters() {
   if (!filterEl || !Array.isArray(CERT_DATA)) return;
   const issuers = Array.from(new Set(CERT_DATA.map(c => c.issuer).filter(Boolean)));
   const shortNames = { 'Mossé Cyber Security Institute': 'MCSI' };
-  const order = ['ALL', 'Security Blue Team', 'Cybrary', 'AWS', 'IBM', 'Mossé Cyber Security Institute', 'UpgradeHub'];
+  const order = ['ALL', 'Security Blue Team', 'Cybrary', 'AWS', 'IBM', 'Cisco', 'Mossé Cyber Security Institute', 'UpgradeHub'];
   const btns = order.filter(x => x === 'ALL' || issuers.includes(x)).map(key => {
     const label = key === 'ALL' ? t('filter_all') : (shortNames[key] || key);
     return `<button class="filter-btn" data-filter="${key}">${label}</button>`;
@@ -151,7 +151,7 @@ function renderLearningJourney(gridId) {
       key: 'Mossé Cyber Security Institute',
       name: 'MCSI',
       imgWeb: 'https://img.icons8.com/fluency/48/security-checked.png',
-      link: 'https://www.mosse-institute.com/knowledge-tests/kccs-knowledge-of-cybersecurity-skills.html'
+      link: 'https://students.mosse-institute.com/knowledge-test/CwLmPjf2GImtJzeszhxJ'
     },
     {
       key: 'UpgradeHub',
@@ -530,8 +530,19 @@ function renderGitHubProjects(username, listId) {
     .then(r => { if (!r.ok) throw new Error(`GitHub repositories failed: ${r.status}`); return r.json(); })
     .then(list => {
       if (!Array.isArray(list)) throw new Error('Invalid GitHub repositories payload');
-      // Filter only original repos (non-forks)
-      const nonFork = list.filter(r => r && r.fork === false);
+      // Keep the recruiter view focused on original, portfolio-relevant work.
+      const excludedRepos = new Set([
+        'github-slideshow',
+        'hello-world',
+        'jimblogic',
+        'jimblogic.github.io',
+        'projects',
+        'skills-communicate-using-markdown',
+        'skills-introduction-to-github'
+      ]);
+      const nonFork = list.filter(r =>
+        r && r.fork === false && !excludedRepos.has((r.name || '').toLowerCase())
+      );
       // Compute latest updated repo from the full non-fork list
       const latestUpdated = nonFork.slice().sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))[0] || null;
       // Build display list (top by stars, then updated), limit to 12
@@ -563,10 +574,10 @@ const MANUAL_PROJECTS = [
   {
     html_url: 'https://github.com/JimBLogic/CyberDailyLog',
     name: 'CyberDailyLog',
-    description: 'Personal cyber-security habit tracker with automated daily-intel reports, CSV validation, pre-commit hooks, and CI. Stores daily-log CSV, news-scan markdown, and automation scripts.',
-    language: 'PowerShell / Python',
+    description: 'Automated, source-backed 24-hour Blue Team intelligence pipeline with source-health validation, deterministic prioritisation, reproducible daily reports, and a compact public portfolio feed.',
+    language: 'Python',
     stargazers_count: 0,
-    topics: ['daily-log','csv-validation','automation','cybersecurity','github-actions'],
+    topics: ['blue-team','threat-intelligence','automation','cybersecurity','github-actions'],
     owner: { avatar_url: 'https://github.com/JimBLogic.png' }
   }
 ];
