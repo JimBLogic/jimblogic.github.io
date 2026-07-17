@@ -2159,3 +2159,106 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* Recruiter-first proof summary and project evidence cards */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.proof-strip > div,
+.case-study-card {
+  border: 1px solid rgba(0, 255, 136, 0.16);
+  border-radius: 14px;
+  background: rgba(12, 18, 16, 0.56);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.proof-strip > div {
+  padding: 14px;
+}
+
+.proof-strip dt {
+  color: #00ff88;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.proof-strip dd {
+  color: #f6f6f6;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.subsection-title {
+  color: #00ff88;
+  font-size: 1.15rem;
+  margin: 22px 0 14px;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0 20px;
+}
+
+.case-study-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+}
+
+.case-study-card h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.case-study-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.case-study-card li {
+  color: rgba(240, 240, 240, 0.88);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.inline-evidence-link {
+  align-self: flex-start;
+  color: #f7931a;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .proof-strip,
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-proof-links {
+  color: rgba(240, 240, 240, 0.74);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-proof-links a {
+  color: #00ff88;
+  font-weight: 700;
+}
