@@ -10,10 +10,19 @@ const hardenGeneratedHtml = {
       "script-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://plausible.io;"
     );
 
-    return withPlausibleCsp.replace(
-      '</head>',
-      ['  <link rel="stylesheet" href="./assets/css/qa-fixes.css">', '</head>'].join('\n')
-    );
+    return withPlausibleCsp
+      .replace(
+        '</head>',
+        [
+          '  <link rel="stylesheet" href="./assets/css/qa-fixes.css">',
+          '  <link rel="stylesheet" href="./assets/css/production-stability.css">',
+          '</head>'
+        ].join('\n')
+      )
+      .replace(
+        '</body>',
+        ['  <script type="module" src="./assets/js/production-stability.js"></script>', '</body>'].join('\n')
+      );
   }
 };
 
