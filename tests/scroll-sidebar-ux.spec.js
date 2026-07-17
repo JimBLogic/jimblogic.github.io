@@ -18,7 +18,7 @@ async function stablePage(page, viewport = { width: 1366, height: 768 }) {
 }
 
 async function scrollToSection(page, id) {
-  await page.locator(`#${id}`).scrollIntoViewIfNeeded();
+  await page.locator(`#${id}`).evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'auto' }));
   await page.waitForFunction(
     targetId => document.querySelector(`.navbar-link[href="#${targetId}"]`)?.getAttribute('aria-current') === 'location',
     id
