@@ -7,7 +7,7 @@ for (const decision of ['consent-accept', 'consent-decline']) {
       Object.defineProperty(window, 'localStorage', {
         configurable: true,
         get() {
-          throw new DOMException('Storage blocked', 'SecurityError');
+          throw new window.DOMException('Storage blocked', 'SecurityError');
         }
       });
     });
@@ -15,11 +15,9 @@ for (const decision of ['consent-accept', 'consent-decline']) {
     const guard = await openHome(page);
     const consent = page.locator('#consent');
     await expect(consent).toBeVisible();
-
     await page.locator(`#${decision}`).click();
     await expect(consent).toBeHidden();
     await expect(consent).toHaveAttribute('aria-hidden', 'true');
-
     guard.assertNoSameOriginFailures();
     guard.assertNoPageErrors();
   });
@@ -28,11 +26,9 @@ for (const decision of ['consent-accept', 'consent-decline']) {
 test('desktop sidebar keeps contact details readable and reachable at low viewport height', async ({ page }) => {
   await page.setViewportSize({ width: 1366, height: 650 });
   const guard = await openHome(page);
-
   const sidebarInfo = page.locator('.sidebar-info');
   const email = page.locator('.contacts-list a[href^="mailto:"]');
   const resume = page.locator('.contacts-list a[href$="CV.pdf"]');
-
   await expect(email).toBeVisible();
   await expect(resume).toBeVisible();
 
@@ -43,7 +39,6 @@ test('desktop sidebar keeps contact details readable and reachable at low viewpo
       document.querySelector('.contacts-list a[href$="CV.pdf"]')
     ];
     const sidebarRect = sidebar.getBoundingClientRect();
-
     return items.every(item => {
       const rect = item.getBoundingClientRect();
       return rect.left >= sidebarRect.left - 1 && rect.right <= sidebarRect.right + 1;
@@ -59,7 +54,6 @@ test('desktop sidebar keeps contact details readable and reachable at low viewpo
     return link.top >= container.top - 1 && link.bottom <= container.bottom + 1;
   });
   expect(canReachNavigation).toBe(true);
-
   guard.assertNoSameOriginFailures();
   guard.assertNoPageErrors();
 });
