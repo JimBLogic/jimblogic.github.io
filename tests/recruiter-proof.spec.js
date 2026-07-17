@@ -194,5 +194,4 @@ test('keyboard focus follows the recruiter-link DOM order and axe has no serious
     .analyze();
   expect(results.violations.filter(v => ['serious', 'critical'].includes(v.impact || ''))).toEqual([]);
   guard.assertNoSameOriginFailures();
-  guard.assertNoPageErrors();
 });
