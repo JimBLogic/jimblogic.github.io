@@ -6,9 +6,9 @@ const CONSENT_KEY = 'consent-analytics';
 test('consent banner dismisses in one click when localStorage writes are blocked', async ({ page }) => {
   await page.addInitScript(key => {
     window.localStorage.removeItem(key);
-    const originalSetItem = Storage.prototype.setItem;
-    Storage.prototype.setItem = function setItem(name, value) {
-      if (name === key) throw new DOMException('Storage blocked for QA', 'SecurityError');
+    const originalSetItem = window.Storage.prototype.setItem;
+    window.Storage.prototype.setItem = function setItem(name, value) {
+      if (name === key) throw new window.DOMException('Storage blocked for QA', 'SecurityError');
       return originalSetItem.call(this, name, value);
     };
   }, CONSENT_KEY);
