@@ -90,7 +90,7 @@ function buildCertFilters() {
   if (!filterEl || !Array.isArray(CERT_DATA)) return;
   const issuers = Array.from(new Set(CERT_DATA.map(c => c.issuer).filter(Boolean)));
   const shortNames = { 'Mossé Cyber Security Institute': 'MCSI' };
-  const order = ['ALL', 'Security Blue Team', 'Cybrary', 'AWS', 'IBM', 'Mossé Cyber Security Institute', 'UpgradeHub'];
+  const order = ['ALL', 'Security Blue Team', 'Cybrary', 'AWS', 'IBM', 'Cisco', 'Mossé Cyber Security Institute', 'UpgradeHub'];
   const btns = order.filter(x => x === 'ALL' || issuers.includes(x)).map(key => {
     const label = key === 'ALL' ? t('filter_all') : (shortNames[key] || key);
     return `<button class="filter-btn" data-filter="${key}">${label}</button>`;
