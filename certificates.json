@@ -26,7 +26,7 @@
   { "name": "Introduction to Vulnerability Management", "issuer": "Security Blue Team", "badgeLocal": "SecurityBlueTeam/Introduction to Vulnerability Management-course.png", "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Vulnerability Management-course.pdf" },
   { "name": "Mental Health in Cybersecurity", "issuer": "Security Blue Team", "badgeLocal": "SecurityBlueTeam/Mental Health in Cybersecurity-course.png", "link": "./assets/pdfs/SecurityBlueTeam/Mental Health in Cybersecurity-course.pdf" },
 
-  { "name": "KCCS - Knowledge of Cybersecurity Skills", "issuer": "Mossé Cyber Security Institute", "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png", "link": "https://www.mosse-institute.com/knowledge-tests/kccs-knowledge-of-cybersecurity-skills.html" },
+  { "name": "KCCS - Knowledge of Cybersecurity Skills", "issuer": "Mossé Cyber Security Institute", "badgeLocal": "MosseCyberSecurityInstitute/KCCS - Knowledge of Cybersecurity Skills.png", "link": "https://students.mosse-institute.com/knowledge-test/CwLmPjf2GImtJzeszhxJ" },
 
   { "name": "AWS Course Completion Certificate", "issuer": "AWS", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg", "badgeLocal": "", "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf" },
   { "name": "AWS Skill Builder Course Completion Certificate", "issuer": "AWS", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg", "badgeLocal": "", "link": "./assets/pdfs/aws/18443_5_6860342_1735810643_AWS%20Skill%20Builder%20Course%20Completion%20Certificate.pdf" },
