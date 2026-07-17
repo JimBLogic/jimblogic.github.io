@@ -151,7 +151,7 @@ function renderLearningJourney(gridId) {
       key: 'Mossé Cyber Security Institute',
       name: 'MCSI',
       imgWeb: 'https://img.icons8.com/fluency/48/security-checked.png',
-      link: 'https://www.mosse-institute.com/knowledge-tests/kccs-knowledge-of-cybersecurity-skills.html'
+      link: 'https://students.mosse-institute.com/knowledge-test/CwLmPjf2GImtJzeszhxJ'
     },
     {
       key: 'UpgradeHub',
