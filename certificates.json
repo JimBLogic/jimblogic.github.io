@@ -12,7 +12,6 @@
   { "name": "Security Program Management and Oversight", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-security-security-program-management-and-oversight.png", "link": "./assets/pdfs/cybrary/cybrary-cert-security-security-program-management-and-oversight.pdf" },
   { "name": "Threats, Vulnerabilities, and Mitigations", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.png", "link": "./assets/pdfs/cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.pdf" },
   { "name": "Vulnerability Scanner Basics", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-vulnerability-scanner-basics.png", "link": "./assets/pdfs/cybrary/cybrary-cert-vulnerability-scanner-basics.pdf" },
-  { "name": "Welcome to Cybrary", "issuer": "Cybrary", "badgeLocal": "cybrary/cybrary-cert-welcome-to-cybrary.png", "link": "./assets/pdfs/cybrary/cybrary-cert-welcome-to-cybrary.pdf" },
 
   { "name": "Blue Team Junior Analyst Pathway Bundle", "issuer": "Security Blue Team", "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png", "link": "./assets/pdfs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.pdf" },
   { "name": "Introduction to Dark Web Operations", "issuer": "Security Blue Team", "badgeLocal": "SecurityBlueTeam/Introduction to Dark Web Operations-course.png", "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Dark Web Operations-course.pdf" },
