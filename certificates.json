@@ -30,10 +30,10 @@
 
   { "name": "AWS Course Completion Certificate", "issuer": "AWS", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg", "badgeLocal": "", "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf" },
   { "name": "AWS Skill Builder Course Completion Certificate", "issuer": "AWS", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg", "badgeLocal": "", "link": "./assets/pdfs/aws/18443_5_6860342_1735810643_AWS%20Skill%20Builder%20Course%20Completion%20Certificate.pdf" },
-  { "name": "AWS SimuLearn - Cloud Practitioner - Training Badge", "issuer": "Amazon Web Services Training and Certification", "badgeWeb": "https://images.credly.com/images/b6b54bbe-b797-49a3-b571-58ca96328b9b/blob", "badgeLocal": "", "link": "https://www.credly.com/badges/2fbdc9ba-c4f6-4e34-bfe6-ada0751e536a" },
+  { "name": "AWS SimuLearn - Cloud Practitioner - Training Badge", "issuer": "AWS", "badgeWeb": "https://images.credly.com/images/b6b54bbe-b797-49a3-b571-58ca96328b9b/blob", "badgeLocal": "", "link": "https://www.credly.com/badges/2fbdc9ba-c4f6-4e34-bfe6-ada0751e536a" },
 
   { "name": "Python 60h", "issuer": "IBM", "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg", "badgeLocal": "", "link": "./assets/pdfs/IBM/python%2060h.pdf" },
-  { "name": "Web Development with Python", "issuer": "IBM SkillsBuild", "badgeWeb": "https://images.credly.com/images/1fb00135-23d3-42e9-a745-c7627e8a84bf/image.png", "badgeLocal": "", "link": "https://www.credly.com/badges/377ba6ff-0d4b-41df-8477-5ba08748c63d" },
+  { "name": "Web Development with Python", "issuer": "IBM", "badgeWeb": "https://images.credly.com/images/1fb00135-23d3-42e9-a745-c7627e8a84bf/image.png", "badgeLocal": "", "link": "https://www.credly.com/badges/377ba6ff-0d4b-41df-8477-5ba08748c63d" },
 
   { "name": "Cyber Threat Management", "issuer": "Cisco", "badgeWeb": "https://images.credly.com/images/5d5ac32b-d239-42b8-9665-8a921dc3ab47/image.png", "badgeLocal": "", "link": "https://www.credly.com/badges/5e2eb763-9d96-4f29-8018-99a71b82c352" },
   { "name": "Introduction to Cybersecurity", "issuer": "Cisco", "badgeWeb": "https://images.credly.com/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png", "badgeLocal": "", "link": "https://www.credly.com/badges/cf1cfdca-0fa3-4989-b065-46d985178ae2" },
