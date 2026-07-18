@@ -214,11 +214,34 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     const navToggle = document.getElementById('navToggle');
     const navbar = document.querySelector('.navbar');
-    if (navToggle && navbar) {
-      navToggle.addEventListener('click', () => {
-        const open = navbar.classList.toggle('open');
+    if (navToggle && navbar && navToggle.dataset.bound !== 'true') {
+      navToggle.dataset.bound = 'true';
+
+      const setOpen = open => {
+        navbar.classList.toggle('open', open);
+        document.body.classList.toggle('mobile-nav-open', open);
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+
+      navToggle.addEventListener('click', () => {
+        setOpen(navToggle.getAttribute('aria-expanded') !== 'true');
       });
+
+      navbar.addEventListener('click', event => {
+        if (event.target.closest('.navbar-link')) setOpen(false);
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') setOpen(false);
+      });
+
+      const mobileMedia = window.matchMedia('(max-width: 700px)');
+      const closeOnDesktop = event => {
+        if (!event.matches) setOpen(false);
+      };
+      if (mobileMedia.addEventListener) mobileMedia.addEventListener('change', closeOnDesktop);
+      else if (mobileMedia.addListener) mobileMedia.addListener(closeOnDesktop);
     }
   } catch (_) {}
 
@@ -395,34 +418,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Consent banner for Plausible analytics (opt-in)
 (function() {
-  try {
-    const el = document.getElementById('consent');
-    if (!el) return;
-    const key = 'consent-analytics';
-    const prior = localStorage.getItem(key);
-    if (prior) {
-      if (prior === 'yes' && typeof window.plausible === 'function') window.plausible('pageview');
-      return; // do not show banner again
+  const el = document.getElementById('consent');
+  if (!el || el.dataset.stableConsent === 'ready') return;
+
+  el.dataset.stableConsent = 'ready';
+  const key = 'consent-analytics';
+
+  const readPreference = () => {
+    try {
+      return window.localStorage.getItem(key);
+    } catch (_) {
+      return null;
     }
-    // show banner
-    el.hidden = false;
+  };
 
-    const setConsent = (value) => {
-      localStorage.setItem(key, value);
-      el.remove();
-      if (value === 'yes' && typeof window.plausible === 'function') window.plausible('pageview');
-    };
+  const savePreference = value => {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch (_) {
+      // Dismissal must still work in Safari private mode or strict privacy settings.
+    }
+  };
 
-    const handleConsentEvent = (event) => {
-      const target = event.target && event.target.closest ? event.target.closest('#consent-accept, #consent-decline') : null;
-      if (!target) return;
-      event.preventDefault();
-      setConsent(target.id === 'consent-accept' ? 'yes' : 'no');
-    };
+  const dismiss = value => {
+    el.hidden = true;
+    el.setAttribute('aria-hidden', 'true');
+    savePreference(value);
+    if (value === 'yes' && typeof window.plausible === 'function') {
+      try {
+        window.plausible('pageview');
+      } catch (_) {}
+    }
+    el.remove();
+  };
 
-    document.addEventListener('click', handleConsentEvent, { passive: false });
-    document.addEventListener('pointerup', handleConsentEvent, { passive: false });
-  } catch (_) {}
+  const prior = readPreference();
+  if (prior === 'yes' || prior === 'no') {
+    dismiss(prior);
+    return;
+  }
+
+  el.hidden = false;
+  el.setAttribute('aria-hidden', 'false');
+
+  document.addEventListener('click', event => {
+    const target = event.target && event.target.closest
+      ? event.target.closest('#consent-accept, #consent-decline')
+      : null;
+    if (!target) return;
+    event.preventDefault();
+    dismiss(target.id === 'consent-accept' ? 'yes' : 'no');
+  }, { capture: true, passive: false });
 })();
 
 // Fetch concise highlights from GitHub profile README
