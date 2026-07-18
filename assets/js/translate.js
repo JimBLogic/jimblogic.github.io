@@ -39,7 +39,7 @@ const translations = {
     "focus_cloud_desc": "Preparing as an AWS Cloud Practitioner candidate while reinforcing IAM, shared responsibility, billing awareness and secure cloud basics.",
     "about_btn_2": "AWS Foundations",
     "about_btn_3": "Blue Team",
-    "about_p1": "I'm a junior SOC Analyst / Blue Team candidate building practical defensive skills through a Raspberry Pi 4 homelab, Linux administration, Docker services, network monitoring, log review, tested backups and hardening. I completed a full-time cybersecurity bootcamp at <a href='./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> and continue studying digital forensics, incident response, OSINT, threat intelligence and AWS cloud foundations.",
+    "about_p1": "I'm a junior SOC Analyst / Blue Team candidate building practical defensive skills through a Raspberry Pi 4 homelab, Linux administration, Docker services, network monitoring, log review, tested backups and hardening. I completed a full-time cybersecurity bootcamp at <a href='https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> and continue studying digital forensics, incident response, OSINT, threat intelligence and AWS cloud foundations.",
     "about_p2": "An entry-level SOC, Blue Team or security operations role where I can triage alerts, document findings, learn from senior analysts and contribute reliable defensive work.",
     "skills_intro": "My skills are junior-level, practical and lab-driven: enough to contribute carefully, ask good questions and keep improving through documented hands-on work.",
     "projects_intro": "Real repositories are loaded from GitHub. The featured item is selected to show practical proof of work; active lab work is marked honestly as currently building.",
@@ -68,7 +68,7 @@ const translations = {
     "about_btn_5": "OSINT",
     "about_btn_6": "Bitcoin",
     "about_p2_label": "Looking for:",
-    "about_p3": "Learning journeys and certificates hosted on GitHub:",
+    "about_p3": "Documented learning repositories and certificate evidence on GitHub:",
     "skills_1_title": "Blue Team Foundations:",
     "skills_1_desc": "SOC concepts, alert triage, incident notes, NIST CSF awareness and careful documentation",
     "skills_2_title": "Networking & Monitoring:",
@@ -158,9 +158,9 @@ const translations = {
     "about_btn_4": "Forense digital",
     "about_btn_5": "OSINT",
     "about_btn_6": "Bitcoin",
-    "about_p1": "Soy candidato a Analista SOC Junior / Blue Team y estoy desarrollando habilidades defensivas prácticas con un homelab con Raspberry Pi 4, administración Linux, servicios Docker, monitorización de red, revisión de logs, copias de seguridad verificadas y hardening. Completé un bootcamp intensivo de ciberseguridad en <a href='./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> y sigo estudiando forense digital, respuesta a incidentes, OSINT, inteligencia de amenazas y fundamentos de AWS.",
+    "about_p1": "Soy candidato a Analista SOC Junior / Blue Team y estoy desarrollando habilidades defensivas prácticas con un homelab con Raspberry Pi 4, administración Linux, servicios Docker, monitorización de red, revisión de logs, copias de seguridad verificadas y hardening. Completé un bootcamp intensivo de ciberseguridad en <a href='https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> y sigo estudiando forense digital, respuesta a incidentes, OSINT, inteligencia de amenazas y fundamentos de AWS.",
     "about_p2_label": "Busco:",
-    "about_p3": "Rutas de aprendizaje y certificados alojados en GitHub:",
+    "about_p3": "Repositorios de aprendizaje documentado y evidencias de certificados en GitHub:",
     "skills_1_title": "Fundamentos de Blue Team:",
     "skills_1_desc": "Conceptos SOC, triaje de alertas, notas de incidente, nociones de NIST CSF y documentación cuidadosa",
     "skills_2_title": "Redes y monitorización:",
@@ -250,9 +250,9 @@ const translations = {
     "about_btn_4": "Informàtica forense",
     "about_btn_5": "OSINT",
     "about_btn_6": "Bitcoin",
-    "about_p1": "Soc candidat a Analista SOC Junior / Blue Team i estic desenvolupant habilitats defensives pràctiques amb un homelab amb Raspberry Pi 4, administració Linux, serveis Docker, monitoratge de xarxa, revisió de logs, còpies de seguretat verificades i hardening. Vaig completar un bootcamp intensiu de ciberseguretat a <a href='./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> i continuo estudiant informàtica forense, resposta a incidents, OSINT, intel·ligència d’amenaces i fonaments d’AWS.",
+    "about_p1": "Soc candidat a Analista SOC Junior / Blue Team i estic desenvolupant habilitats defensives pràctiques amb un homelab amb Raspberry Pi 4, administració Linux, serveis Docker, monitoratge de xarxa, revisió de logs, còpies de seguretat verificades i hardening. Vaig completar un bootcamp intensiu de ciberseguretat a <a href='https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf' target='_blank' rel='noopener noreferrer'>UpgradeHub</a> i continuo estudiant informàtica forense, resposta a incidents, OSINT, intel·ligència d’amenaces i fonaments d’AWS.",
     "about_p2_label": "Cerco:",
-    "about_p3": "Rutes d’aprenentatge i certificats allotjats a GitHub:",
+    "about_p3": "Repositoris d’aprenentatge documentat i evidències de certificats a GitHub:",
     "skills_1_title": "Fonaments de Blue Team:",
     "skills_1_desc": "Conceptes SOC, triatge d’alertes, notes d’incident, nocions de NIST CSF i documentació acurada",
     "skills_2_title": "Xarxes i monitoratge:",
@@ -292,8 +292,8 @@ async function loadLocale(lang) {
   }
 }
 
-function t(key) {
-  const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+function t(key, langOverride) {
+  const lang = (langOverride || document.documentElement.getAttribute('lang') || 'en').toLowerCase();
   return (window.translations && window.translations[lang] && window.translations[lang][key]) ||
          (window.translations && window.translations.en && window.translations.en[key]) || key;
 }
@@ -306,9 +306,10 @@ async function setLang(lang) {
     window.translations[lang] = { ...(window.translations[lang] || {}), ...dict };
   }
 
+  document.documentElement.setAttribute('lang', lang);
   document.querySelectorAll('[data-txt]').forEach(el => {
     const key = el.getAttribute('data-txt');
-    const translation = t(key);
+    const translation = t(key, lang);
     if (!translation) return;
     const hasIcon = el.querySelector('ion-icon');
     const hasSpan = el.querySelector('span');
@@ -326,7 +327,6 @@ async function setLang(lang) {
     }
   });
 
-  document.documentElement.setAttribute('lang', lang);
   if (typeof window !== 'undefined' && typeof window.onLanguageChanged === 'function') {
     try { window.onLanguageChanged(lang); } catch (e) {}
   }
