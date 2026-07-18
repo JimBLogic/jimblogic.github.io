@@ -157,7 +157,7 @@ function renderLearningJourney(gridId) {
       key: 'UpgradeHub',
       name: 'UpgradeHub',
       imgLocal: './UpgradeHub/upgradehubcert.png',
-      link: './assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf'
+      link: 'https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf'
     },
     {
       key: 'TryHackMe · HackTheBox',

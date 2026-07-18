@@ -3,139 +3,139 @@
     "name": "Access Control Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-access-control-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-access-control-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-access-control-basics.pdf"
   },
   {
     "name": "Cryptography Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-cryptography-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-cryptography-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-cryptography-basics.pdf"
   },
   {
     "name": "Firewall Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-firewall-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-firewall-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-firewall-basics.pdf"
   },
   {
     "name": "Group Policy Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-group-policy-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-group-policy-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-group-policy-basics.pdf"
   },
   {
     "name": "IP Addressing Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-ip-addressing-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-ip-addressing-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-ip-addressing-basics.pdf"
   },
   {
     "name": "Patching Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-patching-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-patching-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-patching-basics.pdf"
   },
   {
     "name": "General Security Concepts",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-general-security-concepts.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-general-security-concepts.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Labs/cybrary-cert-security-general-security-concepts.pdf"
   },
   {
     "name": "Security Architecture",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-security-architecture.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-security-architecture.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Labs/cybrary-cert-security-security-architecture.pdf"
   },
   {
     "name": "Security Operations",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-security-operations.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-security-operations.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Labs/cybrary-cert-security-security-operations.pdf"
   },
   {
     "name": "Security Program Management and Oversight",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-security-program-management-and-oversight.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-security-program-management-and-oversight.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Labs/cybrary-cert-security-security-program-management-and-oversight.pdf"
   },
   {
     "name": "Threats, Vulnerabilities, and Mitigations",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-security-threats-vulnerabilities-and-mitigations.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Labs/cybrary-cert-security-threats-vulnerabilities-and-mitigations.pdf"
   },
   {
     "name": "Vulnerability Scanner Basics",
     "issuer": "Cybrary",
     "badgeLocal": "cybrary/cybrary-cert-vulnerability-scanner-basics.png",
-    "link": "./assets/pdfs/cybrary/cybrary-cert-vulnerability-scanner-basics.pdf"
+    "link": "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-vulnerability-scanner-basics.pdf"
   },
   {
     "name": "Blue Team Junior Analyst Pathway Bundle",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Blue Team Junior Analyst Pathway Bundle-btja.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Blue%20Team%20Junior%20Analyst%20Pathway%20Bundle-btja.pdf"
   },
   {
     "name": "Introduction to Dark Web Operations",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Dark Web Operations-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Dark Web Operations-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Dark%20Web%20Operations-course.pdf"
   },
   {
     "name": "Introduction to Digital Forensics",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Digital Forensics-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Digital Forensics-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Digital%20Forensics-course.pdf"
   },
   {
     "name": "Introduction to Network Analysis",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Network Analysis-course.jpg",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Network Analysis-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Network%20Analysis-course.pdf"
   },
   {
     "name": "Introduction to OSINT",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to OSINT-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to OSINT-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20OSINT-course.pdf"
   },
   {
     "name": "Introduction to PowerShell",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to PowerShell-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to PowerShell-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20PowerShell-course.pdf"
   },
   {
     "name": "Introduction to Python",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Python.PNG",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Python-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Python-course.pdf"
   },
   {
     "name": "Introduction to Threat Hunting",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Threat Hunting-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Threat Hunting-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Threat%20Hunting-course.pdf"
   },
   {
     "name": "Introduction to Virtual Machines",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Virtual Machines-course.jpg",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Virtual Machines-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Virtual%20Machines-course.pdf"
   },
   {
     "name": "Introduction to Vulnerability Management",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Introduction to Vulnerability Management-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Introduction to Vulnerability Management-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Vulnerability%20Management-course.pdf"
   },
   {
     "name": "Mental Health in Cybersecurity",
     "issuer": "Security Blue Team",
     "badgeLocal": "SecurityBlueTeam/Mental Health in Cybersecurity-course.png",
-    "link": "./assets/pdfs/SecurityBlueTeam/Mental Health in Cybersecurity-course.pdf"
+    "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Mental%20Health%20in%20Cybersecurity-course.pdf"
   },
   {
     "name": "KCCS - Knowledge of Cybersecurity Skills",
@@ -148,28 +148,28 @@
     "issuer": "AWS",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "badgeLocal": "",
-    "link": "./assets/pdfs/aws/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf"
+    "link": "https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute/blob/main/certs/156_3_6860342_1735817985_AWS%20Course%20Completion%20Certificate.pdf"
   },
   {
     "name": "AWS Skill Builder Course Completion Certificate",
     "issuer": "AWS",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg",
     "badgeLocal": "",
-    "link": "./assets/pdfs/aws/18443_5_6860342_1735810643_AWS%20Skill%20Builder%20Course%20Completion%20Certificate.pdf"
+    "link": "https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute/blob/main/certs/18443_5_6860342_1735810643_AWS%20Skill%20Builder%20Course%20Completion%20Certificate.pdf"
   },
   {
     "name": "Python 60h",
     "issuer": "IBM",
     "badgeWeb": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg",
     "badgeLocal": "",
-    "link": "./assets/pdfs/IBM/python%2060h.pdf"
+    "link": "https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute/blob/main/certs/python%2060h.pdf"
   },
   {
     "name": "Cybersecurity Bootcamp (UpgradeHub)",
     "issuer": "UpgradeHub",
     "badgeWeb": "./UpgradeHub/upgradehubcert.png",
     "badgeLocal": "",
-    "link": "./assets/pdfs/UpgradeHub/UpgradeHub Cert.pdf"
+    "link": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf"
   },
   {
     "name": "Introduction to Bash",
