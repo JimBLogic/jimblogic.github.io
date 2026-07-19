@@ -13,6 +13,9 @@ dist/assets/pdfs/*.pdf
 playwright-report/
 test-results/
 reports/
+/axe-report*.json
+/lh-report*.json
+/lighthouse-audit*.json
 
 # Generated PDF copies from dist builds
 dist/assets/pdfs/**/*.pdf
