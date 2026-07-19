@@ -15,7 +15,7 @@ const read = p => readFile(p, 'utf8');
 const readJson = async p => JSON.parse(await read(p));
 const stable = value => JSON.stringify(value);
 
-for (const f of ['index.html','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json','certificates.json','software.json','tools.json','assets/Jamie Ramsden CV.pdf']) await mustExist(join(root, f));
+for (const f of ['index.html','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json','certificates.json','software.json','tools.json','assets/pdfs/Jaime Ramsden de Frutos CV.pdf']) await mustExist(join(root, f));
 for (const f of ['index.html','certificates.json','software.json','tools.json','assets/locales/en.json','assets/locales/es.json','assets/locales/ca.json']) await mustExist(join(distDir, f));
 
 let html = '';
@@ -47,6 +47,11 @@ const privateNames = ['MyLinkedinInfo','SearchQueries.csv','ImportedContacts.csv
 const generatedPaths = existsSync(distDir) ? readdirSync(distDir, { recursive: true, withFileTypes: true })
   .filter(d => d.isFile() || d.isDirectory())
   .map(d => path.relative(distDir, path.join(d.parentPath || d.path, d.name)).replaceAll('\\', '/')) : [];
+const generatedPdfs = generatedPaths.filter(generated => /\.pdf$/i.test(generated)).sort();
+const expectedGeneratedPdfs = ['assets/pdfs/Jaime Ramsden de Frutos CV.pdf'];
+if (stable(generatedPdfs) !== stable(expectedGeneratedPdfs)) {
+  fail(`Generated PDF allowlist mismatch: expected ${expectedGeneratedPdfs.join(', ')}, found ${generatedPdfs.join(', ') || 'none'}`);
+}
 for (const name of privateNames) {
   const lower = name.toLowerCase();
   if (generatedPaths.some(generated => generated.toLowerCase().includes(lower))) fail(`Private LinkedIn export marker found in generated artifact: ${name}`);
