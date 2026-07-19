@@ -86,19 +86,19 @@
   {
     "name": "Introduction to Digital Forensics",
     "issuer": "Security Blue Team",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Digital Forensics-course.png",
+    "badgeLocal": "SecurityBlueTeam/Introduction to Digital Forensics-course.jpg",
     "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Digital%20Forensics-course.pdf"
   },
   {
     "name": "Introduction to Network Analysis",
     "issuer": "Security Blue Team",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Network Analysis-course.jpg",
+    "badgeLocal": "SecurityBlueTeam/Introduction to Network Analysis-course.png",
     "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Network%20Analysis-course.pdf"
   },
   {
     "name": "Introduction to OSINT",
     "issuer": "Security Blue Team",
-    "badgeLocal": "SecurityBlueTeam/Introduction to OSINT-course.png",
+    "badgeLocal": "SecurityBlueTeam/Introduction to OSINT-course.jpg",
     "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20OSINT-course.pdf"
   },
   {
@@ -122,7 +122,7 @@
   {
     "name": "Introduction to Virtual Machines",
     "issuer": "Security Blue Team",
-    "badgeLocal": "SecurityBlueTeam/Introduction to Virtual Machines-course.jpg",
+    "badgeLocal": "SecurityBlueTeam/Introduction to Virtual Machines-course.png",
     "link": "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Introduction%20to%20Virtual%20Machines-course.pdf"
   },
   {
