@@ -111,17 +111,28 @@ test('recruiter copy has usable in-bundle fallbacks when locale JSON cannot be p
   );
   const guard = await openHome(page);
 
+  await expect(page.locator('[data-txt="hero_statement"]')).toContainText('public proof of work includes CyberDailyLog');
+  await expect(page.locator('[data-txt="projects_intro"]')).toContainText('Start here for interview evidence');
   await expect(page.locator('[data-txt="hero_cv"]')).toHaveText('Open CV');
   await expect(page.locator('[data-txt="proof_evidence_label"]')).toHaveText('Public evidence');
   await expect(page.locator('[data-txt="case_homelab_status"]')).toContainText('repository is private');
+  await expect(page.locator('[data-txt="contact_1"]')).toHaveText('For junior SOC / Blue Team opportunities, email me:');
+  await expect(page.locator('[data-txt="contact_2"]')).toContainText('GitHub');
+  await expect(page.locator('[data-txt="contact_2"]')).toContainText('CV');
 
   await page.locator('button[data-lang="es"]').click();
+  await expect(page.locator('[data-txt="hero_statement"]')).toContainText('Mi evidencia pública incluye CyberDailyLog');
+  await expect(page.locator('[data-txt="projects_intro"]')).toContainText('Empieza aquí para ver evidencia útil');
   await expect(page.locator('[data-txt="hero_cv"]')).toHaveText('Abrir CV');
   await expect(page.locator('[data-txt="proof_evidence_label"]')).toHaveText('Evidencia pública');
+  await expect(page.locator('[data-txt="contact_1"]')).toHaveText('Para oportunidades junior SOC / Blue Team, escríbeme:');
 
   await page.locator('button[data-lang="ca"]').click();
+  await expect(page.locator('[data-txt="hero_statement"]')).toContainText('La meva evidència pública inclou CyberDailyLog');
+  await expect(page.locator('[data-txt="projects_intro"]')).toContainText('Comença aquí per veure evidència útil');
   await expect(page.locator('[data-txt="hero_cv"]')).toHaveText('Obrir CV');
   await expect(page.locator('[data-txt="proof_evidence_label"]')).toHaveText('Evidència pública');
+  await expect(page.locator('[data-txt="contact_1"]')).toHaveText('Per a oportunitats junior SOC / Blue Team, escriu-me:');
 
   guard.assertNoSameOriginFailures();
   guard.assertNoPageErrors();
