@@ -143,7 +143,7 @@ function currentLanguage() {
 function installRecruiterFallbacks() {
   window.translations = window.translations || {};
   Object.entries(RECRUITER_FALLBACKS).forEach(([language, copy]) => {
-    window.translations[language] = { ...copy, ...(window.translations[language] || {}) };
+    window.translations[language] = { ...(window.translations[language] || {}), ...copy };
   });
 }
 
