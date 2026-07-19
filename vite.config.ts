@@ -52,10 +52,8 @@ export default defineConfig({
         { src: 'assets/css', dest: '.' },
         { src: 'assets/js', dest: '.' },
         { src: 'assets/locales', dest: '.' },
-        { src: 'assets/pdfs', dest: '.' },
+        { src: 'assets/pdfs/Jaime Ramsden de Frutos CV.pdf', dest: '.' },
         { src: 'assets/data', dest: '.' },
-        { src: 'assets/Jamie Ramsden CV.pdf', dest: '.' },
-        { src: 'assets/Jamie Ramsden Cover Letter.pdf', dest: '.' },
         { src: 'UpgradeHub', dest: '.' },
         // Copy data JSON files used by runtime fetches
         { src: 'certificates.json', dest: '.' },
