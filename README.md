@@ -19,7 +19,7 @@ Sports Science is intentionally kept as education/background only and not used a
 The portfolio is a Vite-built static site with client-side enhancements:
 
 - EN / ES / CA translations via `assets/js/translate.js` and `assets/locales/*.json`;
-- dynamic certificate loading from `certificates.json`, including issuer filters and PDF/image links;
+- dynamic certificate loading from `certificates.json`, including issuer filters and per-certificate evidence links to GitHub viewers or official issuers;
 - dynamic software and tools lists from `software.json` and `tools.json`;
 - dynamic GitHub repository fetching from the public GitHub REST API, cached in `sessionStorage` for one hour;
 - CSP, canonical URL, Open Graph metadata, Twitter metadata and JSON-LD structured data in `index.html`;
@@ -33,14 +33,14 @@ The portfolio is a Vite-built static site with client-side enhancements:
 - `assets/js/translate.js` — built-in translations plus JSON locale loading.
 - `assets/locales/en.json`, `assets/locales/es.json`, `assets/locales/ca.json` — external translation dictionaries.
 - `certificates.json`, `software.json`, `tools.json` — dynamic data sources.
-- `assets/pdfs/` and `assets/Images/` — valid production assets used by the page.
+- `assets/pdfs/` and `assets/Images/` — source evidence and media; the Pages build publishes only explicitly allowlisted assets, including the linked CV.
 
 ## Development
 
 Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 Run a local development server:
@@ -63,25 +63,22 @@ npm run preview
 
 ## Validation checklist
 
-Useful checks before publishing changes:
+Run the same source and generated-artifact validation used by CI:
 
 ```bash
-npm run build
-node --check assets/js/script.js
-node --check assets/js/translate.js
-python3 - <<'PY'
-from html.parser import HTMLParser
-HTMLParser().feed(open('index.html', encoding='utf-8').read())
-print('index.html parsed')
-PY
+npm test
+npm run test:validator-refs
+npm run validate:version
+npm run validate:privacy
+npm run test:e2e:ci
 git diff --check
 ```
 
-For link and asset checks, parse `index.html` and JSON data sources to verify local `href` and `src` targets exist. For visual checks, use Playwright or another browser tool if installed.
+Install Playwright's Chromium browser once before the end-to-end command with `npx playwright install chromium`.
 
 ## Deployment
 
-The repository contains a placeholder GitHub Actions deployment workflow, but automated GitHub Pages deployment is not currently configured in that workflow. Before changing the deployment model, verify whether GitHub Pages serves the repository root, the `dist/` directory, or another configured source in the repository settings.
+`.github/workflows/site-qa-pages.yml` is the deployment authority. Pull requests build and validate the site without deploying it. A successful push to `main` uploads the exact tested `dist/` artifact to GitHub Pages and then audits the live build version and public resources.
 
 ## License
 
