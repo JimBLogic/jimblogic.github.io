@@ -1,31 +1,24 @@
-# TODO – Site Improvements (ordered by priority)
+# Portfolio roadmap
 
-## High
-- [ ] Add a descriptive `<title>` and `<meta name="description">` (done)
-- [ ] Generate and publish `sitemap.xml` (done)
-- [ ] Optimize all images (convert to WebP, lazy-load, add `srcset`)
-- [ ] Implement a responsive navigation menu (hamburger on mobile)
-- [ ] Add a simple contact form (Netlify Forms / Formspree) with spam protection
+This file tracks only work that remains useful for the production portfolio.
 
-## Medium
-- [ ] Add a lightweight analytics script (Plausible or Umami) with GDPR consent banner
-- [ ] Create a `robots.txt` that allows all crawling (done)
-- [ ] Add Open Graph and Twitter Card meta tags for rich sharing
-- [ ] Add a `CNAME` file (future-proof for a custom domain)
-- [ ] Write a `CHANGELOG.md` entry documenting the site launch
+## Next
 
-## Low
-- [ ] Add JSON-LD structured data for `Person` and `WebSite` (Person added)
-- [ ] Add a “Skip to content” link for screen‑reader users (done)
-- [ ] Add Subresource Integrity hashes to any external scripts/styles
-- [ ] Set up a backup branch (`backup-site`) with the built `_site/` folder
-- [ ] Write a short “Contributing” guide for anyone who wants to help improve the site
+- [ ] Optimize the largest images and add responsive sources without reducing certificate legibility.
+- [ ] Publish a carefully anonymized defensive-homelab case study when the evidence is ready.
+- [ ] Add a scheduled external-link audit for GitHub, Credly and issuer evidence URLs.
 
+## Later
 
-Commit this file after creation:
+- [ ] Remove obsolete, unreferenced front-end files after visual regression coverage confirms they are unnecessary.
+- [ ] Add a custom domain only when a stable professional domain has been selected.
+- [ ] Add a short changelog for recruiter-visible releases.
 
-```
-git add TODO.md
-git commit -m "docs: add TODO list for site improvements"
-git push
-```
+## Completed foundations
+
+- [x] Responsive navigation, keyboard access and skip link.
+- [x] EN / ES / CA translations with resilient locale fallback.
+- [x] Metadata, Open Graph, sitemap, robots.txt and JSON-LD.
+- [x] Per-certificate GitHub or official-issuer evidence links and issuer filters.
+- [x] Consent-aware Plausible analytics.
+- [x] Gated GitHub Pages deployment with Playwright, accessibility, privacy and production audits.
