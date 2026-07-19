@@ -68,7 +68,7 @@ Run the same source and generated-artifact validation used by CI:
 ```bash
 npm test
 npm run test:validator-refs
-npm run validate:version
+npm run validate:version -- --source-version "$(sed -n 's/^VITE_BUILD_VERSION=//p' .env.production.local)"
 npm run validate:privacy
 npm run test:e2e:ci
 git diff --check
