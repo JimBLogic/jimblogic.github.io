@@ -1,0 +1,44 @@
+name: Fix featured homelab link
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/fix-homelab-link-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fix-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Point featured homelab card to its repository
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("index.html")
+          content = path.read_text(encoding="utf-8")
+          old = '<a href="https://github.com/JimBLogic" target="_blank" rel="noopener noreferrer" class="inline-evidence-link" data-txt="hero_github">GitHub evidence</a>'
+          new = '<a href="https://github.com/JimBLogic/defensive-homelab-blue-team" target="_blank" rel="noopener noreferrer" class="inline-evidence-link" data-txt="view_repo">View Repo</a>'
+          if old not in content:
+              raise SystemExit("Expected featured homelab link was not found")
+          path.write_text(content.replace(old, new, 1), encoding="utf-8")
+
+          Path(".github/fix-homelab-link-trigger").unlink(missing_ok=True)
+          Path(".github/workflows/fix-homelab-link.yml").unlink(missing_ok=True)
+
+      - name: Commit corrected link
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Fix featured defensive homelab link"
+          git push
