@@ -160,10 +160,25 @@ function renderLearningJourney(gridId) {
       link: 'https://github.com/JimBLogic/jimblogic.github.io/blob/main/assets/pdfs/UpgradeHub/UpgradeHub%20Cert.pdf'
     },
     {
-      key: 'TryHackMe · HackTheBox',
-      name: 'TryHackMe · HackTheBox',
-      imgLocal: './assets/Images/Profilepicandother/tryhackmehackthebox.jpg',
-      link: 'https://github.com/JimBLogic/TryHackme-HackTheBox',
+      key: 'TryHackMe',
+      name: 'TryHackMe · Live profile',
+      imgWeb: 'https://tryhackme-badges.s3.amazonaws.com/JimBLogic.png',
+      link: 'https://tryhackme.com/p/JimBLogic',
+      manualCount: true,
+      wideBadge: true
+    },
+    {
+      key: 'Hack The Box Academy',
+      name: 'HTB Academy · Academician',
+      imgWeb: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hackthebox.svg',
+      link: 'https://academy.hackthebox.com/achievement/badge/0c6246a5-e11c-11ee-b18d-bea50ffe6cb4',
+      manualCount: true
+    },
+    {
+      key: 'Hack The Box Academy',
+      name: 'HTB Academy · Our Favorite Seabird',
+      imgWeb: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hackthebox.svg',
+      link: 'https://academy.hackthebox.com/achievement/badge/2f425309-f326-11ee-b18d-bea50ffe6cb4',
       manualCount: true
     }
   ];
@@ -171,9 +186,11 @@ function renderLearningJourney(gridId) {
   el.innerHTML = providers.map(p => {
     const count = p.manualCount ? '' : (countBy[p.key] || 0);
     const img = imgLocalThenOnline(p.imgLocal || '', p.imgWeb || '', p.name);
+    const cardClass = p.wideBadge ? ' journey-card-profile' : '';
+    const thumbClass = p.wideBadge ? 'journey-thumb journey-thumb-profile' : 'journey-thumb';
     return `
-      <div class="journey-card" data-href="${p.link}">
-        <div class="journey-thumb">${img}</div>
+      <div class="journey-card${cardClass}" data-href="${p.link}">
+        <div class="${thumbClass}">${img}</div>
         <div class="journey-meta">
           <div class="journey-title">${p.name}</div>
           <div class="journey-count">${count !== '' ? `${count} ${t('certificates')}` : ''}</div>
