@@ -1,0 +1,139 @@
+name: Update live training evidence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/training-evidence-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-training-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Patch live training evidence
+        shell: python
+        run: |
+          from pathlib import Path
+
+          script_path = Path("assets/js/script.js")
+          script = script_path.read_text(encoding="utf-8")
+
+          old_provider = (
+              "    {\n"
+              "      key: 'TryHackMe · HackTheBox',\n"
+              "      name: 'TryHackMe · HackTheBox',\n"
+              "      imgLocal: './assets/Images/Profilepicandother/tryhackmehackthebox.jpg',\n"
+              "      link: 'https://github.com/JimBLogic/TryHackme-HackTheBox',\n"
+              "      manualCount: true\n"
+              "    }\n"
+              "  ];"
+          )
+          new_provider = (
+              "    {\n"
+              "      key: 'TryHackMe',\n"
+              "      name: 'TryHackMe · Live profile',\n"
+              "      imgWeb: 'https://tryhackme-badges.s3.amazonaws.com/JimBLogic.png',\n"
+              "      link: 'https://tryhackme.com/p/JimBLogic',\n"
+              "      manualCount: true,\n"
+              "      wideBadge: true\n"
+              "    },\n"
+              "    {\n"
+              "      key: 'Hack The Box Academy',\n"
+              "      name: 'HTB Academy · Academician',\n"
+              "      imgWeb: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hackthebox.svg',\n"
+              "      link: 'https://academy.hackthebox.com/achievement/badge/0c6246a5-e11c-11ee-b18d-bea50ffe6cb4',\n"
+              "      manualCount: true\n"
+              "    },\n"
+              "    {\n"
+              "      key: 'Hack The Box Academy',\n"
+              "      name: 'HTB Academy · Our Favorite Seabird',\n"
+              "      imgWeb: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/hackthebox.svg',\n"
+              "      link: 'https://academy.hackthebox.com/achievement/badge/2f425309-f326-11ee-b18d-bea50ffe6cb4',\n"
+              "      manualCount: true\n"
+              "    }\n"
+              "  ];"
+          )
+          if old_provider not in script:
+              raise SystemExit("TryHackMe/HTB provider block not found")
+          script = script.replace(old_provider, new_provider, 1)
+
+          old_render = (
+              "    const count = p.manualCount ? '' : (countBy[p.key] || 0);\n"
+              "    const img = imgLocalThenOnline(p.imgLocal || '', p.imgWeb || '', p.name);\n"
+              "    return `\n"
+              "      <div class=\"journey-card\" data-href=\"${p.link}\">\n"
+              "        <div class=\"journey-thumb\">${img}</div>"
+          )
+          new_render = (
+              "    const count = p.manualCount ? '' : (countBy[p.key] || 0);\n"
+              "    const img = imgLocalThenOnline(p.imgLocal || '', p.imgWeb || '', p.name);\n"
+              "    const cardClass = p.wideBadge ? ' journey-card-profile' : '';\n"
+              "    const thumbClass = p.wideBadge ? 'journey-thumb journey-thumb-profile' : 'journey-thumb';\n"
+              "    return `\n"
+              "      <div class=\"journey-card${cardClass}\" data-href=\"${p.link}\">\n"
+              "        <div class=\"${thumbClass}\">${img}</div>"
+          )
+          if old_render not in script:
+              raise SystemExit("Journey render block not found")
+          script = script.replace(old_render, new_render, 1)
+          script_path.write_text(script, encoding="utf-8")
+
+          Path("assets/css/training-profiles.css").write_text(
+              """/* Live TryHackMe and verified HTB Academy evidence */
+          .journey-card-profile { align-items: center; }
+          .journey-card-profile .journey-thumb-profile {
+            width: 190px;
+            min-width: 190px;
+            height: 74px;
+            padding: 4px;
+          }
+          .journey-card-profile .journey-thumb-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+          }
+          @media (max-width: 700px) {
+            .journey-card-profile { align-items: flex-start; }
+            .journey-card-profile .journey-thumb-profile {
+              width: 100%;
+              max-width: 330px;
+              min-width: 0;
+              height: auto;
+            }
+            .journey-card-profile .journey-thumb-profile img { height: auto; }
+          }
+          """,
+              encoding="utf-8",
+          )
+
+          index_path = Path("index.html")
+          index = index_path.read_text(encoding="utf-8")
+          anchor = '  <link rel="stylesheet" href="./assets/css/cyberdailylog.css?v=%VITE_BUILD_VERSION%">\n'
+          link = '  <link rel="stylesheet" href="./assets/css/training-profiles.css?v=%VITE_BUILD_VERSION%">\n'
+          if link not in index:
+              if anchor not in index:
+                  raise SystemExit("Stylesheet anchor not found")
+              index = index.replace(anchor, anchor + link, 1)
+          index_path.write_text(index, encoding="utf-8")
+
+          Path("assets/Images/Profilepicandother/tryhackmehackthebox.jpg").unlink(missing_ok=True)
+          Path(".github/training-evidence-trigger").unlink(missing_ok=True)
+          Path(".github/workflows/update-training-evidence.yml").unlink(missing_ok=True)
+
+      - name: Commit portfolio update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Add live TryHackMe and verified HTB evidence"
+          git push
