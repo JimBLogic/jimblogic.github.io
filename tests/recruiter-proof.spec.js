@@ -82,24 +82,28 @@ test('project case studies keep public evidence boundaries and honest status lan
   await expect(cyber).toContainText('Defensive relevance:');
   await expect(cyber).toContainText('not a production SOC feed');
   await expect(cyber.locator('a[href="https://github.com/JimBLogic/CyberDailyLog"]')).toHaveCount(1);
-  await expect(homelab).toContainText('active hands-on learning');
-  await expect(homelab).toContainText('repository is private');
-  await expect(homelab).toContainText('public documentation is being prepared');
-  await expect(homelab.locator('a[href="https://github.com/JimBLogic"]')).toHaveText('View public GitHub work');
+  await expect(homelab).toContainText('public repository');
+  await expect(homelab).toContainText('reproducible LITE/FULL Docker foundation');
+  await expect(homelab).toContainText('tools remain candidates');
+  await expect(
+    homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
+  ).toHaveText('View Repo');
 
   await page.locator('button[data-lang="es"]').click();
   await expect(cyber).toContainText('no es un feed SOC de producción');
-  await expect(homelab).toContainText('el repositorio detallado del homelab es privado');
-  await expect(homelab.locator('a[href="https://github.com/JimBLogic"]')).toHaveText(
-    'Ver trabajo público en GitHub'
-  );
+  await expect(homelab).toContainText('repositorio público');
+  await expect(homelab).toContainText('base Docker reproducible LITE/FULL');
+  await expect(
+    homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
+  ).toHaveText('Ver Repositorio');
 
   await page.locator('button[data-lang="ca"]').click();
   await expect(cyber).toContainText('no és un feed SOC de producció');
-  await expect(homelab).toContainText('el repositori detallat del homelab és privat');
-  await expect(homelab.locator('a[href="https://github.com/JimBLogic"]')).toHaveText(
-    'Veure treball públic a GitHub'
-  );
+  await expect(homelab).toContainText('repositori públic');
+  await expect(homelab).toContainText('base Docker reproduïble LITE/FULL');
+  await expect(
+    homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
+  ).toHaveText('Veure Repositori');
 
   guard.assertNoSameOriginFailures();
   guard.assertNoPageErrors();
@@ -115,7 +119,7 @@ test('recruiter copy has usable in-bundle fallbacks when locale JSON cannot be p
   await expect(page.locator('[data-txt="projects_intro"]')).toContainText('Start here for interview evidence');
   await expect(page.locator('[data-txt="hero_cv"]')).toHaveText('Open CV');
   await expect(page.locator('[data-txt="proof_evidence_label"]')).toHaveText('Public evidence');
-  await expect(page.locator('[data-txt="case_homelab_status"]')).toContainText('repository is private');
+  await expect(page.locator('[data-txt="case_homelab_status"]')).toContainText('public repository');
   await expect(page.locator('[data-txt="contact_1"]')).toHaveText('For junior SOC / Blue Team opportunities, email me:');
   await expect(page.locator('[data-txt="contact_2"]')).toContainText('GitHub');
   await expect(page.locator('[data-txt="contact_2"]')).toContainText('CV');

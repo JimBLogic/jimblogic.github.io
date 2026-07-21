@@ -114,6 +114,6 @@
   "case_homelab_purpose": "Purpose: learn practical Linux administration, networking, monitoring and recovery on a small always-on lab.",
   "case_homelab_built": "Built: Docker service practice, hardening routines, log review, backup checks and network-visibility exercises.",
   "case_homelab_relevance": "Defensive relevance: supports conversations about least privilege, service exposure, resilience and troubleshooting.",
-  "case_homelab_status": "Current status: active hands-on learning; the detailed homelab repository is private while public documentation is being prepared.",
+  "case_homelab_status": "Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.",
   "homelab_public_link": "View public GitHub work"
 }

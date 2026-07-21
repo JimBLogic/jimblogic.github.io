@@ -114,6 +114,6 @@
   "case_homelab_purpose": "Propòsit: aprendre administració Linux, xarxes, monitoratge i recuperació en un petit laboratori sempre actiu.",
   "case_homelab_built": "Construït: pràctica amb serveis Docker, rutines de hardening, revisió de logs, comprovacions de backup i exercicis de visibilitat de xarxa.",
   "case_homelab_relevance": "Rellevància defensiva: permet parlar del principi de mínim privilegi, exposició de serveis, resiliència i resolució de problemes.",
-  "case_homelab_status": "Estat actual: aprenentatge pràctic actiu; el repositori detallat del homelab és privat mentre preparo documentació pública.",
+  "case_homelab_status": "Estat actual: repositori públic amb una base Docker reproduïble LITE/FULL; les eines continuen sent candidates fins que es documentin exercicis d’instal·lació i validació.",
   "homelab_public_link": "Veure treball públic a GitHub"
 }
