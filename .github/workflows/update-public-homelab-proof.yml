@@ -1,0 +1,90 @@
+name: Update public homelab proof
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/update-public-homelab-proof-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Align public homelab copy and tests
+        shell: python
+        run: |
+          from pathlib import Path
+
+          replacements = {
+              "index.html": [
+                  (
+                      "Current status: in progress and documented as hands-on learning rather than professional operations.",
+                      "Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.",
+                  ),
+              ],
+              "assets/locales/en.json": [
+                  (
+                      "Current status: active hands-on learning; the detailed homelab repository is private while public documentation is being prepared.",
+                      "Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.",
+                  ),
+              ],
+              "assets/locales/es.json": [
+                  (
+                      "Estado actual: aprendizaje práctico activo; el repositorio detallado del homelab es privado mientras preparo documentación pública.",
+                      "Estado actual: repositorio público con una base Docker reproducible LITE/FULL; las herramientas siguen siendo candidatas hasta documentar ejercicios de instalación y validación.",
+                  ),
+              ],
+              "assets/locales/ca.json": [
+                  (
+                      "Estat actual: aprenentatge pràctic actiu; el repositori detallat del homelab és privat mentre preparo documentació pública.",
+                      "Estat actual: repositori públic amb una base Docker reproduïble LITE/FULL; les eines continuen sent candidates fins que es documentin exercicis d’instal·lació i validació.",
+                  ),
+              ],
+              "tests/recruiter-proof.spec.js": [
+                  (
+                      "  await expect(homelab).toContainText('active hands-on learning');\n  await expect(homelab).toContainText('repository is private');\n  await expect(homelab).toContainText('public documentation is being prepared');\n  await expect(homelab.locator('a[href=\"https://github.com/JimBLogic\"]')).toHaveText('View public GitHub work');",
+                      "  await expect(homelab).toContainText('public repository');\n  await expect(homelab).toContainText('reproducible LITE/FULL Docker foundation');\n  await expect(homelab).toContainText('tools remain candidates');\n  await expect(\n    homelab.locator('a[href=\"https://github.com/JimBLogic/defensive-homelab-blue-team\"]')\n  ).toHaveText('View Repo');",
+                  ),
+                  (
+                      "  await expect(homelab).toContainText('el repositorio detallado del homelab es privado');\n  await expect(homelab.locator('a[href=\"https://github.com/JimBLogic\"]')).toHaveText(\n    'Ver trabajo público en GitHub'\n  );",
+                      "  await expect(homelab).toContainText('repositorio público');\n  await expect(homelab).toContainText('base Docker reproducible LITE/FULL');\n  await expect(\n    homelab.locator('a[href=\"https://github.com/JimBLogic/defensive-homelab-blue-team\"]')\n  ).toHaveText('Ver Repositorio');",
+                  ),
+                  (
+                      "  await expect(homelab).toContainText('el repositori detallat del homelab és privat');\n  await expect(homelab.locator('a[href=\"https://github.com/JimBLogic\"]')).toHaveText(\n    'Veure treball públic a GitHub'\n  );",
+                      "  await expect(homelab).toContainText('repositori públic');\n  await expect(homelab).toContainText('base Docker reproduïble LITE/FULL');\n  await expect(\n    homelab.locator('a[href=\"https://github.com/JimBLogic/defensive-homelab-blue-team\"]')\n  ).toHaveText('Veure Repositori');",
+                  ),
+                  (
+                      "  await expect(page.locator('[data-txt=\"case_homelab_status\"]')).toContainText('repository is private');",
+                      "  await expect(page.locator('[data-txt=\"case_homelab_status\"]')).toContainText('public repository');",
+                  ),
+              ],
+          }
+
+          for file_name, file_replacements in replacements.items():
+              path = Path(file_name)
+              content = path.read_text(encoding="utf-8")
+              for old, new in file_replacements:
+                  if old not in content:
+                      raise SystemExit(f"Expected text not found in {file_name}: {old[:80]}")
+                  content = content.replace(old, new, 1)
+              path.write_text(content, encoding="utf-8")
+
+          Path(".github/update-public-homelab-proof-trigger").unlink(missing_ok=True)
+          Path(".github/workflows/update-public-homelab-proof.yml").unlink(missing_ok=True)
+
+      - name: Commit aligned proof and tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Align homelab proof with public repository"
+          git push
