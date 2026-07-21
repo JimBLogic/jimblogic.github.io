@@ -1,0 +1,37 @@
+name: Apply supplied CV update
+
+on:
+  push:
+    branches:
+      - chore/update-cv-2026-07-21
+
+permissions:
+  contents: write
+
+jobs:
+  replace-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chore/update-cv-2026-07-21
+      - name: Rebuild supplied PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat tmp_cv_chunks/part-* > /tmp/cv.b64
+          base64 --decode /tmp/cv.b64 > "assets/pdfs/Jaime Ramsden de Frutos CV.pdf"
+          test "$(head -c 5 "assets/pdfs/Jaime Ramsden de Frutos CV.pdf")" = "%PDF-"
+          test -s "assets/pdfs/Jaime Ramsden de Frutos CV.pdf"
+          sha256sum "assets/pdfs/Jaime Ramsden de Frutos CV.pdf"
+      - name: Commit only the CV replacement
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf tmp_cv_chunks
+          rm -f .github/workflows/apply-cv-update.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace portfolio CV with supplied version"
+          git push origin HEAD:chore/update-cv-2026-07-21
