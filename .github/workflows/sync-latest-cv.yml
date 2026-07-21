@@ -1,0 +1,43 @@
+name: Sync latest portfolio CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/sync-latest-cv-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Replace stable CV with latest upload
+        shell: bash
+        run: |
+          set -euo pipefail
+          latest='assets/Jaime Ramsden de Frutos CV.pdf'
+          stable='assets/pdfs/Jaime Ramsden de Frutos CV.pdf'
+          test -s "$latest"
+          test "$(head -c 5 "$latest")" = '%PDF-'
+          mkdir -p assets/pdfs
+          cp "$latest" "$stable"
+          cmp --silent "$latest" "$stable"
+          rm "$latest"
+          rm -f .github/sync-latest-cv-trigger
+          rm -f .github/workflows/sync-latest-cv.yml
+
+      - name: Commit synced CV
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Publish latest CV at stable portfolio path"
+          git push
