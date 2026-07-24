@@ -115,7 +115,7 @@
   "case_homelab_built": "Construït: pràctica amb serveis Docker, rutines de hardening, revisió de logs, comprovacions de backup i exercicis de visibilitat de xarxa.",
   "case_homelab_relevance": "Rellevància defensiva: permet parlar del principi de mínim privilegi, exposició de serveis, resiliència i resolució de problemes.",
   "case_homelab_status": "Estat actual: repositori públic amb una base Docker reproduïble LITE/FULL; les eines continuen sent candidates fins que es documentin exercicis d’instal·lació i validació.",
-  "homelab_public_link": "Veure treball públic a GitHub",
+  "homelab_public_link": "Veure Repositori",
   "proof_path_eyebrow": "Ruta per a recruiters",
   "proof_path_title": "Una ruta d'evidència de 60 segons",
   "proof_path_intro": "Comença pel que he construït, revisa com explico les decisions i verifica després la formació que ho sosté.",
