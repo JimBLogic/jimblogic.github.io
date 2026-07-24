@@ -115,7 +115,7 @@
   "case_homelab_built": "Built: Docker service practice, hardening routines, log review, backup checks and network-visibility exercises.",
   "case_homelab_relevance": "Defensive relevance: supports conversations about least privilege, service exposure, resilience and troubleshooting.",
   "case_homelab_status": "Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.",
-  "homelab_public_link": "View public GitHub work",
+  "homelab_public_link": "View Repo",
   "proof_path_eyebrow": "Recruiter route",
   "proof_path_title": "A 60-second proof path",
   "proof_path_intro": "Start with what I built, inspect how I explain decisions, then verify the training behind it.",
