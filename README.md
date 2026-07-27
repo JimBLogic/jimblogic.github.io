@@ -14,6 +14,12 @@ The site presents Jaime as a **Junior SOC Analyst / Blue Team candidate** with p
 
 Sports Science is intentionally kept as education/background only and not used as a cybersecurity claim.
 
+## Recruiter-first reading path
+
+The first screen now follows a proof-first hierarchy: target role, auditable work and direct verification. A 60-second route connects the live CyberDailyLog output, its automation, the defensive homelab and selected learning evidence without removing the deeper portfolio sections.
+
+The visual direction is intentionally restrained: Bitcoin orange, warm editorial type and operational traces instead of generic hacker imagery. Existing IDs, dynamic data sources, EN/ES/CA translation behavior and QA hooks remain intact.
+
 ## Runtime functionality
 
 The portfolio is a Vite-built static site with client-side enhancements:

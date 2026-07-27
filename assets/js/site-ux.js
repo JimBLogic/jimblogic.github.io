@@ -8,7 +8,7 @@ const RECRUITER_FALLBACKS = {
   en: {
     hero_eyebrow: 'Junior SOC Analyst / Blue Team candidate · Balearic Islands, Spain',
     hero_statement:
-      'I am looking for an entry-level SOC, Blue Team or security operations role where I can triage alerts, document findings and learn from senior analysts. My public proof of work includes CyberDailyLog, a Raspberry Pi defensive homelab, Linux/Docker practice and documented labs.',
+      'I turn daily learning into auditable defensive proof of work. I build small, inspectable security systems that show how I think: source-backed triage, Linux and container operations, network visibility, documentation, recovery and careful automation.',
     projects_intro:
       'Start here for interview evidence. These case studies explain what was built, why it matters defensively and where public source or lab notes are available.',
     hero_github: 'GitHub evidence',
@@ -43,13 +43,13 @@ const RECRUITER_FALLBACKS = {
     case_homelab_relevance:
       'Defensive relevance: supports conversations about least privilege, service exposure, resilience and troubleshooting.',
     case_homelab_status:
-      'Current status: active hands-on learning; the detailed homelab repository is private while public documentation is being prepared.',
-    homelab_public_link: 'View public GitHub work'
+      'Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.',
+    homelab_public_link: 'View Repo'
   },
   es: {
     hero_eyebrow: 'Candidato a Analista SOC Junior / Blue Team · Islas Baleares, España',
     hero_statement:
-      'Busco un puesto inicial de SOC, Blue Team u operaciones de seguridad donde pueda analizar y priorizar alertas, documentar hallazgos y aprender de analistas con experiencia. Mi evidencia pública incluye CyberDailyLog, un homelab defensivo con Raspberry Pi, práctica con Linux/Docker y laboratorios documentados.',
+      'Convierto el aprendizaje diario en evidencia defensiva auditable. Construyo sistemas de seguridad pequeños e inspeccionables que muestran cómo pienso: triaje basado en fuentes, operaciones Linux y contenedores, visibilidad de red, documentación, recuperación y automatización cuidadosa.',
     projects_intro:
       'Empieza aquí para ver evidencia útil en una entrevista. Estos casos explican qué se construyó, por qué es relevante para la defensa y dónde hay código o notas públicas disponibles.',
     hero_github: 'Evidencia en GitHub',
@@ -84,13 +84,13 @@ const RECRUITER_FALLBACKS = {
     case_homelab_relevance:
       'Relevancia defensiva: permite hablar del principio de mínimo privilegio, exposición de servicios, resiliencia y resolución de problemas.',
     case_homelab_status:
-      'Estado actual: aprendizaje práctico activo; el repositorio detallado del homelab es privado mientras preparo documentación pública.',
-    homelab_public_link: 'Ver trabajo público en GitHub'
+      'Estado actual: repositorio público con una base Docker reproducible LITE/FULL; las herramientas siguen siendo candidatas hasta documentar ejercicios de instalación y validación.',
+    homelab_public_link: 'Ver Repositorio'
   },
   ca: {
     hero_eyebrow: 'Candidat a Analista SOC Junior / Blue Team · Illes Balears, Espanya',
     hero_statement:
-      'Busco una posició inicial de SOC, Blue Team o operacions de seguretat on pugui analitzar i prioritzar alertes, documentar conclusions i aprendre d’analistes amb experiència. La meva evidència pública inclou CyberDailyLog, un homelab defensiu amb Raspberry Pi, pràctica amb Linux/Docker i laboratoris documentats.',
+      'Converteixo l\'aprenentatge diari en evidència defensiva auditable. Construeixo sistemes de seguretat petits i inspeccionables que mostren com penso: triatge basat en fonts, operacions Linux i contenidors, visibilitat de xarxa, documentació, recuperació i automatització acurada.',
     projects_intro:
       'Comença aquí per veure evidència útil en una entrevista. Aquests casos expliquen què s’ha construït, per què és rellevant per a la defensa i on hi ha codi o notes públiques disponibles.',
     hero_github: 'Evidència a GitHub',
@@ -125,8 +125,8 @@ const RECRUITER_FALLBACKS = {
     case_homelab_relevance:
       'Rellevància defensiva: permet parlar del principi de mínim privilegi, exposició de serveis, resiliència i resolució de problemes.',
     case_homelab_status:
-      'Estat actual: aprenentatge pràctic actiu; el repositori detallat del homelab és privat mentre preparo documentació pública.',
-    homelab_public_link: 'Veure treball públic a GitHub'
+      'Estat actual: repositori públic amb una base Docker reproduïble LITE/FULL; les eines continuen sent candidates fins que es documentin exercicis d’instal·lació i validació.',
+    homelab_public_link: 'Veure Repositori'
   }
 };
 

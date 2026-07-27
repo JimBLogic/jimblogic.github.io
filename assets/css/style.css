@@ -2298,3 +2298,212 @@ img {
   color: #00ff88;
   font-weight: 700;
 }
+
+
+/* Signal Room editorial pass — recruiter-first proof hierarchy */
+#about .hero-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #343b44;
+  border-radius: 0;
+  padding: clamp(24px, 4vw, 44px);
+  background:
+    linear-gradient(90deg, rgba(247, 147, 26, 0.05), transparent 42%),
+    rgba(8, 10, 13, 0.88);
+  box-shadow: none;
+}
+
+#about .hero-panel::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(140, 150, 163, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 150, 163, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, #000, transparent 70%);
+}
+
+#about .hero-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+#about .hero-panel .eyebrow {
+  color: #f7931a;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+#about .hero-statement {
+  max-width: 920px;
+  margin: 22px 0 28px;
+  color: #f3f0e8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 4.5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+#about .hero-panel .btn-link {
+  min-height: 48px;
+  border-radius: 2px;
+  padding-inline: 22px;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1), border-color 180ms ease;
+}
+
+#about .hero-panel .btn-link:hover,
+#about .hero-panel .btn-link:focus-visible {
+  filter: none;
+  transform: translateY(-2px);
+}
+
+#about .hero-proof-links a,
+#about .proof-strip dt {
+  color: #f7931a;
+}
+
+#about .proof-strip {
+  gap: 0;
+  border-top: 1px solid #343b44;
+  border-bottom: 1px solid #343b44;
+}
+
+#about .proof-strip > div {
+  min-width: 0;
+  border: 0;
+  border-left: 1px solid #343b44;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#about .proof-strip > div:first-child {
+  border-left: 0;
+}
+
+.proof-path-section {
+  display: grid;
+  grid-template-columns: minmax(210px, .72fr) minmax(0, 1.7fr);
+  gap: clamp(30px, 5vw, 74px);
+  border-color: #343b44;
+  border-radius: 0;
+  background: rgba(8, 10, 13, 0.72);
+  box-shadow: none;
+}
+
+.proof-path-section:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.proof-path-heading h2 {
+  margin: 0;
+  color: #f3f0e8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.proof-path-heading > p:last-child {
+  margin: 20px 0 0;
+  color: #8c96a3;
+  line-height: 1.65;
+}
+
+.proof-path-grid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+}
+
+.proof-path-grid li {
+  min-width: 0;
+  border-left: 1px solid #343b44;
+  border-bottom: 1px solid #343b44;
+}
+
+.proof-path-grid li:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.proof-path-grid a {
+  display: flex;
+  min-height: 150px;
+  height: 100%;
+  flex-direction: column;
+  padding: 20px;
+  color: #f3f0e8;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.proof-path-grid a:hover,
+.proof-path-grid a:focus-visible {
+  background: #10141a;
+  transform: translateY(-2px);
+}
+
+.proof-path-grid span {
+  color: #f7931a;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: .68rem;
+}
+
+.proof-path-grid strong {
+  margin-top: auto;
+  font-size: .98rem;
+}
+
+.proof-path-grid small {
+  margin-top: 8px;
+  color: #8c96a3;
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1280px) {
+  #about .proof-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  #about .proof-strip,
+  .proof-path-section,
+  .proof-path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #about .proof-strip > div {
+    border-top: 1px solid #343b44;
+    border-left: 0;
+  }
+
+  #about .proof-strip > div:first-child {
+    border-top: 0;
+  }
+
+  .proof-path-grid li,
+  .proof-path-grid li:nth-last-child(-n + 2) {
+    border-left: 0;
+    border-bottom: 1px solid #343b44;
+  }
+
+  .proof-path-grid li:last-child {
+    border-bottom: 0;
+  }
+
+  .proof-path-grid a {
+    min-height: 124px;
+    padding-inline: 0;
+  }
+}
