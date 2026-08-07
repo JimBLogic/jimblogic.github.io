@@ -43,7 +43,7 @@ const RECRUITER_FALLBACKS = {
     case_homelab_relevance:
       'Defensive relevance: supports conversations about least privilege, service exposure, resilience and troubleshooting.',
     case_homelab_status:
-      'Current status: active hands-on learning; the detailed homelab repository is private while public documentation is being prepared.',
+      'Current status: public repository with a reproducible LITE/FULL Docker foundation; tools remain candidates until installation and validation exercises are recorded.',
     homelab_public_link: 'View public GitHub work'
   },
   es: {
