@@ -95,7 +95,7 @@ test('project case studies keep public evidence boundaries and honest status lan
   await expect(homelab).toContainText('base Docker reproducible LITE/FULL');
   await expect(
     homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
-  ).toHaveText('Ver Repositorio');
+  ).toHaveText('Ver trabajo público en GitHub');
 
   await page.locator('button[data-lang="ca"]').click();
   await expect(cyber).toContainText('no és un feed SOC de producció');
@@ -103,7 +103,7 @@ test('project case studies keep public evidence boundaries and honest status lan
   await expect(homelab).toContainText('base Docker reproduïble LITE/FULL');
   await expect(
     homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
-  ).toHaveText('Veure Repositori');
+  ).toHaveText('Veure treball públic a GitHub');
 
   guard.assertNoSameOriginFailures();
   guard.assertNoPageErrors();
