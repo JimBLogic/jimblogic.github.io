@@ -87,7 +87,7 @@ test('project case studies keep public evidence boundaries and honest status lan
   await expect(homelab).toContainText('tools remain candidates');
   await expect(
     homelab.locator('a[href="https://github.com/JimBLogic/defensive-homelab-blue-team"]')
-  ).toHaveText('View Repo');
+  ).toHaveText('View public GitHub work');
 
   await page.locator('button[data-lang="es"]').click();
   await expect(cyber).toContainText('no es un feed SOC de producción');
