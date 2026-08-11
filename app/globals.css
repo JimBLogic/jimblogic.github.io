@@ -632,10 +632,25 @@ main section[id] {
 .proof-path li {
   min-width: 0;
   border-left: 1px solid var(--rule);
-  padding: 4px 24px 10px;
+  padding: 0;
 }
 
-.proof-path li > span {
+.proof-path li > a {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  padding: 4px 24px 10px;
+  color: inherit;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.proof-path li > a:hover,
+.proof-path li > a:focus-visible {
+  background: rgba(247, 147, 26, 0.065);
+  transform: translateY(-2px);
+}
+
+.proof-path li > a > span {
   color: var(--orange);
   font-family: var(--mono);
   font-size: 10px;
@@ -645,6 +660,13 @@ main section[id] {
   display: block;
   margin-top: 34px;
   font-size: 15px;
+}
+
+.proof-path li strong::after {
+  margin-left: 8px;
+  content: "↗";
+  color: var(--orange);
+  font-size: 11px;
 }
 
 .proof-path li p {
@@ -1742,6 +1764,10 @@ footer p:last-child {
   .proof-path li {
     border-top: 1px solid var(--rule);
     border-left: 0;
+    padding: 0;
+  }
+
+  .proof-path li > a {
     padding: 20px 0;
   }
 
