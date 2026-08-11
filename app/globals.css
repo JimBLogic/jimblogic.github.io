@@ -727,6 +727,90 @@ main section[id] {
   line-height: 1.75;
 }
 
+.delivery-map {
+  margin: 34px 0 0;
+  padding: 0;
+}
+
+.delivery-map figcaption {
+  margin-bottom: 14px;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.delivery-flow {
+  display: grid;
+  border: 1px solid var(--rule);
+  background:
+    linear-gradient(135deg, rgba(247, 147, 26, 0.05), transparent 56%),
+    rgba(8, 10, 13, 0.38);
+}
+
+.delivery-node {
+  position: relative;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.delivery-node + .delivery-node::before {
+  position: absolute;
+  top: -9px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--rule-bright);
+  border-radius: 50%;
+  content: "↓";
+  background: var(--ink-raised);
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.delivery-node > span {
+  display: block;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.delivery-node strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.delivery-node.is-artifact {
+  background: rgba(247, 147, 26, 0.045);
+}
+
+.delivery-targets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.delivery-targets span {
+  padding: 16px 20px;
+  color: var(--paper-dim);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.delivery-targets span + span {
+  border-left: 1px solid var(--rule);
+}
+
 .project-pipeline {
   margin: 38px 0 0;
   padding: 0;
