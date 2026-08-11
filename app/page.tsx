@@ -205,6 +205,13 @@ const content = {
             "Evidence links point to exact certificates",
             "GitHub Pages deployment gated by validation",
           ],
+          delivery: {
+            label: "One source, two identical delivery paths",
+            source: "Portfolio source",
+            checks: "Lint · build · browser QA",
+            artifact: "Validated static artifact",
+            targets: ["GitHub Pages", "Docker / Nginx"],
+          },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
@@ -554,6 +561,13 @@ const content = {
             "Enlaces a certificados concretos",
             "Despliegue en GitHub Pages condicionado a validación",
           ],
+          delivery: {
+            label: "Una fuente, dos rutas de entrega idénticas",
+            source: "Código del portfolio",
+            checks: "Lint · build · QA de navegador",
+            artifact: "Artefacto estático validado",
+            targets: ["GitHub Pages", "Docker / Nginx"],
+          },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
@@ -903,6 +917,13 @@ const content = {
             "Enllaços a certificats concrets",
             "Desplegament a GitHub Pages condicionat a validació",
           ],
+          delivery: {
+            label: "Una font, dues rutes de lliurament idèntiques",
+            source: "Codi del portfolio",
+            checks: "Lint · build · QA de navegador",
+            artifact: "Artefacte estàtic validat",
+            targets: ["GitHub Pages", "Docker / Nginx"],
+          },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
@@ -1533,6 +1554,31 @@ export default function Home() {
                     </figure>
                   ) : null}
                   <p className="project-summary">{project.summary}</p>
+
+                  {"delivery" in project ? (
+                    <figure className="delivery-map">
+                      <figcaption>{project.delivery.label}</figcaption>
+                      <div className="delivery-flow">
+                        <div className="delivery-node">
+                          <span>01 / SOURCE</span>
+                          <strong>{project.delivery.source}</strong>
+                        </div>
+                        <div className="delivery-node">
+                          <span>02 / VERIFY</span>
+                          <strong>{project.delivery.checks}</strong>
+                        </div>
+                        <div className="delivery-node is-artifact">
+                          <span>03 / PACKAGE</span>
+                          <strong>{project.delivery.artifact}</strong>
+                        </div>
+                        <div className="delivery-targets">
+                          {project.delivery.targets.map((target) => (
+                            <span key={target}>{target}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </figure>
+                  ) : null}
 
                   {"pipeline" in project ? (
                     <figure className="project-pipeline">
