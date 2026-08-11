@@ -80,16 +80,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Junior SOC Analyst / Blue Team Candidate",
-      statementStart: "I turn daily learning into",
-      statementAccent: "auditable defensive proof of work.",
+      role: "Junior SOC Analyst · Blue Team / Security Operations",
+      statementStart: "I turn operational discipline into",
+      statementAccent: "auditable defensive work.",
       intro:
-        "I build small, inspectable security systems that show how I think: source-backed triage, Linux and container operations, network visibility, documentation, recovery and careful automation.",
+        "I combine incident ownership, multilingual operations and hands-on defensive engineering: source-backed triage, Linux and containers, network visibility, clear handovers, recovery and careful automation.",
       explore: "Explore proof of work",
       cv: "Open CV",
-      location: "Menorca · Remote across Spain / EU",
+      location: "Menorca · Remote across Spain / EU · UK eligible",
       availability:
-        "Entry-level SOC, Blue Team, security operations and IT support roles",
+        "Native English + Spanish · Professional Catalan · EU + UK work rights",
       railLabel: "Evidence index",
       signals: [
         {
@@ -129,10 +129,10 @@ const content = {
       intro:
         "Start with what I built, inspect how I explain decisions, then verify the training behind it.",
       steps: [
-        ["01", "See the output", "Open today’s defensive intelligence brief."],
-        ["02", "Inspect the system", "Review the automation and validation."],
-        ["03", "Follow the build", "Explore the defensive homelab baseline."],
-        ["04", "Verify foundations", "Check selected certificates and labs."],
+        ["01", "See the output", "Open the live defensive intelligence project.", links.cyberDailyLab],
+        ["02", "Inspect the system", "Review the automation and validation.", links.cyberDailyLog],
+        ["03", "Follow the build", "Explore the defensive homelab baseline.", links.homelab],
+        ["04", "Verify the profile", "Open the CV and selected evidence.", links.cv],
       ],
     },
     work: {
@@ -352,7 +352,7 @@ const content = {
       eyebrow: "Operational background",
       title: "Experience that transfers into security work.",
       intro:
-        "The technical work is new; the operational discipline is not. These roles built the habits behind reliable triage, careful handovers and calm communication.",
+        "My cybersecurity career is new; disciplined operations are not. These roles built the habits behind reliable triage, careful handovers and calm communication.",
       workLabel: "Relevant experience",
       educationLabel: "Education & development",
       roles: [
@@ -426,9 +426,9 @@ const content = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let’s talk about the work.",
+      title: "Let’s talk about your security team.",
       text:
-        "I am interested in junior SOC, Blue Team, security operations, NOC/help desk and IT support opportunities with stable Monday-to-Friday work, ideally remote or hybrid.",
+        "I am seeking junior SOC, Blue Team and security operations roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, incident ownership and escalation are central to the work.",
       email: "Email Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -459,16 +459,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Candidato a Analista SOC Junior / Blue Team",
-      statementStart: "Convierto el aprendizaje diario en",
-      statementAccent: "evidencia defensiva auditable.",
+      role: "Analista SOC Junior · Blue Team / Operaciones de Seguridad",
+      statementStart: "Convierto disciplina operativa en",
+      statementAccent: "trabajo defensivo auditable.",
       intro:
-        "Construyo sistemas de seguridad pequeños e inspeccionables que muestran cómo pienso: triaje respaldado por fuentes, operaciones Linux y contenedores, visibilidad de red, documentación, recuperación y automatización cuidadosa.",
+        "Combino responsabilidad sobre incidencias, operaciones multilingües e ingeniería defensiva práctica: triaje respaldado por fuentes, Linux y contenedores, visibilidad de red, buenos relevos, recuperación y automatización cuidadosa.",
       explore: "Explorar evidencia práctica",
       cv: "Abrir CV",
-      location: "Menorca · Remoto en España / UE",
+      location: "Menorca · Remoto en España / UE · habilitado para Reino Unido",
       availability:
-        "Puestos junior de SOC, Blue Team, operaciones de seguridad y soporte IT",
+        "Inglés + español nativos · Catalán profesional · permiso UE + Reino Unido",
       railLabel: "Índice de evidencias",
       signals: [
         {
@@ -508,10 +508,10 @@ const content = {
       intro:
         "Empieza por lo que he construido, revisa cómo explico las decisiones y verifica después la formación que lo respalda.",
       steps: [
-        ["01", "Ver el resultado", "Abrir el informe de inteligencia defensiva de hoy."],
-        ["02", "Revisar el sistema", "Examinar la automatización y sus validaciones."],
-        ["03", "Seguir el despliegue", "Explorar la base del homelab defensivo."],
-        ["04", "Verificar fundamentos", "Comprobar certificados y laboratorios seleccionados."],
+        ["01", "Ver el resultado", "Abrir el proyecto de inteligencia defensiva en vivo.", links.cyberDailyLab],
+        ["02", "Revisar el sistema", "Examinar la automatización y sus validaciones.", links.cyberDailyLog],
+        ["03", "Seguir el despliegue", "Explorar la base del homelab defensivo.", links.homelab],
+        ["04", "Verificar el perfil", "Abrir el CV y la evidencia seleccionada.", links.cv],
       ],
     },
     work: {
@@ -731,7 +731,7 @@ const content = {
       eyebrow: "Experiencia operativa",
       title: "Una trayectoria que sí transfiere valor a seguridad.",
       intro:
-        "La parte técnica es nueva; la disciplina operativa no. Estos puestos consolidaron los hábitos que sostienen un triaje fiable, buenos relevos y una comunicación serena.",
+        "Mi carrera en ciberseguridad es nueva; la disciplina operativa no. Estos puestos consolidaron los hábitos que sostienen un triaje fiable, buenos relevos y una comunicación serena.",
       workLabel: "Experiencia relevante",
       educationLabel: "Formación y desarrollo",
       roles: [
@@ -805,9 +805,9 @@ const content = {
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Hablemos del trabajo.",
+      title: "Hablemos de tu equipo de seguridad.",
       text:
-        "Me interesan oportunidades junior en SOC, Blue Team, operaciones de seguridad, NOC/help desk y soporte IT con trabajo estable de lunes a viernes, idealmente remoto o híbrido.",
+        "Busco oportunidades junior en SOC, Blue Team y operaciones de seguridad. También estoy abierto a puestos de operaciones IT o NOC cercanos a seguridad donde la monitorización, la gestión de incidencias y el escalado sean parte central del trabajo.",
       email: "Escribir a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -838,16 +838,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Candidat a Analista SOC Junior / Blue Team",
-      statementStart: "Converteixo l’aprenentatge diari en",
-      statementAccent: "evidència defensiva auditable.",
+      role: "Analista SOC Junior · Blue Team / Operacions de Seguretat",
+      statementStart: "Converteixo disciplina operativa en",
+      statementAccent: "feina defensiva auditable.",
       intro:
-        "Construeixo sistemes de seguretat petits i inspeccionables que mostren com penso: triatge basat en fonts, operacions Linux i contenidors, visibilitat de xarxa, documentació, recuperació i automatització acurada.",
+        "Combino responsabilitat sobre incidències, operacions multilingües i enginyeria defensiva pràctica: triatge basat en fonts, Linux i contenidors, visibilitat de xarxa, bons relleus, recuperació i automatització acurada.",
       explore: "Explorar evidència pràctica",
       cv: "Obrir CV",
-      location: "Menorca · Remot a Espanya / UE",
+      location: "Menorca · Remot a Espanya / UE · habilitat per al Regne Unit",
       availability:
-        "Llocs junior de SOC, Blue Team, operacions de seguretat i suport IT",
+        "Anglès + castellà natius · Català professional · permís UE + Regne Unit",
       railLabel: "Índex d’evidències",
       signals: [
         {
@@ -887,10 +887,10 @@ const content = {
       intro:
         "Comença pel que he construït, revisa com explico les decisions i verifica després la formació que ho sosté.",
       steps: [
-        ["01", "Veure el resultat", "Obrir l’informe d’intel·ligència defensiva d’avui."],
-        ["02", "Revisar el sistema", "Examinar l’automatització i les validacions."],
-        ["03", "Seguir el desplegament", "Explorar la base de l’homelab defensiu."],
-        ["04", "Verificar fonaments", "Comprovar certificats i laboratoris seleccionats."],
+        ["01", "Veure el resultat", "Obrir el projecte d’intel·ligència defensiva en viu.", links.cyberDailyLab],
+        ["02", "Revisar el sistema", "Examinar l’automatització i les validacions.", links.cyberDailyLog],
+        ["03", "Seguir el desplegament", "Explorar la base de l’homelab defensiu.", links.homelab],
+        ["04", "Verificar el perfil", "Obrir el CV i l’evidència seleccionada.", links.cv],
       ],
     },
     work: {
@@ -1110,7 +1110,7 @@ const content = {
       eyebrow: "Experiència operativa",
       title: "Una trajectòria que transfereix valor a seguretat.",
       intro:
-        "La part tècnica és nova; la disciplina operativa no. Aquests llocs han consolidat els hàbits que sostenen un triatge fiable, bons relleus i una comunicació serena.",
+        "La meva carrera en ciberseguretat és nova; la disciplina operativa no. Aquests llocs han consolidat els hàbits que sostenen un triatge fiable, bons relleus i una comunicació serena.",
       workLabel: "Experiència rellevant",
       educationLabel: "Formació i desenvolupament",
       roles: [
@@ -1184,9 +1184,9 @@ const content = {
     },
     contact: {
       eyebrow: "Contacte",
-      title: "Parlem de la feina.",
+      title: "Parlem del teu equip de seguretat.",
       text:
-        "M’interessen oportunitats junior en SOC, Blue Team, operacions de seguretat, NOC/help desk i suport IT amb feina estable de dilluns a divendres, idealment remota o híbrida.",
+        "Busco oportunitats junior en SOC, Blue Team i operacions de seguretat. També estic obert a llocs d’operacions IT o NOC propers a seguretat on el monitoratge, la gestió d’incidències i l’escalat siguin una part central de la feina.",
       email: "Escriure a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -1589,11 +1589,17 @@ export default function Home() {
               <p>{t.scan.intro}</p>
             </div>
             <ol>
-              {t.scan.steps.map(([number, title, text]) => (
+              {t.scan.steps.map(([number, title, text, href]) => (
                 <li key={number}>
-                  <span>{number}</span>
-                  <strong>{title}</strong>
-                  <p>{text}</p>
+                  <a
+                    href={href}
+                    target={href.startsWith("/") ? undefined : "_blank"}
+                    rel={href.startsWith("/") ? undefined : "noopener noreferrer"}
+                  >
+                    <span>{number}</span>
+                    <strong>{title}</strong>
+                    <p>{text}</p>
+                  </a>
                 </li>
               ))}
             </ol>

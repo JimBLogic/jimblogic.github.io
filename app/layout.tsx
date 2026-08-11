@@ -11,10 +11,11 @@ export const metadata: Metadata = {
     template: "%s | JimBLogic",
   },
   description:
-    "Jaime Ramsden de Frutos — Junior SOC Analyst and Blue Team candidate. Auditable proof of work in threat intelligence automation, defensive homelabs, Linux, monitoring, incident response and AWS foundations.",
+    "Jaime Ramsden de Frutos — Junior SOC Analyst focused on Blue Team and security operations. Auditable proof of work in threat intelligence automation, defensive homelabs, Linux, monitoring, incident response and AWS foundations.",
   keywords: [
     "Junior SOC Analyst",
     "Blue Team",
+    "Security Operations",
     "Cybersecurity",
     "Threat Intelligence",
     "Incident Response",
@@ -103,7 +104,7 @@ const structuredData = {
       alternateName: "JimBLogic",
       url: siteUrl,
       email: "mailto:jrf91@pm.me",
-      jobTitle: "Junior SOC Analyst / Blue Team Candidate",
+      jobTitle: "Junior SOC Analyst / Blue Team / Security Operations",
       knowsLanguage: ["English", "Spanish", "Catalan"],
       homeLocation: {
         "@type": "Place",
@@ -133,7 +134,7 @@ const structuredData = {
       url: siteUrl,
       name: "JimBLogic Portfolio",
       description:
-        "Auditable cybersecurity proof of work by Junior SOC Analyst candidate Jaime Ramsden de Frutos.",
+        "Auditable cybersecurity proof of work by Junior SOC Analyst Jaime Ramsden de Frutos.",
       inLanguage: ["en", "es", "ca"],
       author: { "@id": `${siteUrl}/#person` },
     },
