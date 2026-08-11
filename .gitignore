@@ -1,28 +1,8 @@
+node_modules/
+.next/
+out/
 .env
 .env.*
-*.key
-secrets/*
-config/*.json
-node_modules/
-
-# Ignore generated PDF copies emitted by Vite static copy
-dist/assets/*.pdf
-dist/assets/pdfs/*.pdf
-
-# QA artifacts
-playwright-report/
-test-results/
-reports/
-/axe-report*.json
-/lh-report*.json
-/lighthouse-audit*.json
-
-# Generated PDF copies from dist builds
-dist/assets/pdfs/**/*.pdf
-
-# Generated Vite build output
-dist/
-
-# Private LinkedIn export data must never be committed or deployed
-assets/MyLinkedinInfo/
-**/MyLinkedinInfo/
+!.env.example
+npm-debug.log*
+.DS_Store
