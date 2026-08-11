@@ -1,6 +1,6 @@
 # JimBLogic cybersecurity portfolio
 
-Recruiter-first portfolio for Jaime Ramsden de Frutos, focused on verifiable Junior SOC / Blue Team proof of work. It mirrors the current ChatGPT Sites design, supports English, Spanish and Catalan, and builds as one static artifact for GitHub Pages or self-hosting.
+Recruiter-first portfolio for Jaime Ramsden de Frutos, focused on verifiable Junior SOC / Blue Team proof of work. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the ChatGPT Sites mirror. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
 
 ## Quick start
 
@@ -19,6 +19,7 @@ Open `http://localhost:3000`.
 |---|---|
 | `app/` | Next.js routes, portfolio content, SEO and styling |
 | `app/certifications/` | Searchable certification explorer |
+| `app/labs/` | Portable project briefs and gateways to the live applications |
 | `public/images/` | Production portfolio imagery |
 | `public/documents/` | Stable public CV and certificate routes |
 | `docs/` | Architecture, development, deployment and rollback guides |
@@ -35,6 +36,8 @@ Files such as `package.json`, `next.config.ts`, `tsconfig.json`, PostCSS and ESL
 npm run dev       # local development
 npm run lint      # source checks
 npm test          # production build + artifact validation
+npm run build:compat  # generate the portable static out/ artifact
+npm run verify:mirror # lint, build and validate every mirrored route
 npm run start     # preview the generated out/ directory
 ```
 
@@ -43,11 +46,14 @@ npm run start     # preview the generated out/ directory
 - [Architecture and content map](docs/ARCHITECTURE.md)
 - [Development and validation](docs/DEVELOPMENT.md)
 - [GitHub Pages and self-hosting](docs/DEPLOYMENT.md)
+- [Compatibility and mirror contract](docs/COMPATIBILITY.md)
 
 ## Live versions
 
 - GitHub Pages: <https://jimblogic.github.io/>
 - ChatGPT Sites mirror: <https://jimblogic-portfolio-lab.jimblogic.chatgpt.site/>
+
+The portable UI, translations and lab routes are kept equivalent across both editions. Platform adapters remain separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime.
 
 ## Rollback archive
 
