@@ -8,10 +8,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:compat": "next build",
     "start": "npx serve@14 out",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
     "test": "npm run build && node scripts/validate-static.mjs",
-    "validate": "node scripts/validate-static.mjs"
+    "validate": "node scripts/validate-static.mjs",
+    "verify:mirror": "npm run lint && npm test"
   },
   "dependencies": {
     "next": "16.2.6",

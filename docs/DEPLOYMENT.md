@@ -11,6 +11,8 @@ Both deployment methods serve the same generated `out/` directory.
 5. Verify:
    - <https://jimblogic.github.io/>
    - <https://jimblogic.github.io/certifications/>
+   - <https://jimblogic.github.io/labs/cyberdailylog/>
+   - <https://jimblogic.github.io/labs/austrian-monitor/>
    - <https://jimblogic.github.io/robots.txt>
    - <https://jimblogic.github.io/sitemap.xml>
 
@@ -43,7 +45,8 @@ The Nginx policy is stored in `infra/nginx/default.conf`.
 
 ```bash
 npm ci
-npm run build
+npm run build:compat
+npm run validate
 ```
 
 Serve `out/` using any static host. For a traditional Nginx server, copy the directory beneath your web root and adapt `infra/nginx/default.conf` to the chosen domain and filesystem path.

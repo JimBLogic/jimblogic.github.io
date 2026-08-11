@@ -5,7 +5,9 @@
 ## Primary evidence
 
 - CyberDailyLog: automated, source-backed daily defensive intelligence with auditable reports — https://github.com/JimBLogic/CyberDailyLog
+- CyberDailyLog project brief and live-app gateway: /labs/cyberdailylog
 - Defensive Homelab: reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployment modes — https://github.com/JimBLogic/defensive-homelab-blue-team
+- Austrian Business Cycle Monitor: transparent macro research dashboard with visible source health and methodology — /labs/austrian-monitor
 - Source portfolio: multilingual, accessible portfolio with security and delivery checks — https://github.com/JimBLogic/jimblogic.github.io
 
 ## Skills and positioning

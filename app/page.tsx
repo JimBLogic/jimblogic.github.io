@@ -24,8 +24,16 @@ const links = {
   cv: "https://jimblogic.github.io/documents/Jaime-Ramsden-de-Frutos-CV.pdf",
   email: "mailto:jrf91@pm.me",
   cyberDailyLog: "https://github.com/JimBLogic/CyberDailyLog",
+  cyberDailyLab: "/labs/cyberdailylog",
+  cyberDailyLive:
+    "https://cyberdailylog-dashboard.jimblogic.chatgpt.site",
   cyberDailyReport:
     "https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/latest.md",
+  austrianMonitorLab: "/labs/austrian-monitor",
+  austrianMonitorLive:
+    "https://austrian-business-cycle-monitor.jimblogic.chatgpt.site",
+  austrianMonitorRepo:
+    "https://github.com/JimBLogic/AustrianBusinessCycleMonitor",
   homelab: "https://github.com/JimBLogic/defensive-homelab-blue-team",
   portfolio: "https://github.com/JimBLogic/jimblogic.github.io",
   blueTeam:
@@ -89,7 +97,7 @@ const content = {
           status: "Automated daily",
           detail: "Source-backed 24-hour pipeline",
           stamp: "LIVE FEED",
-          href: links.cyberDailyReport,
+          href: links.cyberDailyLab,
         },
         {
           name: "Defensive Homelab",
@@ -133,6 +141,7 @@ const content = {
       intro:
         "Each project states its purpose, current status and limits. No enterprise-SOC cosplay; just real, reviewable work and the next sensible improvement.",
       open: "Open project",
+      brief: "View project brief",
       report: "Read today’s brief",
       cards: [
         {
@@ -161,9 +170,9 @@ const content = {
               ["04", "Publish", "Checked report + portfolio snapshot"],
             ],
           },
-          href: links.cyberDailyLog,
-          secondaryHref: links.cyberDailyReport,
-          secondaryLabel: "Read today’s brief",
+          href: links.cyberDailyLab,
+          secondaryHref: links.cyberDailyLog,
+          secondaryLabel: "Inspect repository",
           featured: true,
         },
         {
@@ -206,15 +215,37 @@ const content = {
             "GitHub Pages deployment gated by validation",
           ],
           delivery: {
-            label: "One source, two identical delivery paths",
-            source: "Portfolio source",
-            checks: "Lint · build · browser QA",
-            artifact: "Validated static artifact",
-            targets: ["GitHub Pages", "Docker / Nginx"],
+            label: "One portable source, three compatible delivery paths",
+            source: "Public GitHub source",
+            checks: "Lint · static build · route QA",
+            artifact: "Reproducible compatibility build",
+            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
           },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
+          featured: false,
+        },
+        {
+          index: "04",
+          kicker: "Economics + data provenance + product thinking",
+          title: "Austrian Business Cycle Monitor",
+          summary:
+            "A transparent macro dashboard that connects liquidity, credit conditions, productive activity and market structure through an Austrian-economics lens, while keeping source health and model limits visible.",
+          metrics: [
+            ["3", "analytical pillars"],
+            ["MACRO", "economic indicators"],
+            ["LIVE", "data health"],
+          ],
+          notes: [
+            "Liquidity, credit and market-structure layers",
+            "Productive-activity and market indicators",
+            "Visible divergence and data-freshness states",
+            "Educational analysis, not trading advice",
+          ],
+          href: links.austrianMonitorLab,
+          secondaryHref: links.austrianMonitorRepo,
+          secondaryLabel: "Inspect repository",
           featured: false,
         },
       ],
@@ -445,7 +476,7 @@ const content = {
           status: "Automatizado a diario",
           detail: "Pipeline de 24 horas basado en fuentes",
           stamp: "DATOS EN VIVO",
-          href: links.cyberDailyReport,
+          href: links.cyberDailyLab,
         },
         {
           name: "Homelab defensivo",
@@ -489,6 +520,7 @@ const content = {
       intro:
         "Cada proyecto declara su propósito, estado actual y límites. Nada de disfrazarse de SOC empresarial: trabajo real y revisable, con la siguiente mejora lógica a la vista.",
       open: "Abrir proyecto",
+      brief: "Ver resumen del proyecto",
       report: "Leer el informe de hoy",
       cards: [
         {
@@ -517,9 +549,9 @@ const content = {
               ["04", "Publicar", "Informe validado + snapshot del portfolio"],
             ],
           },
-          href: links.cyberDailyLog,
-          secondaryHref: links.cyberDailyReport,
-          secondaryLabel: "Leer el informe de hoy",
+          href: links.cyberDailyLab,
+          secondaryHref: links.cyberDailyLog,
+          secondaryLabel: "Revisar repositorio",
           featured: true,
         },
         {
@@ -562,15 +594,37 @@ const content = {
             "Despliegue en GitHub Pages condicionado a validación",
           ],
           delivery: {
-            label: "Una fuente, dos rutas de entrega idénticas",
-            source: "Código del portfolio",
-            checks: "Lint · build · QA de navegador",
-            artifact: "Artefacto estático validado",
-            targets: ["GitHub Pages", "Docker / Nginx"],
+            label: "Una fuente portable, tres rutas de entrega compatibles",
+            source: "Código público en GitHub",
+            checks: "Lint · build estática · QA de rutas",
+            artifact: "Build de compatibilidad reproducible",
+            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
           },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
+          featured: false,
+        },
+        {
+          index: "04",
+          kicker: "Economía + procedencia de datos + producto",
+          title: "Austrian Business Cycle Monitor",
+          summary:
+            "Un dashboard macro transparente que conecta liquidez, condiciones de crédito, actividad productiva y estructura de mercado desde una óptica de economía austriaca, mostrando la salud de las fuentes y los límites del modelo.",
+          metrics: [
+            ["3", "pilares analíticos"],
+            ["MACRO", "indicadores económicos"],
+            ["LIVE", "salud de datos"],
+          ],
+          notes: [
+            "Capas de liquidez, crédito y estructura de mercado",
+            "Indicadores de actividad productiva y mercados",
+            "Estados visibles de divergencia y actualidad de datos",
+            "Análisis educativo, no asesoramiento financiero",
+          ],
+          href: links.austrianMonitorLab,
+          secondaryHref: links.austrianMonitorRepo,
+          secondaryLabel: "Revisar repositorio",
           featured: false,
         },
       ],
@@ -801,7 +855,7 @@ const content = {
           status: "Automatitzat diàriament",
           detail: "Pipeline de 24 hores basat en fonts",
           stamp: "DADES EN VIU",
-          href: links.cyberDailyReport,
+          href: links.cyberDailyLab,
         },
         {
           name: "Homelab defensiu",
@@ -845,6 +899,7 @@ const content = {
       intro:
         "Cada projecte declara el propòsit, l’estat actual i els límits. Res de disfressar-se de SOC empresarial: feina real i revisable, amb la següent millora lògica a la vista.",
       open: "Obrir projecte",
+      brief: "Veure resum del projecte",
       report: "Llegir l’informe d’avui",
       cards: [
         {
@@ -873,9 +928,9 @@ const content = {
               ["04", "Publicar", "Informe validat + snapshot del portfolio"],
             ],
           },
-          href: links.cyberDailyLog,
-          secondaryHref: links.cyberDailyReport,
-          secondaryLabel: "Llegir l’informe d’avui",
+          href: links.cyberDailyLab,
+          secondaryHref: links.cyberDailyLog,
+          secondaryLabel: "Revisar repositori",
           featured: true,
         },
         {
@@ -918,15 +973,37 @@ const content = {
             "Desplegament a GitHub Pages condicionat a validació",
           ],
           delivery: {
-            label: "Una font, dues rutes de lliurament idèntiques",
-            source: "Codi del portfolio",
-            checks: "Lint · build · QA de navegador",
-            artifact: "Artefacte estàtic validat",
-            targets: ["GitHub Pages", "Docker / Nginx"],
+            label: "Una font portable, tres rutes de lliurament compatibles",
+            source: "Codi públic a GitHub",
+            checks: "Lint · build estàtica · QA de rutes",
+            artifact: "Build de compatibilitat reproduïble",
+            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
           },
           href: links.portfolio,
           secondaryHref: "",
           secondaryLabel: "",
+          featured: false,
+        },
+        {
+          index: "04",
+          kicker: "Economia + procedència de dades + producte",
+          title: "Austrian Business Cycle Monitor",
+          summary:
+            "Un dashboard macro transparent que connecta liquiditat, condicions de crèdit, activitat productiva i estructura de mercat des d’una òptica d’economia austríaca, mostrant la salut de les fonts i els límits del model.",
+          metrics: [
+            ["3", "pilars analítics"],
+            ["MACRO", "indicadors econòmics"],
+            ["LIVE", "salut de dades"],
+          ],
+          notes: [
+            "Capes de liquiditat, crèdit i estructura de mercat",
+            "Indicadors d’activitat productiva i mercats",
+            "Estats visibles de divergència i actualitat de dades",
+            "Anàlisi educativa, no assessorament financer",
+          ],
+          href: links.austrianMonitorLab,
+          secondaryHref: links.austrianMonitorRepo,
+          secondaryLabel: "Revisar repositori",
           featured: false,
         },
       ],
@@ -1482,8 +1559,12 @@ export default function Home() {
               {heroSignals.map((signal, index) => (
                 <a
                   href={signal.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={signal.href.startsWith("/") ? undefined : "_blank"}
+                  rel={
+                    signal.href.startsWith("/")
+                      ? undefined
+                      : "noopener noreferrer"
+                  }
                   className="signal"
                   key={signal.name}
                 >
@@ -1528,7 +1609,7 @@ export default function Home() {
             <div className="work-grid">
               {workCards.map((project) => (
                 <article
-                  className={`project-card ${project.featured ? "is-featured" : ""}`}
+                  className={`project-card ${project.featured ? "is-featured" : ""} ${project.index === "04" ? "is-wide" : ""}`}
                   key={project.title}
                 >
                   <div className="project-topline">
@@ -1611,8 +1692,16 @@ export default function Home() {
                   </ul>
 
                   <div className="project-actions">
-                    <a href={project.href} target="_blank" rel="noopener noreferrer">
-                      {t.work.open} <Arrow />
+                    <a
+                      href={project.href}
+                      target={project.href.startsWith("/") ? undefined : "_blank"}
+                      rel={
+                        project.href.startsWith("/")
+                          ? undefined
+                          : "noopener noreferrer"
+                      }
+                    >
+                      {project.href.startsWith("/") ? t.work.brief : t.work.open} <Arrow />
                     </a>
                     {project.secondaryHref ? (
                       <a
