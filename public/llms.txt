@@ -1,0 +1,23 @@
+# JimBLogic — Jaime Ramsden de Frutos
+
+> Recruiter-first cybersecurity portfolio for a Junior SOC Analyst / Blue Team candidate based in Menorca, Spain, available for remote roles across Spain and the EU.
+
+## Primary evidence
+
+- CyberDailyLog: automated, source-backed daily defensive intelligence with auditable reports — https://github.com/JimBLogic/CyberDailyLog
+- Defensive Homelab: reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployment modes — https://github.com/JimBLogic/defensive-homelab-blue-team
+- Source portfolio: multilingual, accessible portfolio with security and delivery checks — https://github.com/JimBLogic/jimblogic.github.io
+
+## Skills and positioning
+
+Junior-level, practical foundations in alert triage, Linux, Bash, Docker, network visibility, monitoring, incident response, digital forensics, threat intelligence, OSINT, Splunk/SPL and AWS cloud security. Claims are intentionally limited to public, verifiable work and lab evidence.
+
+## Verification
+
+- Full certifications and labs: /certifications
+- GitHub: https://github.com/JimBLogic
+- TryHackMe: https://tryhackme.com/p/JimBLogic
+- LinkedIn: https://www.linkedin.com/in/jimblogic/
+- Contact: mailto:jrf91@pm.me
+
+Languages: English and Spanish (native), Catalan (professional).

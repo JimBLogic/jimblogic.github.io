@@ -1,47 +1,31 @@
 {
   "name": "jimblogic-portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
-    "dev": "vite",
-    "prebuild": "node scripts/generate-build-version.mjs",
-    "build": "vite build && npm run purgecss",
-    "preview": "vite preview --port 4173",
-    "lint": "eslint assets/js scripts tests --ext .js,.mjs,.ts && stylelint \"style.css\"",
-    "format": "prettier --write .",
-    "audit": "echo Run Lighthouse CI locally if installed",
-    "to:webp": "echo Add cwebp conversion here if installed",
-    "purgecss": "echo \"Skip PurgeCSS (handled by Vite/CSS splitting)\"",
-    "test": "npm run lint && npm run build && npm run validate:local",
-    "validate:local": "node scripts/validate-local.mjs --dist-dir dist",
-    "audit:production": "node scripts/audit-production.mjs",
-    "test:unit": "npm run validate:local",
-    "test:e2e": "playwright test",
-    "test:e2e:local": "npm run build && playwright test",
-    "test:e2e:ci": "playwright test --project=chromium",
-    "validate:version": "node scripts/validate-build-version-canonical.mjs --dist-dir dist",
-    "validate:privacy": "node scripts/validate-artifact-privacy.mjs --dist-dir dist",
-    "test:validator-refs": "node scripts/test-local-reference-utils.mjs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve@14 out",
+    "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
+    "test": "npm run build && node scripts/validate-static.mjs",
+    "validate": "node scripts/validate-static.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.11.2",
-    "@playwright/test": "1.56.1",
-    "@testing-library/dom": "10.4.1",
-    "autoprefixer": "10.4.22",
-    "eslint": "9.39.1",
-    "eslint-config-prettier": "9.1.2",
-    "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-prettier": "5.5.4",
-    "playwright": "1.56.1",
-    "postcss": "8.5.14",
-    "prettier": "3.6.2",
-    "purgecss": "6.0.0",
-    "stylelint": "16.25.0",
-    "stylelint-config-standard": "36.0.1",
-    "svgo": "3.3.3",
-    "vite": "8.0.13",
-    "vite-plugin-static-copy": "4.1.0",
-    "vitest": "4.1.6"
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3"
   }
 }
