@@ -1,6 +1,6 @@
 # JimBLogic cybersecurity portfolio
 
-Recruiter-first portfolio for Jaime Ramsden de Frutos, focused on verifiable Junior SOC / Blue Team proof of work. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the ChatGPT Sites mirror. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
+Recruiter-first portfolio for Jaime Ramsden de Frutos, focused on verifiable Junior SOC, Blue Team, cloud-security and automation proof of work. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the published ChatGPT Sites version. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
 
 ## Quick start
 
@@ -53,7 +53,7 @@ npm run start     # preview the generated out/ directory
 - GitHub Pages: <https://jimblogic.github.io/>
 - ChatGPT Sites mirror: <https://jimblogic-portfolio-lab.jimblogic.chatgpt.site/>
 
-The portable UI, translations and lab routes are kept equivalent across both editions. Platform adapters remain separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime.
+The UI, translations, portfolio content and lab routes match the published Sites version reviewed on 21 August 2026. Platform adapters remain deliberately separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime. This keeps the user-facing source equivalent without breaking GitHub Pages, localhost or the Docker/Nginx self-host path.
 
 ## Rollback archive
 

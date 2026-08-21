@@ -27,6 +27,10 @@ const labConfig = {
 const copy = {
   en: {
     skip: "Skip to project",
+    navigation: "Project navigation",
+    language: "Language",
+    breadcrumb: "Breadcrumb",
+    related: "Related project",
     portfolio: "Portfolio",
     projects: "All projects",
     status: "Public live demo",
@@ -39,6 +43,7 @@ const copy = {
     context: "What you are opening",
     briefEyebrow: "Project brief",
     briefTitle: "Three things worth knowing.",
+    detailTitle: "How to evaluate the project.",
     find: "What you’ll find",
     shows: "What it demonstrates",
     relationship: "Why it belongs here",
@@ -139,6 +144,10 @@ const copy = {
   },
   es: {
     skip: "Saltar al proyecto",
+    navigation: "Navegación del proyecto",
+    language: "Idioma",
+    breadcrumb: "Migas de pan",
+    related: "Proyecto relacionado",
     portfolio: "Portfolio",
     projects: "Todos los proyectos",
     status: "Demo pública activa",
@@ -151,6 +160,7 @@ const copy = {
     context: "Qué vas a abrir",
     briefEyebrow: "Resumen del proyecto",
     briefTitle: "Tres cosas que merece la pena saber.",
+    detailTitle: "Cómo evaluar el proyecto.",
     find: "Qué encontrarás",
     shows: "Qué demuestra",
     relationship: "Por qué encaja aquí",
@@ -251,6 +261,10 @@ const copy = {
   },
   ca: {
     skip: "Saltar al projecte",
+    navigation: "Navegació del projecte",
+    language: "Idioma",
+    breadcrumb: "Ruta de navegació",
+    related: "Projecte relacionat",
     portfolio: "Portfolio",
     projects: "Tots els projectes",
     status: "Demo pública activa",
@@ -263,6 +277,7 @@ const copy = {
     context: "Què obriràs",
     briefEyebrow: "Resum del projecte",
     briefTitle: "Tres coses que val la pena saber.",
+    detailTitle: "Com avaluar el projecte.",
     find: "Què hi trobaràs",
     shows: "Què demostra",
     relationship: "Per què encaixa aquí",
@@ -413,11 +428,11 @@ export default function LabPage({ lab }: { lab: LabId }) {
           </Link>
 
           <div className="lab-header-panel">
-            <nav aria-label="Project navigation">
+            <nav aria-label={t.navigation}>
               <Link href="/#work">{t.projects}</Link>
               <Link href="/">{t.portfolio}</Link>
             </nav>
-            <div className="languages" aria-label="Language">
+            <div className="languages" aria-label={t.language}>
               {(["en", "es", "ca"] as const).map((lang) => (
                 <button
                   key={lang}
@@ -436,7 +451,7 @@ export default function LabPage({ lab }: { lab: LabId }) {
         <main id="lab-main" className="lab-main">
           <section className="lab-hero" aria-labelledby="lab-title">
             <div className="lab-copy">
-              <div className="lab-breadcrumb" aria-label="Breadcrumb">
+              <div className="lab-breadcrumb" aria-label={t.breadcrumb}>
                 <Link href="/">JimBLogic</Link>
                 <span aria-hidden="true">/</span>
                 <Link href="/#work">Labs</Link>
@@ -520,7 +535,40 @@ export default function LabPage({ lab }: { lab: LabId }) {
             </div>
           </section>
 
-          <nav className="lab-next" aria-label="Related project">
+          <section className="lab-method" aria-labelledby="lab-method-title">
+            <div className="section-heading compact">
+              <p className="eyebrow">{t.context} · {config.code}</p>
+              <h2 id="lab-method-title">{t.detailTitle}</h2>
+            </div>
+
+            <div className="lab-method-grid">
+              <article className="lab-method-purpose">
+                <span>01</span>
+                <h3>{t.purpose}</h3>
+                <p>{project.purposeText}</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>{t.inside}</h3>
+                <ul>
+                  {project.insideItems.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>{t.review}</h3>
+                <ol>
+                  {project.reviewItems.map((item) => <li key={item}>{item}</li>)}
+                </ol>
+              </article>
+              <aside className="lab-boundary">
+                <span>{t.boundary}</span>
+                <p>{project.boundaryText}</p>
+              </aside>
+            </div>
+          </section>
+
+          <nav className="lab-next" aria-label={t.related}>
             <a
               href={config.siblingPath}
               aria-label={`${t.other}: ${sibling.title}`}

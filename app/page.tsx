@@ -68,6 +68,8 @@ const content = {
       skip: "Skip to content",
       external: "opens in a new tab",
       top: "Back to top",
+      primaryNav: "Primary navigation",
+      language: "Language",
     },
     nav: {
       work: "Work",
@@ -80,16 +82,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Junior SOC Analyst · Blue Team / Security Operations",
-      statementStart: "I turn operational discipline into",
+      role: "Junior SOC Analyst · Blue Team · Cloud Security",
+      statementStart: "I turn operational pressure into",
       statementAccent: "auditable defensive work.",
       intro:
-        "I combine incident ownership, multilingual operations and hands-on defensive engineering: source-backed triage, Linux and containers, network visibility, clear handovers, recovery and careful automation.",
+        "I combine incident ownership, multilingual operations and hands-on defensive engineering: source-backed triage, Linux and containers, network visibility, AWS foundations, clear handovers and careful automation.",
       explore: "Explore proof of work",
       cv: "Open CV",
       location: "Menorca · Remote across Spain / EU · UK eligible",
       availability:
-        "Native English + Spanish · Professional Catalan · EU + UK work rights",
+        "Native English + Spanish · Professional Catalan · Open to remote / hybrid roles",
       railLabel: "Evidence index",
       signals: [
         {
@@ -210,16 +212,16 @@ const content = {
           ],
           notes: [
             "EN / ES / CA with safe content fallbacks",
-            "Mobile navigation and strict-storage resilience",
-            "Evidence links point to exact certificates",
-            "GitHub Pages deployment gated by validation",
+            "Accessible mobile navigation and strict-storage resilience",
+            "The published Sites source mirrored to GitHub main",
+            "Local production checks and container-ready self-hosting",
           ],
           delivery: {
-            label: "One portable source, three compatible delivery paths",
-            source: "Public GitHub source",
-            checks: "Lint · static build · route QA",
-            artifact: "Reproducible compatibility build",
-            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
+            label: "One reviewed source, three reproducible delivery paths",
+            source: "GitHub main mirror",
+            checks: "Lint · production build · route checks",
+            artifact: "Verified deployable artifact",
+            targets: ["ChatGPT Sites", "Localhost", "Docker self-host"],
           },
           href: links.portfolio,
           secondaryHref: "",
@@ -283,8 +285,8 @@ const content = {
         {
           code: "CLOUD",
           title: "AWS foundations",
-          text: "Preparing for AWS Cloud Practitioner with attention to IAM, shared responsibility, logging and cost awareness.",
-          tools: "IAM · CloudTrail concepts · shared responsibility",
+          text: "Building toward cloud security through AWS AI Practitioner and Cloud Practitioner, with attention to IAM, logging, shared responsibility and safe automation.",
+          tools: "IAM · CloudTrail concepts · AWS AI · shared responsibility",
         },
         {
           code: "OPS",
@@ -334,9 +336,9 @@ const content = {
         },
         {
           issuer: "AWS Skill Builder",
-          title: "Cloud Practitioner learning path",
-          focus: "Course evidence; certification exam in preparation",
-          year: "Active",
+          title: "AI Practitioner → Cloud Practitioner path",
+          focus: "Course evidence; AIF-C01 scheduled for September 2026",
+          year: "Active 2026",
           href: links.awsEvidence,
         },
         {
@@ -357,7 +359,7 @@ const content = {
       educationLabel: "Education & development",
       roles: [
         {
-          period: "2025 — NOW",
+          period: "2026 — NOW",
           role: "Administration with practical IT responsibility",
           organisation: "Property operations · Menorca",
           text:
@@ -391,10 +393,10 @@ const content = {
         },
         {
           period: "ONGOING",
-          title: "Blue Team and cloud development",
+          title: "Blue Team, cloud and automation development",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Continuous lab work in network analysis, forensics, threat intelligence, Splunk foundations, Linux and AWS Cloud Practitioner preparation.",
+            "Continuous lab work in network analysis, forensics, threat intelligence, Splunk, Linux and AWS; AIF-C01 is scheduled for September 2026 before Cloud Practitioner.",
         },
         {
           period: "BACKGROUND",
@@ -408,7 +410,7 @@ const content = {
         "Native English + Spanish",
         "Professional Catalan",
         "EU + UK work rights",
-        "Remote-first from Menorca",
+        "Remote / hybrid across Spain and the EU",
       ],
     },
     about: {
@@ -417,7 +419,7 @@ const content = {
       lead:
         "I am moving into cybersecurity from customer-facing operations, administration and practical IT support. That background is not a detour: it taught me to document, prioritise, protect sensitive information and communicate when the situation is messy.",
       body:
-        "Outside work I build public security projects, run a defensive Raspberry Pi lab and study SOC, incident response, threat intelligence and AWS foundations. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
+        "Outside work I build public security projects, run a defensive Raspberry Pi lab and study SOC, incident response, threat intelligence and AWS with a longer-term focus on cloud security automation. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
       principles: [
         ["Evidence over claims", "If I say I built it, there should be a repository, report or lab note."],
         ["Useful over flashy", "The next operational control matters more than another decorative badge."],
@@ -426,14 +428,14 @@ const content = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let’s talk about your security team.",
+      title: "Let’s talk about useful junior security work.",
       text:
-        "I am seeking junior SOC, Blue Team and security operations roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, incident ownership and escalation are central to the work.",
+        "I am seeking junior SOC, Blue Team and cloud-security-track roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, incident ownership and escalation are central to the work.",
       email: "Email Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
       cv: "Open CV",
-      availability: "Based in Menorca · Native English and Spanish",
+      availability: "Based in Menorca · Remote / hybrid across Spain and the EU · UK eligible",
     },
     footer: {
       note: "Built as auditable proof of work.",
@@ -447,6 +449,8 @@ const content = {
       skip: "Saltar al contenido",
       external: "se abre en una pestaña nueva",
       top: "Volver arriba",
+      primaryNav: "Navegación principal",
+      language: "Idioma",
     },
     nav: {
       work: "Proyectos",
@@ -459,16 +463,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Analista SOC Junior · Blue Team / Operaciones de Seguridad",
-      statementStart: "Convierto disciplina operativa en",
+      role: "Analista SOC Junior · Blue Team · Seguridad Cloud",
+      statementStart: "Convierto presión operativa en",
       statementAccent: "trabajo defensivo auditable.",
       intro:
-        "Combino responsabilidad sobre incidencias, operaciones multilingües e ingeniería defensiva práctica: triaje respaldado por fuentes, Linux y contenedores, visibilidad de red, buenos relevos, recuperación y automatización cuidadosa.",
+        "Combino responsabilidad sobre incidencias, operaciones multilingües e ingeniería defensiva práctica: triaje respaldado por fuentes, Linux y contenedores, visibilidad de red, fundamentos AWS, buenos relevos y automatización cuidadosa.",
       explore: "Explorar evidencia práctica",
       cv: "Abrir CV",
       location: "Menorca · Remoto en España / UE · habilitado para Reino Unido",
       availability:
-        "Inglés + español nativos · Catalán profesional · permiso UE + Reino Unido",
+        "Inglés + español nativos · Catalán profesional · disponible en remoto / híbrido",
       railLabel: "Índice de evidencias",
       signals: [
         {
@@ -589,16 +593,16 @@ const content = {
           ],
           notes: [
             "EN / ES / CA con fallbacks de contenido seguros",
-            "Navegación móvil resistente a almacenamiento estricto",
-            "Enlaces a certificados concretos",
-            "Despliegue en GitHub Pages condicionado a validación",
+            "Navegación móvil accesible y resistente a almacenamiento estricto",
+            "La fuente publicada en Sites reflejada en GitHub main",
+            "Comprobaciones locales y self-hosting preparado para contenedor",
           ],
           delivery: {
-            label: "Una fuente portable, tres rutas de entrega compatibles",
-            source: "Código público en GitHub",
-            checks: "Lint · build estática · QA de rutas",
-            artifact: "Build de compatibilidad reproducible",
-            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
+            label: "Una fuente revisada, tres rutas de entrega reproducibles",
+            source: "Espejo en GitHub main",
+            checks: "Lint · build de producción · pruebas de rutas",
+            artifact: "Artefacto desplegable verificado",
+            targets: ["ChatGPT Sites", "Localhost", "Docker self-host"],
           },
           href: links.portfolio,
           secondaryHref: "",
@@ -662,8 +666,8 @@ const content = {
         {
           code: "CLOUD",
           title: "Fundamentos AWS",
-          text: "Preparación para AWS Cloud Practitioner con atención a IAM, responsabilidad compartida, logs y costes.",
-          tools: "IAM · conceptos CloudTrail · responsabilidad compartida",
+          text: "Avanzo hacia seguridad cloud mediante AWS AI Practitioner y Cloud Practitioner, con atención a IAM, logs, responsabilidad compartida y automatización segura.",
+          tools: "IAM · conceptos CloudTrail · IA en AWS · responsabilidad compartida",
         },
         {
           code: "OPS",
@@ -713,9 +717,9 @@ const content = {
         },
         {
           issuer: "AWS Skill Builder",
-          title: "Ruta de Cloud Practitioner",
-          focus: "Evidencia del curso; examen de certificación en preparación",
-          year: "Activo",
+          title: "Ruta AI Practitioner → Cloud Practitioner",
+          focus: "Evidencia formativa; AIF-C01 programado para septiembre de 2026",
+          year: "Activo 2026",
           href: links.awsEvidence,
         },
         {
@@ -736,7 +740,7 @@ const content = {
       educationLabel: "Formación y desarrollo",
       roles: [
         {
-          period: "2025 — AHORA",
+          period: "2026 — AHORA",
           role: "Administración con responsabilidad IT práctica",
           organisation: "Operaciones inmobiliarias · Menorca",
           text:
@@ -770,10 +774,10 @@ const content = {
         },
         {
           period: "EN CURSO",
-          title: "Desarrollo Blue Team y cloud",
+          title: "Desarrollo Blue Team, cloud y automatización",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Laboratorios continuos de análisis de red, forense, inteligencia de amenazas, fundamentos de Splunk, Linux y preparación de AWS Cloud Practitioner.",
+            "Laboratorios continuos de análisis de red, forense, inteligencia de amenazas, Splunk, Linux y AWS; AIF-C01 está programado para septiembre de 2026 antes de Cloud Practitioner.",
         },
         {
           period: "BASE ACADÉMICA",
@@ -787,7 +791,7 @@ const content = {
         "Inglés + español nativos",
         "Catalán profesional",
         "Permiso de trabajo UE + Reino Unido",
-        "Remoto-first desde Menorca",
+        "Remoto / híbrido en España y la UE",
       ],
     },
     about: {
@@ -796,7 +800,7 @@ const content = {
       lead:
         "Estoy dando el salto a ciberseguridad desde operaciones de atención al cliente, administración y soporte IT práctico. Ese recorrido no es un desvío: me enseñó a documentar, priorizar, proteger información sensible y comunicar cuando la situación viene con curvas.",
       body:
-        "Fuera del trabajo construyo proyectos públicos de seguridad, mantengo un laboratorio defensivo con Raspberry Pi y estudio SOC, respuesta a incidentes, inteligencia de amenazas y fundamentos AWS. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
+        "Fuera del trabajo construyo proyectos públicos de seguridad, mantengo un laboratorio defensivo con Raspberry Pi y estudio SOC, respuesta a incidentes, inteligencia de amenazas y AWS con foco a largo plazo en automatización de seguridad cloud. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
       principles: [
         ["Evidencia antes que afirmaciones", "Si digo que lo he construido, debe existir un repositorio, informe o nota de laboratorio."],
         ["Útil antes que vistoso", "El siguiente control operativo importa más que otra insignia decorativa."],
@@ -805,14 +809,14 @@ const content = {
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Hablemos de tu equipo de seguridad.",
+      title: "Hablemos de trabajo junior de seguridad que aporte valor.",
       text:
-        "Busco oportunidades junior en SOC, Blue Team y operaciones de seguridad. También estoy abierto a puestos de operaciones IT o NOC cercanos a seguridad donde la monitorización, la gestión de incidencias y el escalado sean parte central del trabajo.",
+        "Busco oportunidades junior en SOC, Blue Team y puestos con recorrido hacia seguridad cloud. También estoy abierto a operaciones IT o NOC cercanos a seguridad donde la monitorización, la gestión de incidencias y el escalado sean parte central del trabajo.",
       email: "Escribir a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
       cv: "Abrir CV",
-      availability: "Con base en Menorca · Inglés y español nativos",
+      availability: "Con base en Menorca · Remoto / híbrido en España y la UE · habilitado para Reino Unido",
     },
     footer: {
       note: "Construido como evidencia práctica auditable.",
@@ -826,6 +830,8 @@ const content = {
       skip: "Saltar al contingut",
       external: "s’obre en una pestanya nova",
       top: "Tornar a dalt",
+      primaryNav: "Navegació principal",
+      language: "Idioma",
     },
     nav: {
       work: "Projectes",
@@ -838,16 +844,16 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Analista SOC Junior · Blue Team / Operacions de Seguretat",
-      statementStart: "Converteixo disciplina operativa en",
+      role: "Analista SOC Junior · Blue Team · Seguretat Cloud",
+      statementStart: "Converteixo pressió operativa en",
       statementAccent: "feina defensiva auditable.",
       intro:
-        "Combino responsabilitat sobre incidències, operacions multilingües i enginyeria defensiva pràctica: triatge basat en fonts, Linux i contenidors, visibilitat de xarxa, bons relleus, recuperació i automatització acurada.",
+        "Combino responsabilitat sobre incidències, operacions multilingües i enginyeria defensiva pràctica: triatge basat en fonts, Linux i contenidors, visibilitat de xarxa, fonaments AWS, bons relleus i automatització acurada.",
       explore: "Explorar evidència pràctica",
       cv: "Obrir CV",
       location: "Menorca · Remot a Espanya / UE · habilitat per al Regne Unit",
       availability:
-        "Anglès + castellà natius · Català professional · permís UE + Regne Unit",
+        "Anglès + castellà natius · Català professional · disponible en remot / híbrid",
       railLabel: "Índex d’evidències",
       signals: [
         {
@@ -968,16 +974,16 @@ const content = {
           ],
           notes: [
             "EN / ES / CA amb alternatives de contingut segures",
-            "Navegació mòbil resistent a l’emmagatzematge estricte",
-            "Enllaços a certificats concrets",
-            "Desplegament a GitHub Pages condicionat a validació",
+            "Navegació mòbil accessible i resistent a l’emmagatzematge estricte",
+            "La font publicada a Sites reflectida a GitHub main",
+            "Comprovacions locals i self-hosting preparat per a contenidor",
           ],
           delivery: {
-            label: "Una font portable, tres rutes de lliurament compatibles",
-            source: "Codi públic a GitHub",
-            checks: "Lint · build estàtica · QA de rutes",
-            artifact: "Build de compatibilitat reproduïble",
-            targets: ["GitHub Pages", "ChatGPT Sites", "Docker / Nginx"],
+            label: "Una font revisada, tres rutes de lliurament reproduïbles",
+            source: "Mirall a GitHub main",
+            checks: "Lint · build de producció · proves de rutes",
+            artifact: "Artefacte desplegable verificat",
+            targets: ["ChatGPT Sites", "Localhost", "Docker self-host"],
           },
           href: links.portfolio,
           secondaryHref: "",
@@ -1041,8 +1047,8 @@ const content = {
         {
           code: "CLOUD",
           title: "Fonaments AWS",
-          text: "Preparació per a AWS Cloud Practitioner amb atenció a IAM, responsabilitat compartida, logs i costos.",
-          tools: "IAM · conceptes CloudTrail · responsabilitat compartida",
+          text: "Avanço cap a la seguretat cloud mitjançant AWS AI Practitioner i Cloud Practitioner, amb atenció a IAM, logs, responsabilitat compartida i automatització segura.",
+          tools: "IAM · conceptes CloudTrail · IA a AWS · responsabilitat compartida",
         },
         {
           code: "OPS",
@@ -1092,9 +1098,9 @@ const content = {
         },
         {
           issuer: "AWS Skill Builder",
-          title: "Ruta de Cloud Practitioner",
-          focus: "Evidència del curs; examen de certificació en preparació",
-          year: "Actiu",
+          title: "Ruta AI Practitioner → Cloud Practitioner",
+          focus: "Evidència formativa; AIF-C01 programat per al setembre de 2026",
+          year: "Actiu 2026",
           href: links.awsEvidence,
         },
         {
@@ -1115,7 +1121,7 @@ const content = {
       educationLabel: "Formació i desenvolupament",
       roles: [
         {
-          period: "2025 — ARA",
+          period: "2026 — ARA",
           role: "Administració amb responsabilitat IT pràctica",
           organisation: "Operacions immobiliàries · Menorca",
           text:
@@ -1149,10 +1155,10 @@ const content = {
         },
         {
           period: "EN CURS",
-          title: "Desenvolupament Blue Team i cloud",
+          title: "Desenvolupament Blue Team, cloud i automatització",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Laboratoris continus d’anàlisi de xarxa, forense, intel·ligència d’amenaces, fonaments de Splunk, Linux i preparació d’AWS Cloud Practitioner.",
+            "Laboratoris continus d’anàlisi de xarxa, forense, intel·ligència d’amenaces, Splunk, Linux i AWS; AIF-C01 està programat per al setembre de 2026 abans de Cloud Practitioner.",
         },
         {
           period: "BASE ACADÈMICA",
@@ -1166,7 +1172,7 @@ const content = {
         "Anglès + castellà natius",
         "Català professional",
         "Permís de treball UE + Regne Unit",
-        "Remote-first des de Menorca",
+        "Remot / híbrid a Espanya i la UE",
       ],
     },
     about: {
@@ -1175,7 +1181,7 @@ const content = {
       lead:
         "Estic fent el salt a la ciberseguretat des d’operacions d’atenció al client, administració i suport IT pràctic. Aquest recorregut no és una desviació: m’ha ensenyat a documentar, prioritzar, protegir informació sensible i comunicar quan la situació es complica.",
       body:
-        "Fora de la feina construeixo projectes públics de seguretat, mantinc un laboratori defensiu amb Raspberry Pi i estudio SOC, resposta a incidents, intel·ligència d’amenaces i fonaments AWS. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
+        "Fora de la feina construeixo projectes públics de seguretat, mantinc un laboratori defensiu amb Raspberry Pi i estudio SOC, resposta a incidents, intel·ligència d’amenaces i AWS amb focus a llarg termini en automatització de seguretat cloud. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
       principles: [
         ["Evidència abans que afirmacions", "Si dic que ho he construït, hi ha d’haver un repositori, informe o nota de laboratori."],
         ["Útil abans que vistós", "El següent control operatiu importa més que una altra insígnia decorativa."],
@@ -1184,14 +1190,14 @@ const content = {
     },
     contact: {
       eyebrow: "Contacte",
-      title: "Parlem del teu equip de seguretat.",
+      title: "Parlem de feina junior de seguretat que aporti valor.",
       text:
-        "Busco oportunitats junior en SOC, Blue Team i operacions de seguretat. També estic obert a llocs d’operacions IT o NOC propers a seguretat on el monitoratge, la gestió d’incidències i l’escalat siguin una part central de la feina.",
+        "Busco oportunitats junior en SOC, Blue Team i llocs amb recorregut cap a seguretat cloud. També estic obert a operacions IT o NOC properes a seguretat on el monitoratge, la gestió d’incidències i l’escalat siguin una part central de la feina.",
       email: "Escriure a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
       cv: "Obrir CV",
-      availability: "Amb base a Menorca · Anglès i castellà natius",
+      availability: "Amb base a Menorca · Remot / híbrid a Espanya i la UE · habilitat per al Regne Unit",
     },
     footer: {
       note: "Construït com a evidència pràctica auditable.",
@@ -1446,7 +1452,7 @@ export default function Home() {
           </button>
 
           <div className={`header-panel ${menuOpen ? "is-open" : ""}`}>
-            <nav id="primary-navigation" aria-label="Primary">
+            <nav id="primary-navigation" aria-label={t.meta.primaryNav}>
               {(
                 [
                   "work",
@@ -1473,7 +1479,7 @@ export default function Home() {
               {t.nav.live}
             </div>
 
-            <div className="languages" aria-label="Language">
+            <div className="languages" aria-label={t.meta.language}>
               {(["en", "es", "ca"] as const).map((lang) => (
                 <button
                   key={lang}
@@ -1908,7 +1914,14 @@ export default function Home() {
         type="button"
         className={`back-to-top ${showTop ? "is-visible" : ""}`}
         aria-label={t.meta.top}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+              ? "auto"
+              : "smooth",
+          })
+        }
       >
         ↑
       </button>
