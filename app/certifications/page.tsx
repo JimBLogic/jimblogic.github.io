@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import "./certifications.css";
 
 type Certificate = { name: string; issuer: string; href: string; featured?: boolean };
+type Language = "en" | "es" | "ca";
 
 const certificates: Certificate[] = [
   { name: "Blue Team Junior Analyst Pathway Bundle", issuer: "Security Blue Team", href: "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Blue%20Team%20Junior%20Analyst%20Pathway%20Bundle-btja.pdf", featured: true },
@@ -46,9 +47,77 @@ const certificates: Certificate[] = [
   { name: "Web Development with Python", issuer: "IBM", href: "https://www.credly.com/badges/377ba6ff-0d4b-41df-8477-5ba08748c63d" },
 ];
 
+const copy = {
+  en: {
+    skip: "Skip to credentials",
+    back: "Portfolio",
+    eyebrow: "VERIFIABLE LEARNING EVIDENCE",
+    title: "Credentials, without the badge wall.",
+    intro: "A complete, searchable record. Featured credentials come first; every card opens the original PDF, repository evidence or issuer verification page.",
+    records: "records",
+    issuers: "issuers",
+    search: "Search",
+    issuer: "Issuer",
+    all: "All",
+    placeholder: "Try: forensics, AWS, Python…",
+    showing: "Showing",
+    of: "of",
+    featured: "Featured",
+    empty: "No matching credentials. Try a broader search.",
+    return: "Return to portfolio",
+    filters: "Credential filters",
+    list: "Credentials",
+    language: "Language",
+  },
+  es: {
+    skip: "Saltar a las credenciales",
+    back: "Portfolio",
+    eyebrow: "EVIDENCIA FORMATIVA VERIFICABLE",
+    title: "Credenciales, sin un muro de insignias.",
+    intro: "Un registro completo y buscable. Las credenciales destacadas aparecen primero; cada tarjeta abre el PDF original, la evidencia del repositorio o la verificación del emisor.",
+    records: "registros",
+    issuers: "emisores",
+    search: "Buscar",
+    issuer: "Emisor",
+    all: "Todos",
+    placeholder: "Prueba: forense, AWS, Python…",
+    showing: "Mostrando",
+    of: "de",
+    featured: "Destacada",
+    empty: "No hay credenciales coincidentes. Prueba una búsqueda más amplia.",
+    return: "Volver al portfolio",
+    filters: "Filtros de credenciales",
+    list: "Credenciales",
+    language: "Idioma",
+  },
+  ca: {
+    skip: "Saltar a les credencials",
+    back: "Portfolio",
+    eyebrow: "EVIDÈNCIA FORMATIVA VERIFICABLE",
+    title: "Credencials, sense un mur d’insígnies.",
+    intro: "Un registre complet i cercable. Les credencials destacades apareixen primer; cada targeta obre el PDF original, l’evidència del repositori o la verificació de l’emissor.",
+    records: "registres",
+    issuers: "emissors",
+    search: "Cercar",
+    issuer: "Emissor",
+    all: "Tots",
+    placeholder: "Prova: forense, AWS, Python…",
+    showing: "Mostrant",
+    of: "de",
+    featured: "Destacada",
+    empty: "No hi ha credencials coincidents. Prova una cerca més àmplia.",
+    return: "Tornar al portfolio",
+    filters: "Filtres de credencials",
+    list: "Credencials",
+    language: "Idioma",
+  },
+} as const;
+
 export default function CertificationsPage() {
+  const [language, setLanguage] = useState<Language>("en");
   const [query, setQuery] = useState("");
   const [issuer, setIssuer] = useState("All");
+  const t = copy[language];
   const issuers = useMemo(() => ["All", ...Array.from(new Set(certificates.map((item) => item.issuer))).sort()], []);
   const results = certificates.filter((item) => {
     const matchesIssuer = issuer === "All" || item.issuer === issuer;
@@ -56,35 +125,81 @@ export default function CertificationsPage() {
     return matchesIssuer && haystack.includes(query.trim().toLowerCase());
   });
 
+  useEffect(() => {
+    let timer: number | undefined;
+    try {
+      const saved = window.localStorage.getItem("jimblogic-language") as Language | null;
+      if (saved && saved in copy) {
+        timer = window.setTimeout(() => {
+          setLanguage(saved);
+        }, 0);
+      }
+    } catch {
+      // The default language remains available when storage is blocked.
+    }
+    return () => {
+      if (timer) window.clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    try {
+      window.localStorage.setItem("jimblogic-language", language);
+    } catch {
+      // The selection still applies to this visit.
+    }
+  }, [language]);
+
+  const changeLanguage = (next: Language) => {
+    setLanguage(next);
+  };
+
   return (
     <>
-    <a className="skip-link" href="#certificates">Skip to certificates</a>
+    <a className="skip-link" href="#certificates">{t.skip}</a>
     <main className="cert-page">
       <nav className="cert-nav" aria-label="Breadcrumb">
-        <Link href="/">← Portfolio</Link><span>JimBLogic.</span>
+        <Link href="/">← {t.back}</Link>
+        <div className="cert-nav-tools">
+          <div className="languages" aria-label={t.language}>
+            {(["en", "es", "ca"] as const).map((lang) => (
+              <button
+                key={lang}
+                type="button"
+                className={language === lang ? "is-active" : ""}
+                aria-pressed={language === lang}
+                onClick={() => changeLanguage(lang)}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <span>JimBLogic.</span>
+        </div>
       </nav>
       <header className="cert-hero">
-        <p className="cert-eyebrow">VERIFIABLE LEARNING EVIDENCE</p>
-        <h1>Credentials, without the badge wall.</h1>
-        <p>A complete, searchable record. Featured credentials come first; every card opens the original PDF, repository evidence or issuer verification page.</p>
-        <div className="cert-stats"><strong>{certificates.length}</strong><span>records</span><strong>{issuers.length - 1}</strong><span>issuers</span></div>
+        <p className="cert-eyebrow">{t.eyebrow}</p>
+        <h1>{t.title}</h1>
+        <p>{t.intro}</p>
+        <div className="cert-stats"><strong>{certificates.length}</strong><span>{t.records}</span><strong>{issuers.length - 1}</strong><span>{t.issuers}</span></div>
       </header>
-      <section className="cert-controls" aria-label="Certificate filters">
-        <label><span>Search</span><input type="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.currentTarget.value)} placeholder="Try: forensics, AWS, Python…" /></label>
-        <label><span>Issuer</span><select value={issuer} onChange={(event) => setIssuer(event.target.value)}>{issuers.map((item) => <option key={item}>{item}</option>)}</select></label>
+      <section className="cert-controls" aria-label={t.filters}>
+        <label><span>{t.search}</span><input type="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.currentTarget.value)} placeholder={t.placeholder} /></label>
+        <label><span>{t.issuer}</span><select value={issuer} onChange={(event) => setIssuer(event.target.value)}>{issuers.map((item) => <option key={item} value={item}>{item === "All" ? t.all : item}</option>)}</select></label>
       </section>
-      <p className="result-count" aria-live="polite">Showing {results.length} of {certificates.length}</p>
-      <section className="cert-grid" id="certificates" aria-label="Certificates">
+      <p className="result-count" aria-live="polite">{t.showing} {results.length} {t.of} {certificates.length}</p>
+      <section className="cert-grid" id="certificates" aria-label={t.list}>
         {results.map((item, index) => (
           <a href={item.href} target="_blank" rel="noopener noreferrer" className={item.featured ? "cert-card featured" : "cert-card"} key={`${item.issuer}-${item.name}`}>
             <span className="cert-index">{String(index + 1).padStart(2, "0")}</span>
-            <span className="cert-copy"><small>{item.issuer}</small><strong>{item.name}</strong>{item.featured ? <em>Featured</em> : null}</span>
+            <span className="cert-copy"><small>{item.issuer}</small><strong>{item.name}</strong>{item.featured ? <em>{t.featured}</em> : null}</span>
             <span className="cert-open" aria-hidden="true">↗</span>
           </a>
         ))}
       </section>
-      {results.length === 0 ? <p className="cert-empty">No matching credentials. Try a broader search.</p> : null}
-      <footer className="cert-footer"><Link href="/">Return to portfolio</Link><span>© 2026 Jaime Ramsden de Frutos</span></footer>
+      {results.length === 0 ? <p className="cert-empty">{t.empty}</p> : null}
+      <footer className="cert-footer"><Link href="/">{t.return}</Link><span>© 2026 Jaime Ramsden de Frutos</span></footer>
     </main>
     </>
   );

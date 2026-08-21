@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | JimBLogic",
   },
   description:
-    "Jaime Ramsden de Frutos — Junior SOC Analyst focused on Blue Team and security operations. Auditable proof of work in threat intelligence automation, defensive homelabs, Linux, monitoring, incident response and AWS foundations.",
+    "Jaime Ramsden de Frutos — Junior SOC Analyst focused on Blue Team, cloud security and practical automation. Auditable proof of work in threat intelligence, defensive homelabs, Linux, monitoring, incident response and AWS foundations.",
   keywords: [
     "Junior SOC Analyst",
     "Blue Team",
@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     "Incident Response",
     "Linux",
     "AWS",
+    "Cloud Security",
+    "Security Automation",
     "Menorca",
   ],
   authors: [{ name: "Jaime Ramsden de Frutos" }],
@@ -74,9 +76,6 @@ export const metadata: Metadata = {
       "Auditable defensive proof of work: CyberDailyLog, a Raspberry Pi homelab and verifiable Blue Team learning.",
     images: ["/images/generic-sbc-homelab.webp"],
   },
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -104,7 +103,7 @@ const structuredData = {
       alternateName: "JimBLogic",
       url: siteUrl,
       email: "mailto:jrf91@pm.me",
-      jobTitle: "Junior SOC Analyst / Blue Team / Security Operations",
+      jobTitle: "Junior SOC Analyst / Blue Team / Cloud Security",
       knowsLanguage: ["English", "Spanish", "Catalan"],
       homeLocation: {
         "@type": "Place",
@@ -126,6 +125,7 @@ const structuredData = {
         "Digital forensics foundations",
         "Incident response foundations",
         "AWS cloud foundations",
+        "Security automation",
       ],
     },
     {
