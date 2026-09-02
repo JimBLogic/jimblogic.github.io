@@ -51,7 +51,7 @@ npm run start     # preview the generated out/ directory
 ## Live versions
 
 - GitHub Pages: <https://jimblogic.github.io/>
-- ChatGPT Sites mirror: <https://jimblogic-portfolio-lab.jimblogic.chatgpt.site/>
+- ChatGPT Sites mirror: <https://portfolio.jimblogic.chatgpt.site/>
 
 The UI, translations, portfolio content and lab routes match the published Sites version reviewed on 21 August 2026. Platform adapters remain deliberately separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime. This keeps the user-facing source equivalent without breaking GitHub Pages, localhost or the Docker/Nginx self-host path.
 
