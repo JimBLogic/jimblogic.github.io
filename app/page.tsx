@@ -26,7 +26,7 @@ const links = {
   cyberDailyLog: "https://github.com/JimBLogic/CyberDailyLog",
   cyberDailyLab: "/labs/cyberdailylog",
   cyberDailyLive:
-    "https://cyberdailylog-dashboard.jimblogic.chatgpt.site",
+    "https://cyberdailylog.jimblogic.chatgpt.site",
   cyberDailyReport:
     "https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/latest.md",
   austrianMonitorLab: "/labs/austrian-monitor",
