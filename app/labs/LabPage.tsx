@@ -9,7 +9,7 @@ export type LabId = "cyberdailylog" | "austrian-monitor";
 const labConfig = {
   cyberdailylog: {
     code: "INTEL / 01",
-    liveUrl: "https://cyberdailylog-dashboard.jimblogic.chatgpt.site",
+    liveUrl: "https://cyberdailylog.jimblogic.chatgpt.site",
     repoUrl: "https://github.com/JimBLogic/CyberDailyLog",
     sibling: "austrian-monitor" as LabId,
     siblingPath: "/labs/austrian-monitor",
