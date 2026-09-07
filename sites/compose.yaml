@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build:
+      context: .
+    image: jimblogic-portfolio:local
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"

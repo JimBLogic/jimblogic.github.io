@@ -62,3 +62,7 @@ The exact pre-migration portfolio remains preserved in `archive/pre-sites-migrat
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Privacy and Sites mirror
+
+The complete Sites source is in `sites/`. Run `npm run verify:mirror` to verify shared source, privacy and the static export. See [the privacy audit and reproduction instructions](docs/PRIVACY_AUDIT.md). The CV is served locally on both domains. Public snapshot refresh is scheduled for 12:00 Europe/Madrid.

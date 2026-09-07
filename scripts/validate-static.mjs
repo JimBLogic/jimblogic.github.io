@@ -3,6 +3,8 @@ import { readFile, stat } from "node:fs/promises";
 
 const required = [
   "out/index.html",
+  "out/privacy/index.html",
+  "out/data/cyberdailylog.json",
   "out/certifications/index.html",
   "out/labs/cyberdailylog/index.html",
   "out/labs/austrian-monitor/index.html",
@@ -45,3 +47,15 @@ assert.match(sitemap, /https:\/\/jimblogic\.github\.io\/labs\/cyberdailylog/);
 assert.match(sitemap, /https:\/\/jimblogic\.github\.io\/labs\/austrian-monitor/);
 
 console.log(`Validated ${required.length} static deployment artifacts.`);
+
+const pages = [["", home], ["certifications/", certifications], ["labs/cyberdailylog/", cyberDailyLog], ["labs/austrian-monitor/", austrianMonitor], ["privacy/", await readFile("out/privacy/index.html", "utf8")]];
+for (const [route, html] of pages) {
+  const tags = html.match(/<link[^>]+rel="canonical"[^>]*>/g) || [];
+  assert.equal(tags.length, 1, route);
+  assert.ok(tags[0].includes(`href="https://jimblogic.github.io/${route}"`), route);
+  assert.match(html, /Content-Security-Policy/);
+  assert.doesNotMatch(html, /fonts\.googleapis\.com|googletagmanager\.com/);
+  if (route !== "privacy/") assert.match(html, /href="\/privacy\/"/);
+}
+assert.match(sitemap, /https:\/\/jimblogic\.github\.io\/privacy\//);
+console.log("Verified independent canonicals, privacy links and CSP on all five routes.");

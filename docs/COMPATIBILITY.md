@@ -1,49 +1,17 @@
 # Compatibility and mirror contract
 
-## Canonical source
+The root is the GitHub Pages static export; `sites/` contains the complete Sites Worker source. All root application pages, helpers and public assets are mirrored byte for byte. The Sites-only authentication helper remains unused and is not a public route.
 
-This GitHub repository is the public, reproducible source for the portable portfolio interface. The ChatGPT Sites edition mirrors the same visible product surface: copy, translations, styles, project cards and the two `/labs/` routes.
-
-Platform-specific adapters are intentionally not forced into one configuration:
-
-| Target | Adapter | Output |
+| Target | Runtime | Output |
 |---|---|---|
 | GitHub Pages | Next.js static export | `out/` |
-| Docker / Nginx | The same static export | `out/` served by Nginx |
-| ChatGPT Sites | Vinext + Cloudflare-compatible Worker | Sites deployment artifact |
+| Docker / Nginx | The same static export | `out/` |
+| ChatGPT Sites | Vinext / Cloudflare-compatible Worker | `sites/dist/` |
 
-This split keeps the interface portable without pretending that GitHub Pages can execute a Worker runtime.
+Run `npm ci` then `npm run verify:mirror`. To verify the Sites adapter, run `npm ci` and `npm run verify` in `sites/`. The two lockfiles and build configurations remain adapter-specific.
 
-## Compatibility mode
+The canonical origin is https://jimblogic.github.io/ on both publications. Each content route has its own canonical URL. The source snapshot preserves the existing Sites project identity; credentials and generated output are excluded. Forks must register their own Site identity.
 
-Run the complete portable verification path with:
+A GitHub push publishes Pages through Actions. Sites publication uses the native Sites workflow after checking the same application source. Daily public feed updates are mirrored in source and served by Sites through its own server, without browser calls to GitHub.
 
-```bash
-npm ci
-npm run verify:mirror
-```
-
-`verify:mirror` lints the source, builds the static export and checks the homepage, certifications, both project briefs, crawl routes and stable public documents. The generated `out/` directory requires no Node.js server, database or secret at runtime.
-
-## Mirror scope
-
-The following paths must remain equivalent between GitHub and Sites:
-
-- `app/page.tsx`
-- `app/globals.css`
-- `app/labs/LabPage.tsx`
-- `app/labs/cyberdailylog/page.tsx`
-- `app/labs/austrian-monitor/page.tsx`
-- `public/llms.txt`
-
-Metadata bases, build configuration, hosting manifests and deployment helpers are adapter-specific and may differ.
-
-## Safe update sequence
-
-1. Update the portable interface in this repository.
-2. Run `npm run verify:mirror`.
-3. Review the generated routes locally with `npm run start`.
-4. Merge only after GitHub Actions passes.
-5. Apply the same portable-surface change to Sites and verify its deployment independently.
-
-No credentials, generated build directories or platform-owned deployment identifiers belong in the portable source.
+See [the privacy inventory and deployment procedure](PRIVACY_AUDIT.md).

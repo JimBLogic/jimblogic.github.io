@@ -11,9 +11,12 @@
     "build:compat": "next build",
     "start": "npx serve@14 out",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
-    "test": "npm run build && node scripts/validate-static.mjs",
+    "test": "npm run privacy:audit && npm run test:privacy && npm run build && node scripts/validate-static.mjs",
     "validate": "node scripts/validate-static.mjs",
-    "verify:mirror": "npm run lint && npm test"
+    "verify:mirror": "npm run lint && node scripts/verify-mirror.mjs && npm test",
+    "privacy:audit": "node scripts/privacy-audit.mjs",
+    "test:privacy": "node --experimental-strip-types --test tests/privacy.test.mjs",
+    "feed:refresh": "node --experimental-strip-types scripts/sync-public-feed.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -29,5 +32,6 @@
     "eslint-config-next": "16.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
-  }
+  },
+  "type": "module"
 }
