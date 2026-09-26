@@ -1,11 +1,11 @@
 {
-  "above_threshold": 26,
-  "generated_at": "2026-09-25T10:01:29+00:00",
+  "above_threshold": 1536,
+  "generated_at": "2026-09-26T10:04:47+00:00",
   "pipeline_status": "operational",
-  "qualified_developments": 83,
+  "qualified_developments": 2553,
   "source_health": {
     "core": {
-      "healthy": 2,
+      "healthy": 3,
       "total": 3
     }
   }
