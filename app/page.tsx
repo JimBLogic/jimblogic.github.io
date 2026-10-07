@@ -14,6 +14,7 @@ const links = {
   linkedin: "https://www.linkedin.com/in/jimblogic/",
   tryHackMe: "https://tryhackme.com/p/JimBLogic",
   cv: "/documents/Jaime-Ramsden-de-Frutos-CV.pdf",
+  coverLetter: "/documents/Jaime-Ramsden-de-Frutos-Cover-Letter.pdf",
   email: "mailto:jrf91@pm.me",
   cyberDailyLog: "https://github.com/JimBLogic/CyberDailyLog",
   cyberDailyLab: "/labs/cyberdailylog",
@@ -368,7 +369,7 @@ const content = {
           signal: "Live operations · customer impact · bilingual communication",
         },
         {
-          period: "PREVIOUS · UK",
+          period: "2016 — 2022",
           role: "Senior support work",
           organisation: "Residential services · United Kingdom",
           text:
@@ -750,7 +751,7 @@ const content = {
           signal: "Operaciones en vivo · impacto al usuario · comunicación bilingüe",
         },
         {
-          period: "ANTERIOR · REINO UNIDO",
+          period: "2016 — 2022",
           role: "Profesional senior de apoyo",
           organisation: "Servicios residenciales · Reino Unido",
           text:
@@ -1132,7 +1133,7 @@ const content = {
           signal: "Operacions en viu · impacte a l’usuari · comunicació bilingüe",
         },
         {
-          period: "ANTERIOR · REGNE UNIT",
+          period: "2016 — 2022",
           role: "Professional sènior de suport",
           organisation: "Serveis residencials · Regne Unit",
           text:
@@ -1827,6 +1828,9 @@ export default function Home() {
               </a>
               <a href={links.cv} target="_blank" rel="noopener noreferrer">
                 {t.contact.cv} <Arrow />
+              </a>
+              <a href={links.coverLetter} target="_blank" rel="noopener noreferrer">
+                {language === "es" ? "Carta de presentación (EN)" : language === "ca" ? "Carta de presentació (EN)" : "Cover letter"} <Arrow />
               </a>
             </div>
             <p className="contact-meta">{t.contact.availability}</p>

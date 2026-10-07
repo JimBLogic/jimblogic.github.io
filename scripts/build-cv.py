@@ -1,54 +1,52 @@
-"""Generate the portfolio CV from reviewed professional claims; requires reportlab."""
+"""Build the preserved photo CV and separate cover letter. Requires PyMuPDF and reportlab."""
 from pathlib import Path
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+import fitz
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.colors import HexColor
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-pdfmetrics.registerFont(TTFont("CVSans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
-pdfmetrics.registerFont(TTFont("CVSans-Bold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"))
-pdfmetrics.registerFontFamily("CVSans",normal="CVSans",bold="CVSans-Bold",italic="CVSans",boldItalic="CVSans-Bold")
+pdfmetrics.registerFont(TTFont("DocSans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
+pdfmetrics.registerFont(TTFont("DocSansBold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"))
+pdfmetrics.registerFontFamily("DocSans",normal="DocSans",bold="DocSansBold",italic="DocSans",boldItalic="DocSansBold")
 ROOT=Path(__file__).resolve().parents[1]
-styles=getSampleStyleSheet()
-styles.add(ParagraphStyle(name='NameCV',fontName='CVSans-Bold',fontSize=22,leading=26,textColor=HexColor('#193a47'),spaceAfter=8))
-styles.add(ParagraphStyle(name='SectionCV',fontName='CVSans-Bold',fontSize=11,leading=14,textColor=HexColor('#193a47'),spaceBefore=13,spaceAfter=6))
-styles.add(ParagraphStyle(name='BodyCV',fontName='CVSans',fontSize=10,leading=14,spaceAfter=6))
+out=ROOT/'public/documents'
+pdf=fitz.open(ROOT/'scripts/assets/cv-photo-template.pdf')
+def put(page,rect,text,size=9,font='helv',color=(0,0,0)):
+ fontfile='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if font=='hebo' else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+ font='EmbeddedBold' if font=='hebo' else 'EmbeddedSans'
+ pdf[page].insert_font(fontname=font,fontfile=fontfile)
+ remaining=pdf[page].insert_textbox(fitz.Rect(rect),text,fontsize=size,fontname=font,color=color,lineheight=1.22)
+ assert remaining>=0,(text,remaining)
+# Preserve the original photograph, header, section layout and employment detail.
+pdf[0].draw_rect(fitz.Rect(42,95,300,130),color=None,fill=(18/255,53/255,59/255),overlay=True)
+put(0,(42.5,98,295,132),'Junior SOC / Blue Team candidate\nThreat intelligence and cloud foundations',10.5,'hebo',(1,1,1))
+put(0,(35.5,274,562,344),'Seeking my first professional SOC / Blue Team role. I combine hands-on defensive training in Splunk/SPL, TryHackMe and Security Blue Team with administration, IT support and customer operations. My public projects demonstrate source-backed CTI, Linux, containers, reproducibility and clear technical documentation. CyberDailyLog is my main defensive project; homelab operational validation is still in progress. Projects and guided labs are not professional SOC employment. Native English and Spanish communicator, used to careful records and operational pressure.',9)
+put(0,(37,400,563,415),'- TryHackMe profile JimBLogic: public hands-on learning evidence; ranking and activity change over time.',9)
+put(0,(37,509,563,540),'- AWS AIF-C01: first attempt completed 29 September 2026; targeted study before a retake. CLF-C02: preparing. Neither AWS certification is earned; Skill Builder / SimuLearn badges are training evidence.',9)
+put(1,(35.5,94,562,109),'Administrative Assistant & IT Support Functions | Administración de Fincas Vil-la | 2026',9)
+for i in range(2):put(i,(195,819,435,832),'Jamie Ramsden de Frutos - Junior SOC / Blue Team candidate',7,color=(.35,.35,.35))
+pdf.set_metadata({'title':'Jamie Ramsden de Frutos - Junior SOC / Blue Team CV','author':'Jamie Ramsden de Frutos'})
+pdf.subset_fonts()
+pdf.save(out/'Jaime-Ramsden-de-Frutos-CV.pdf',garbage=4,deflate=True)
+# A genuine cover letter, based on the project-focused document, not a relabelled CV.
+styles={
+ 'name':ParagraphStyle('name',fontName='DocSansBold',fontSize=21,leading=26,textColor=HexColor('#12353b'),spaceAfter=9),
+ 'meta':ParagraphStyle('meta',fontName='DocSans',fontSize=10,leading=15,spaceAfter=18),
+ 'body':ParagraphStyle('body',fontName='DocSans',fontSize=10,leading=14.5,spaceAfter=13),
+ 'subject':ParagraphStyle('subject',fontName='DocSansBold',fontSize=12,leading=17,textColor=HexColor('#12353b'),spaceAfter=22),
+}
 story=[]
-def p(text,style='BodyCV'):story.append(Paragraph(text,styles[style]))
-def h(text):p(text,'SectionCV')
-def bullet(text):p('• '+text)
-p('Jaime Ramsden de Frutos','NameCV')
-p('Junior SOC / Blue Team candidate | CTI and automation | Cloud foundations')
-p('Menorca, Spain | English / Spanish / Catalan | Remote / hybrid Spain and EU; UK eligible')
-p('<link href="mailto:jrf91@pm.me">jrf91@pm.me</link> | <link href="https://jimblogic.github.io/">jimblogic.github.io</link> | <link href="https://github.com/JimBLogic">github.com/JimBLogic</link>')
-h('PROFILE')
-p('Seeking my first professional SOC / Blue Team role. I combine administration, customer operations and practical IT support with public defensive projects and guided cybersecurity training. My focus is source-backed vulnerability intelligence, Linux and containers, reproducibility, troubleshooting, trust boundaries and clear technical documentation. Project and lab experience is not presented as paid SOC employment.')
-h('ORIGINAL PROJECTS / PROOF OF WORK')
-bullet('<b>CyberDailyLog - flagship defensive project.</b> Python automation using CISA KEV, NVD and FIRST EPSS; stateful CVE tracking, state transitions, correlation and prioritisation. Public reports, source-health checks, explicit degradation and publication SLO records. A CTI learning project, not a SIEM or enterprise SOC service. <link href="https://github.com/JimBLogic/CyberDailyLog">Repository and evidence</link>.')
-bullet('<b>Defensive Homelab.</b> Reproducible Raspberry Pi 4 baseline with LITE / FULL Docker configurations, service-health tooling and documented trust boundaries. Deployment-ready baseline; operational validation in progress. Next evidence: service health, authentication triage, Windows/Sysmon or equivalent telemetry, a SIEM query, sanitised incident note and detection tuning. These exercises are pending. <link href="https://github.com/JimBLogic/defensive-homelab-blue-team">Repository</link>.')
-bullet('<b>Austrian Business Cycle Monitor.</b> Educational macro-data project with source provenance, freshness and failure states; not investment advice. <link href="https://github.com/JimBLogic/AustrianBusinessCycleMonitor">Repository</link>.')
-bullet('<b>Portfolio.</b> EN/ES/CA content, privacy controls, security headers, route validation and GitHub Pages / Sites delivery. <link href="https://github.com/JimBLogic/jimblogic.github.io">Source and CI</link>.')
-h('AWS LEARNING STATUS')
-p('AWS AI Practitioner (AIF-C01): preparation and first exam attempt completed on 29 September 2026; continuing targeted study before a future retake. AWS Cloud Practitioner (CLF-C02): preparing. Neither certification has been earned. AWS SimuLearn / Skill Builder badges are training evidence, not professional AWS certification.')
-story.append(PageBreak())
-p('Experience and supporting learning','NameCV')
-h('PROFESSIONAL BACKGROUND - OUTSIDE SOC')
-bullet('<b>Administration and practical IT support - property operations, Menorca (2026).</b> Administrative workflows, supplier coordination, sensitive records, everyday systems troubleshooting, written follow-up and escalation.')
-bullet('<b>Administrative / IT support - Azulona (2025).</b> Booking administration, invoicing, customer support and everyday software troubleshooting.')
-bullet('<b>Customer operations - Jet2.com (2023-2025).</b> Time-sensitive passenger support, accurate information, multilingual communication and escalation.')
-bullet('<b>Auxiliary services - UTE Masa-Sagital (2022-2023).</b> Support for passengers needing assistance in an airport environment.')
-bullet('<b>Previous senior residential support - United Kingdom.</b> People support, confidential records, shift handovers and coordination. This was a care-services role, not cybersecurity incident response.')
-h('LEARNING / GUIDED LABS')
-p('TryHackMe, Security Blue Team and Splunk / Hack The Box learning exercises support junior foundations in log analysis, network analysis, OSINT, forensics and incident-handling discipline. Public profile: <link href="https://tryhackme.com/p/JimBLogic">tryhackme.com/p/JimBLogic</link>. Rankings and room counts are not treated as permanent credentials.')
-h('SELECTED TRAINING & CREDENTIALS')
-bullet('UpgradeHub: Cybersecurity, Ethical Hacking & Cloud bootcamp, 350 hours (2024).')
-bullet('Security Blue Team: Blue Team Junior Analyst Pathway and introductory defensive courses.')
-bullet('Cisco: Cyber Threat Management and Introduction to Cybersecurity; arcX: Threat Intelligence Foundation.')
-bullet('Cybrary, IBM and AWS Skill Builder: supporting cybersecurity, Python and cloud learning records. Verify individual records at <link href="https://jimblogic.github.io/certifications/">jimblogic.github.io/certifications</link>.')
-h('FORKS / UPSTREAM EXPERIMENTS')
-p('Third-party repositories and upstream experiments are separate from my original projects. Fork ownership alone does not establish a contribution; review the upstream and commit history.')
-h('EDUCATION & LANGUAGES')
-p('Sports Science academic background, Universitat Ramon Llull; Advanced Technician in Physical and Sports Activities, IES Cap de Llevant. English and Spanish: native; Catalan: professional (Level C).')
-def footer(canvas,doc):
- canvas.setFont('CVSans',8);canvas.setFillColor(HexColor('#555555'));canvas.drawString(42,27,'Jaime Ramsden de Frutos | Professional content reviewed 7 October 2026');canvas.drawRightString(553,27,str(doc.page))
-SimpleDocTemplate(str(ROOT/'public/documents/Jaime-Ramsden-de-Frutos-CV.pdf'),pagesize=(595,842),rightMargin=42,leftMargin=42,topMargin=38,bottomMargin=43,title='Jaime Ramsden de Frutos - Junior SOC / Blue Team candidate',author='Jaime Ramsden de Frutos').build(story,onFirstPage=footer,onLaterPages=footer)
+def p(s,k='body'):story.append(Paragraph(s,styles[k]))
+p('Jamie Ramsden de Frutos','name')
+p('Menorca, Spain | English / Spanish / Catalan<br/><link href="mailto:jrf91@pm.me">jrf91@pm.me</link> | <link href="https://jimblogic.github.io/">jimblogic.github.io</link>','meta')
+p('Application for a Junior SOC / Blue Team opportunity','subject')
+p('Dear Hiring Team,')
+p('I am seeking my first professional role in SOC / Blue Team, bringing practical defensive learning and a background in administration, IT support and customer-facing operations. I am interested in remote or hybrid opportunities in Spain and the EU, and I also have the right to work in the UK.')
+p('My strongest evidence is CyberDailyLog, a personal defensive threat-intelligence and automation project. It brings together CISA KEV, NVD and FIRST EPSS, tracks CVE state changes, and produces source-backed reports. Source-health checks, explicit degradation and publication timing records make its limitations and failures visible. It is a learning and research project, not a claim of enterprise SOC operation.')
+p('I also maintain a reproducible defensive homelab baseline built around Linux and containers. Deployment configuration and documentation are available for review; operational validation is still in progress. My next deliverables are documented service health, authentication triage, telemetry, a SIEM query, an incident note and detection tuning. I distinguish clearly between planned evidence and completed work.')
+p('My previous roles have taught me to prioritise competing requests, troubleshoot everyday systems, protect sensitive information and leave clear handovers. Residential support work at The Community of Saint Antony & Saint Elias (2016-2022), airport customer operations and property administration in 2026 provide that operational background. They are not cybersecurity incident-response employment.')
+p('Training supports this practical work. I completed preparation and my first AWS AI Practitioner AIF-C01 exam attempt on 29 September 2026 and am reinforcing the areas identified before a future retake. Cloud Practitioner CLF-C02 remains in preparation; neither is an earned AWS certification. My portfolio separates training badges, guided labs and original projects.')
+p('I would welcome the opportunity to discuss my repositories, explain my technical decisions and contribute under the guidance of an experienced security team. I offer careful documentation, curiosity and a willingness to make my work reproducible and reviewable.')
+p('Kind regards,<br/><b>Jamie Ramsden de Frutos</b>')
+SimpleDocTemplate(str(out/'Jaime-Ramsden-de-Frutos-Cover-Letter.pdf'),pagesize=(595,842),leftMargin=48,rightMargin=48,topMargin=42,bottomMargin=40,title='Jamie Ramsden de Frutos - Junior SOC / Blue Team cover letter',author='Jamie Ramsden de Frutos').build(story)

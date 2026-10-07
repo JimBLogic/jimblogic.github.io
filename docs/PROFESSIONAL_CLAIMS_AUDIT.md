@@ -38,3 +38,7 @@ CyberDailyLog: src/cyberdailylog/state.py, tests/unit/test_state_transitions.py,
 ## Deliberately preserved
 
 Existing visual design, EN/ES/CA switching, five routes, responsive rules, platform-specific builds, canonical URLs, privacy model, workflows, document URLs and project boundaries. No dependencies or new tracking services introduced. Source-feed timestamps are data timestamps, not proof of a newly completed professional exercise.
+
+## Owner clarification and document preference - 7 October 2026
+
+Owner confirmed Community employment through 2022 and administration in 2026. Public dates now show 2016-2022 and 2026 consistently. Restored the previous two-page photo CV layout with accurate candidate/AWS claims and no volatile ranking. The project-focused replacement is now a separate one-page cover letter, linked from Contact. Earlier pending-date and browser-QA notes above describe the prior review, not outstanding date questions.
