@@ -734,7 +734,7 @@ const content = {
       educationLabel: "Formación y desarrollo",
       roles: [
         {
-          period: "2026 — AHORA",
+          period: "2026",
           role: "Administración con responsabilidad IT práctica",
           organisation: "Operaciones inmobiliarias · Menorca",
           text:
