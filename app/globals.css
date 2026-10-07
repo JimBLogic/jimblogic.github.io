@@ -2854,3 +2854,11 @@ footer {
 .privacy-page footer { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
 .cert-footer { flex-wrap: wrap; gap: 16px; }
 @media (max-width: 720px) { footer { display: flex; flex-wrap: wrap; gap: 20px; } .footer-centre { align-items: flex-start; text-align: left; } }
+
+.professional-evidence { padding-block: 2.5rem; }
+.professional-evidence p { max-width: 80ch; line-height: 1.7; overflow-wrap: anywhere; }
+.professional-evidence h3 { margin-top: 1.5rem; }
+.professional-evidence details { margin-block: 1rem; padding: 1rem; border: 1px solid #686c70; border-radius: .5rem; }
+.professional-evidence summary { cursor: pointer; font-size: 1rem; font-weight: 600; }
+.professional-evidence li { margin-block: .5rem; }
+.professional-evidence a { text-decoration: underline; text-underline-offset: .2em; }

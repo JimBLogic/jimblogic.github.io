@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 const siteUrl = "https://jimblogic.github.io";
-const lastModified = new Date("2026-09-07T00:00:00.000Z");
+const lastModified = new Date("2026-10-07T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

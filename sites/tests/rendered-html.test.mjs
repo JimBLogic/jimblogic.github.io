@@ -33,7 +33,7 @@ test("renders production portfolio metadata and content", async () => {
   assert.match(html, /Experience that transfers into security work\./);
   assert.match(html, /Blue Team Junior Analyst Pathway/);
   assert.match(html, /EU \+ UK work rights/);
-  assert.match(html, /AIF-C01 is scheduled for September 2026/);
+  assert.match(html, /first exam attempt on 29 September 2026/);
   assert.match(html, /GitHub main mirror/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /ProfilePage/);
@@ -111,7 +111,7 @@ test("serves crawl discovery routes", async () => {
   assert.equal(sitemap.status, 200);
   const xml = await sitemap.text();
   assert.match(xml, /<loc>.*\/certifications\/<\/loc>/);
-  assert.match(xml, /<lastmod>2026-09-07/);
+  assert.match(xml, /<lastmod>2026-10-07/);
 
   const manifest = await worker.fetch(
     new Request("https://portfolio.jimblogic.chatgpt.site/manifest.webmanifest"),

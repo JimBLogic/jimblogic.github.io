@@ -19,7 +19,7 @@ if [[ ! -x "${vinext}" ]]; then
 fi
 
 node scripts/privacy-audit.mjs
-node --experimental-strip-types --test tests/privacy.test.mjs
+node --experimental-strip-types --test tests/privacy.test.mjs tests/professional-claims.test.mjs
 
 echo "Running bounded vinext build..."
 timeout \

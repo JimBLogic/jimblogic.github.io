@@ -15,7 +15,7 @@
     "validate": "node scripts/validate-static.mjs",
     "verify:mirror": "npm run lint && node scripts/verify-mirror.mjs && npm test",
     "privacy:audit": "node scripts/privacy-audit.mjs",
-    "test:privacy": "node --experimental-strip-types --test tests/privacy.test.mjs",
+    "test:privacy": "node --experimental-strip-types --test tests/privacy.test.mjs tests/professional-claims.test.mjs",
     "feed:refresh": "node --experimental-strip-types scripts/sync-public-feed.mjs"
   },
   "dependencies": {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | JimBLogic",
   },
   description:
-    "Junior SOC Analyst portfolio by Jaime Ramsden de Frutos: Blue Team projects, threat intelligence, defensive homelab, Linux, AWS and auditable proof of work.",
+    "Junior SOC / Blue Team candidate portfolio by Jaime Ramsden de Frutos: Blue Team projects, threat intelligence, defensive homelab, Linux, AWS and auditable proof of work.",
   keywords: [
     "Junior SOC Analyst",
     "Blue Team",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   publisher: "Jaime Ramsden de Frutos",
   category: "technology",
   classification: "Cybersecurity portfolio",
-  referrer: "strict-origin-when-cross-origin",
+  referrer: "no-referrer",
   formatDetection: {
     email: false,
     address: false,
@@ -104,7 +104,7 @@ const structuredData = {
       alternateName: "JimBLogic",
       url: siteUrl,
       email: "mailto:jrf91@pm.me",
-      jobTitle: "Junior SOC Analyst / Blue Team / Cloud Security",
+      description: "Candidate seeking a first Junior SOC / Blue Team role; CTI automation projects and cloud security foundations. No professional SOC employment or earned AWS certification claimed.",
       knowsLanguage: ["English", "Spanish", "Catalan"],
       homeLocation: {
         "@type": "Place",
@@ -135,12 +135,13 @@ const structuredData = {
       url: siteUrl,
       name: "JimBLogic Portfolio",
       description:
-        "Auditable cybersecurity proof of work by Junior SOC Analyst Jaime Ramsden de Frutos.",
+        "Auditable cybersecurity proof of work by Junior SOC candidate Jaime Ramsden de Frutos.",
       inLanguage: ["en", "es", "ca"],
       author: { "@id": `${siteUrl}/#person` },
     },
     {
       "@type": "ProfilePage",
+      dateModified: "2026-10-07",
       "@id": `${siteUrl}/#profile-page`,
       url: siteUrl,
       name: "JimBLogic — Junior SOC Analyst & Blue Team Portfolio",
@@ -161,7 +162,7 @@ const structuredData = {
       "@id": "https://github.com/JimBLogic/CyberDailyLog#software",
       name: "CyberDailyLog",
       description:
-        "Automated, source-backed daily Blue Team intelligence pipeline with auditable reports.",
+        "Original CTI automation project using CISA KEV, NVD and FIRST EPSS, stateful CVE tracking, source health and publication SLO evidence.",
       codeRepository: "https://github.com/JimBLogic/CyberDailyLog",
       programmingLanguage: "Python",
       author: { "@id": `${siteUrl}/#person` },
@@ -171,10 +172,26 @@ const structuredData = {
       "@id": "https://github.com/JimBLogic/defensive-homelab-blue-team#software",
       name: "Defensive Homelab",
       description:
-        "Reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployment modes.",
+        "Deployment-ready Raspberry Pi 4 defensive baseline with LITE and FULL modes; operational validation in progress.",
       codeRepository:
         "https://github.com/JimBLogic/defensive-homelab-blue-team",
       programmingLanguage: ["Shell", "Dockerfile"],
+      author: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/JimBLogic/AustrianBusinessCycleMonitor#software",
+      name: "Austrian Business Cycle Monitor",
+      description: "Original educational macro-data project with source provenance and explicit freshness and failure states; not investment advice.",
+      codeRepository: "https://github.com/JimBLogic/AustrianBusinessCycleMonitor",
+      author: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/JimBLogic/jimblogic.github.io#software",
+      name: "JimBLogic Portfolio",
+      description: "Original multilingual portfolio with shared professional content across GitHub Pages and Sites, privacy controls and CI checks.",
+      codeRepository: "https://github.com/JimBLogic/jimblogic.github.io",
       author: { "@id": `${siteUrl}/#person` },
     },
   ],

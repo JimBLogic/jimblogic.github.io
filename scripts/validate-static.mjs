@@ -31,7 +31,7 @@ assert.match(home, /JimBLogic \| Junior SOC Analyst/);
 assert.match(home, /ProfilePage/);
 assert.match(home, /SoftwareSourceCode/);
 assert.match(home, /https:\/\/jimblogic\.github\.io/);
-assert.match(home, /AIF-C01 is scheduled for September 2026/);
+assert.match(home, /first exam attempt on 29 September 2026/);
 assert.match(home, /GitHub main mirror/);
 assert.doesNotMatch(home, /codex-preview/i);
 assert.match(certifications, /Credentials, without the badge wall/);

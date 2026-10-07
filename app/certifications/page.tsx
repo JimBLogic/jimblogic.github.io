@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { careerStatus } from "@/lib/career-status";
 import "./certifications.css";
 
 type Certificate = { name: string; issuer: string; href: string; featured?: boolean };
@@ -12,7 +13,7 @@ const certificates: Certificate[] = [
   { name: "Blue Team Junior Analyst Pathway Bundle", issuer: "Security Blue Team", href: "https://github.com/JimBLogic/Security-Blue-Team-Learning-Journey-Certificates/blob/main/certs/Blue%20Team%20Junior%20Analyst%20Pathway%20Bundle-btja.pdf", featured: true },
   { name: "Cybersecurity, Ethical Hacking & Cloud Bootcamp", issuer: "UpgradeHub", href: "/documents/UpgradeHub-Cert.pdf", featured: true },
   { name: "Cyber Threat Management", issuer: "Cisco", href: "https://www.credly.com/badges/5e2eb763-9d96-4f29-8018-99a71b82c352", featured: true },
-  { name: "AWS SimuLearn — Cloud Practitioner", issuer: "AWS", href: "https://www.credly.com/badges/2fbdc9ba-c4f6-4e34-bfe6-ada0751e536a", featured: true },
+  { name: "AWS SimuLearn — Cloud Practitioner (training badge)", issuer: "AWS", href: "https://www.credly.com/badges/2fbdc9ba-c4f6-4e34-bfe6-ada0751e536a", featured: true },
   { name: "KCCS — Knowledge of Cybersecurity Skills", issuer: "Mossé Cyber Security Institute", href: "https://students.mosse-institute.com/knowledge-test/CwLmPjf2GImtJzeszhxJ", featured: true },
   { name: "Introduction to Cybersecurity", issuer: "Cisco", href: "https://www.credly.com/badges/cf1cfdca-0fa3-4989-b065-46d985178ae2" },
   { name: "Access Control Basics", issuer: "Cybrary", href: "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs/blob/main/Certificates/cybrary-cert-access-control-basics.pdf" },
@@ -162,6 +163,7 @@ export default function CertificationsPage() {
         <p className="cert-eyebrow">{t.eyebrow}</p>
         <h1>{t.title}</h1>
         <p>{t.intro}</p>
+        <p>{careerStatus[language].aws}</p><p>{careerStatus[language].badge}</p>
         <div className="cert-stats"><strong>{certificates.length}</strong><span>{t.records}</span><strong>{issuers.length - 1}</strong><span>{t.issuers}</span></div>
       </header>
       <section className="cert-controls" aria-label={t.filters}>

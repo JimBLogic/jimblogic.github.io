@@ -60,14 +60,14 @@ const copy = {
         statement:
           "From source validation to an analyst-ready daily defensive brief.",
         intro:
-          "A live interface for the automated pipeline behind my daily threat-intelligence work: qualified developments, source health, prioritisation and exportable evidence in one reviewable surface.",
+          "A live interface for the automated pipeline behind my personal threat-intelligence project: qualified developments, source health, prioritisation and exportable evidence in one reviewable surface.",
         purposeText:
           "Reduce noisy public security information into a concise, source-backed starting point for defensive triage without hiding freshness, confidence or methodology.",
         insideItems: [
-          "Normalised CVE, KEV and EPSS context",
-          "Source-health and pipeline status",
+          "CISA KEV, NVD and FIRST EPSS; stateful CVE tracking",
+          "State transitions, source health and explicit degradation",
           "Thirty-day history plus JSON/CSV exports",
-          "Bilingual methodology and watchlist views",
+          "Publication SLO monitoring and reproducible reports",
         ],
         reviewItems: [
           "Check the timestamp and source quorum",
@@ -80,7 +80,7 @@ const copy = {
         metrics: [
           ["24 h", "rolling window"],
           ["CVE", "KEV + EPSS"],
-          ["3/3", "core sources"],
+          ["3", "core sources"],
         ],
         accessTitle: "The working system, one click away",
         accessLead:
@@ -178,14 +178,14 @@ const copy = {
         statement:
           "De la validación de fuentes a un informe defensivo diario listo para el analista.",
         intro:
-          "Una interfaz viva para el pipeline automatizado que sostiene mi trabajo diario de inteligencia de amenazas: novedades cualificadas, salud de fuentes, priorización y evidencia exportable en una superficie revisable.",
+          "Una interfaz viva para el pipeline automatizado que sostiene mi proyecto personal de inteligencia de amenazas: novedades cualificadas, salud de fuentes, priorización y evidencia exportable en una superficie revisable.",
         purposeText:
           "Reducir el ruido de la información pública de seguridad a un punto de partida conciso y respaldado por fuentes para el triaje defensivo, sin ocultar actualidad, confianza o metodología.",
         insideItems: [
-          "Contexto normalizado de CVE, KEV y EPSS",
-          "Salud de fuentes y estado del pipeline",
+          "CISA KEV, NVD y FIRST EPSS; seguimiento persistente de CVE",
+          "Transiciones de estado, salud de fuentes y degradación explícita",
           "Histórico de 30 días y exportación JSON/CSV",
-          "Metodología bilingüe y vistas de watchlist",
+          "Seguimiento del SLO de publicación e informes reproducibles",
         ],
         reviewItems: [
           "Comprobar timestamp y cuórum de fuentes",
@@ -198,7 +198,7 @@ const copy = {
         metrics: [
           ["24 h", "ventana móvil"],
           ["CVE", "KEV + EPSS"],
-          ["3/3", "fuentes núcleo"],
+          ["3", "fuentes núcleo"],
         ],
         accessTitle: "El sistema real, a un clic",
         accessLead:
@@ -296,14 +296,14 @@ const copy = {
         statement:
           "De la validació de fonts a un informe defensiu diari llest per a l’analista.",
         intro:
-          "Una interfície viva per al pipeline automatitzat que sosté la meva feina diària d’intel·ligència d’amenaces: novetats qualificades, salut de fonts, priorització i evidència exportable en una superfície revisable.",
+          "Una interfície viva per al pipeline automatitzat que sosté el meu projecte personal d’intel·ligència d’amenaces: novetats qualificades, salut de fonts, priorització i evidència exportable en una superfície revisable.",
         purposeText:
           "Reduir el soroll de la informació pública de seguretat a un punt de partida concís i basat en fonts per al triatge defensiu, sense ocultar actualitat, confiança o metodologia.",
         insideItems: [
-          "Context normalitzat de CVE, KEV i EPSS",
-          "Salut de fonts i estat del pipeline",
+          "CISA KEV, NVD i FIRST EPSS; seguiment persistent de CVE",
+          "Transicions d’estat, salut de fonts i degradació explícita",
           "Històric de 30 dies i exportació JSON/CSV",
-          "Metodologia bilingüe i vistes de watchlist",
+          "Seguiment de l’SLO de publicació i informes reproduïbles",
         ],
         reviewItems: [
           "Comprovar timestamp i quòrum de fonts",
@@ -316,7 +316,7 @@ const copy = {
         metrics: [
           ["24 h", "finestra mòbil"],
           ["CVE", "KEV + EPSS"],
-          ["3/3", "fonts nucli"],
+          ["3", "fonts nucli"],
         ],
         accessTitle: "El sistema real, a un clic",
         accessLead:

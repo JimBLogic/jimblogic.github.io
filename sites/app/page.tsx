@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { ProfessionalEvidence } from "@/app/ProfessionalEvidence";
+import { careerStatus } from "@/lib/career-status";
 import { useLanguage } from "@/lib/use-language";
 import type { Language } from "@/lib/local-preferences";
 
@@ -32,7 +34,8 @@ const links = {
     "https://github.com/JimBLogic/Cybrary-IT-Cybersecurity-Certificates-and-Labs",
   awsEvidence:
     "https://github.com/JimBLogic/AWS-IBM-Skills-Build-KCCS-Moss-Cibersecurity-Institute",
-  credly: "https://www.credly.com/users/jaime-ramsden-de-frutos",
+  ciscoBadge: "https://www.credly.com/badges/5e2eb763-9d96-4f29-8018-99a71b82c352",
+  kccs: "https://students.mosse-institute.com/knowledge-test/CwLmPjf2GImtJzeszhxJ",
   upgradeHubCertificate:
     "/documents/UpgradeHub-Cert.pdf",
   blueTeamPathway:
@@ -72,11 +75,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Junior SOC Analyst · Blue Team · Cloud Security",
+      role: "Junior SOC candidate · Blue Team · CTI / Automation · Cloud foundations",
       statementStart: "I turn operational pressure into",
       statementAccent: "auditable defensive work.",
       intro:
-        "I combine incident ownership, multilingual operations and hands-on defensive engineering: source-backed triage, Linux and containers, network visibility, AWS foundations, clear handovers and careful automation.",
+        "I am seeking my first professional SOC / Blue Team role. I bring operational ownership, multilingual IT support and public projects in source-backed CTI, Linux, containers, reproducibility and automation.",
       explore: "Explore proof of work",
       cv: "Open CV",
       location: "Menorca · Remote across Spain / EU · UK eligible",
@@ -93,14 +96,14 @@ const content = {
         },
         {
           name: "Defensive Homelab",
-          status: "Operational build",
-          detail: "LITE / FULL Raspberry Pi baseline",
+          status: "Validation in progress",
+          detail: "Deployment-ready LITE / FULL baseline",
           stamp: "PUBLIC REPO",
           href: links.homelab,
         },
         {
           name: "TryHackMe",
-          status: "Top 1%",
+          status: "Lab practice",
           detail: "Hands-on learning evidence",
           stamp: "PROFILE",
           href: links.tryHackMe,
@@ -131,7 +134,7 @@ const content = {
       eyebrow: "Selected proof of work",
       title: "Projects designed to survive questions.",
       intro:
-        "Each project states its purpose, current status and limits. No enterprise-SOC cosplay; just real, reviewable work and the next sensible improvement.",
+        "Each project states its purpose, current status and limits. Original project work is separated from training and upstream experiments.",
       open: "Open project",
       brief: "View project brief",
       report: "Read today’s brief",
@@ -145,13 +148,13 @@ const content = {
           metrics: [
             ["24 h", "rolling coverage"],
             ["CVE", "KEV + EPSS context"],
-            ["3/3", "core source quorum"],
+            ["3", "core sources monitored"],
           ],
           notes: [
             "GitHub Actions pipeline with safe publishing",
-            "CVE, KEV, EPSS and official-source context",
-            "Human context and community signals kept separate",
-            "Clear methodology, limitations and analyst next actions",
+            "CISA KEV · NVD · FIRST EPSS · stateful CVE tracking",
+            "State transitions, correlation and prioritisation",
+            "Source health, explicit degradation and publication SLO monitoring",
           ],
           pipeline: {
             label: "Auditable daily pipeline",
@@ -172,17 +175,17 @@ const content = {
           kicker: "Linux + containers + monitoring",
           title: "Defensive Homelab",
           summary:
-            "A reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployments for service health, metrics, DNS security, hardening, tested recovery and incident notes.",
+            "A reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployments for service health, metrics, DNS security, hardening, recovery procedures awaiting operational evidence and incident notes.",
           metrics: [
             ["8 GB", "Raspberry Pi 4"],
             ["1 TB", "SSD storage"],
             ["2", "deployment modes"],
           ],
           notes: [
-            "Prometheus, Grafana, Node Exporter and Uptime Kuma",
+            "Configuration for Prometheus, Grafana, Node Exporter and Uptime Kuma",
             "Local-first exposure and least-privilege decisions",
             "Sanitized documentation and trust boundaries",
-            "Explicitly not presented as an enterprise SOC",
+            "Operational validation pending; no professional SOC experience claimed",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -197,7 +200,7 @@ const content = {
             "A multilingual portfolio treated as a small production system: recruiter-first content, accessible controls, content security policy, responsive QA and exact-artifact deployment.",
           metrics: [
             ["3", "languages"],
-            ["CI", "build + browser QA"],
+            ["CI", "build + route checks"],
             ["A11y", "keyboard + motion"],
           ],
           notes: [
@@ -257,7 +260,7 @@ const content = {
         {
           code: "SYSTEMS",
           title: "Linux & container operations",
-          text: "Service baselines, Docker deployments, health checks, logs, updates, backup validation and least privilege.",
+          text: "Service baselines, Docker deployments, health checks, logs, updates, backup procedures and least privilege.",
           tools: "Linux · Bash · Docker · Prometheus · Grafana",
         },
         {
@@ -311,30 +314,30 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "arcX",
-          title: "Threat Intelligence Foundation",
-          focus: "Intelligence lifecycle and analysis foundations",
+          issuer: "Mossé Cyber Security Institute",
+          title: "KCCS — Knowledge of Cybersecurity Skills",
+          focus: "Cybersecurity knowledge assessment",
           year: "2024",
-          href: links.credly,
+          href: links.kccs,
         },
         {
           issuer: "Cisco Networking Academy",
           title: "Cyber Threat Management",
           focus: "Threats, controls and defensive management",
           year: "2024",
-          href: links.credly,
+          href: links.ciscoBadge,
         },
         {
           issuer: "AWS Skill Builder",
-          title: "AI Practitioner → Cloud Practitioner path",
-          focus: "Course evidence; AIF-C01 scheduled for September 2026",
+          title: "AWS exam preparation · not certified",
+          focus: "Training badges; exam preparation is not AWS certification",
           year: "Active 2026",
           href: links.awsEvidence,
         },
         {
           issuer: "TryHackMe",
           title: "Hands-on cyber learning",
-          focus: "Top 1% profile and documented lab practice",
+          focus: "Public profile and training labs",
           year: "Active",
           href: links.tryHackMe,
         },
@@ -349,7 +352,7 @@ const content = {
       educationLabel: "Education & development",
       roles: [
         {
-          period: "2026 — NOW",
+          period: "2026",
           role: "Administration with practical IT responsibility",
           organisation: "Property operations · Menorca",
           text:
@@ -365,7 +368,7 @@ const content = {
           signal: "Live operations · customer impact · bilingual communication",
         },
         {
-          period: "2016 — 2021",
+          period: "PREVIOUS · UK",
           role: "Senior support work",
           organisation: "Residential services · United Kingdom",
           text:
@@ -386,7 +389,7 @@ const content = {
           title: "Blue Team, cloud and automation development",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Continuous lab work in network analysis, forensics, threat intelligence, Splunk, Linux and AWS; AIF-C01 is scheduled for September 2026 before Cloud Practitioner.",
+            careerStatus.en.aws,
         },
         {
           period: "BACKGROUND",
@@ -409,7 +412,7 @@ const content = {
       lead:
         "I am moving into cybersecurity from customer-facing operations, administration and practical IT support. That background is not a detour: it taught me to document, prioritise, protect sensitive information and communicate when the situation is messy.",
       body:
-        "Outside work I build public security projects, run a defensive Raspberry Pi lab and study SOC, incident response, threat intelligence and AWS with a longer-term focus on cloud security automation. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
+        "Outside work I build public security projects, develop a defensive Raspberry Pi baseline and study SOC, incident response, threat intelligence and AWS with a longer-term focus on cloud security automation. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
       principles: [
         ["Evidence over claims", "If I say I built it, there should be a repository, report or lab note."],
         ["Useful over flashy", "The next operational control matters more than another decorative badge."],
@@ -420,7 +423,7 @@ const content = {
       eyebrow: "Contact",
       title: "Let’s talk about useful junior security work.",
       text:
-        "I am seeking junior SOC, Blue Team and cloud-security-track roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, incident ownership and escalation are central to the work.",
+        "I am seeking junior SOC, Blue Team and cloud-security-track roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, operational ownership and escalation are central to the work.",
       email: "Email Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -454,11 +457,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Analista SOC Junior · Blue Team · Seguridad Cloud",
+      role: "Candidato SOC Junior · Blue Team · CTI / Automatización · Fundamentos cloud",
       statementStart: "Convierto presión operativa en",
       statementAccent: "trabajo defensivo auditable.",
       intro:
-        "Combino responsabilidad sobre incidencias, operaciones multilingües e ingeniería defensiva práctica: triaje respaldado por fuentes, Linux y contenedores, visibilidad de red, fundamentos AWS, buenos relevos y automatización cuidadosa.",
+        "Busco mi primer puesto profesional SOC / Blue Team. Aporto responsabilidad operativa, soporte IT multilingüe y proyectos públicos de CTI respaldada por fuentes, Linux, contenedores, reproducibilidad y automatización.",
       explore: "Explorar evidencia práctica",
       cv: "Abrir CV",
       location: "Menorca · Remoto en España / UE · habilitado para Reino Unido",
@@ -475,14 +478,14 @@ const content = {
         },
         {
           name: "Homelab defensivo",
-          status: "Despliegue operativo",
+          status: "Validación en curso",
           detail: "Base LITE / FULL para Raspberry Pi",
           stamp: "REPO PÚBLICA",
           href: links.homelab,
         },
         {
           name: "TryHackMe",
-          status: "Top 1%",
+          status: "Práctica formativa",
           detail: "Evidencia de aprendizaje práctico",
           stamp: "PERFIL",
           href: links.tryHackMe,
@@ -513,7 +516,7 @@ const content = {
       eyebrow: "Evidencia práctica destacada",
       title: "Proyectos preparados para responder preguntas.",
       intro:
-        "Cada proyecto declara su propósito, estado actual y límites. Nada de disfrazarse de SOC empresarial: trabajo real y revisable, con la siguiente mejora lógica a la vista.",
+        "Cada proyecto declara su propósito, estado actual y límites. El trabajo propio, la formación y los experimentos sobre código de terceros se identifican por separado.",
       open: "Abrir proyecto",
       brief: "Ver resumen del proyecto",
       report: "Leer el informe de hoy",
@@ -527,13 +530,13 @@ const content = {
           metrics: [
             ["24 h", "cobertura móvil"],
             ["CVE", "contexto KEV + EPSS"],
-            ["3/3", "cuórum de fuentes"],
+            ["3", "fuentes principales"],
           ],
           notes: [
             "Pipeline de GitHub Actions con publicación segura",
-            "Contexto CVE, KEV, EPSS y fuentes oficiales",
-            "Contexto humano y señales comunitarias separados",
-            "Metodología, límites y siguientes acciones claras",
+            "CISA KEV · NVD · FIRST EPSS · seguimiento persistente de CVE",
+            "Transiciones de estado, correlación y priorización",
+            "Salud de fuentes, degradación explícita y seguimiento del SLO",
           ],
           pipeline: {
             label: "Pipeline diario auditable",
@@ -554,17 +557,17 @@ const content = {
           kicker: "Linux + contenedores + monitorización",
           title: "Homelab defensivo",
           summary:
-            "Un laboratorio Blue Team reproducible con Raspberry Pi 4 y despliegues LITE y FULL para salud de servicios, métricas, seguridad DNS, hardening, recuperación probada y notas de incidentes.",
+            "Un laboratorio Blue Team reproducible con Raspberry Pi 4 y despliegues LITE y FULL para salud de servicios, métricas, seguridad DNS, hardening, procedimientos de recuperación pendientes de evidencia operacional y notas de incidentes.",
           metrics: [
             ["8 GB", "Raspberry Pi 4"],
             ["1 TB", "almacenamiento SSD"],
             ["2", "modos de despliegue"],
           ],
           notes: [
-            "Prometheus, Grafana, Node Exporter y Uptime Kuma",
+            "Configuración de Prometheus, Grafana, Node Exporter y Uptime Kuma",
             "Exposición local y decisiones de mínimo privilegio",
             "Documentación saneada y límites de confianza",
-            "No se presenta como un SOC empresarial",
+            "Validación operacional pendiente; no acredita experiencia laboral SOC",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -579,7 +582,7 @@ const content = {
             "Un portfolio multilingüe tratado como un pequeño sistema de producción: contenido para recruiters, controles accesibles, CSP, QA responsive y despliegue del artefacto exacto probado.",
           metrics: [
             ["3", "idiomas"],
-            ["CI", "build + QA de navegador"],
+            ["CI", "build + validación de rutas"],
             ["A11y", "teclado + movimiento"],
           ],
           notes: [
@@ -693,30 +696,30 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "arcX",
-          title: "Threat Intelligence Foundation",
-          focus: "Ciclo de inteligencia y fundamentos de análisis",
+          issuer: "Mossé Cyber Security Institute",
+          title: "KCCS — Knowledge of Cybersecurity Skills",
+          focus: "Evaluación de conocimientos de ciberseguridad",
           year: "2024",
-          href: links.credly,
+          href: links.kccs,
         },
         {
           issuer: "Cisco Networking Academy",
           title: "Cyber Threat Management",
           focus: "Amenazas, controles y gestión defensiva",
           year: "2024",
-          href: links.credly,
+          href: links.ciscoBadge,
         },
         {
           issuer: "AWS Skill Builder",
           title: "Ruta AI Practitioner → Cloud Practitioner",
-          focus: "Evidencia formativa; AIF-C01 programado para septiembre de 2026",
+          focus: "Insignias formativas; preparación no equivale a certificación AWS",
           year: "Activo 2026",
           href: links.awsEvidence,
         },
         {
           issuer: "TryHackMe",
           title: "Aprendizaje práctico en ciberseguridad",
-          focus: "Perfil Top 1% y práctica de laboratorios documentada",
+          focus: "Perfil público y laboratorios formativos",
           year: "Activo",
           href: links.tryHackMe,
         },
@@ -747,7 +750,7 @@ const content = {
           signal: "Operaciones en vivo · impacto al usuario · comunicación bilingüe",
         },
         {
-          period: "2016 — 2021",
+          period: "ANTERIOR · REINO UNIDO",
           role: "Profesional senior de apoyo",
           organisation: "Servicios residenciales · Reino Unido",
           text:
@@ -768,7 +771,7 @@ const content = {
           title: "Desarrollo Blue Team, cloud y automatización",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Laboratorios continuos de análisis de red, forense, inteligencia de amenazas, Splunk, Linux y AWS; AIF-C01 está programado para septiembre de 2026 antes de Cloud Practitioner.",
+            careerStatus.es.aws,
         },
         {
           period: "BASE ACADÉMICA",
@@ -791,7 +794,7 @@ const content = {
       lead:
         "Estoy dando el salto a ciberseguridad desde operaciones de atención al cliente, administración y soporte IT práctico. Ese recorrido no es un desvío: me enseñó a documentar, priorizar, proteger información sensible y comunicar cuando la situación viene con curvas.",
       body:
-        "Fuera del trabajo construyo proyectos públicos de seguridad, mantengo un laboratorio defensivo con Raspberry Pi y estudio SOC, respuesta a incidentes, inteligencia de amenazas y AWS con foco a largo plazo en automatización de seguridad cloud. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
+        "Fuera del trabajo construyo proyectos públicos de seguridad, desarrollo una baseline defensiva con Raspberry Pi y estudio SOC, respuesta a incidentes, inteligencia de amenazas y AWS con foco a largo plazo en automatización de seguridad cloud. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
       principles: [
         ["Evidencia antes que afirmaciones", "Si digo que lo he construido, debe existir un repositorio, informe o nota de laboratorio."],
         ["Útil antes que vistoso", "El siguiente control operativo importa más que otra insignia decorativa."],
@@ -836,11 +839,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Analista SOC Junior · Blue Team · Seguretat Cloud",
+      role: "Candidat SOC Junior · Blue Team · CTI / Automatització · Fonaments cloud",
       statementStart: "Converteixo pressió operativa en",
       statementAccent: "feina defensiva auditable.",
       intro:
-        "Combino responsabilitat sobre incidències, operacions multilingües i enginyeria defensiva pràctica: triatge basat en fonts, Linux i contenidors, visibilitat de xarxa, fonaments AWS, bons relleus i automatització acurada.",
+        "Busco el meu primer lloc professional SOC / Blue Team. Aporto responsabilitat operativa, suport IT multilingüe i projectes públics de CTI basada en fonts, Linux, contenidors, reproduïbilitat i automatització.",
       explore: "Explorar evidència pràctica",
       cv: "Obrir CV",
       location: "Menorca · Remot a Espanya / UE · habilitat per al Regne Unit",
@@ -857,14 +860,14 @@ const content = {
         },
         {
           name: "Homelab defensiu",
-          status: "Desplegament operatiu",
+          status: "Validació en curs",
           detail: "Base LITE / FULL per a Raspberry Pi",
           stamp: "REPO PÚBLIC",
           href: links.homelab,
         },
         {
           name: "TryHackMe",
-          status: "Top 1%",
+          status: "Pràctica formativa",
           detail: "Evidència d’aprenentatge pràctic",
           stamp: "PERFIL",
           href: links.tryHackMe,
@@ -895,7 +898,7 @@ const content = {
       eyebrow: "Evidència pràctica destacada",
       title: "Projectes preparats per respondre preguntes.",
       intro:
-        "Cada projecte declara el propòsit, l’estat actual i els límits. Res de disfressar-se de SOC empresarial: feina real i revisable, amb la següent millora lògica a la vista.",
+        "Cada projecte declara el propòsit, l’estat actual i els límits. El treball propi, la formació i els experiments sobre codi de tercers s’identifiquen per separat.",
       open: "Obrir projecte",
       brief: "Veure resum del projecte",
       report: "Llegir l’informe d’avui",
@@ -909,13 +912,13 @@ const content = {
           metrics: [
             ["24 h", "cobertura mòbil"],
             ["CVE", "context KEV + EPSS"],
-            ["3/3", "quòrum de fonts"],
+            ["3", "fonts principals"],
           ],
           notes: [
             "Pipeline de GitHub Actions amb publicació segura",
-            "Context CVE, KEV, EPSS i fonts oficials",
-            "Context humà i senyals comunitaris separats",
-            "Metodologia, límits i accions següents clares",
+            "CISA KEV · NVD · FIRST EPSS · seguiment persistent de CVE",
+            "Transicions d’estat, correlació i priorització",
+            "Salut de fonts, degradació explícita i seguiment de l’SLO",
           ],
           pipeline: {
             label: "Pipeline diari auditable",
@@ -936,17 +939,17 @@ const content = {
           kicker: "Linux + contenidors + monitoratge",
           title: "Homelab defensiu",
           summary:
-            "Un laboratori Blue Team reproduïble amb Raspberry Pi 4 i desplegaments LITE i FULL per a salut de serveis, mètriques, seguretat DNS, hardening, recuperació provada i notes d’incidents.",
+            "Un laboratori Blue Team reproduïble amb Raspberry Pi 4 i desplegaments LITE i FULL per a salut de serveis, mètriques, seguretat DNS, hardening, procediments de recuperació pendents d’evidència operacional i notes d’incidents.",
           metrics: [
             ["8 GB", "Raspberry Pi 4"],
             ["1 TB", "emmagatzematge SSD"],
             ["2", "modes de desplegament"],
           ],
           notes: [
-            "Prometheus, Grafana, Node Exporter i Uptime Kuma",
+            "Configuració de Prometheus, Grafana, Node Exporter i Uptime Kuma",
             "Exposició local i decisions de mínim privilegi",
             "Documentació sanejada i límits de confiança",
-            "No es presenta com un SOC empresarial",
+            "Validació operacional pendent; no acredita experiència laboral SOC",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -961,7 +964,7 @@ const content = {
             "Un portfolio multilingüe tractat com un petit sistema de producció: contingut per a recruiters, controls accessibles, CSP, QA responsive i desplegament de l’artefacte exacte.",
           metrics: [
             ["3", "idiomes"],
-            ["CI", "build + QA de navegador"],
+            ["CI", "build + validació de rutes"],
             ["A11y", "teclat + moviment"],
           ],
           notes: [
@@ -1075,30 +1078,30 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "arcX",
-          title: "Threat Intelligence Foundation",
-          focus: "Cicle d’intel·ligència i fonaments d’anàlisi",
+          issuer: "Mossé Cyber Security Institute",
+          title: "KCCS — Knowledge of Cybersecurity Skills",
+          focus: "Avaluació de coneixements de ciberseguretat",
           year: "2024",
-          href: links.credly,
+          href: links.kccs,
         },
         {
           issuer: "Cisco Networking Academy",
           title: "Cyber Threat Management",
           focus: "Amenaces, controls i gestió defensiva",
           year: "2024",
-          href: links.credly,
+          href: links.ciscoBadge,
         },
         {
           issuer: "AWS Skill Builder",
           title: "Ruta AI Practitioner → Cloud Practitioner",
-          focus: "Evidència formativa; AIF-C01 programat per al setembre de 2026",
+          focus: "Insígnies formatives; preparació no equival a certificació AWS",
           year: "Actiu 2026",
           href: links.awsEvidence,
         },
         {
           issuer: "TryHackMe",
           title: "Aprenentatge pràctic en ciberseguretat",
-          focus: "Perfil Top 1% i pràctica de laboratoris documentada",
+          focus: "Perfil públic i laboratoris formatius",
           year: "Actiu",
           href: links.tryHackMe,
         },
@@ -1113,7 +1116,7 @@ const content = {
       educationLabel: "Formació i desenvolupament",
       roles: [
         {
-          period: "2026 — ARA",
+          period: "2026",
           role: "Administració amb responsabilitat IT pràctica",
           organisation: "Operacions immobiliàries · Menorca",
           text:
@@ -1129,7 +1132,7 @@ const content = {
           signal: "Operacions en viu · impacte a l’usuari · comunicació bilingüe",
         },
         {
-          period: "2016 — 2021",
+          period: "ANTERIOR · REGNE UNIT",
           role: "Professional sènior de suport",
           organisation: "Serveis residencials · Regne Unit",
           text:
@@ -1150,7 +1153,7 @@ const content = {
           title: "Desenvolupament Blue Team, cloud i automatització",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
-            "Laboratoris continus d’anàlisi de xarxa, forense, intel·ligència d’amenaces, Splunk, Linux i AWS; AIF-C01 està programat per al setembre de 2026 abans de Cloud Practitioner.",
+            careerStatus.ca.aws,
         },
         {
           period: "BASE ACADÈMICA",
@@ -1173,7 +1176,7 @@ const content = {
       lead:
         "Estic fent el salt a la ciberseguretat des d’operacions d’atenció al client, administració i suport IT pràctic. Aquest recorregut no és una desviació: m’ha ensenyat a documentar, prioritzar, protegir informació sensible i comunicar quan la situació es complica.",
       body:
-        "Fora de la feina construeixo projectes públics de seguretat, mantinc un laboratori defensiu amb Raspberry Pi i estudio SOC, resposta a incidents, intel·ligència d’amenaces i AWS amb focus a llarg termini en automatització de seguretat cloud. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
+        "Fora de la feina construeixo projectes públics de seguretat, desenvolupo una baseline defensiva amb Raspberry Pi i estudio SOC, resposta a incidents, intel·ligència d’amenaces i AWS amb focus a llarg termini en automatització de seguretat cloud. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
       principles: [
         ["Evidència abans que afirmacions", "Si dic que ho he construït, hi ha d’haver un repositori, informe o nota de laboratori."],
         ["Útil abans que vistós", "El següent control operatiu importa més que una altra insígnia decorativa."],
@@ -1514,6 +1517,8 @@ export default function Home() {
               ))}
             </aside>
           </section>
+
+          <ProfessionalEvidence language={language} />
 
           <section className="proof-path" aria-labelledby="proof-path-title">
             <div className="section-heading compact">
