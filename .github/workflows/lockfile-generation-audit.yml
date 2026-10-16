@@ -1,0 +1,42 @@
+name: TEMPORARY lockfile regeneration evidence (remove before review)
+
+on:
+  pull_request:
+    paths:
+      - package.json
+      - .github/workflows/lockfile-generation-audit.yml
+
+permissions:
+  contents: read
+
+jobs:
+  regenerate:
+    if: github.repository == 'JimBLogic/jimblogic.github.io' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'audit/portfolio-actions-supply-chain-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout candidate without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Resolve lockfile from exact approved semver pins (do not execute scripts)
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Return candidate lockfile artifact for explicit review
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: candidate-lockfile-20261016
+          path: package-lock.json
+          retention-days: 1
+          if-no-files-found: error
+      - name: Reinstall strictly from candidate lock and verify source
+        run: |
+          npm ci
+          npm run verify:mirror
+      - name: Recheck production advisories
+        run: npm audit --omit=dev --audit-level=high
