@@ -40,3 +40,64 @@ jobs:
           npm run verify:mirror
       - name: Recheck production advisories
         run: npm audit --omit=dev --audit-level=high
+
+  write-lock:
+    needs: regenerate
+    # One-shot writer: only for the named same-repo audit PR; never writes main.
+    if: needs.regenerate.result == 'success' && github.repository == 'JimBLogic/jimblogic.github.io' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'audit/portfolio-actions-supply-chain-20261016'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout exact audited PR source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: true
+      - name: Set up deterministic Node without npm scripts
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+      - name: Download same-run lockfile
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: candidate-lockfile-20261016
+          path: .
+      - name: Independently validate only allowed lockfile and patched versions
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const lock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
+          if (lock.lockfileVersion !== 3 || lock.packages?.['']?.dependencies?.next !== pkg.dependencies.next
+              || lock.packages?.['']?.devDependencies?.['eslint-config-next'] !== pkg.devDependencies['eslint-config-next']) {
+            throw new Error('Lockfile and package.json dependency mismatch');
+          }
+          if (lock.packages?.['node_modules/next']?.version !== '16.4.2' ||
+              lock.packages?.['node_modules/eslint-config-next']?.version !== '16.4.2' ||
+              pkg.overrides?.['source-map-js'] !== '^1.2.2') {
+            throw new Error('Unapproved package versions');
+          }
+          for (const [path, info] of Object.entries(lock.packages)) {
+            if (path.endsWith('node_modules/source-map-js')) {
+              const numbers = String(info.version).split('.').map(Number);
+              if (numbers[0] !== 1 || numbers[1] < 2 || (numbers[1] === 2 && numbers[2] < 2)) {
+                throw new Error('Vulnerable source-map-js in candidate lockfile');
+              }
+            }
+          }
+          NODE
+          git add -- package-lock.json
+          test "$(git diff --cached --name-only)" = 'package-lock.json'
+          git diff --cached --check
+      - name: Commit lockfile only on isolated audit branch
+        run: |
+          set -euo pipefail
+          if git diff --cached --quiet; then
+            echo 'Lockfile already matches; no synthetic commit.'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'fix(deps): reproducibly lock security-patched Next and source-map-js'
+          git push origin HEAD:refs/heads/audit/portfolio-actions-supply-chain-20261016
