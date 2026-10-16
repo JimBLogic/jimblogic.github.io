@@ -12,7 +12,7 @@ function job(name) {
 }
 
 test("only full 40-character SHA GitHub Actions dependencies are used", () => {
-  const actions = [...workflow.matchAll(/^\s+- uses:\s+([^\s#]+)/gm)].map(x => x[1]);
+  const actions = [...workflow.matchAll(/^\s+(?:-\s+)?uses:\s+([^\s#]+)/gm)].map(x => x[1]);
   assert.ok(actions.length >= 9);
   for (const action of actions) {
     assert.match(action, /^actions\/[a-z-]+@[0-9a-f]{40}$/, action);
