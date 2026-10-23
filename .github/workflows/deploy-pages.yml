@@ -14,60 +14,141 @@ permissions:
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  # A scheduled snapshot commit must never cancel its own validation/deployment.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   refresh:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
+    # Only a scheduled/manual run of the canonical default branch may refresh.
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && github.repository == 'JimBLogic/jimblogic.github.io'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out trusted main without saved credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7 (Node 24)
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up Node.js 22
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6 (Node 24)
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Refresh and validate the complete public mirror without write access
+        run: |
+          set -euo pipefail
+          node --experimental-strip-types scripts/sync-public-feed.mjs
+          cp public/data/cyberdailylog.json sites/public/data/cyberdailylog.json
+          npm run verify:mirror
+      - name: Pass only the validated public JSON files to the writer
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7 (Node 24)
+        with:
+          name: validated-public-snapshot
+          path: |
+            public/data/cyberdailylog.json
+            sites/public/data/cyberdailylog.json
+          if-no-files-found: error
+          retention-days: 1
+
+  publish-snapshot:
+    needs: refresh
+    # This is the sole job with repository write permission. Never runs on PRs.
+    if: needs.refresh.result == 'success' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && github.repository == 'JimBLogic/jimblogic.github.io'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out trusted main for a narrow data-only commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7 (Node 24)
         with:
           ref: main
-      - uses: actions/setup-node@v4
+          persist-credentials: true # required only for git push in this privileged job
+      - name: Set up Node.js 22 without installing dependencies
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6 (Node 24)
         with:
-          node-version: 22
-      - name: Refresh the public snapshot on both mirrors
+          node-version: '22'
+      - name: Retrieve the same-run validated snapshot
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7 (Node 24)
+        with:
+          name: validated-public-snapshot
+          path: .
+      - name: Revalidate the untrusted artifact using trusted source
         run: |
-          node --experimental-strip-types scripts/sync-public-feed.mjs
-          cp public/data/cyberdailylog.json sites/public/data/cyberdailylog.json
+          set -euo pipefail
+          node --experimental-strip-types --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          import { isCyberDailySnapshot, publicSnapshot } from './lib/feed.ts';
+          const file = 'public/data/cyberdailylog.json';
+          const current = JSON.parse(readFileSync(file, 'utf8'));
+          const previous = JSON.parse(execFileSync('git', ['show', 'HEAD:' + file], { encoding: 'utf8' }));
+          if (!isCyberDailySnapshot(current) || !isCyberDailySnapshot(previous)) {
+            throw new Error('Public snapshot failed schema validation');
+          }
+          if (JSON.stringify(publicSnapshot(current)) !== JSON.stringify(current)) {
+            throw new Error('Unapproved fields or noncanonical snapshot');
+          }
+          if (Date.parse(current.generated_at) < Date.parse(previous.generated_at)) {
+            throw new Error('Refusing to replace newer public evidence with older evidence');
+          }
+          NODE
           node scripts/verify-mirror.mjs
-      - name: Record the checked snapshot
+          git diff --check
+      - name: Commit only two allowlisted JSON files when changed
         run: |
-          if ! git diff --quiet -- public/data/cyberdailylog.json sites/public/data/cyberdailylog.json; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add public/data/cyberdailylog.json sites/public/data/cyberdailylog.json
-            git commit -m 'Refresh public portfolio snapshot'
-            git push origin HEAD:main
+          set -euo pipefail
+          git add -- public/data/cyberdailylog.json sites/public/data/cyberdailylog.json
+          if git diff --cached --quiet; then
+            echo 'No new public snapshot; keeping existing data, no synthetic update.'
+            exit 0
           fi
+          if git diff --cached --name-only | grep -Ev '^(public/data/cyberdailylog\.json|sites/public/data/cyberdailylog\.json)$'; then
+            echo 'Unexpected file staged; refusing write' >&2
+            exit 1
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh validated public portfolio snapshot'
+          git push origin HEAD:main
 
   validate:
-    needs: refresh
-    if: always() && (needs.refresh.result == 'success' || needs.refresh.result == 'skipped')
-    runs-on: ubuntu-latest
+    needs: [refresh, publish-snapshot]
+    if: always() && !cancelled() && (github.event_name == 'pull_request' || github.event_name == 'push' || (github.ref == 'refs/heads/main' && needs.publish-snapshot.result == 'success'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out exact PR/push commit, or validated main snapshot
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7 (Node 24)
         with:
           ref: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'main' || github.sha }}
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - name: Set up Node.js 22
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6 (Node 24)
         with:
-          node-version: 22
+          node-version: '22'
           cache: npm
-      - run: npm ci
-      - run: npm run verify:mirror
-      - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
+      - name: Install exact lockfile
+        run: npm ci
+      - name: Lint, unit/privacy/workflow tests, build and static mirror checks
+        run: npm run verify:mirror
+      - name: Audit runtime dependencies for known high/critical advisories
+        run: npm audit --omit=dev --audit-level=high
+      - name: Upload static Pages artifact (never from a pull request)
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5 (Node 24 transitive upload)
         with:
           path: out
 
   deploy:
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success'
     needs: validate
-    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && needs.validate.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write
@@ -75,6 +156,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/configure-pages@v5
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6 (Node 24)
+      - name: Deploy the previously validated static artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5 (Node 24)
