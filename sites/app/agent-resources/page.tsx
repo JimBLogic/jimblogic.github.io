@@ -27,6 +27,7 @@ export default function AgentResourcesPage() {
         <nav aria-label="Resource navigation">
           <a href="/agent-resources/catalog.json">Catalogue JSON</a>
           <a href="/llms.txt">llms.txt</a>
+          <a href="/agent-resources/qa-cases.json">Agent test cases</a>
           <Link href="/">Portfolio</Link>
         </nav>
       </header>
