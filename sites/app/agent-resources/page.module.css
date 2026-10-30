@@ -1,0 +1,25 @@
+.root{min-height:100vh;background:#101318;color:#e7edf5;line-height:1.6}
+.root *{box-sizing:border-box}.frame{max-width:1120px;margin:auto;padding:0 clamp(16px,4vw,42px) 50px}
+.top{padding:21px 0;border-bottom:1px solid #323d4b;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{font-size:1.25rem;font-weight:800;color:#fafafa;text-decoration:none;letter-spacing:-.04em}.brand span{color:#fb923c}
+.top nav{display:flex;gap:15px;flex-wrap:wrap}.top nav a,.footer a{color:#d0dae7;text-decoration:underline;text-underline-offset:4px}
+.hero{padding:clamp(48px,9vw,85px) 0;max-width:830px}
+.eyebrow{color:#ffa968;font-size:.78rem;font-weight:800;letter-spacing:.12em}
+.hero h1{font-size:clamp(2.1rem,5.5vw,4.1rem);letter-spacing:-.05em;line-height:1.08;margin:12px 0 22px}
+.hero p{font-size:clamp(1rem,2vw,1.18rem);color:#cfdae7}.hero .lang{font-size:.85rem;color:#bac8d9}
+.cta{display:inline-block;background:#f97316;color:#151515;font-weight:800;padding:13px 18px;border-radius:12px;text-decoration:none;margin-top:13px}
+.help{background:#1b222d;border:1px solid #3b4858;border-radius:16px;padding:22px;margin-bottom:56px}.help h2{font-size:1.3rem;margin:0 0 8px}.help p{margin:0;color:#cfd8e4}
+.catalogue h2{font-size:1.8rem;margin-bottom:4px}.catalogue>p{color:#b8c6d6;margin:0}
+.group{margin-top:35px}.group h3{font-size:1.23rem;margin:0 0 5px}.group>p{color:#c3d0de;margin:0 0 13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{border:1px solid #3d4958;border-radius:16px;background:#1b222b;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h4{font-size:1.15rem;margin:0}.card p{margin:0;color:#d3dfea;font-size:.93rem}
+.card p strong{color:#ffad72}.micro{display:flex;gap:10px;flex-wrap:wrap;font-size:.78rem;color:#ffba8b}
+.card a{margin-top:auto;color:#ffb37b;font-weight:800;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;padding-top:5px}
+.footnote{background:#19212b;border-top:1px solid #3b4655;padding:24px;border-radius:14px;margin-top:44px}
+.footnote h2{margin:0;font-size:1.3rem}.footnote p{margin:10px 0 0;color:#cbd8e4}
+.footer{display:flex;flex-wrap:wrap;gap:18px;padding:24px 0;border-top:1px solid #3b4655;margin-top:38px}
+.root a:focus-visible{outline:3px solid #ffa86c;outline-offset:4px;border-radius:4px}
+.root a:hover{color:#ffcfaa}.cta:hover{background:#ffb27b;color:#111}
+@media(max-width:720px){.grid{grid-template-columns:minmax(0,1fr)}.card{padding:18px}.hero{padding:40px 0}.help{padding:18px}}
+@media(prefers-reduced-motion:reduce){.root *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
