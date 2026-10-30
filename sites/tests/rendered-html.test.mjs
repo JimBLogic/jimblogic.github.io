@@ -1,10 +1,34 @@
 import assert from "node:assert/strict";
-import test from "node:test";
+import test, { before, after } from "node:test";
+import { Miniflare, convertV4MiniflareOptions } from "miniflare";
+import path from "node:path";
+import { readdirSync } from "node:fs";
+
+const snapshot = { above_threshold: 2, generated_at: "2026-09-06T13:20:48Z", pipeline_status: "operational",
+  qualified_developments: 4, source_health: { core: { healthy: 3, total: 3 } } };
+const outboundRequests = [];
+function createRuntime(outboundService = (request) => {
+  outboundRequests.push({ url: request.url, headers: Object.fromEntries(request.headers) });
+  return Response.json({ ...snapshot, private_extra: "must not be exposed" });
+}) {
+  return new Miniflare(convertV4MiniflareOptions({
+  modules: ["index.js", ...readdirSync("dist/server", { recursive: true }).filter((p) => p.endsWith(".js") && p !== "index.js")]
+    .map((file) => ({ type: "ESModule", path: path.resolve("dist/server", file) })),
+  modulesRoot: path.resolve("dist/server"),
+  compatibilityDate: "2026-10-23",
+  compatibilityFlags: ["nodejs_compat"],
+  serviceBindings: { ASSETS: () => new Response("Not found", { status: 404 }) },
+  outboundService,
+}));
+}
+const runtime = createRuntime();
+
+before(async () => { await runtime.ready; });
+after(async () => { await runtime.dispose(); });
+const worker = { fetch: (request) => runtime.dispatchFetch(request.url, request) };
+
 
 test("renders production portfolio metadata and content", async () => {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
 
   const response = await worker.fetch(
     new Request("https://portfolio.jimblogic.chatgpt.site/", {
@@ -47,9 +71,6 @@ test("renders production portfolio metadata and content", async () => {
 });
 
 test("renders every public portfolio route from the same production worker", async () => {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("route-test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
   const env = {
     ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
   };
@@ -84,9 +105,6 @@ test("renders every public portfolio route from the same production worker", asy
 });
 
 test("serves crawl discovery routes", async () => {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("crawl-test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
   const env = {
     ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
   };
@@ -126,20 +144,35 @@ test("serves crawl discovery routes", async () => {
   );
 });
 
-test("serves the public feed without forwarding visitor headers or upstream extra fields", async (t) => {
-  const snapshot = { above_threshold: 2, generated_at: "2026-09-06T13:20:48Z", pipeline_status: "operational",
-    qualified_developments: 4, source_health: { core: { healthy: 3, total: 3 } } };
-  t.mock.method(globalThis, "fetch", async (url, options) => {
-    assert.equal(url, "https://jimblogic.github.io/data/cyberdailylog.json");
-    assert.deepEqual(options.headers, { accept: "application/json" });
-    return Response.json({ ...snapshot, private_extra: "must not be exposed" });
-  });
-  const { default: worker } = await import(`../dist/server/index.js?feed-test=${Date.now()}`);
+test("serves the public feed without forwarding visitor headers or upstream extra fields", async () => {
   const response = await worker.fetch(new Request("https://portfolio.jimblogic.chatgpt.site/data/cyberdailylog.json", {
     headers: { Cookie: "visitor=secret", Authorization: "Bearer not-forwarded", "X-Forwarded-For": "192.0.2.1" },
   }), { ASSETS: { fetch: async () => new Response("missing", { status: 404 }) } }, { waitUntil() {}, passThroughOnException() {} });
-  assert.equal(response.status, 200);
+  assert.equal(response.status, 200, JSON.stringify(outboundRequests));
   assert.equal(response.headers.get("set-cookie"), null);
   assert.deepEqual(await response.json(), snapshot);
+  assert.equal(outboundRequests.length, 1);
+  assert.equal(outboundRequests[0].url, "https://jimblogic.github.io/data/cyberdailylog.json");
+  assert.equal(outboundRequests[0].headers.accept, "application/json");
+  for (const name of ["cookie", "authorization", "x-forwarded-for"]) {
+    assert.equal(outboundRequests[0].headers[name], undefined, `${name} must not leave the Worker`);
+  }
   assert.match(response.headers.get("content-security-policy"), /connect-src 'self'/);
+});
+
+
+test("does not follow an upstream redirect to a different destination", async () => {
+  const requested = [];
+  const redirected = createRuntime((request) => {
+    requested.push(request.url);
+    return new Response(null, { status: 302, headers: { location: "https://example.invalid/private" } });
+  });
+  try {
+    await redirected.ready;
+    const response = await redirected.dispatchFetch("https://portfolio.jimblogic.chatgpt.site/data/cyberdailylog.json");
+    assert.equal(response.status, 404); // Controlled missing-asset fallback.
+    assert.deepEqual(requested, ["https://jimblogic.github.io/data/cyberdailylog.json"]);
+  } finally {
+    await redirected.dispose();
+  }
 });

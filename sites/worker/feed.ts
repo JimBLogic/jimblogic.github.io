@@ -10,8 +10,9 @@ async function getPublicFeed(): Promise<string | null> {
     try {
       // Fixed public URL. Never forward the visitor's request, headers or cookies.
       const response = await fetch("https://jimblogic.github.io/data/cyberdailylog.json", {
-        headers: { accept: "application/json" }, signal: AbortSignal.timeout(5000), redirect: "error",
+        headers: { accept: "application/json" }, signal: AbortSignal.timeout(5000), redirect: "manual",
       });
+      // Workers supports manual redirects; reject 3xx without following them.
       if (!response.ok) return null;
       const text = await response.text();
       if (text.length > 32768) return null;
