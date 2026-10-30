@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.75,
     },
+    { url: `${siteUrl}/agent-resources/`, lastModified: new Date("2026-10-30T00:00:00.000Z"), changeFrequency: "monthly", priority: 0.55 },
     { url: `${siteUrl}/privacy/`, lastModified, changeFrequency: "yearly", priority: 0.4 },
   ];
 }

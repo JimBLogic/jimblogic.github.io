@@ -11,7 +11,7 @@
     "build:compat": "next build",
     "start": "npx serve@14 out",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
-    "test": "npm run privacy:audit && npm run test:privacy && npm run build && node scripts/validate-static.mjs",
+    "test": "npm run privacy:audit && npm run test:privacy && node --test tests/agent-resources.test.mjs && npm run build && node scripts/validate-static.mjs",
     "validate": "node scripts/validate-static.mjs",
     "verify:mirror": "npm run lint && node scripts/verify-mirror.mjs && npm test",
     "privacy:audit": "node scripts/privacy-audit.mjs",
@@ -19,9 +19,9 @@
     "feed:refresh": "node --experimental-strip-types scripts/sync-public-feed.mjs"
   },
   "dependencies": {
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "next": "16.4.3",
+    "react": "19.2.9",
+    "react-dom": "19.2.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
