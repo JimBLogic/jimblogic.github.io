@@ -12,6 +12,8 @@ const required = [
   "out/sitemap.xml",
   "out/manifest.webmanifest",
   "out/llms.txt",
+  "out/agent-resources/index.html",
+  "out/agent-resources/catalog.json",
   "out/documents/Jaime-Ramsden-de-Frutos-CV.pdf",
   "out/documents/UpgradeHub-Cert.pdf",
 ];
@@ -48,7 +50,16 @@ assert.match(sitemap, /https:\/\/jimblogic\.github\.io\/labs\/austrian-monitor/)
 
 console.log(`Validated ${required.length} static deployment artifacts.`);
 
-const pages = [["", home], ["certifications/", certifications], ["labs/cyberdailylog/", cyberDailyLog], ["labs/austrian-monitor/", austrianMonitor], ["privacy/", await readFile("out/privacy/index.html", "utf8")]];
+const agentHtml = await readFile("out/agent-resources/index.html", "utf8");
+const agentData = JSON.parse(await readFile("out/agent-resources/catalog.json", "utf8"));
+assert.equal(agentData.sources.length, 12);
+assert.match(agentHtml, /Find the right source, faster/);
+assert.match(agentHtml, /CISA Known Exploited Vulnerabilities/);
+assert.match(home, /href="\/agent-resources\/"/);
+assert.match(home, /CyberSecurity 3D Lab/);
+assert.match(home, /Austrian Business Cycle Monitor/);
+assert.match(sitemap, /https:\/\/jimblogic\.github\.io\/agent-resources\//);
+const pages = [["agent-resources/", agentHtml], ["", home], ["certifications/", certifications], ["labs/cyberdailylog/", cyberDailyLog], ["labs/austrian-monitor/", austrianMonitor], ["privacy/", await readFile("out/privacy/index.html", "utf8")]];
 for (const [route, html] of pages) {
   const tags = html.match(/<link[^>]+rel="canonical"[^>]*>/g) || [];
   assert.equal(tags.length, 1, route);
