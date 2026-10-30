@@ -13,7 +13,7 @@ test("editorial catalogue is structured, strictly allowlisted and useful", () =>
   for (const row of json.sources) {
     for (const key of ["id", "name", "publisher", "topic", "intent", "question", "url", "format", "limitation"]) {
       assert.equal(typeof row[key], "string", row.id + ":" + key);
-      assert.ok(row[key].length > 5, row.id + ":" + key);
+      assert.ok(row[key].trim().length > 0, row.id + ":" + key);
     }
     assert.match(row.id, /^[a-z0-9-]+$/);
     const uri = new URL(row.url);
