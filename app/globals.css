@@ -2875,3 +2875,14 @@ footer {
 .live-project-link:focus-visible{outline:3px solid #ffa565;outline-offset:3px}
 @media(max-width:800px){.live-project-links{grid-template-columns:1fr}.live-project-link{min-height:0;padding:18px 20px 38px}}
 @media(prefers-reduced-motion:reduce){.live-project-link{transition:none}.live-project-link:hover{transform:none}}
+
+/* Mobile-first performance: reduce costly fixed/animated ambient layers on small devices. */
+@media (max-width:800px) {
+  body { background-attachment:scroll; }
+  body::before, body::after { animation:none; }
+  .project-card:hover, .live-project-link:hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body::before, body::after { animation:none; }
+  .project-card:hover { transform:none; }
+}
