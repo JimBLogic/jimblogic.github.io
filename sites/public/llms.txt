@@ -3,6 +3,12 @@
 Professional content reviewed: 2026-10-07.
 Candidate seeking a first Junior SOC / Blue Team role; CTI / vulnerability intelligence and automation are adjacent interests. Cloud security foundations, not professional cloud-security employment.
 
+## Agent source discovery (editorial pilot)
+- Curated human-readable source router: https://jimblogic.github.io/agent-resources/
+- Static JSON catalogue: https://jimblogic.github.io/agent-resources/catalog.json
+- Editorial source selection only, not a live security feed or a guarantee of AI citations.
+- Interactive CyberSecurity 3D Lab (experimental): https://lab.jimblogic.chatgpt.site/
+
 ## Original project repositories
 - CyberDailyLog (flagship): CISA KEV, NVD, FIRST EPSS, stateful CVE tracking and transitions, structured feeds and advisory text, correlation, prioritisation, reproducible reports, source health, explicit degradation and publication SLO monitoring. A learning project, not a SIEM or enterprise SOC service. https://github.com/JimBLogic/CyberDailyLog
 - State implementation: https://github.com/JimBLogic/CyberDailyLog/blob/main/src/cyberdailylog/state.py
