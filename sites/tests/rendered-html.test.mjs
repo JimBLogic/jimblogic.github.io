@@ -56,6 +56,7 @@ test("renders every public portfolio route from the same production worker", asy
   const ctx = { waitUntil() {}, passThroughOnException() {} };
   const routes = [
     ["/certifications", /Credentials, without the badge wall\./],
+    ["/agent-resources", /Find the right source, faster/],
     ["/privacy", /Privacy &amp; local storage|Privacy &amp; Local Storage|Privacy &amp;|Privacy & local storage/],
     ["/labs/cyberdailylog", /How to evaluate the project\./],
     ["/labs/austrian-monitor", /Austrian Business Cycle Monitor/],
@@ -111,6 +112,7 @@ test("serves crawl discovery routes", async () => {
   assert.equal(sitemap.status, 200);
   const xml = await sitemap.text();
   assert.match(xml, /<loc>.*\/certifications\/<\/loc>/);
+  assert.match(xml, /<loc>.*\/agent-resources\/<\/loc>/);
   assert.match(xml, /<lastmod>2026-10-07/);
 
   const manifest = await worker.fetch(
