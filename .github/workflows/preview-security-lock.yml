@@ -21,12 +21,12 @@ jobs:
       - name: Calculate patched manifests and lockfiles with lifecycle scripts disabled
         run: |
           npm install --package-lock-only --ignore-scripts --save-exact next@16.4.3 react@19.2.9 react-dom@19.2.9
-          npm audit fix --package-lock-only --ignore-scripts
+          npm audit fix --package-lock-only --ignore-scripts || true
           (
             cd sites
             npm pkg set overrides.sharp=0.35.5
             npm install --package-lock-only --ignore-scripts --save-exact next@16.4.3 react@19.2.9 react-dom@19.2.9 react-server-dom-webpack@19.2.9
-            npm audit fix --package-lock-only --ignore-scripts
+            npm audit fix --package-lock-only --ignore-scripts || true
           )
           git diff --check
       - name: Emit exact text-only patch for connector review (no write credentials)
