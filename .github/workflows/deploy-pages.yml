@@ -87,6 +87,50 @@ jobs:
       - name: Validate Sites real production build
         run: cd sites && npm run verify
 
+  validate-mobile:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Build exactly the GitHub Pages static route bundle
+        run: |
+          npm ci
+          NEXT_TELEMETRY_DISABLED=1 npm run build
+      - name: Install isolated headless QA driver (no lockfile writes or lifecycle scripts)
+        run: npm install --no-save --ignore-scripts --package-lock=false playwright-core@1.64.1
+      - name: Test layout and navigation in Chrome at four viewport sizes
+        run: |
+          set -euo pipefail
+          CHROME_BIN="$(command -v google-chrome || command -v chromium || true)"
+          if [[ -z "$CHROME_BIN" ]]; then
+            echo "Chromium/Google Chrome missing: UI QA BLOCKED" >&2
+            exit 69
+          fi
+          (cd out && python3 -m http.server 9876 --bind 127.0.0.1) > /tmp/jimblogic-qa-http.log 2>&1 &
+          test_server_pid=$!
+          trap 'kill "$test_server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 20); do
+            if curl --silent --fail http://127.0.0.1:9876/ >/dev/null; then break; fi
+            sleep 0.25
+          done
+          CHROME_BIN="$CHROME_BIN" node scripts/qa-viewports.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jimblogic-responsive-qa
+          path: qa-artifacts/
+          if-no-files-found: warn
+          retention-days: 7
+
   deploy:
     if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success'
     needs: validate
