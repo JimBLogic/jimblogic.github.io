@@ -19,9 +19,9 @@
     "feed:refresh": "node --experimental-strip-types scripts/sync-public-feed.mjs"
   },
   "dependencies": {
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "next": "16.4.3",
+    "react": "19.2.9",
+    "react-dom": "19.2.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
