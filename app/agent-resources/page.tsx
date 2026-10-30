@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import catalog from "@/public/agent-resources/catalog.json";
 import styles from "./page.module.css";
 
@@ -22,11 +23,11 @@ export default function AgentResourcesPage() {
   return <main className={styles.root}>
     <div className={styles.frame}>
       <header className={styles.top}>
-        <a className={styles.brand} href="/" aria-label="JimBLogic portfolio home">JimBLogic<span>.</span></a>
+        <Link className={styles.brand} href="/" aria-label="JimBLogic portfolio home">JimBLogic<span>.</span></Link>
         <nav aria-label="Resource navigation">
           <a href="/agent-resources/catalog.json">Catalogue JSON</a>
           <a href="/llms.txt">llms.txt</a>
-          <a href="/">Portfolio</a>
+          <Link href="/">Portfolio</Link>
         </nav>
       </header>
       <section className={styles.hero} aria-labelledby="agent-title">
@@ -57,10 +58,10 @@ export default function AgentResourcesPage() {
       </section>
       <aside className={styles.footnote} aria-label="Source methodology and privacy">
         <h2>Method and limitations</h2>
-        <p>Editorially curated on <time dateTime={catalog.reviewed_on}>{catalog.reviewed_on}</time>. This does not certify uptime, reliability, current content or licensing. Follow each publisher's usage conditions and verify the current source before using its information.</p>
+        <p>Editorially curated on <time dateTime={catalog.reviewed_on}>{catalog.reviewed_on}</time>. This does not certify uptime, reliability, current content or licensing. Follow each publisher&apos;s usage conditions and verify the current source before using its information.</p>
         <p>All links are direct. This resource does not proxy external data, fingerprint visitors, store requests or require login. No guarantee of indexing, citations or search ranking.</p>
       </aside>
-      <footer className={styles.footer}><a href="/">← Professional portfolio</a><a href="/privacy/">Privacy</a><a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener noreferrer">Repository ↗</a></footer>
+      <footer className={styles.footer}><Link href="/">← Professional portfolio</Link><Link href="/privacy/">Privacy</Link><a href="https://github.com/JimBLogic/jimblogic.github.io" target="_blank" rel="noopener noreferrer">Repository ↗</a></footer>
     </div>
   </main>;
 }
