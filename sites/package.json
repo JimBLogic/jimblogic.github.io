@@ -18,7 +18,8 @@
     "privacy:audit": "node scripts/privacy-audit.mjs",
     "test:privacy": "node --experimental-strip-types --test tests/privacy.test.mjs",
     "feed:refresh": "node --experimental-strip-types scripts/sync-public-feed.mjs",
-    "security:dependencies": "node scripts/check-framework-security.mjs"
+    "security:dependencies": "node scripts/check-framework-security.mjs",
+    "test:dependencies": "node --test tests/dependency-compat.test.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
@@ -46,5 +47,13 @@
     "miniflare": "5.20261023.1-beta"
   },
   "type": "module",
-  "displayName": "JimBLogic Portfolio Lab"
+  "displayName": "JimBLogic Portfolio Lab",
+  "overrides": {
+    "satori": {
+      "fflate": "0.7.5"
+    },
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    }
+  }
 }

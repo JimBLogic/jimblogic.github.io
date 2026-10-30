@@ -15,6 +15,11 @@ for (const [name, entry] of Object.entries(lock.packages)) {
     assert.ok(atLeast(entry.version, [19, 3, 1]), `${name}: unreviewed React/RSC ${entry.version}`);
   }
   if (name.endsWith("node_modules/sharp")) assert.ok(atLeast(entry.version, [0, 35, 5]), `${name}: vulnerable sharp ${entry.version}`);
+  if (name.endsWith("node_modules/fflate")) assert.ok(atLeast(entry.version, [0, 7, 5]), `${name}: vulnerable fflate ${entry.version}`);
+  if (name.endsWith("node_modules/esbuild")) {
+    assert.ok(atLeast(entry.version, [0, 25, 0]), `${name}: vulnerable esbuild development server ${entry.version}`);
+    assert.ok(!atLeast(entry.version, [0, 27, 3]) || atLeast(entry.version, [0, 28, 1]), `${name}: vulnerable esbuild Windows file handling ${entry.version}`);
+  }
 }
 const vendor = "node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/package.json";
 if (lock.packages["node_modules/@vitejs/plugin-rsc"]) {

@@ -21,6 +21,8 @@ fi
 node scripts/privacy-audit.mjs
 node --experimental-strip-types --test tests/privacy.test.mjs tests/professional-claims.test.mjs
 
+node --test tests/dependency-compat.test.mjs
+
 echo "Running bounded vinext build..."
 timeout \
   --signal=TERM \
