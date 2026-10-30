@@ -23,6 +23,7 @@ const links = {
   cyberDailyReport:
     "https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/latest.md",
   austrianMonitorLab: "/labs/austrian-monitor",
+  cyber3DLabLive: "https://lab.jimblogic.chatgpt.site/",
   austrianMonitorLive:
     "https://austrian-business-cycle-monitor.jimblogic.chatgpt.site",
   austrianMonitorRepo:
@@ -242,6 +243,18 @@ const content = {
           href: links.austrianMonitorLab,
           secondaryHref: links.austrianMonitorRepo,
           secondaryLabel: "Inspect repository",
+          featured: false,
+        },
+        {
+          index: "05",
+          kicker: "Interactive 3D + UX experimentation",
+          title: "CyberSecurity 3D Lab",
+          summary: "An experimental, explorable 3D cybersecurity room connecting project themes and interactive screens. It is a visual companion, not an operational SOC or a replacement for the recruiter portfolio.",
+          metrics: [["3D","interactive exploration"],["2D","optional view"],["UX","input and navigation"]],
+          notes: ["Interactive project screens and room-based navigation","3D experience is optional; the recruiter portfolio remains the fast path","Performance, motion comfort and device compatibility are ongoing design priorities"],
+          href: links.cyber3DLabLive,
+          secondaryHref: "",
+          secondaryLabel: "",
           featured: false,
         },
       ],
@@ -626,6 +639,18 @@ const content = {
           secondaryLabel: "Revisar repositorio",
           featured: false,
         },
+        {
+          index: "05",
+          kicker: "3D interactivo + experimentación UX",
+          title: "CyberSecurity 3D Lab",
+          summary: "Un espacio 3D experimental para explorar temáticas de ciberseguridad y pantallas interactivas relacionadas con proyectos. No es un SOC operativo ni sustituye al portfolio para reclutadores.",
+          metrics: [["3D","exploración interactiva"],["2D","vista alternativa"],["UX","controles y navegación"]],
+          notes: ["Pantallas de proyectos y navegación por salas","La experiencia 3D es opcional; el portfolio sigue siendo la vía rápida","Rendimiento, comodidad de movimiento y compatibilidad siguen en evolución"],
+          href: links.cyber3DLabLive,
+          secondaryHref: "",
+          secondaryLabel: "",
+          featured: false,
+        },
       ],
     },
     capabilities: {
@@ -1008,6 +1033,18 @@ const content = {
           secondaryLabel: "Revisar repositori",
           featured: false,
         },
+        {
+          index: "05",
+          kicker: "3D interactiu + experimentació UX",
+          title: "CyberSecurity 3D Lab",
+          summary: "Un espai 3D experimental per explorar temes de ciberseguretat i pantalles interactives de projectes. No és un SOC operatiu ni substitueix el portfolio per a reclutadors.",
+          metrics: [["3D","exploració interactiva"],["2D","vista alternativa"],["UX","controls i navegació"]],
+          notes: ["Pantalles de projectes i navegació per sales","L'experiència 3D és opcional; el portfolio continua sent el camí ràpid","Rendiment, comoditat del moviment i compatibilitat en evolució"],
+          href: links.cyber3DLabLive,
+          secondaryHref: "",
+          secondaryLabel: "",
+          featured: false,
+        },
       ],
     },
     capabilities: {
@@ -1200,6 +1237,37 @@ const content = {
       privacy: "Privacitat i emmagatzematge local",
       legal: "© 2026 Jaime Ramsden de Frutos",
     },
+  },
+} as const;
+
+
+const projectSpotlight = {
+  en: {
+    label: "EXPLORE LIVE PROJECTS",
+    title: "Three distinct ways to explore my work.",
+    entries: [
+      { number: "01", name: "CyberDailyLog", type: "Threat intelligence", text: "Source-backed defensive intelligence, with explicit publication and source-health limits.", href: links.cyberDailyLab },
+      { number: "02", name: "Austrian Business Cycle Monitor", type: "Economic data", text: "Explore macro indicators, source provenance and the limits of economic interpretations.", href: links.austrianMonitorLab },
+      { number: "03", name: "CyberSecurity 3D Lab", type: "Interactive experiment", text: "Walk through an experimental 3D environment. A 2D option is available in the lab.", href: links.cyber3DLabLive },
+    ],
+  },
+  es: {
+    label: "EXPLORA LOS PROYECTOS",
+    title: "Tres formas distintas de conocer mi trabajo.",
+    entries: [
+      { number: "01", name: "CyberDailyLog", type: "Inteligencia de amenazas", text: "Inteligencia defensiva con fuentes y límites explícitos de publicación y cobertura.", href: links.cyberDailyLab },
+      { number: "02", name: "Austrian Business Cycle Monitor", type: "Datos económicos", text: "Indicadores macro, procedencia de datos y límites de interpretación económica.", href: links.austrianMonitorLab },
+      { number: "03", name: "CyberSecurity 3D Lab", type: "Experimento interactivo", text: "Laboratorio 3D experimental con una alternativa 2D disponible en el propio sitio.", href: links.cyber3DLabLive },
+    ],
+  },
+  ca: {
+    label: "EXPLORA ELS PROJECTES",
+    title: "Tres maneres diferents de conèixer la meva feina.",
+    entries: [
+      { number: "01", name: "CyberDailyLog", type: "Intel·ligència d'amenaces", text: "Intel·ligència defensiva amb fonts i límits explícits de publicació i cobertura.", href: links.cyberDailyLab },
+      { number: "02", name: "Austrian Business Cycle Monitor", type: "Dades econòmiques", text: "Indicadors macro, procedència de dades i límits d'interpretació econòmica.", href: links.austrianMonitorLab },
+      { number: "03", name: "CyberSecurity 3D Lab", type: "Experiment interactiu", text: "Laboratori 3D experimental amb una alternativa 2D disponible al mateix lloc.", href: links.cyber3DLabLive },
+    ],
   },
 } as const;
 
@@ -1521,6 +1589,25 @@ export default function Home() {
 
           <ProfessionalEvidence language={language} />
 
+          <section className="live-project-spotlight" aria-labelledby="live-project-spotlight-title">
+            <div className="section-heading compact">
+              <p className="eyebrow">{projectSpotlight[language].label}</p>
+              <h2 id="live-project-spotlight-title">{projectSpotlight[language].title}</h2>
+            </div>
+            <div className="live-project-links">
+              {projectSpotlight[language].entries.map((entry) => (
+                <a key={entry.number} className="live-project-link" href={entry.href}
+                  target={entry.href.startsWith("/") ? undefined : "_blank"}
+                  rel={entry.href.startsWith("/") ? undefined : "noopener noreferrer"}>
+                  <span className="live-project-id">{entry.number} / {entry.type}</span>
+                  <strong>{entry.name}</strong>
+                  <span className="live-project-summary">{entry.text}</span>
+                  <span aria-hidden="true" className="live-project-arrow">↗</span>
+                </a>
+              ))}
+            </div>
+          </section>
+
           <section className="proof-path" aria-labelledby="proof-path-title">
             <div className="section-heading compact">
               <p className="eyebrow">{t.scan.eyebrow}</p>
@@ -1554,7 +1641,7 @@ export default function Home() {
             <div className="work-grid">
               {workCards.map((project) => (
                 <article
-                  className={`project-card ${project.featured ? "is-featured" : ""} ${project.index === "04" ? "is-wide" : ""}`}
+                  className={`project-card ${project.featured ? "is-featured" : ""} ${project.index === "04" || project.index === "05" ? "is-wide" : ""}`}
                   key={project.title}
                 >
                   <div className="project-topline">
@@ -1841,7 +1928,7 @@ export default function Home() {
           <a className="wordmark" href="#top">
             JimBLogic<span>.</span>
           </a>
-          <div className="footer-centre"><p>{t.footer.note}</p><a href="/privacy/">{t.footer.privacy}</a></div>
+          <div className="footer-centre"><p>{t.footer.note}</p><a href="/agent-resources/">{language === "es" ? "Recursos para agentes" : language === "ca" ? "Recursos per a agents" : "Agent resources"}</a><a href="/privacy/">{t.footer.privacy}</a></div>
           <p>{t.footer.legal}</p>
         </footer>
       </div>
