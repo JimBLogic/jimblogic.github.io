@@ -42,7 +42,7 @@ test("portfolio prominently links three projects without embedding 3D runtime", 
   assert.doesNotMatch(home, /<iframe/);
 });
 test("all mirrored feature files match byte-for-byte", async () => {
-  const paths = ["app/page.tsx", "app/globals.css", "app/sitemap.ts", "app/agent-resources/page.tsx", "app/agent-resources/page.module.css", "public/agent-resources/catalog.json", "public/llms.txt"];
+  const paths = ["app/page.tsx", "app/globals.css", "app/sitemap.ts", "app/agent-resources/page.tsx", "app/agent-resources/page.module.css", "public/agent-resources/catalog.json", "public/agent-resources/qa-cases.json", "public/llms.txt"];
   for (const p of paths) {
     assert.equal(await readFile(p, "utf8"), await readFile("sites/" + p, "utf8"), p);
   }
