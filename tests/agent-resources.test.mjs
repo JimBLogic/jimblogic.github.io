@@ -47,3 +47,15 @@ test("all mirrored feature files match byte-for-byte", async () => {
     assert.equal(await readFile(p, "utf8"), await readFile("sites/" + p, "utf8"), p);
   }
 });
+
+test("routing cases cover all source intents and preserve warnings", async () => {
+  const data = JSON.parse(await readFile("public/agent-resources/qa-cases.json", "utf8"));
+  assert.equal(data.cases.length, 12);
+  const ids = new Set(json.sources.map(source => source.id));
+  for (const sample of data.cases) {
+    assert.ok(ids.has(sample.expected_source_id));
+    assert.ok(sample.prompt.length > 12);
+    assert.ok(sample.reason.length > 12);
+    assert.match(sample.avoid, /not|never|do not|avoid/i);
+  }
+});
