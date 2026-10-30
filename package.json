@@ -11,7 +11,7 @@
     "build:compat": "next build",
     "start": "npx serve@14 out",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
-    "test": "npm run privacy:audit && npm run test:privacy && npm run build && node scripts/validate-static.mjs",
+    "test": "npm run privacy:audit && npm run test:privacy && node --test tests/agent-resources.test.mjs && npm run build && node scripts/validate-static.mjs",
     "validate": "node scripts/validate-static.mjs",
     "verify:mirror": "npm run lint && node scripts/verify-mirror.mjs && npm test",
     "privacy:audit": "node scripts/privacy-audit.mjs",
