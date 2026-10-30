@@ -41,3 +41,15 @@ test("portfolio prominently links three projects without embedding 3D runtime", 
   assert.match(home, /\/agent-resources\//);
   assert.doesNotMatch(home, /<iframe/);
 });
+
+test("routing cases cover all source intents and preserve warnings", async () => {
+  const data = JSON.parse(await readFile("public/agent-resources/qa-cases.json", "utf8"));
+  assert.equal(data.cases.length, 12);
+  const ids = new Set(json.sources.map(source => source.id));
+  for (const sample of data.cases) {
+    assert.ok(ids.has(sample.expected_source_id));
+    assert.ok(sample.prompt.length > 12);
+    assert.ok(sample.reason.length > 12);
+    assert.match(sample.avoid, /not|never|do not|avoid/i);
+  }
+});
