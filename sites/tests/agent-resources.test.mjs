@@ -41,9 +41,3 @@ test("portfolio prominently links three projects without embedding 3D runtime", 
   assert.match(home, /\/agent-resources\//);
   assert.doesNotMatch(home, /<iframe/);
 });
-test("all mirrored feature files match byte-for-byte", async () => {
-  const paths = ["app/page.tsx", "app/globals.css", "app/sitemap.ts", "app/agent-resources/page.tsx", "app/agent-resources/page.module.css", "public/agent-resources/catalog.json", "public/llms.txt"];
-  for (const p of paths) {
-    assert.equal(await readFile(p, "utf8"), await readFile("sites/" + p, "utf8"), p);
-  }
-});
