@@ -1,0 +1,142 @@
+{
+  "schema_version": "0.1.0",
+  "name": "JimBLogic Agent Source Router",
+  "canonical_url": "https://jimblogic.github.io/agent-resources/",
+  "reviewed_on": "2026-10-30",
+  "review_scope": "Editorial selection only. Live endpoint status, content freshness and reuse permissions are not continuously monitored.",
+  "license_notice": "Original link descriptions only. Third-party resources remain with their publishers and subject to their terms.",
+  "sources": [
+    {
+      "id": "cisa-kev",
+      "name": "CISA Known Exploited Vulnerabilities",
+      "publisher": "CISA",
+      "topic": "security",
+      "intent": "confirmed-exploitation",
+      "question": "Which vulnerabilities are listed as known exploited?",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "format": "Catalog",
+      "limitation": "Not a complete inventory of all exploitation, and inclusion criteria can change."
+    },
+    {
+      "id": "nvd-cve",
+      "name": "NVD Vulnerabilities API",
+      "publisher": "NIST / NVD",
+      "topic": "security",
+      "intent": "cve-metadata",
+      "question": "Where can I find CVE metadata and API documentation?",
+      "url": "https://nvd.nist.gov/developers/vulnerabilities",
+      "format": "API docs",
+      "limitation": "Enrichment timing can lag CVE publication; it does not establish active exploitation."
+    },
+    {
+      "id": "first-epss",
+      "name": "Exploit Prediction Scoring System",
+      "publisher": "FIRST",
+      "topic": "security",
+      "intent": "exploit-probability",
+      "question": "Where can I find estimated near-term exploitation probabilities?",
+      "url": "https://www.first.org/epss/",
+      "format": "Model and data",
+      "limitation": "EPSS is a predictive model, not confirmation that exploitation occurred."
+    },
+    {
+      "id": "mitre-attack",
+      "name": "MITRE ATT&CK",
+      "publisher": "MITRE",
+      "topic": "security",
+      "intent": "adversary-techniques",
+      "question": "Where are documented adversary tactics and techniques classified?",
+      "url": "https://attack.mitre.org/",
+      "format": "Knowledge base",
+      "limitation": "A technique mapping is not proof of an incident in a specific environment."
+    },
+    {
+      "id": "owasp-cheatsheets",
+      "name": "OWASP Cheat Sheet Series",
+      "publisher": "OWASP",
+      "topic": "security",
+      "intent": "implementation-guidance",
+      "question": "Where can I find practical defensive implementation guidance?",
+      "url": "https://cheatsheetseries.owasp.org/",
+      "format": "Reference guides",
+      "limitation": "Guidance must be adapted to actual software, deployment and threat model."
+    },
+    {
+      "id": "nist-csf",
+      "name": "NIST Cybersecurity Framework",
+      "publisher": "NIST",
+      "topic": "security",
+      "intent": "risk-framework",
+      "question": "Where can I review the official cybersecurity risk framework?",
+      "url": "https://www.nist.gov/cyberframework",
+      "format": "Framework",
+      "limitation": "A framework is not a certification, audit or regulatory compliance guarantee."
+    },
+    {
+      "id": "aws-iam",
+      "name": "AWS IAM documentation",
+      "publisher": "AWS",
+      "topic": "identity",
+      "intent": "cloud-authorization",
+      "question": "Where is AWS's official IAM identity and permissions guidance?",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+      "format": "Vendor docs",
+      "limitation": "Check the service, account scope and latest applicable policies before implementation."
+    },
+    {
+      "id": "entra-auth",
+      "name": "Microsoft Entra authentication",
+      "publisher": "Microsoft",
+      "topic": "identity",
+      "intent": "authentication",
+      "question": "Where can I investigate Entra authentication and MFA concepts?",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication",
+      "format": "Vendor docs",
+      "limitation": "Tenant licensing, configuration and feature availability can differ."
+    },
+    {
+      "id": "mdn-http",
+      "name": "MDN HTTP status codes",
+      "publisher": "Mozilla / MDN",
+      "topic": "web",
+      "intent": "http-errors",
+      "question": "What does this HTTP response code mean?",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status",
+      "format": "Web reference",
+      "limitation": "The status code alone may not reveal root cause."
+    },
+    {
+      "id": "rfc9110",
+      "name": "HTTP Semantics RFC 9110",
+      "publisher": "IETF / RFC Editor",
+      "topic": "web",
+      "intent": "http-semantics",
+      "question": "What are standard HTTP method, header and status semantics?",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "format": "Standard",
+      "limitation": "Check updates and related specifications for the exact use case."
+    },
+    {
+      "id": "cloudflare-cache",
+      "name": "Cloudflare Cache documentation",
+      "publisher": "Cloudflare",
+      "topic": "web",
+      "intent": "caching",
+      "question": "How do Cloudflare caching and revalidation work?",
+      "url": "https://developers.cloudflare.com/cache/",
+      "format": "Vendor docs",
+      "limitation": "Behaviour depends on the zone, rules and plan."
+    },
+    {
+      "id": "eurostat",
+      "name": "Eurostat official statistics",
+      "publisher": "European Commission",
+      "topic": "data",
+      "intent": "european-statistics",
+      "question": "Where can I obtain European official statistics and their methodology?",
+      "url": "https://ec.europa.eu/eurostat",
+      "format": "Data portal",
+      "limitation": "Each dataset has distinct release timing, definitions, revisions and reuse terms."
+    }
+  ]
+}
