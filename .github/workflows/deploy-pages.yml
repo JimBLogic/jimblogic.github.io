@@ -64,6 +64,24 @@ jobs:
         with:
           path: out
 
+  validate-sites:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sites/package-lock.json
+      - name: Install Sites locked dependencies
+        run: npm ci --prefix sites
+      - name: Validate Sites real production build
+        run: cd sites && npm run verify
+
   deploy:
     if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success'
     needs: validate
