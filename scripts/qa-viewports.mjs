@@ -44,6 +44,14 @@ try{
     const details=await page.locator("#work .project-card h3").allTextContents();
     assert.ok(details.some(x=>x.includes("CyberDailyLog"))&&details.some(x=>x.includes("Austrian Business Cycle Monitor"))&&details.some(x=>x.includes("CyberSecurity 3D Lab")),size.label+": detailed project catalogue");
     const homeOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+    if(homeOverflow>2) {
+      const offenders=await page.evaluate(()=>[...document.querySelectorAll("body *")].map(el=>{
+        const r=el.getBoundingClientRect();
+        return {tag:el.tagName,cls:String(el.className||"").slice(0,100),text:(el.textContent||"").trim().slice(0,65),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
+      }).filter(el=>el.right>innerWidth+2 && el.width>0).sort((a,b)=>b.right-a.right).slice(0,18));
+      console.error("HORIZONTAL_OVERFLOW_DIAGNOSTICS",size.label,JSON.stringify({pixels:homeOverflow,offenders}));
+      await page.screenshot({path:`${dir}/home-overflow-${size.label}.png`,fullPage:true,animations:"disabled"});
+    }
     assert.ok(homeOverflow<=2,size.label+": no home horizontal overflow "+homeOverflow);
     await page.screenshot({path:`${dir}/home-${size.label}.png`,fullPage:true,animations:"disabled"});
     const agents=await page.goto(base+"/agent-resources/",{waitUntil:"domcontentloaded"});
