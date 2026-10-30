@@ -2114,6 +2114,27 @@ body::after {
   background: rgba(24, 26, 27, 0.58);
 }
 
+.background-grid > div {
+  min-width: 0;
+  padding: clamp(20px, 2.4vw, 36px);
+  overflow-wrap: anywhere;
+}
+
+.principles article {
+  min-width: 0;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 16px;
+  padding: clamp(20px, 2.4vw, 32px);
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 901px) and (max-width: 1120px) {
+  .background-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 .button {
   border-radius: 10px;
 }
