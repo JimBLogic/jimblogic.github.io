@@ -1,0 +1,280 @@
+{
+  "$schema": "https://jimblogic.github.io/agent-resources/catalog.schema.json",
+  "schema_version": "1.0.0",
+  "name": "JimBLogic Agent Source Router",
+  "canonical_url": "https://jimblogic.github.io/agent-resources/",
+  "reviewed_on": "2026-11-10",
+  "review_scope": "Editorial review of source-selection descriptions and original workflows. Per-source reviewed_on retains the original 2026-10-30 selection review. Neither date verifies publisher updates, live endpoint availability, current reuse permissions or continuous monitoring.",
+  "license_notice": "Original link descriptions only. Third-party resources remain with their publishers and subject to their terms.",
+  "sources": [
+    {
+      "id": "cisa-kev",
+      "name": "CISA Known Exploited Vulnerabilities",
+      "publisher": "CISA",
+      "topic": "security",
+      "intent": "confirmed-exploitation",
+      "question": "Which vulnerabilities are listed as known exploited?",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "format": "Catalog",
+      "limitation": "Not a complete inventory of all exploitation, and inclusion criteria can change.",
+      "provenance_kind": "publisher-data",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "nvd-cve",
+      "name": "NVD Vulnerabilities API",
+      "publisher": "NIST / NVD",
+      "topic": "security",
+      "intent": "cve-metadata",
+      "question": "Where can I find CVE metadata and API documentation?",
+      "url": "https://nvd.nist.gov/developers/vulnerabilities",
+      "format": "API docs",
+      "limitation": "Enrichment timing can lag CVE publication; it does not establish active exploitation.",
+      "provenance_kind": "publisher-documentation",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "first-epss",
+      "name": "Exploit Prediction Scoring System",
+      "publisher": "FIRST",
+      "topic": "security",
+      "intent": "exploit-probability",
+      "question": "Where can I find estimated near-term exploitation probabilities?",
+      "url": "https://www.first.org/epss/",
+      "format": "Model and data",
+      "limitation": "EPSS is a predictive model, not confirmation that exploitation occurred.",
+      "provenance_kind": "publisher-model",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "mitre-attack",
+      "name": "MITRE ATT&CK",
+      "publisher": "MITRE",
+      "topic": "security",
+      "intent": "adversary-techniques",
+      "question": "Where are documented adversary tactics and techniques classified?",
+      "url": "https://attack.mitre.org/",
+      "format": "Knowledge base",
+      "limitation": "A technique mapping is not proof of an incident in a specific environment.",
+      "provenance_kind": "maintainer-knowledge-base",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "owasp-cheatsheets",
+      "name": "OWASP Cheat Sheet Series",
+      "publisher": "OWASP",
+      "topic": "security",
+      "intent": "implementation-guidance",
+      "question": "Where can I find practical defensive implementation guidance?",
+      "url": "https://cheatsheetseries.owasp.org/",
+      "format": "Reference guides",
+      "limitation": "Guidance must be adapted to actual software, deployment and threat model.",
+      "provenance_kind": "community-guidance",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "nist-csf",
+      "name": "NIST Cybersecurity Framework",
+      "publisher": "NIST",
+      "topic": "security",
+      "intent": "risk-framework",
+      "question": "Where can I review the official NIST Cybersecurity Framework for governing and communicating cybersecurity risk?",
+      "url": "https://www.nist.gov/cyberframework",
+      "format": "Framework",
+      "limitation": "The Cybersecurity Framework is distinct from the NIST Risk Management Framework. Neither catalogue selection nor a framework mapping proves certification, an audit or regulatory compliance.",
+      "provenance_kind": "publisher-framework",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "aws-iam",
+      "name": "AWS IAM documentation",
+      "publisher": "AWS",
+      "topic": "identity",
+      "intent": "cloud-authorization",
+      "question": "Where is AWS's official IAM identity and permissions guidance?",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+      "format": "Vendor docs",
+      "limitation": "Check the service, account scope and latest applicable policies before implementation.",
+      "provenance_kind": "publisher-documentation",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "entra-auth",
+      "name": "Microsoft Entra authentication",
+      "publisher": "Microsoft",
+      "topic": "identity",
+      "intent": "authentication",
+      "question": "Where can I investigate Entra authentication and MFA concepts?",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication",
+      "format": "Vendor docs",
+      "limitation": "Tenant licensing, configuration and feature availability can differ.",
+      "provenance_kind": "publisher-documentation",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "mdn-http",
+      "name": "MDN HTTP status codes",
+      "publisher": "Mozilla / MDN",
+      "topic": "web",
+      "intent": "http-errors",
+      "question": "What does this HTTP response code mean?",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status",
+      "format": "Web reference",
+      "limitation": "An explanatory secondary reference, not the normative HTTP specification. A status code alone does not reveal server root cause.",
+      "provenance_kind": "secondary-reference",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "rfc9110",
+      "name": "HTTP Semantics RFC 9110",
+      "publisher": "IETF / RFC Editor",
+      "topic": "web",
+      "intent": "http-semantics",
+      "question": "What are standard HTTP method, header and status semantics?",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "format": "Standard",
+      "limitation": "Check updates and related specifications for the exact use case.",
+      "provenance_kind": "normative-specification",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "cloudflare-cache",
+      "name": "Cloudflare Cache documentation",
+      "publisher": "Cloudflare",
+      "topic": "web",
+      "intent": "caching",
+      "question": "How do Cloudflare caching and revalidation work?",
+      "url": "https://developers.cloudflare.com/cache/",
+      "format": "Vendor docs",
+      "limitation": "Behaviour depends on the zone, rules and plan.",
+      "provenance_kind": "publisher-documentation",
+      "reviewed_on": "2026-10-30"
+    },
+    {
+      "id": "eurostat",
+      "name": "Eurostat official statistics",
+      "publisher": "European Commission",
+      "topic": "data",
+      "intent": "european-statistics",
+      "question": "Where can I obtain European official statistics and their methodology?",
+      "url": "https://ec.europa.eu/eurostat",
+      "format": "Data portal",
+      "limitation": "Check dataset-specific definitions, units, geography, seasonal adjustment, release timing, revisions and reuse terms. Official publication does not make unlike series comparable.",
+      "provenance_kind": "official-statistics",
+      "reviewed_on": "2026-10-30"
+    }
+  ],
+  "selection_method": "Choose the publisher responsible for the claim. Prefer original data, vendor documentation and normative specifications; MDN and OWASP are labelled reference or community guidance. Selection is by the question answered, not popularity, payment or crawler traffic.",
+  "workflows": [
+    {
+      "id": "defensive-vulnerability-triage",
+      "title": "Defensive triage: three signals, three different claims",
+      "question": "How should I investigate a CVE without confusing observed exploitation, severity and predicted risk?",
+      "source_ids": [
+        "cisa-kev",
+        "nvd-cve",
+        "first-epss"
+      ],
+      "steps": [
+        "Record the exact CVE, affected product/version and the time of your review. Confirm exposure and the fix in the original vendor advisory; a catalogue match cannot establish local exposure.",
+        "Check CISA KEV for inclusion and record the catalogue entry and date. Inclusion supports a known-exploitation claim; absence does not establish that exploitation is impossible or unobserved elsewhere.",
+        "Use NVD for CVE references and available enrichment. Keep CVSS severity, affected-version assertions and enrichment timestamps distinct from exploitation evidence.",
+        "Record the FIRST EPSS score, score date and percentile separately. Its next-30-day probability is a model estimate, not proof that your organisation has been targeted.",
+        "Write the decision with source URLs, retrieval times, local exposure and unresolved gaps. CyberDailyLog can help organise that review; an analyst still decides whether to escalate."
+      ],
+      "do_not_infer": "Do not convert a KEV absence, a high CVSS score or an EPSS probability into a confirmed incident, a guaranteed forecast or a safe-to-ignore verdict.",
+      "project_connection": "CyberDailyLog connects these three source roles with stateful CVE tracking and explicit source-health and publication limits. Inspect its implementation and timing evidence instead of treating this portfolio description as a live result.",
+      "evidence": [
+        {
+          "label": "CyberDailyLog project brief and review order",
+          "url": "https://jimblogic.github.io/labs/cyberdailylog/"
+        },
+        {
+          "label": "State tracking implementation",
+          "url": "https://github.com/JimBLogic/CyberDailyLog/blob/main/src/cyberdailylog/state.py"
+        },
+        {
+          "label": "Publication timing evidence (inspect its own timestamp)",
+          "url": "https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/publication-timing.json"
+        }
+      ]
+    },
+    {
+      "id": "cloud-identity-boundaries",
+      "title": "Cloud identity: authentication is not permission",
+      "question": "Which documentation should I use for a cloud access problem before changing a policy?",
+      "source_ids": [
+        "aws-iam",
+        "entra-auth"
+      ],
+      "steps": [
+        "Name the platform, principal, intended action and resource. Separate a failed sign-in or MFA challenge from an authenticated principal being denied a resource action.",
+        "For an AWS permission question, start with AWS IAM documentation. Identify the applicable account, policy types and conditions before reasoning about access; a single allow statement is not the whole decision.",
+        "For Microsoft Entra sign-in or authentication-method questions, use Microsoft documentation. Check tenant configuration, licensing and the method actually enabled; this does not establish authorisation to an application resource.",
+        "Reproduce the specific question with sanitised local evidence or an owner-approved test account. Keep production policy changes outside this source-selection exercise."
+      ],
+      "do_not_infer": "Successful MFA is not proof of least privilege, and reading a guide is not evidence that an AWS account or Entra tenant is securely configured.",
+      "project_connection": "The portfolio labels cloud work as foundations and learning, without claiming professional cloud-security employment or a verified production tenant. This workflow supplies a decision boundary, not a cloud audit result.",
+      "evidence": [
+        {
+          "label": "Professional claims and evidence boundaries",
+          "url": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/docs/PROFESSIONAL_CLAIMS_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "id": "http-evidence-layers",
+      "title": "Web debugging: specification, explanation, deployment",
+      "question": "An HTTP response looks wrong. Which source can explain what, and what must I measure myself?",
+      "source_ids": [
+        "rfc9110",
+        "mdn-http",
+        "cloudflare-cache"
+      ],
+      "steps": [
+        "Capture the actual request method, response status and relevant headers without visitor cookies or authorisation values. Distinguish the origin response from cache or proxy behaviour.",
+        "Use RFC 9110 for normative method, status and header semantics. Use MDN for a readable explanation, while preserving the distinction between a reference guide and the standard.",
+        "For a deployment using Cloudflare, consult the vendor cache documentation for the exact rule and product context. Do not assume that a vendor feature or default applies to GitHub Pages.",
+        "Compare the rendered canonical URL, cache headers and content type at each hosting target. Shared UI source does not make GitHub Pages and a Sites Worker operationally identical."
+      ],
+      "do_not_infer": "A 404 identifies a response outcome, not its root cause. A passing source test or build is not proof of production headers, indexing or cache behaviour.",
+      "project_connection": "This portfolio shares content across a GitHub Pages static export and a separate Sites Worker. Its architecture and CSP source show the intended controls; each deployed target still requires independent verification.",
+      "evidence": [
+        {
+          "label": "Two-host delivery architecture",
+          "url": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/docs/ARCHITECTURE.md"
+        },
+        {
+          "label": "Portfolio security policy source",
+          "url": "https://github.com/JimBLogic/jimblogic.github.io/blob/main/lib/security.ts"
+        }
+      ]
+    },
+    {
+      "id": "official-data-comparability",
+      "title": "Economic data: compare definitions before values",
+      "question": "Can I compare two official European economic observations and interpret a trend?",
+      "source_ids": [
+        "eurostat"
+      ],
+      "steps": [
+        "Start at Eurostat, then identify the specific dataset code and its metadata. Record the indicator definition, geography, units and frequency rather than citing only the portal homepage.",
+        "Check reference periods, nominal versus real values, seasonal adjustment and publication/revision dates. Resolve these differences before plotting series together.",
+        "Preserve status flags, missing observations and revisions. Record the actual extraction time and the dataset reuse terms; do not fill gaps silently or label old observations live.",
+        "Separate the observed series from the economic interpretation. Explain assumptions and uncertainty before connecting a movement with a business-cycle hypothesis."
+      ],
+      "do_not_infer": "Official data alone does not establish causality, produce an investment recommendation or validate a particular economic theory.",
+      "project_connection": "Austrian Business Cycle Monitor illustrates a separate interpretation layer with visible provenance, freshness and fallback states. This Eurostat selection example does not claim that Eurostat is an implemented data provider in that project.",
+      "evidence": [
+        {
+          "label": "ABCM purpose, review order and educational limits",
+          "url": "https://jimblogic.github.io/labs/austrian-monitor/"
+        },
+        {
+          "label": "ABCM original repository",
+          "url": "https://github.com/JimBLogic/AustrianBusinessCycleMonitor"
+        }
+      ]
+    }
+  ]
+}

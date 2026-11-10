@@ -64,9 +64,32 @@ jobs:
         with:
           path: out
 
+  validate-sites:
+    needs: refresh
+    if: always() && (needs.refresh.result == 'success' || needs.refresh.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: sites
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'main' || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sites/package-lock.json
+      - run: npm run install:ci
+      - run: npm run verify
+
   deploy:
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success'
-    needs: validate
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && needs.validate-sites.result == 'success'
+    needs: [validate, validate-sites]
     runs-on: ubuntu-latest
     permissions:
       pages: write

@@ -1203,6 +1203,48 @@ const content = {
   },
 } as const;
 
+const projectSpotlight = {
+  en: {
+    eyebrow: "Three projects · three review paths",
+    title: "Choose the question you want to explore.",
+    evidence: "Read the evidence and limits",
+    sourceIntro: "Working on your own technical question?",
+    sourceLink: "Use the source-selection guide",
+    resource: "Source-selection guide",
+    entries: [
+      { number: "01", name: "CyberDailyLog", purpose: "Defensive intelligence", description: "Trace public vulnerability sources through a personal CTI pipeline, CVE state tracking and publication evidence.", href: "/labs/cyberdailylog/" },
+      { number: "02", name: "Austrian Business Cycle Monitor", purpose: "Macro data and interpretation", description: "Inspect economic indicators, source states and the boundary between observations and an educational macro interpretation.", href: "/labs/austrian-monitor/" },
+      { number: "03", name: "CyberSecurity 3D Lab", purpose: "Optional interface experiment", description: "Read the practical text brief first, then choose whether to explore the separate 3D presentation. No 3D is needed here.", href: "/labs/3d-lab/" },
+    ],
+  },
+  es: {
+    eyebrow: "Tres proyectos · tres rutas de revisión",
+    title: "Elige la pregunta que quieres explorar.",
+    evidence: "Revisar evidencia y límites",
+    sourceIntro: "¿Investigas tu propia pregunta técnica?",
+    sourceLink: "Usa la guía de selección de fuentes",
+    resource: "Guía de selección de fuentes",
+    entries: [
+      { number: "01", name: "CyberDailyLog", purpose: "Inteligencia defensiva", description: "Sigue fuentes públicas de vulnerabilidades a través de un pipeline CTI personal, estados de CVE y evidencia de publicación.", href: "/labs/cyberdailylog/" },
+      { number: "02", name: "Austrian Business Cycle Monitor", purpose: "Datos macro e interpretación", description: "Revisa indicadores económicos, estados de fuentes y el límite entre las observaciones y una interpretación macro educativa.", href: "/labs/austrian-monitor/" },
+      { number: "03", name: "CyberSecurity 3D Lab", purpose: "Experimento de interfaz opcional", description: "Lee primero el resumen práctico en texto y decide si quieres explorar la presentación 3D externa. Aquí no necesitas 3D.", href: "/labs/3d-lab/" },
+    ],
+  },
+  ca: {
+    eyebrow: "Tres projectes · tres rutes de revisió",
+    title: "Tria la pregunta que vols explorar.",
+    evidence: "Revisar evidència i límits",
+    sourceIntro: "Investiges una pregunta tècnica pròpia?",
+    sourceLink: "Fes servir la guia de selecció de fonts",
+    resource: "Guia de selecció de fonts",
+    entries: [
+      { number: "01", name: "CyberDailyLog", purpose: "Intel·ligència defensiva", description: "Segueix fonts públiques de vulnerabilitats a través d'un pipeline CTI personal, estats de CVE i evidència de publicació.", href: "/labs/cyberdailylog/" },
+      { number: "02", name: "Austrian Business Cycle Monitor", purpose: "Dades macro i interpretació", description: "Revisa indicadors econòmics, estats de fonts i el límit entre les observacions i una interpretació macro educativa.", href: "/labs/austrian-monitor/" },
+      { number: "03", name: "CyberSecurity 3D Lab", purpose: "Experiment d'interfície opcional", description: "Llegeix primer el resum pràctic en text i tria si vols explorar la presentació 3D externa. Aquí no necessites 3D.", href: "/labs/3d-lab/" },
+    ],
+  },
+} as const;
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -1216,6 +1258,7 @@ export default function Home() {
   const [cyberDailySnapshot, setCyberDailySnapshot] =
     useState<CyberDailySnapshot | null>(null);
   const t = content[language];
+  const spotlight = projectSpotlight[language];
 
 
 
@@ -1517,6 +1560,24 @@ export default function Home() {
                 </a>
               ))}
             </aside>
+          </section>
+
+          <section className="section project-spotlight" aria-labelledby="project-spotlight-title">
+            <div className="section-heading compact">
+              <p className="eyebrow">{spotlight.eyebrow}</p>
+              <h2 id="project-spotlight-title">{spotlight.title}</h2>
+            </div>
+            <div className="project-routes">
+              {spotlight.entries.map((entry) => (
+                <a className="project-route" href={entry.href} key={entry.number}>
+                  <span className="project-route-purpose">{entry.number} / {entry.purpose}</span>
+                  <h3>{entry.name}</h3>
+                  <p>{entry.description}</p>
+                  <span className="project-route-evidence">{spotlight.evidence} <span aria-hidden="true">→</span></span>
+                </a>
+              ))}
+            </div>
+            <p className="project-source-link">{spotlight.sourceIntro} <a href="/agent-resources/">{spotlight.sourceLink} <span aria-hidden="true">→</span></a></p>
           </section>
 
           <ProfessionalEvidence language={language} />
@@ -1841,7 +1902,7 @@ export default function Home() {
           <a className="wordmark" href="#top">
             JimBLogic<span>.</span>
           </a>
-          <div className="footer-centre"><p>{t.footer.note}</p><a href="/privacy/">{t.footer.privacy}</a></div>
+          <div className="footer-centre"><p>{t.footer.note}</p><a href="/agent-resources/">{spotlight.resource}</a><a href="/privacy/">{t.footer.privacy}</a></div>
           <p>{t.footer.legal}</p>
         </footer>
       </div>

@@ -19,9 +19,9 @@ test("Satori's patched fflate preserves compressed Unicode content", () => {
 test("legacy Drizzle loader transforms TypeScript using the patched esbuild", async () => {
   for (const compile of [transformSync, transform]) {
     const result = await compile("const value: number = 42; export default value;", "/tmp/portfolio-compat.mts", { format: "cjs" });
-    const module = { exports: {} };
-    runInNewContext(result.code, { module, exports: module.exports });
-    assert.equal(module.exports.default, 42);
+    const compiledModule = { exports: {} };
+    runInNewContext(result.code, { module: compiledModule, exports: compiledModule.exports });
+    assert.equal(compiledModule.exports.default, 42);
   }
 });
 

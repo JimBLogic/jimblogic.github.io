@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${siteUrl}/`,
-      lastModified,
+      lastModified: new Date("2026-11-10T00:00:00.000Z"),
       changeFrequency: "weekly",
       priority: 1,
     },
@@ -30,6 +30,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 0.75,
+    },
+    {
+      url: `${siteUrl}/labs/3d-lab/`,
+      lastModified: new Date("2026-11-10T00:00:00.000Z"),
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${siteUrl}/agent-resources/`,
+      lastModified: new Date("2026-11-10T00:00:00.000Z"),
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     { url: `${siteUrl}/privacy/`, lastModified, changeFrequency: "yearly", priority: 0.4 },
   ];
