@@ -2854,6 +2854,48 @@ footer {
 /* Policy and footer: shared by the two public mirrors. */
 .footer-centre { display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; }
 .footer-centre a { color: var(--orange); font-size: .875rem; }
+
+/* Project routes stay ordinary links; interactive 3D remains an optional exit. */
+.project-routes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+.project-route {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid var(--rule-bright);
+  border-radius: 16px;
+  padding: clamp(22px, 2.5vw, 32px);
+  background: rgba(24, 26, 27, 0.58);
+  overflow-wrap: anywhere;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.project-route:hover,
+.project-route:focus-visible {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.1);
+}
+.project-route-purpose {
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.project-route h3 {
+  margin: 0;
+  font-size: clamp(23px, 2.3vw, 30px);
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+}
+.project-route p { margin: 0; color: var(--paper-dim); font-size: 15px; line-height: 1.7; }
+.project-route-evidence { margin-top: auto; color: var(--orange); font-size: 14px; font-weight: 600; }
+.project-source-link { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 24px 0 0; color: var(--paper-dim); }
+.project-source-link a { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; color: var(--orange); text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 1100px) { .project-routes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .project-route { transition: none; } }
 .privacy-page { width: min(100% - 32px, 960px); margin: 24px auto; overflow-wrap: anywhere; }
 .privacy-nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; }
 .privacy-page header { padding: 48px 0 32px; }

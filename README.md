@@ -20,6 +20,8 @@ Open `http://localhost:3000`.
 | `app/` | Next.js routes, portfolio content, SEO and styling |
 | `app/certifications/` | Searchable certification explorer |
 | `app/labs/` | Portable project briefs and gateways to the live applications |
+| `app/agent-resources/` | Source-selection workflows and publisher-attributed references |
+| `public/agent-resources/` | Versioned catalogue, evaluation fixtures and JSON schemas |
 | `public/images/` | Production portfolio imagery |
 | `public/documents/` | Stable public CV and certificate routes |
 | `docs/` | Architecture, development, deployment and rollback guides |
@@ -47,13 +49,14 @@ npm run start     # preview the generated out/ directory
 - [Development and validation](docs/DEVELOPMENT.md)
 - [GitHub Pages and self-hosting](docs/DEPLOYMENT.md)
 - [Compatibility and mirror contract](docs/COMPATIBILITY.md)
+- [Source router: provenance, maintenance and measurement](docs/AGENT_RESOURCES.md)
 
 ## Live versions
 
 - GitHub Pages: <https://jimblogic.github.io/>
 - ChatGPT Sites mirror: <https://portfolio.jimblogic.chatgpt.site/>
 
-The UI, translations, portfolio content and lab routes match the published Sites version reviewed on 21 August 2026. Platform adapters remain deliberately separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime. This keeps the user-facing source equivalent without breaking GitHub Pages, localhost or the Docker/Nginx self-host path.
+The shared UI, translations, portfolio content and lab routes are checked against the tracked Sites mirror. This source check does not establish which version is currently published. Platform adapters remain deliberately separate: GitHub uses a static Next.js export, while Sites uses its Cloudflare-compatible runtime. This keeps the user-facing source equivalent without breaking GitHub Pages, localhost or the Docker/Nginx self-host path.
 
 ## Rollback archive
 

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://jimblogic.github.io/agent-resources/qa-cases.schema.json",
+  "schema_version": "1.0.0",
+  "purpose": "Human-authored source-selection evaluation fixtures. These are expected starting points and cautions, not generated answers, dynamic routing, bot tracking or measured agent performance.",
+  "tested_behavior": "Given a prompt, select the expected_source_id, preserve the avoid warning, explain the reason and verify the current publisher source before making a factual claim. Structural validation is separate from running an AI or human evaluation.",
+  "cases": [
+    {
+      "id": "active-exploitation",
+      "prompt": "For a CVE, which catalogue should I check for a published record of known exploitation?",
+      "expected_source_id": "cisa-kev",
+      "avoid": "Do not treat absence from KEV as proof of no exploitation.",
+      "reason": "KEV catalogues known exploitation and has specific inclusion criteria."
+    },
+    {
+      "id": "next-30-days",
+      "prompt": "What is the estimated 30-day exploitation probability for a CVE?",
+      "expected_source_id": "first-epss",
+      "avoid": "Never describe EPSS probability as exploitation already observed.",
+      "reason": "EPSS is a predictive statistical model."
+    },
+    {
+      "id": "cve-metadata",
+      "prompt": "Which source provides programmatic CVE metadata and enrichment?",
+      "expected_source_id": "nvd-cve",
+      "avoid": "Do not assert NVD update timing is immediate.",
+      "reason": "NVD provides structured vulnerability metadata and API documentation."
+    },
+    {
+      "id": "incident-mapping",
+      "prompt": "Where can I map observed adversary behaviors into TTPs?",
+      "expected_source_id": "mitre-attack",
+      "avoid": "Do not assume an ATT&CK mapping proves attribution.",
+      "reason": "ATT&CK is a technique knowledge base."
+    },
+    {
+      "id": "web-secure-development",
+      "prompt": "Where are practical cheat sheets for secure web implementation?",
+      "expected_source_id": "owasp-cheatsheets",
+      "avoid": "Avoid pretending that following a cheat sheet proves security.",
+      "reason": "OWASP curates implementation guidance."
+    },
+    {
+      "id": "risk-framework",
+      "prompt": "Where is official NIST Cybersecurity Framework guidance for governing and communicating cybersecurity risk?",
+      "expected_source_id": "nist-csf",
+      "avoid": "Do not confuse the Cybersecurity Framework with the NIST Risk Management Framework, or describe a framework as a certification.",
+      "reason": "NIST publishes the Cybersecurity Framework; it is distinct from the Risk Management Framework."
+    },
+    {
+      "id": "iam-policy",
+      "prompt": "Which documentation should I consult before modifying an AWS IAM policy?",
+      "expected_source_id": "aws-iam",
+      "avoid": "Never edit a live policy based solely on a catalogue entry.",
+      "reason": "Vendor documentation should be read before changes."
+    },
+    {
+      "id": "mfa-microsoft",
+      "prompt": "Which primary vendor source explains Microsoft Entra authentication methods?",
+      "expected_source_id": "entra-auth",
+      "avoid": "Do not assume all MFA methods are enabled in the tenant.",
+      "reason": "Microsoft maintains Entra authentication guidance."
+    },
+    {
+      "id": "http-404",
+      "prompt": "What does HTTP 404 mean?",
+      "expected_source_id": "mdn-http",
+      "avoid": "Do not infer server root cause from status code alone.",
+      "reason": "MDN explains HTTP response status codes."
+    },
+    {
+      "id": "http-standard",
+      "prompt": "Which specification defines HTTP status and method semantics?",
+      "expected_source_id": "rfc9110",
+      "avoid": "Do not substitute informal advice for normative standards.",
+      "reason": "RFC 9110 defines HTTP semantics."
+    },
+    {
+      "id": "cache-revalidation",
+      "prompt": "Where should I read about Cloudflare cache policies and revalidation?",
+      "expected_source_id": "cloudflare-cache",
+      "avoid": "Do not assume a feature exists on every plan.",
+      "reason": "Cloudflare's own docs specify runtime behavior."
+    },
+    {
+      "id": "eu-statistics",
+      "prompt": "Where can I find comparable official EU economic data?",
+      "expected_source_id": "eurostat",
+      "avoid": "Do not compare incompatible reference periods, units, definitions, geography or seasonal adjustment; preserve revisions and missing values.",
+      "reason": "Eurostat is the source for EU official statistics."
+    }
+  ],
+  "reviewed_on": "2026-11-10",
+  "evaluation": {
+    "status": "NOT TESTED",
+    "note": "No AI model or agent source-selection run is recorded by this fixture. Automated schema/reference tests do not establish answer quality, citation accuracy or live source availability."
+  }
+}

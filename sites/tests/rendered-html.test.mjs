@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import test, { before, after } from "node:test";
 import { Miniflare, convertV4MiniflareOptions } from "miniflare";
 import path from "node:path";
-import { readdirSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
+
+const assetRoot = path.resolve("dist/client");
 
 const snapshot = { above_threshold: 2, generated_at: "2026-09-06T13:20:48Z", pipeline_status: "operational",
   qualified_developments: 4, source_health: { core: { healthy: 3, total: 3 } } };
@@ -17,7 +19,14 @@ function createRuntime(outboundService = (request) => {
   modulesRoot: path.resolve("dist/server"),
   compatibilityDate: "2026-10-23",
   compatibilityFlags: ["nodejs_compat"],
-  serviceBindings: { ASSETS: () => new Response("Not found", { status: 404 }) },
+  // Real Miniflare static-asset handling supplies content types and ASSETS.
+  // Worker-first also exercises its security headers on public JSON responses.
+  assets: {
+    directory: assetRoot,
+    binding: "ASSETS",
+    run_worker_first: true,
+    routerConfig: { has_user_worker: true },
+  },
   outboundService,
 }));
 }
@@ -80,6 +89,8 @@ test("renders every public portfolio route from the same production worker", asy
     ["/privacy", /Privacy &amp; local storage|Privacy &amp; Local Storage|Privacy &amp;|Privacy & local storage/],
     ["/labs/cyberdailylog", /How to evaluate the project\./],
     ["/labs/austrian-monitor", /Austrian Business Cycle Monitor/],
+    ["/agent-resources", /source selection|source-selection|Source Router|Source router|Source selection/],
+    ["/labs/3d-lab", /3D Lab|3D lab/],
   ];
 
   for (const [pathname, expected] of routes) {
@@ -93,6 +104,7 @@ test("renders every public portfolio route from the same production worker", asy
     const html = await response.text();
     assert.match(html, expected);
     assert.ok(html.includes(`href="https://jimblogic.github.io${pathname}/"`), pathname);
+    assert.equal((html.match(/<link\b[^>]*\brel="canonical"[^>]*>/g) ?? []).length, 1, `${pathname}: one canonical`);
     assert.equal(response.headers.get("set-cookie"), null);
     if (pathname === "/labs/cyberdailylog") {
       assert.match(html, /https:\/\/cyberdailylog\.jimblogic\.chatgpt\.site/);
@@ -102,6 +114,34 @@ test("renders every public portfolio route from the same production worker", asy
       );
     }
   }
+});
+
+test("resource routes and JSON assets make no outbound requests or cookies", async () => {
+  const outboundBefore = outboundRequests.length;
+  for (const pathname of ["/agent-resources/", "/labs/3d-lab/"]) {
+    const response = await runtime.dispatchFetch(`https://portfolio.jimblogic.chatgpt.site${pathname}`, {
+      headers: { Cookie: "visitor=private", Authorization: "Bearer must-not-leave" },
+    });
+    assert.equal(response.status, 200, pathname);
+    assert.equal(response.headers.get("set-cookie"), null, pathname);
+    const html = await response.text();
+    assert.doesNotMatch(html, /<iframe\b|<canvas\b|three\.js|aframe\.min\.js/i, pathname);
+    // Vinext normalises Link hrefs without the Pages trailingSlash setting.
+    assert.match(html, /href="\/privacy\/?"/, pathname);
+  }
+  for (const filename of ["catalog.json", "qa-cases.json", "catalog.schema.json", "qa-cases.schema.json"]) {
+    const pathname = `/agent-resources/${filename}`;
+    const response = await runtime.dispatchFetch(`https://portfolio.jimblogic.chatgpt.site${pathname}`, {
+      headers: { Cookie: "visitor=private", Authorization: "Bearer must-not-leave" },
+    });
+    assert.equal(response.status, 200, pathname);
+    assert.match(response.headers.get("content-type") ?? "", /^application\/json\b/i, pathname);
+    assert.equal(response.headers.get("set-cookie"), null, pathname);
+    const actual = await response.json();
+    const expected = JSON.parse(readFileSync(path.join(assetRoot, pathname), "utf8"));
+    assert.deepEqual(actual, expected, pathname);
+  }
+  assert.equal(outboundRequests.length, outboundBefore, "source resources must not trigger external requests");
 });
 
 test("serves crawl discovery routes", async () => {
@@ -170,7 +210,8 @@ test("does not follow an upstream redirect to a different destination", async ()
   try {
     await redirected.ready;
     const response = await redirected.dispatchFetch("https://portfolio.jimblogic.chatgpt.site/data/cyberdailylog.json");
-    assert.equal(response.status, 404); // Controlled missing-asset fallback.
+    assert.equal(response.status, 200); // The built, public snapshot is the only redirect fallback.
+    assert.deepEqual(await response.json(), JSON.parse(readFileSync(path.join(assetRoot, "data/cyberdailylog.json"), "utf8")));
     assert.deepEqual(requested, ["https://jimblogic.github.io/data/cyberdailylog.json"]);
   } finally {
     await redirected.dispose();

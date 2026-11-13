@@ -3,6 +3,20 @@
 Professional content reviewed: 2026-10-07.
 Candidate seeking a first Junior SOC / Blue Team role; CTI / vulnerability intelligence and automation are adjacent interests. Cloud security foundations, not professional cloud-security employment.
 
+## Source selection and project review
+- Human-readable source router with original review workflows: https://jimblogic.github.io/agent-resources/
+- Static source catalogue: https://jimblogic.github.io/agent-resources/catalog.json
+- Catalogue JSON Schema: https://jimblogic.github.io/agent-resources/catalog.schema.json
+- Transparent source-selection evaluation cases: https://jimblogic.github.io/agent-resources/qa-cases.json
+- Evaluation JSON Schema: https://jimblogic.github.io/agent-resources/qa-cases.schema.json
+- Editorial routes distinguish exploitation evidence (CISA KEV), predictive probability (FIRST EPSS) and CVE metadata (NVD). Other workflows cover defensive guidance, cloud identity, HTTP standards and official economic datasets.
+- These static resources do not retrieve answers, monitor publisher freshness or demonstrate that an AI system selected or cited a source. Evaluation cases are a test specification, not measured model results.
+- llms.txt is an optional discovery aid, not a universal standard or a guarantee of crawler access, indexing, rankings or AI citations.
+- CyberDailyLog project brief and evidence review path: https://jimblogic.github.io/labs/cyberdailylog/
+- Austrian Business Cycle Monitor educational project brief: https://jimblogic.github.io/labs/austrian-monitor/
+- CyberSecurity 3D Lab plain-text brief and practical non-3D review path: https://jimblogic.github.io/labs/3d-lab/
+- Optional experimental 3D interface (separate deployment): https://lab.jimblogic.chatgpt.site/
+
 ## Original project repositories
 - CyberDailyLog (flagship): CISA KEV, NVD, FIRST EPSS, stateful CVE tracking and transitions, structured feeds and advisory text, correlation, prioritisation, reproducible reports, source health, explicit degradation and publication SLO monitoring. A learning project, not a SIEM or enterprise SOC service. https://github.com/JimBLogic/CyberDailyLog
 - State implementation: https://github.com/JimBLogic/CyberDailyLog/blob/main/src/cyberdailylog/state.py

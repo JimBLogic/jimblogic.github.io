@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jimblogic.github.io/agent-resources/catalog.schema.json",
+  "title": "JimBLogic source catalogue 1.0",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "https://jimblogic.github.io/agent-resources/catalog.schema.json",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_url": {
+      "const": "https://jimblogic.github.io/agent-resources/",
+      "type": "string"
+    },
+    "reviewed_on": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "review_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_notice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selection_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1
+          },
+          "topic": {
+            "type": "string",
+            "enum": [
+              "security",
+              "identity",
+              "web",
+              "data"
+            ]
+          },
+          "intent": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "format": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provenance_kind": {
+            "type": "string",
+            "enum": [
+              "community-guidance",
+              "maintainer-knowledge-base",
+              "normative-specification",
+              "official-statistics",
+              "publisher-data",
+              "publisher-documentation",
+              "publisher-framework",
+              "publisher-model",
+              "secondary-reference"
+            ]
+          },
+          "reviewed_on": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "publisher",
+          "topic",
+          "intent",
+          "question",
+          "url",
+          "format",
+          "limitation",
+          "provenance_kind",
+          "reviewed_on"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "minItems": 1
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "do_not_infer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://"
+                }
+              },
+              "required": [
+                "label",
+                "url"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "project_connection": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "question",
+          "source_ids",
+          "steps",
+          "do_not_infer",
+          "evidence",
+          "project_connection"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "$schema",
+    "schema_version",
+    "name",
+    "canonical_url",
+    "reviewed_on",
+    "review_scope",
+    "license_notice",
+    "selection_method",
+    "sources",
+    "workflows"
+  ],
+  "additionalProperties": false
+}

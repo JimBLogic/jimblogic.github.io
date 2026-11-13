@@ -141,7 +141,7 @@ const structuredData = {
     },
     {
       "@type": "ProfilePage",
-      dateModified: "2026-10-07",
+      dateModified: "2026-11-10",
       "@id": `${siteUrl}/#profile-page`,
       url: siteUrl,
       name: "JimBLogic — Junior SOC Analyst & Blue Team Portfolio",
