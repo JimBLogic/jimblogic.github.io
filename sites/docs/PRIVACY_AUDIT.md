@@ -30,9 +30,9 @@ Primary references: [AEPD cookie guide](https://www.aepd.es/guias/guia-cookies.p
 - In the Sites source directory, `npm ci` and `npm run verify` verify the Worker build. Publication still uses the native Sites save/deploy flow; a GitHub push alone does not publish a new Sites interface.
 - For interface edits, apply the same files to both source trees and publish both verified outputs. Keep each adapter's package and build configuration intact.
 
-## Daily snapshot
+## CyberDailyLog snapshot
 
-The Pages workflow refreshes the public snapshot at 12:00 Europe/Madrid (DST-aware), records changes in both copies, then builds once and deploys that checked artifact. GitHub scheduling is best effort. Sites reads the published Pages snapshot on its server, so news refreshes do not require redeploying the Sites interface. Failure keeps the previous dated snapshot; it never invents a current timestamp.
+Manual dispatch of the Pages workflow reads the archived CyberDailyLog GitHub feed, records any snapshot changes in both copies, and builds and deploys the checked artifact. Sites reads the published Pages snapshot on its server. The portfolio snapshot retains the source edition date, including when the workflow uses its bundled fallback. Current daily editions are available on [CyberDailyLog](https://cyberdailylog.jimblogic.chatgpt.site/).
 
 
 ## 28 September 2026 — Sites responsibilities review
