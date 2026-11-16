@@ -1,7 +1,7 @@
 # JimBLogic - Jaime Ramsden de Frutos
 
 Professional content reviewed: 2026-11-16.
-Cybersecurity and ethical hacking candidate seeking a first role, with a focus on junior pentesting. UpgradeHub Cybersecurity, Ethical Hacking & Cloud bootcamp graduate (350 hours, 2024).
+Cybersecurity, ethical hacking and AWS cloud candidate. Open to junior Red Team/pentesting, Blue Team/threat intelligence and cloud-security roles. UpgradeHub Cybersecurity, Ethical Hacking & Cloud bootcamp graduate (350 hours, 2024); AWS certifications in preparation.
 
 ## Original project repositories
 - CyberDailyLog (flagship): CISA KEV, NVD, FIRST EPSS, stateful CVE tracking and transitions, structured feeds and advisory text, correlation, prioritisation, reproducible reports, source health, explicit degradation and publication SLO monitoring. A learning project, not a SIEM or enterprise SOC service. https://github.com/JimBLogic/CyberDailyLog
