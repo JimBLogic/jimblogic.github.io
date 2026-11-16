@@ -2883,3 +2883,10 @@ footer {
 .professional-evidence summary { cursor: pointer; font-size: 1rem; font-weight: 600; }
 .professional-evidence li { margin-block: .5rem; }
 .professional-evidence a { text-decoration: underline; text-underline-offset: .2em; }
+
+/* Keep long translated headlines within their cards on narrow screens. */
+.hero h1 { overflow-wrap: anywhere; }
+/* The seventh capability closes the row without an orphan card. */
+.capability-grid article:last-child:nth-child(3n + 1) { grid-column: 1 / -1; }
+
+.project-card h3 { overflow-wrap: anywhere; }

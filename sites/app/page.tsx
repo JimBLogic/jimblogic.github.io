@@ -1586,14 +1586,14 @@ export default function Home() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/images/generic-sbc-homelab.webp"
-                        alt="Generic single-board computer configured as a defensive homelab"
+                        alt="Illustrative single-board computer; operational evidence is from WSL2"
                         width="1200"
                         height="800"
                         loading="lazy"
                         decoding="async"
                       />
                       <figcaption>
-                        SBC / LOCAL-FIRST / DEFENSIVE LAB
+                        WSL2 / LOCAL-FIRST / SECURITY LAB
                       </figcaption>
                     </figure>
                   ) : null}
@@ -1846,9 +1846,6 @@ export default function Home() {
               </a>
               <a href={links.cv} target="_blank" rel="noopener noreferrer">
                 {t.contact.cv} <Arrow />
-              </a>
-              <a href={links.coverLetter} target="_blank" rel="noopener noreferrer">
-                {language === "es" ? "Carta de presentación (EN)" : language === "ca" ? "Carta de presentació (EN)" : "Cover letter"} <Arrow />
               </a>
             </div>
             <p className="contact-meta">{t.contact.availability}</p>

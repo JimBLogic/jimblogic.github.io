@@ -1,6 +1,6 @@
 # JimBLogic - Jaime Ramsden de Frutos
 
-Professional content reviewed: 2026-10-07.
+Professional content reviewed: 2026-11-16.
 Cybersecurity and ethical hacking candidate seeking a first role, with a focus on junior pentesting. UpgradeHub Cybersecurity, Ethical Hacking & Cloud bootcamp graduate (350 hours, 2024).
 
 ## Original project repositories
