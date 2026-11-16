@@ -56,7 +56,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Threat intelligence & vulnerability analysis",
+        eyebrow: "Threat intelligence",
         statement:
           "From source validation to an analyst-ready daily defensive brief.",
         intro:
@@ -174,7 +174,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Inteligencia de amenazas y análisis de vulnerabilidades",
+        eyebrow: "Inteligencia de amenazas",
         statement:
           "De la validación de fuentes a un informe defensivo diario listo para el analista.",
         intro:
@@ -292,7 +292,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Intel·ligència d’amenaces i anàlisi de vulnerabilitats",
+        eyebrow: "Intel·ligència d’amenaces",
         statement:
           "De la validació de fonts a un informe defensiu diari llest per a l’analista.",
         intro:
