@@ -1,5 +1,22 @@
 # JimBLogic cybersecurity portfolio
 
+## Current professional profile · 16 November 2026
+
+**Cybersecurity · Ethical Hacking · AWS Cloud**
+
+UpgradeHub Cybersecurity, Ethical Hacking & Cloud bootcamp graduate (350 hours). Open to junior **Red Team / pentesting**, **Blue Team / threat intelligence** and **AWS cloud security** roles, with hands-on practice in authorised laboratories, Linux, Docker, web request inspection, automation and technical reporting.
+
+- **Training evidence:** [UpgradeHub diploma](public/documents/UpgradeHub-Cert.pdf), [verifiable certificates and labs](https://github.com/JimBLogic/jimblogic.github.io/tree/main/app/certifications), [TryHackMe profile](https://tryhackme.com/p/JimBLogic).
+- **Local lab evidence:** [Defensive Homelab WSL2 validation and limitations](https://github.com/JimBLogic/defensive-homelab-blue-team/pull/14).
+- **Technical projects:** [CyberDailyLog](https://github.com/JimBLogic/CyberDailyLog), [Austrian Business Cycle Monitor](https://github.com/JimBLogic/AustrianBusinessCycleMonitor).
+- **Additional portfolio host:** [portfolio.jimblogic.chatgpt.site](https://portfolio.jimblogic.chatgpt.site/). Its publication is independent of GitHub Pages; latest publication status should be verified on the live site.
+
+**AWS status:** studying for CLF-C02; AIF-C01 attempted but not passed. AWS training badges are **not** official AWS certifications.
+
+**Note for visitors:** GitHub Pages can temporarily show an older release when publishing is unavailable; this repository's `main` branch is the source of truth for the updated profile. No GitHub Actions billing or runner is required to read this documentation.
+
+---
+
 Recruiter-first portfolio for Jaime Ramsden de Frutos, presenting cybersecurity, ethical hacking, junior Red Team/pentesting, defensive security and AWS cloud foundations through verifiable evidence. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the published ChatGPT Sites version. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
 
 ## Quick start
