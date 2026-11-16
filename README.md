@@ -1,6 +1,6 @@
 # JimBLogic cybersecurity portfolio
 
-Recruiter-first portfolio for Jaime Ramsden de Frutos, focused on verifiable Junior SOC, Blue Team, cloud-security and automation proof of work. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the published ChatGPT Sites version. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
+Recruiter-first portfolio for Jaime Ramsden de Frutos, presenting cybersecurity, ethical hacking, junior Red Team/pentesting, defensive security and AWS cloud foundations through verifiable evidence. This repository is the public, reproducible compatibility source for the GitHub Pages edition and the published ChatGPT Sites version. It supports English, Spanish and Catalan and produces one static artifact for GitHub Pages or self-hosting.
 
 ## Quick start
 
