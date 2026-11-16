@@ -8,13 +8,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "JimBLogic Portfolio",
   title: {
-    default: "JimBLogic | Junior SOC Analyst & Blue Team Portfolio",
+    default: "JimBLogic | Cybersecurity & Ethical Hacking Portfolio",
     template: "%s | JimBLogic",
   },
   description:
-    "Junior SOC / Blue Team candidate portfolio by Jaime Ramsden de Frutos: Blue Team projects, threat intelligence, defensive homelab, Linux, AWS and auditable proof of work.",
+    "Cybersecurity and ethical hacking portfolio by Jaime Ramsden de Frutos: UpgradeHub graduate, junior pentesting candidate, practical labs, threat intelligence and cloud foundations.",
   keywords: [
-    "Junior SOC Analyst",
+    "Junior Pentester",
+    "Ethical Hacking",
     "Blue Team",
     "Security Operations",
     "Cybersecurity",
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "JimBLogic | Defensive proof of work",
+    title: "JimBLogic | Cybersecurity & Ethical Hacking",
     description:
-      "CyberDailyLog, a defensive Raspberry Pi homelab and verifiable Blue Team learning.",
+      "UpgradeHub ethical hacking training, a locally tested WSL2 homelab and CyberDailyLog threat intelligence.",
     type: "website",
     url: siteUrl,
     siteName: "JimBLogic Portfolio",
@@ -72,9 +73,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JimBLogic | Junior SOC Analyst & Blue Team Portfolio",
+    title: "JimBLogic | Cybersecurity & Ethical Hacking Portfolio",
     description:
-      "Auditable defensive proof of work: CyberDailyLog, a Raspberry Pi homelab and verifiable Blue Team learning.",
+      "Cybersecurity practice: ethical hacking training, WSL2 lab evidence and threat intelligence.",
     images: ["/images/generic-sbc-homelab.webp"],
   },
   icons: {
@@ -104,7 +105,7 @@ const structuredData = {
       alternateName: "JimBLogic",
       url: siteUrl,
       email: "mailto:jrf91@pm.me",
-      description: "Candidate seeking a first Junior SOC / Blue Team role; CTI automation projects and cloud security foundations. No professional SOC employment or earned AWS certification claimed.",
+      description: "Cybersecurity and junior pentesting candidate. UpgradeHub Cybersecurity, Ethical Hacking and Cloud bootcamp graduate (350 hours); practical labs and CTI automation projects.",
       knowsLanguage: ["English", "Spanish", "Catalan"],
       homeLocation: {
         "@type": "Place",
@@ -117,7 +118,7 @@ const structuredData = {
         "https://jimblogic.github.io/",
       ],
       knowsAbout: [
-        "SOC analysis",
+        "Ethical hacking foundations",
         "Blue Team operations",
         "Threat intelligence",
         "Linux",
@@ -135,16 +136,16 @@ const structuredData = {
       url: siteUrl,
       name: "JimBLogic Portfolio",
       description:
-        "Auditable cybersecurity proof of work by Junior SOC candidate Jaime Ramsden de Frutos.",
+        "Auditable cybersecurity proof of work by cybersecurity and junior pentesting candidate Jaime Ramsden de Frutos.",
       inLanguage: ["en", "es", "ca"],
       author: { "@id": `${siteUrl}/#person` },
     },
     {
       "@type": "ProfilePage",
-      dateModified: "2026-10-07",
+      dateModified: "2026-11-16",
       "@id": `${siteUrl}/#profile-page`,
       url: siteUrl,
-      name: "JimBLogic — Junior SOC Analyst & Blue Team Portfolio",
+      name: "JimBLogic — Cybersecurity & Ethical Hacking Portfolio",
       description:
         "Recruiter-first portfolio with auditable cybersecurity projects, operational experience and verifiable learning evidence.",
       inLanguage: ["en", "es", "ca"],
@@ -172,7 +173,7 @@ const structuredData = {
       "@id": "https://github.com/JimBLogic/defensive-homelab-blue-team#software",
       name: "Defensive Homelab",
       description:
-        "Deployment-ready Raspberry Pi 4 defensive baseline with LITE and FULL modes; operational validation in progress.",
+        "WSL2 / Docker Desktop LITE pilot observed on 4–5 November 2026: four services running and two Prometheus targets UP; operational validation in progress with filesystem and manual-review gaps. Raspberry Pi NOT TESTED.",
       codeRepository:
         "https://github.com/JimBLogic/defensive-homelab-blue-team",
       programmingLanguage: ["Shell", "Dockerfile"],

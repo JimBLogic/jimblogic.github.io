@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "JimBLogic — Cybersecurity Portfolio",
     short_name: "JimBLogic",
     description:
-      "Auditable SOC, Blue Team and cybersecurity proof of work by Jaime Ramsden de Frutos.",
+      "Cybersecurity, ethical hacking training and practical lab evidence by Jaime Ramsden de Frutos.",
     start_url: "/",
     display: "standalone",
     background_color: "#181a1b",

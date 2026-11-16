@@ -76,11 +76,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Junior SOC candidate · Blue Team · CTI / Automation · Cloud foundations",
+      role: "Cybersecurity & Ethical Hacking · Junior Pentester candidate",
       statementStart: "I turn operational pressure into",
-      statementAccent: "auditable defensive work.",
+      statementAccent: "documented security practice.",
       intro:
-        "I am seeking my first professional SOC / Blue Team role. I bring operational ownership, multilingual IT support and public projects in source-backed CTI, Linux, containers, reproducibility and automation.",
+        "UpgradeHub graduate in Cybersecurity, Ethical Hacking & Cloud (350 hours). I am seeking my first cybersecurity role, with a focus on junior pentesting. I combine practical labs, threat intelligence, Linux and Docker with operational experience and clear technical reporting.",
       explore: "Explore proof of work",
       cv: "Open CV",
       location: "Menorca · Remote across Spain / EU · UK eligible",
@@ -98,7 +98,7 @@ const content = {
         {
           name: "Defensive Homelab",
           status: "Validation in progress",
-          detail: "Deployment-ready LITE / FULL baseline",
+          detail: "WSL2 pilot · 4 services running",
           stamp: "PUBLIC REPO",
           href: links.homelab,
         },
@@ -176,17 +176,17 @@ const content = {
           kicker: "Linux + containers + monitoring",
           title: "Defensive Homelab",
           summary:
-            "A reproducible Raspberry Pi 4 Blue Team lab with LITE and FULL deployments for service health, metrics, DNS security, hardening, recovery procedures awaiting operational evidence and incident notes.",
+            "Reproducible security lab with a real WSL2 / Docker Desktop LITE pilot: four running services, Prometheus targets and Grafana checks. Filesystem telemetry and manual controls remain incomplete; Raspberry Pi is not tested.",
           metrics: [
-            ["8 GB", "Raspberry Pi 4"],
-            ["1 TB", "SSD storage"],
-            ["2", "deployment modes"],
+            ["4/4", "services running"],
+            ["2/2", "Prometheus UP"],
+            ["WSL2", "LITE · 04–05 Nov 2026"],
           ],
           notes: [
             "Configuration for Prometheus, Grafana, Node Exporter and Uptime Kuma",
             "Local-first exposure and least-privilege decisions",
             "Sanitized documentation and trust boundaries",
-            "Operational validation pending; no professional SOC experience claimed",
+            "DEGRADED: filesystem metrics and manual review pending; Raspberry Pi NOT TESTED",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -253,6 +253,12 @@ const content = {
         "My value is not pretending to know everything. It is combining operational discipline, technical foundations and clear communication so senior people can trust what I hand over.",
       items: [
         {
+          code: "PENTEST",
+          title: "Ethical hacking foundations",
+          text: "Authorised lab reconnaissance, HTTP request inspection and vulnerability documentation; practical ethical hacking training through UpgradeHub and guided labs.",
+          tools: "Burp Suite · Nmap · Linux · TryHackMe",
+        },
+        {
           code: "TRIAGE",
           title: "Defensive monitoring",
           text: "Alert prioritisation, source validation, concise reporting, escalation thinking and documented next actions.",
@@ -294,25 +300,25 @@ const content = {
       eyebrow: "Selected evidence",
       title: "Depth without the certificate wall.",
       intro:
-        "The current portfolio contains 37 verifiable learning records. These six are the quickest way to understand the defensive path; the full repositories remain available for deeper review.",
+        "The current portfolio contains 37 verifiable learning records. These six are the quickest way to understand my cybersecurity training; the full repositories remain available for deeper review.",
       selected: "6 selected",
       total: "37 total records",
       verify: "Verify evidence",
       full: "View full learning evidence",
       items: [
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · networks · forensics · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
-        },
-        {
           issuer: "UpgradeHub",
           title: "Cybersecurity, Ethical Hacking & Cloud",
           focus: "350-hour intensive bootcamp",
           year: "2024",
           href: links.upgradeHubCertificate,
+        },
+        {
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · networks · forensics · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -387,7 +393,7 @@ const content = {
         },
         {
           period: "ONGOING",
-          title: "Blue Team, cloud and automation development",
+          title: "Ethical hacking, cloud and security development",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
             careerStatus.en.aws,
@@ -413,7 +419,7 @@ const content = {
       lead:
         "I am moving into cybersecurity from customer-facing operations, administration and practical IT support. That background is not a detour: it taught me to document, prioritise, protect sensitive information and communicate when the situation is messy.",
       body:
-        "Outside work I build public security projects, develop a defensive Raspberry Pi baseline and study SOC, incident response, threat intelligence and AWS with a longer-term focus on cloud security automation. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
+        "Outside work I build public security projects, validate a local WSL2 homelab and study ethical hacking, incident response, threat intelligence and AWS with a longer-term focus on cloud security automation. I also bring years of live-community experience as a Twitch Partner—useful training in calm communication, troubleshooting and reading a room.",
       principles: [
         ["Evidence over claims", "If I say I built it, there should be a repository, report or lab note."],
         ["Useful over flashy", "The next operational control matters more than another decorative badge."],
@@ -424,7 +430,7 @@ const content = {
       eyebrow: "Contact",
       title: "Let’s talk about useful junior security work.",
       text:
-        "I am seeking junior SOC, Blue Team and cloud-security-track roles. I am also open to security-adjacent IT operations or NOC positions where monitoring, operational ownership and escalation are central to the work.",
+        "I am seeking junior pentesting, ethical hacking and cybersecurity roles. I bring hands-on training, reproducible lab work and careful documentation. I am also open to security operations and cloud-related IT roles where I can keep developing these skills.",
       email: "Email Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -458,11 +464,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Candidato SOC Junior · Blue Team · CTI / Automatización · Fundamentos cloud",
+      role: "Ciberseguridad y Hacking Ético · Candidato a Pentester Junior",
       statementStart: "Convierto presión operativa en",
-      statementAccent: "trabajo defensivo auditable.",
+      statementAccent: "práctica de seguridad documentada.",
       intro:
-        "Busco mi primer puesto profesional SOC / Blue Team. Aporto responsabilidad operativa, soporte IT multilingüe y proyectos públicos de CTI respaldada por fuentes, Linux, contenedores, reproducibilidad y automatización.",
+        "Titulado en el bootcamp de Ciberseguridad, Hacking ético y Cloud de UpgradeHub (350 horas). Busco mi primer puesto en ciberseguridad, con interés especial en pentesting junior. Combino laboratorios prácticos, inteligencia de amenazas, Linux y Docker con experiencia operativa y documentación técnica clara.",
       explore: "Explorar evidencia práctica",
       cv: "Abrir CV",
       location: "Menorca · Remoto en España / UE · habilitado para Reino Unido",
@@ -480,7 +486,7 @@ const content = {
         {
           name: "Homelab defensivo",
           status: "Validación en curso",
-          detail: "Base LITE / FULL para Raspberry Pi",
+          detail: "Piloto WSL2 · 4 servicios activos",
           stamp: "REPO PÚBLICA",
           href: links.homelab,
         },
@@ -558,17 +564,17 @@ const content = {
           kicker: "Linux + contenedores + monitorización",
           title: "Homelab defensivo",
           summary:
-            "Un laboratorio Blue Team reproducible con Raspberry Pi 4 y despliegues LITE y FULL para salud de servicios, métricas, seguridad DNS, hardening, procedimientos de recuperación pendientes de evidencia operacional y notas de incidentes.",
+            "Laboratorio de seguridad reproducible con piloto LITE real en WSL2 / Docker Desktop: cuatro servicios activos, targets de Prometheus y comprobaciones de Grafana. Quedan pendientes telemetría de filesystem y controles manuales; Raspberry Pi no probado.",
           metrics: [
-            ["8 GB", "Raspberry Pi 4"],
-            ["1 TB", "almacenamiento SSD"],
-            ["2", "modos de despliegue"],
+            ["4/4", "servicios activos"],
+            ["2/2", "Prometheus UP"],
+            ["WSL2", "LITE · 04–05 Nov 2026"],
           ],
           notes: [
             "Configuración de Prometheus, Grafana, Node Exporter y Uptime Kuma",
             "Exposición local y decisiones de mínimo privilegio",
             "Documentación saneada y límites de confianza",
-            "Validación operacional pendiente; no acredita experiencia laboral SOC",
+            "DEGRADED: filesystem y revisión manual pendientes; Raspberry Pi NOT TESTED",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -635,6 +641,12 @@ const content = {
         "Mi valor no está en fingir que lo sé todo. Está en combinar disciplina operativa, fundamentos técnicos y comunicación clara para que perfiles senior puedan confiar en lo que les entrego.",
       items: [
         {
+          code: "PENTEST",
+          title: "Fundamentos de hacking ético",
+          text: "Reconocimiento en laboratorios autorizados, inspección de peticiones HTTP y documentación de vulnerabilidades; formación práctica en hacking ético con UpgradeHub y laboratorios guiados.",
+          tools: "Burp Suite · Nmap · Linux · TryHackMe",
+        },
+        {
           code: "TRIAJE",
           title: "Monitorización defensiva",
           text: "Priorización de alertas, validación de fuentes, informes concisos, criterio de escalado y siguientes acciones documentadas.",
@@ -676,25 +688,25 @@ const content = {
       eyebrow: "Evidencia seleccionada",
       title: "Profundidad sin un muro de certificados.",
       intro:
-        "El portfolio actual contiene 37 registros formativos verificables. Estos seis explican más rápido el recorrido defensivo; los repositorios completos siguen disponibles para profundizar.",
+        "El portfolio actual contiene 37 registros formativos verificables. Estos seis explican más rápido mi formación en ciberseguridad; los repositorios completos siguen disponibles para profundizar.",
       selected: "6 seleccionados",
       total: "37 registros totales",
       verify: "Verificar evidencia",
       full: "Ver toda la evidencia formativa",
       items: [
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · redes · forense · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
-        },
-        {
           issuer: "UpgradeHub",
           title: "Ciberseguridad, Hacking Ético y Cloud",
           focus: "Bootcamp intensivo de 350 horas",
           year: "2024",
           href: links.upgradeHubCertificate,
+        },
+        {
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · redes · forense · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -769,7 +781,7 @@ const content = {
         },
         {
           period: "EN CURSO",
-          title: "Desarrollo Blue Team, cloud y automatización",
+          title: "Desarrollo en hacking ético, cloud y seguridad",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
             careerStatus.es.aws,
@@ -795,7 +807,7 @@ const content = {
       lead:
         "Estoy dando el salto a ciberseguridad desde operaciones de atención al cliente, administración y soporte IT práctico. Ese recorrido no es un desvío: me enseñó a documentar, priorizar, proteger información sensible y comunicar cuando la situación viene con curvas.",
       body:
-        "Fuera del trabajo construyo proyectos públicos de seguridad, desarrollo una baseline defensiva con Raspberry Pi y estudio SOC, respuesta a incidentes, inteligencia de amenazas y AWS con foco a largo plazo en automatización de seguridad cloud. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
+        "Fuera del trabajo construyo proyectos públicos de seguridad, valido un homelab local en WSL2 y estudio hacking ético, respuesta a incidentes, inteligencia de amenazas y AWS con foco a largo plazo en automatización de seguridad cloud. También aporto años de experiencia gestionando comunidades en directo como Twitch Partner: una escuela bastante eficaz de comunicación tranquila, resolución de problemas y lectura de contexto.",
       principles: [
         ["Evidencia antes que afirmaciones", "Si digo que lo he construido, debe existir un repositorio, informe o nota de laboratorio."],
         ["Útil antes que vistoso", "El siguiente control operativo importa más que otra insignia decorativa."],
@@ -806,7 +818,7 @@ const content = {
       eyebrow: "Contacto",
       title: "Hablemos de trabajo junior de seguridad que aporte valor.",
       text:
-        "Busco oportunidades junior en SOC, Blue Team y puestos con recorrido hacia seguridad cloud. También estoy abierto a operaciones IT o NOC cercanos a seguridad donde la monitorización, la gestión de incidencias y el escalado sean parte central del trabajo.",
+        "Busco oportunidades de pentesting junior, hacking ético y ciberseguridad. Aporto formación práctica, laboratorios reproducibles y documentación rigurosa. También estoy abierto a operaciones de seguridad y puestos IT vinculados a cloud donde pueda seguir desarrollando estas capacidades.",
       email: "Escribir a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -840,11 +852,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Candidat SOC Junior · Blue Team · CTI / Automatització · Fonaments cloud",
+      role: "Ciberseguretat i Hacking Ètic · Candidat a Pentester Junior",
       statementStart: "Converteixo pressió operativa en",
-      statementAccent: "feina defensiva auditable.",
+      statementAccent: "pràctica de seguretat documentada.",
       intro:
-        "Busco el meu primer lloc professional SOC / Blue Team. Aporto responsabilitat operativa, suport IT multilingüe i projectes públics de CTI basada en fonts, Linux, contenidors, reproduïbilitat i automatització.",
+        "Titulat en el bootcamp de Ciberseguretat, Hacking ètic i Cloud d’UpgradeHub (350 hores). Busco el meu primer lloc en ciberseguretat, amb interès especial en pentesting junior. Combino laboratoris pràctics, intel·ligència d’amenaces, Linux i Docker amb experiència operativa i documentació tècnica clara.",
       explore: "Explorar evidència pràctica",
       cv: "Obrir CV",
       location: "Menorca · Remot a Espanya / UE · habilitat per al Regne Unit",
@@ -862,7 +874,7 @@ const content = {
         {
           name: "Homelab defensiu",
           status: "Validació en curs",
-          detail: "Base LITE / FULL per a Raspberry Pi",
+          detail: "Pilot WSL2 · 4 serveis actius",
           stamp: "REPO PÚBLIC",
           href: links.homelab,
         },
@@ -940,17 +952,17 @@ const content = {
           kicker: "Linux + contenidors + monitoratge",
           title: "Homelab defensiu",
           summary:
-            "Un laboratori Blue Team reproduïble amb Raspberry Pi 4 i desplegaments LITE i FULL per a salut de serveis, mètriques, seguretat DNS, hardening, procediments de recuperació pendents d’evidència operacional i notes d’incidents.",
+            "Laboratori de seguretat reproduïble amb pilot LITE real a WSL2 / Docker Desktop: quatre serveis actius, targets de Prometheus i comprovacions de Grafana. Resten pendents telemetria de filesystem i controls manuals; Raspberry Pi no provat.",
           metrics: [
-            ["8 GB", "Raspberry Pi 4"],
-            ["1 TB", "emmagatzematge SSD"],
-            ["2", "modes de desplegament"],
+            ["4/4", "serveis actius"],
+            ["2/2", "Prometheus UP"],
+            ["WSL2", "LITE · 04–05 Nov 2026"],
           ],
           notes: [
             "Configuració de Prometheus, Grafana, Node Exporter i Uptime Kuma",
             "Exposició local i decisions de mínim privilegi",
             "Documentació sanejada i límits de confiança",
-            "Validació operacional pendent; no acredita experiència laboral SOC",
+            "DEGRADED: filesystem i revisió manual pendents; Raspberry Pi NOT TESTED",
           ],
           href: links.homelab,
           secondaryHref: "",
@@ -1017,6 +1029,12 @@ const content = {
         "El meu valor no és fingir que ho sé tot. És combinar disciplina operativa, fonaments tècnics i comunicació clara perquè els perfils sèniors puguin confiar en el que lliuro.",
       items: [
         {
+          code: "PENTEST",
+          title: "Fonaments de hacking ètic",
+          text: "Reconeixement en laboratoris autoritzats, inspecció de peticions HTTP i documentació de vulnerabilitats; formació pràctica en hacking ètic amb UpgradeHub i laboratoris guiats.",
+          tools: "Burp Suite · Nmap · Linux · TryHackMe",
+        },
+        {
           code: "TRIATGE",
           title: "Monitoratge defensiu",
           text: "Priorització d’alertes, validació de fonts, informes concisos, criteri d’escalat i accions següents documentades.",
@@ -1058,25 +1076,25 @@ const content = {
       eyebrow: "Evidència seleccionada",
       title: "Profunditat sense un mur de certificats.",
       intro:
-        "El portfolio actual conté 37 registres formatius verificables. Aquests sis expliquen més ràpid el recorregut defensiu; els repositoris complets continuen disponibles per aprofundir.",
+        "El portfolio actual conté 37 registres formatius verificables. Aquests sis expliquen més ràpid la meva formació en ciberseguretat; els repositoris complets continuen disponibles per aprofundir.",
       selected: "6 seleccionats",
       total: "37 registres totals",
       verify: "Verificar evidència",
       full: "Veure tota l’evidència formativa",
       items: [
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · xarxes · forense · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
-        },
-        {
           issuer: "UpgradeHub",
           title: "Ciberseguretat, Hacking Ètic i Cloud",
           focus: "Bootcamp intensiu de 350 hores",
           year: "2024",
           href: links.upgradeHubCertificate,
+        },
+        {
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · xarxes · forense · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -1151,7 +1169,7 @@ const content = {
         },
         {
           period: "EN CURS",
-          title: "Desenvolupament Blue Team, cloud i automatització",
+          title: "Desenvolupament en hacking ètic, cloud i seguretat",
           organisation: "Security Blue Team · TryHackMe · AWS Skill Builder",
           text:
             careerStatus.ca.aws,
@@ -1177,7 +1195,7 @@ const content = {
       lead:
         "Estic fent el salt a la ciberseguretat des d’operacions d’atenció al client, administració i suport IT pràctic. Aquest recorregut no és una desviació: m’ha ensenyat a documentar, prioritzar, protegir informació sensible i comunicar quan la situació es complica.",
       body:
-        "Fora de la feina construeixo projectes públics de seguretat, desenvolupo una baseline defensiva amb Raspberry Pi i estudio SOC, resposta a incidents, intel·ligència d’amenaces i AWS amb focus a llarg termini en automatització de seguretat cloud. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
+        "Fora de la feina construeixo projectes públics de seguretat, valido un homelab local a WSL2 i estudio hacking ètic, resposta a incidents, intel·ligència d’amenaces i AWS amb focus a llarg termini en automatització de seguretat cloud. També aporto anys d’experiència gestionant comunitats en directe com a Twitch Partner: una escola força eficaç de comunicació tranquil·la, resolució de problemes i lectura de context.",
       principles: [
         ["Evidència abans que afirmacions", "Si dic que ho he construït, hi ha d’haver un repositori, informe o nota de laboratori."],
         ["Útil abans que vistós", "El següent control operatiu importa més que una altra insígnia decorativa."],
@@ -1188,7 +1206,7 @@ const content = {
       eyebrow: "Contacte",
       title: "Parlem de feina junior de seguretat que aporti valor.",
       text:
-        "Busco oportunitats junior en SOC, Blue Team i llocs amb recorregut cap a seguretat cloud. També estic obert a operacions IT o NOC properes a seguretat on el monitoratge, la gestió d’incidències i l’escalat siguin una part central de la feina.",
+        "Busco oportunitats de pentesting junior, hacking ètic i ciberseguretat. Aporto formació pràctica, laboratoris reproduïbles i documentació rigorosa. També estic obert a operacions de seguretat i llocs IT vinculats a cloud on pugui continuar desenvolupant aquestes capacitats.",
       email: "Escriure a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",

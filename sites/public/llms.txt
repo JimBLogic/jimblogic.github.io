@@ -1,17 +1,18 @@
 # JimBLogic - Jaime Ramsden de Frutos
 
 Professional content reviewed: 2026-10-07.
-Candidate seeking a first Junior SOC / Blue Team role; CTI / vulnerability intelligence and automation are adjacent interests. Cloud security foundations, not professional cloud-security employment.
+Cybersecurity and ethical hacking candidate seeking a first role, with a focus on junior pentesting. UpgradeHub Cybersecurity, Ethical Hacking & Cloud bootcamp graduate (350 hours, 2024).
 
 ## Original project repositories
 - CyberDailyLog (flagship): CISA KEV, NVD, FIRST EPSS, stateful CVE tracking and transitions, structured feeds and advisory text, correlation, prioritisation, reproducible reports, source health, explicit degradation and publication SLO monitoring. A learning project, not a SIEM or enterprise SOC service. https://github.com/JimBLogic/CyberDailyLog
 - State implementation: https://github.com/JimBLogic/CyberDailyLog/blob/main/src/cyberdailylog/state.py
 - Publication evidence: https://github.com/JimBLogic/CyberDailyLog/blob/main/reports/publication-timing.json
-- Defensive Homelab: deployment-ready reproducible baseline, operational validation in progress. LITE/FULL configurations and procedures do not prove live operation. Next evidence (all pending): baseline service health, authentication triage, Windows/Sysmon or equivalent telemetry, SIEM query, incident note, detection tuning. https://github.com/JimBLogic/defensive-homelab-blue-team
+- Defensive Homelab: local WSL2 / Docker Desktop LITE pilot, 4–5 November 2026. Four services running; Prometheus 2/2 UP. DEGRADED: filesystem metrics and manual controls incomplete. Public PR #14: 31/31 synthetic tests; operator subsequently reported 35/35 local tests on 5 November (code tests, not live security controls). Raspberry Pi NOT TESTED; Exercise 001 open. https://github.com/JimBLogic/defensive-homelab-blue-team/pull/14
 - Austrian Business Cycle Monitor: educational macro-data project; no investment advice or guaranteed data availability. https://github.com/JimBLogic/AustrianBusinessCycleMonitor
 - Portfolio: https://github.com/JimBLogic/jimblogic.github.io
 
 ## Learning and certification status
+- UpgradeHub: completed Cybersecurity, Ethical Hacking & Cloud bootcamp, 350 hours (2024). Diploma: https://jimblogic.github.io/documents/UpgradeHub-Cert.pdf
 - AIF-C01: first attempt completed 29 September 2026, not passed; targeted AWS AI study continues before a future retake. Not an earned AWS certification.
 - AWS Cloud Practitioner CLF-C02: preparing, not certified.
 - AWS SimuLearn and Skill Builder badges: learning activities, not AWS Certification exam passes.

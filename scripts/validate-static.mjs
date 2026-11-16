@@ -27,7 +27,7 @@ const [home, certifications, cyberDailyLog, austrianMonitor, robots, sitemap] = 
   readFile("out/sitemap.xml", "utf8"),
 ]);
 
-assert.match(home, /JimBLogic \| Junior SOC Analyst/);
+assert.match(home, /JimBLogic \| Cybersecurity &amp; Ethical Hacking/);
 assert.match(home, /ProfilePage/);
 assert.match(home, /SoftwareSourceCode/);
 assert.match(home, /https:\/\/jimblogic\.github\.io/);
