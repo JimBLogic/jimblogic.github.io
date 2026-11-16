@@ -254,7 +254,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Pentesting / Red Team foundations",
+          title: "Pentesting & Red Team",
           text: "Authorised lab reconnaissance, HTTP request inspection and vulnerability documentation; practical ethical hacking training through UpgradeHub and guided labs.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
@@ -642,7 +642,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Fundamentos de pentesting / Red Team",
+          title: "Pentesting y Red Team",
           text: "Reconocimiento en laboratorios autorizados, inspección de peticiones HTTP y documentación de vulnerabilidades; formación práctica en hacking ético con UpgradeHub y laboratorios guiados.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
@@ -1030,7 +1030,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Fonaments de pentesting / Red Team",
+          title: "Pentesting i Red Team",
           text: "Reconeixement en laboratoris autoritzats, inspecció de peticions HTTP i documentació de vulnerabilitats; formació pràctica en hacking ètic amb UpgradeHub i laboratoris guiats.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
