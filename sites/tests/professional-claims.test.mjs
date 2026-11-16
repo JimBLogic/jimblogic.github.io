@@ -32,3 +32,17 @@ test('published sources do not revive unsupported claims or excluded projects', 
   assert.doesNotMatch(structured, /jobTitle:/);
   assert.match(structured, /operational validation in progress/);
 });
+
+test('portfolio presents Red Team, Blue Team and AWS Cloud options without claiming AWS certification', async () => {
+  const home = await readFile('app/page.tsx', 'utf8');
+  const metadata = await readFile('app/layout.tsx', 'utf8');
+  for (const headline of [
+    'Cybersecurity · Ethical Hacking · AWS Cloud',
+    'Ciberseguridad · Hacking Ético · AWS Cloud',
+    'Ciberseguretat · Hacking Ètic · AWS Cloud',
+  ]) assert.ok(home.includes(headline), headline);
+  assert.ok((home.match(/Red Team \/ pentesting/g) ?? []).length >= 3);
+  assert.match(home, /Certification exams remain in preparation/);
+  assert.match(metadata, /AWS Cloud/);
+  assert.match(home, /Blue Team Junior Analyst Pathway/); // authentic training stays visible
+});

@@ -8,13 +8,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "JimBLogic Portfolio",
   title: {
-    default: "JimBLogic | Cybersecurity & Ethical Hacking Portfolio",
+    default: "JimBLogic | Cybersecurity, Ethical Hacking & AWS Cloud Portfolio",
     template: "%s | JimBLogic",
   },
   description:
-    "Cybersecurity and ethical hacking portfolio by Jaime Ramsden de Frutos: UpgradeHub graduate, junior pentesting candidate, practical labs, threat intelligence and cloud foundations.",
+    "Cybersecurity, ethical hacking and AWS cloud portfolio by Jaime Ramsden de Frutos. Open to junior Red Team/pentesting, Blue Team/security operations and cloud roles; verified UpgradeHub training and practical labs.",
   keywords: [
     "Junior Pentester",
+    "Red Team",
     "Ethical Hacking",
     "Blue Team",
     "Security Operations",
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "JimBLogic | Cybersecurity & Ethical Hacking",
+    title: "JimBLogic | Cybersecurity, Ethical Hacking & AWS Cloud",
     description:
-      "UpgradeHub ethical hacking training, a locally tested WSL2 homelab and CyberDailyLog threat intelligence.",
+      "UpgradeHub cybersecurity and ethical hacking training, AWS cloud foundations, WSL2 lab evidence and CyberDailyLog threat intelligence.",
     type: "website",
     url: siteUrl,
     siteName: "JimBLogic Portfolio",
@@ -73,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JimBLogic | Cybersecurity & Ethical Hacking Portfolio",
+    title: "JimBLogic | Cybersecurity, Ethical Hacking & AWS Cloud Portfolio",
     description:
-      "Cybersecurity practice: ethical hacking training, WSL2 lab evidence and threat intelligence.",
+      "Cybersecurity practice across Red Team/pentesting, Blue Team/threat intelligence and AWS cloud foundations.",
     images: ["/images/generic-sbc-homelab.webp"],
   },
   icons: {
@@ -105,7 +106,7 @@ const structuredData = {
       alternateName: "JimBLogic",
       url: siteUrl,
       email: "mailto:jrf91@pm.me",
-      description: "Cybersecurity and junior pentesting candidate. UpgradeHub Cybersecurity, Ethical Hacking and Cloud bootcamp graduate (350 hours); practical labs and CTI automation projects.",
+      description: "Junior cybersecurity candidate open to Red Team/pentesting, Blue Team and AWS cloud security. UpgradeHub Cybersecurity, Ethical Hacking and Cloud bootcamp graduate (350 hours), with practical labs and CTI automation.",
       knowsLanguage: ["English", "Spanish", "Catalan"],
       homeLocation: {
         "@type": "Place",

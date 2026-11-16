@@ -76,11 +76,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Cybersecurity & Ethical Hacking · Junior Pentester candidate",
+      role: "Cybersecurity · Ethical Hacking · AWS Cloud",
       statementStart: "I turn operational pressure into",
       statementAccent: "documented security practice.",
       intro:
-        "UpgradeHub graduate in Cybersecurity, Ethical Hacking & Cloud (350 hours). I am seeking my first cybersecurity role, with a focus on junior pentesting. I combine practical labs, threat intelligence, Linux and Docker with operational experience and clear technical reporting.",
+        "UpgradeHub graduate in Cybersecurity, Ethical Hacking & Cloud (350 hours). Open to junior roles in Red Team / pentesting, Blue Team / threat intelligence and AWS cloud security. I combine authorised lab practice, Linux, Docker and documented technical work with operational experience.",
       explore: "Explore proof of work",
       cv: "Open CV",
       location: "Menorca · Remote across Spain / EU · UK eligible",
@@ -145,7 +145,7 @@ const content = {
           kicker: "Flagship · Automation + threat intelligence",
           title: "CyberDailyLog",
           summary:
-            "An automated, source-backed daily Blue Team brief that collects public advisories, scores and curates defensive signals, validates its own outputs and publishes an auditable report.",
+            "An automated, source-backed daily threat-intelligence brief that collects public advisories, scores and curates defensive signals, validates its own outputs and publishes an auditable report.",
           metrics: [
             ["24 h", "rolling coverage"],
             ["CVE", "KEV + EPSS context"],
@@ -254,7 +254,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Ethical hacking foundations",
+          title: "Pentesting & Red Team",
           text: "Authorised lab reconnaissance, HTTP request inspection and vulnerability documentation; practical ethical hacking training through UpgradeHub and guided labs.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
@@ -285,7 +285,7 @@ const content = {
         {
           code: "CLOUD",
           title: "AWS foundations",
-          text: "Building toward cloud security through AWS AI Practitioner and Cloud Practitioner, with attention to IAM, logging, shared responsibility and safe automation.",
+          text: "Developing AWS Cloud Practitioner knowledge and cloud-security foundations in IAM, logging, shared responsibility and safe automation. Certification exams remain in preparation.",
           tools: "IAM · CloudTrail concepts · AWS AI · shared responsibility",
         },
         {
@@ -314,11 +314,11 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · networks · forensics · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
+          issuer: "AWS Skill Builder",
+          title: "AWS exam preparation · not certified",
+          focus: "Training badges; exam preparation is not AWS certification",
+          year: "Active 2026",
+          href: links.awsEvidence,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -335,11 +335,11 @@ const content = {
           href: links.ciscoBadge,
         },
         {
-          issuer: "AWS Skill Builder",
-          title: "AWS exam preparation · not certified",
-          focus: "Training badges; exam preparation is not AWS certification",
-          year: "Active 2026",
-          href: links.awsEvidence,
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · networks · forensics · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "TryHackMe",
@@ -430,7 +430,7 @@ const content = {
       eyebrow: "Contact",
       title: "Let’s talk about useful junior security work.",
       text:
-        "I am seeking junior pentesting, ethical hacking and cybersecurity roles. I bring hands-on training, reproducible lab work and careful documentation. I am also open to security operations and cloud-related IT roles where I can keep developing these skills.",
+        "I am open to junior cybersecurity roles across Red Team / pentesting, Blue Team / security operations and AWS cloud security. I bring verified training, repeatable lab practice and clear technical documentation.",
       email: "Email Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -464,11 +464,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Ciberseguridad y Hacking Ético · Candidato a Pentester Junior",
+      role: "Ciberseguridad · Hacking Ético · AWS Cloud",
       statementStart: "Convierto presión operativa en",
       statementAccent: "práctica de seguridad documentada.",
       intro:
-        "Titulado en el bootcamp de Ciberseguridad, Hacking ético y Cloud de UpgradeHub (350 horas). Busco mi primer puesto en ciberseguridad, con interés especial en pentesting junior. Combino laboratorios prácticos, inteligencia de amenazas, Linux y Docker con experiencia operativa y documentación técnica clara.",
+        "Titulado en Ciberseguridad, Hacking Ético y Cloud por UpgradeHub (350 horas). Abierto a puestos junior de Red Team / pentesting, Blue Team / inteligencia de amenazas y seguridad AWS Cloud. Combino laboratorios autorizados, Linux, Docker y documentación técnica rigurosa con experiencia operativa.",
       explore: "Explorar evidencia práctica",
       cv: "Abrir CV",
       location: "Menorca · Remoto en España / UE · habilitado para Reino Unido",
@@ -533,7 +533,7 @@ const content = {
           kicker: "Proyecto principal · Automatización + inteligencia",
           title: "CyberDailyLog",
           summary:
-            "Un informe Blue Team diario, automatizado y basado en fuentes, que recopila avisos públicos, puntúa y selecciona señales defensivas, valida sus salidas y publica un resultado auditable.",
+            "Un informe diario de inteligencia de amenazas, automatizado y basado en fuentes, que recopila avisos públicos, puntúa y selecciona señales defensivas, valida sus salidas y publica un resultado auditable.",
           metrics: [
             ["24 h", "cobertura móvil"],
             ["CVE", "contexto KEV + EPSS"],
@@ -642,7 +642,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Fundamentos de hacking ético",
+          title: "Pentesting y Red Team",
           text: "Reconocimiento en laboratorios autorizados, inspección de peticiones HTTP y documentación de vulnerabilidades; formación práctica en hacking ético con UpgradeHub y laboratorios guiados.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
@@ -673,7 +673,7 @@ const content = {
         {
           code: "CLOUD",
           title: "Fundamentos AWS",
-          text: "Avanzo hacia seguridad cloud mediante AWS AI Practitioner y Cloud Practitioner, con atención a IAM, logs, responsabilidad compartida y automatización segura.",
+          text: "Me preparo en AWS Cloud Practitioner y seguridad cloud: IAM, registros, responsabilidad compartida y automatización segura. Las certificaciones oficiales siguen pendientes.",
           tools: "IAM · conceptos CloudTrail · IA en AWS · responsabilidad compartida",
         },
         {
@@ -702,11 +702,11 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · redes · forense · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
+          issuer: "AWS Skill Builder",
+          title: "Ruta AI Practitioner → Cloud Practitioner",
+          focus: "Insignias formativas; preparación no equivale a certificación AWS",
+          year: "Activo 2026",
+          href: links.awsEvidence,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -723,11 +723,11 @@ const content = {
           href: links.ciscoBadge,
         },
         {
-          issuer: "AWS Skill Builder",
-          title: "Ruta AI Practitioner → Cloud Practitioner",
-          focus: "Insignias formativas; preparación no equivale a certificación AWS",
-          year: "Activo 2026",
-          href: links.awsEvidence,
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · redes · forense · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "TryHackMe",
@@ -818,7 +818,7 @@ const content = {
       eyebrow: "Contacto",
       title: "Hablemos de trabajo junior de seguridad que aporte valor.",
       text:
-        "Busco oportunidades de pentesting junior, hacking ético y ciberseguridad. Aporto formación práctica, laboratorios reproducibles y documentación rigurosa. También estoy abierto a operaciones de seguridad y puestos IT vinculados a cloud donde pueda seguir desarrollando estas capacidades.",
+        "Busco oportunidades junior de ciberseguridad en Red Team / pentesting, Blue Team / operaciones de seguridad y AWS Cloud. Aporto formación acreditada, laboratorios reproducibles y documentación técnica rigurosa.",
       email: "Escribir a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -852,11 +852,11 @@ const content = {
     },
     hero: {
       name: "Jaime Ramsden de Frutos",
-      role: "Ciberseguretat i Hacking Ètic · Candidat a Pentester Junior",
+      role: "Ciberseguretat · Hacking Ètic · AWS Cloud",
       statementStart: "Converteixo pressió operativa en",
       statementAccent: "pràctica de seguretat documentada.",
       intro:
-        "Titulat en el bootcamp de Ciberseguretat, Hacking ètic i Cloud d’UpgradeHub (350 hores). Busco el meu primer lloc en ciberseguretat, amb interès especial en pentesting junior. Combino laboratoris pràctics, intel·ligència d’amenaces, Linux i Docker amb experiència operativa i documentació tècnica clara.",
+        "Titulat en Ciberseguretat, Hacking Ètic i Cloud per UpgradeHub (350 hores). Obert a llocs junior de Red Team / pentesting, Blue Team / intel·ligència d’amenaces i seguretat AWS Cloud. Combino laboratoris autoritzats, Linux, Docker i documentació tècnica rigorosa amb experiència operativa.",
       explore: "Explorar evidència pràctica",
       cv: "Obrir CV",
       location: "Menorca · Remot a Espanya / UE · habilitat per al Regne Unit",
@@ -921,7 +921,7 @@ const content = {
           kicker: "Projecte principal · Automatització + intel·ligència",
           title: "CyberDailyLog",
           summary:
-            "Un informe Blue Team diari, automatitzat i basat en fonts, que recopila avisos públics, puntua i selecciona senyals defensius, valida els resultats i publica un informe auditable.",
+            "Un informe diari d’intel·ligència d’amenaces, automatitzat i basat en fonts, que recopila avisos públics, puntua i selecciona senyals defensius, valida els resultats i publica un informe auditable.",
           metrics: [
             ["24 h", "cobertura mòbil"],
             ["CVE", "context KEV + EPSS"],
@@ -1030,7 +1030,7 @@ const content = {
       items: [
         {
           code: "PENTEST",
-          title: "Fonaments de hacking ètic",
+          title: "Pentesting i Red Team",
           text: "Reconeixement en laboratoris autoritzats, inspecció de peticions HTTP i documentació de vulnerabilitats; formació pràctica en hacking ètic amb UpgradeHub i laboratoris guiats.",
           tools: "Burp Suite · Nmap · Linux · TryHackMe",
         },
@@ -1061,7 +1061,7 @@ const content = {
         {
           code: "CLOUD",
           title: "Fonaments AWS",
-          text: "Avanço cap a la seguretat cloud mitjançant AWS AI Practitioner i Cloud Practitioner, amb atenció a IAM, logs, responsabilitat compartida i automatització segura.",
+          text: "Em preparo en AWS Cloud Practitioner i seguretat cloud: IAM, registres, responsabilitat compartida i automatització segura. Les certificacions oficials continuen pendents.",
           tools: "IAM · conceptes CloudTrail · IA a AWS · responsabilitat compartida",
         },
         {
@@ -1090,11 +1090,11 @@ const content = {
           href: links.upgradeHubCertificate,
         },
         {
-          issuer: "Security Blue Team",
-          title: "Blue Team Junior Analyst Pathway",
-          focus: "VMs · xarxes · forense · OSINT · hunting · Bash · Python",
-          year: "2024–25",
-          href: links.blueTeamPathway,
+          issuer: "AWS Skill Builder",
+          title: "Ruta AI Practitioner → Cloud Practitioner",
+          focus: "Insígnies formatives; preparació no equival a certificació AWS",
+          year: "Actiu 2026",
+          href: links.awsEvidence,
         },
         {
           issuer: "Mossé Cyber Security Institute",
@@ -1111,11 +1111,11 @@ const content = {
           href: links.ciscoBadge,
         },
         {
-          issuer: "AWS Skill Builder",
-          title: "Ruta AI Practitioner → Cloud Practitioner",
-          focus: "Insígnies formatives; preparació no equival a certificació AWS",
-          year: "Actiu 2026",
-          href: links.awsEvidence,
+          issuer: "Security Blue Team",
+          title: "Blue Team Junior Analyst Pathway",
+          focus: "VMs · xarxes · forense · OSINT · hunting · Bash · Python",
+          year: "2024–25",
+          href: links.blueTeamPathway,
         },
         {
           issuer: "TryHackMe",
@@ -1206,7 +1206,7 @@ const content = {
       eyebrow: "Contacte",
       title: "Parlem de feina junior de seguretat que aporti valor.",
       text:
-        "Busco oportunitats de pentesting junior, hacking ètic i ciberseguretat. Aporto formació pràctica, laboratoris reproduïbles i documentació rigorosa. També estic obert a operacions de seguretat i llocs IT vinculats a cloud on pugui continuar desenvolupant aquestes capacitats.",
+        "Busco oportunitats junior de ciberseguretat en Red Team / pentesting, Blue Team / operacions de seguretat i AWS Cloud. Aporto formació acreditada, laboratoris reproduïbles i documentació tècnica rigorosa.",
       email: "Escriure a Jaime",
       linkedin: "LinkedIn",
       github: "GitHub",

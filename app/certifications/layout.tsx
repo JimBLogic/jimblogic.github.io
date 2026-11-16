@@ -5,7 +5,7 @@ const siteUrl = "https://jimblogic.github.io";
 export const metadata: Metadata = {
   title: "Cybersecurity Certifications & Labs",
   description:
-    "Search and verify Jaime Ramsden de Frutos' ethical hacking, Blue Team, AWS, digital forensics, threat intelligence, Linux and cybersecurity learning evidence.",
+    "Search and verify ethical hacking, Red Team/pentesting, defensive security, AWS cloud, digital forensics, threat intelligence and Linux learning evidence.",
   alternates: {
     canonical: `${siteUrl}/certifications/`,
   },
@@ -44,11 +44,12 @@ const structuredData = {
   inLanguage: "en",
   isPartOf: { "@id": `${siteUrl}/#website` },
   about: [
-    "Blue Team",
-    "SOC analysis",
-    "Digital forensics",
-    "Threat intelligence",
+    "Cybersecurity",
+    "Ethical hacking and pentesting",
     "AWS cloud foundations",
+    "Threat intelligence",
+    "Digital forensics",
+    "Blue Team fundamentals",
   ],
   breadcrumb: {
     "@type": "BreadcrumbList",

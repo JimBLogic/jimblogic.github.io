@@ -1,9 +1,8 @@
 name: Build and deploy portfolio
 
+# Archived manual workflow: production publishing no longer uses GitHub Actions.
+# Keep for historical reference only; ordinary pushes and PRs never start jobs.
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:

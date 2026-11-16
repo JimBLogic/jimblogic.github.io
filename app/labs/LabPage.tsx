@@ -56,7 +56,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Blue Team intelligence system",
+        eyebrow: "Threat intelligence",
         statement:
           "From source validation to an analyst-ready daily defensive brief.",
         intro:
@@ -90,7 +90,7 @@ const copy = {
         showsText:
           "Source validation, Python automation, data normalisation, prioritisation, documentation and bilingual product delivery.",
         relationshipText:
-          "My main Blue Team experimentation project. It turns daily learning into an auditable analyst workflow supporting my wider cybersecurity and vulnerability-analysis practice.",
+          "A threat-intelligence and security automation project supporting my wider cybersecurity practice, from offensive vulnerability research to defensive prioritisation and reporting.",
         accessItems: [
           ["Live dashboard", "Qualified developments, history and source health"],
           ["Public evidence", "Exports, methodology and source repository"],
@@ -174,7 +174,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Sistema de inteligencia Blue Team",
+        eyebrow: "Inteligencia de amenazas",
         statement:
           "De la validación de fuentes a un informe defensivo diario listo para el analista.",
         intro:
@@ -208,7 +208,7 @@ const copy = {
         showsText:
           "Validación de fuentes, automatización con Python, normalización de datos, priorización, documentación y entrega bilingüe de producto.",
         relationshipText:
-          "Mi principal proyecto de experimentación Blue Team. Convierte el aprendizaje diario en un flujo de analista auditable y que complementa mi práctica en ciberseguridad y análisis de vulnerabilidades.",
+          "Proyecto de inteligencia de amenazas y automatización que complementa mi formación en ciberseguridad, desde el análisis de vulnerabilidades hasta la priorización defensiva y la elaboración de informes.",
         accessItems: [
           ["Dashboard en vivo", "Novedades cualificadas, histórico y salud de fuentes"],
           ["Evidencia pública", "Exportaciones, metodología y repositorio"],
@@ -292,7 +292,7 @@ const copy = {
     projectsCopy: {
       cyberdailylog: {
         title: "CyberDailyLog",
-        eyebrow: "Sistema d’intel·ligència Blue Team",
+        eyebrow: "Intel·ligència d’amenaces",
         statement:
           "De la validació de fonts a un informe defensiu diari llest per a l’analista.",
         intro:
@@ -326,7 +326,7 @@ const copy = {
         showsText:
           "Validació de fonts, automatització amb Python, normalització de dades, priorització, documentació i lliurament bilingüe de producte.",
         relationshipText:
-          "El meu principal projecte d’experimentació Blue Team. Converteix l’aprenentatge diari en un flux d’analista auditable i que complementa la meva pràctica en ciberseguretat i anàlisi de vulnerabilitats.",
+          "Projecte d’intel·ligència d’amenaces i automatització que complementa la meva formació en ciberseguretat, des de l’anàlisi de vulnerabilitats fins a la priorització defensiva i l’elaboració d’informes.",
         accessItems: [
           ["Dashboard en viu", "Novetats qualificades, històric i salut de fonts"],
           ["Evidència pública", "Exportacions, metodologia i repositori"],

@@ -1,6 +1,6 @@
 # JimBLogic Portfolio
 
-Source for Jaime Ramsden de Frutos' multilingual cybersecurity portfolio: Junior SOC, Blue Team, cloud security and practical automation.
+Source for Jaime Ramsden de Frutos' multilingual cybersecurity portfolio: ethical hacking, Red Team/pentesting, Blue Team/threat intelligence and AWS cloud foundations.
 
 The `main` branch is the canonical reproducible mirror of the version published through ChatGPT Sites. The same application can run locally or in a self-hosted container without rewriting the portfolio into a second codebase.
 

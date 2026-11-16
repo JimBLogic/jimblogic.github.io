@@ -1,14 +1,12 @@
 # Deployment and self-hosting
 
-Both deployment methods serve the same generated `out/` directory.
+The root application generates a portable static `out/` directory. The source repository is updated through ordinary commits and pull requests, **without requiring GitHub Actions**. Cloudflare Pages or another static host can deploy `out/`; ChatGPT Sites publishes its independent `sites/` build through the native Sites editor.
 
-## GitHub Pages
+## Historical GitHub Pages URL
 
-1. In the repository, open **Settings → Pages**.
-2. Set **Build and deployment → Source** to **GitHub Actions**.
-3. Merge a validated pull request into `main`.
-4. The `Build and deploy portfolio` workflow installs locked dependencies, lints, builds, validates and deploys.
-5. Verify:
+`https://jimblogic.github.io/` may continue serving its last successful GitHub Pages deployment, but **commits to `main` do not update that URL** while GitHub Actions publishing is unavailable. Do not describe source merges as live deployments. The legacy workflow is manual-only to stop automatic failed runs.
+
+Verify the existing URL only as a historical mirror (not proof of the latest release):
    - <https://jimblogic.github.io/>
    - <https://jimblogic.github.io/certifications/>
    - <https://jimblogic.github.io/labs/cyberdailylog/>
@@ -16,7 +14,7 @@ Both deployment methods serve the same generated `out/` directory.
    - <https://jimblogic.github.io/robots.txt>
    - <https://jimblogic.github.io/sitemap.xml>
 
-Pull requests validate without deploying. Only successful pushes to `main` publish.
+Pull requests and pushes update repository code only. For new releases, validate locally and publish via Sites or a separate free static host; verify live output before switching recruiter links.
 
 ## Docker Compose
 
