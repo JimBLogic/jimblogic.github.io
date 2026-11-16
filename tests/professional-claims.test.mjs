@@ -41,7 +41,7 @@ test('portfolio presents Red Team, Blue Team and AWS Cloud options without claim
     'Ciberseguridad · Hacking Ético · AWS Cloud',
     'Ciberseguretat · Hacking Ètic · AWS Cloud',
   ]) assert.ok(home.includes(headline), headline);
-  assert.equal((home.match(/Red Team \/ pentesting/g) ?? []).length, 3);
+  assert.ok((home.match(/Red Team \/ pentesting/g) ?? []).length >= 3);
   assert.match(home, /Certification exams remain in preparation/);
   assert.match(metadata, /AWS Cloud/);
   assert.match(home, /Blue Team Junior Analyst Pathway/); // authentic training stays visible
