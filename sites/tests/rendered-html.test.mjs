@@ -129,7 +129,7 @@ test("serves crawl discovery routes", async () => {
   assert.equal(sitemap.status, 200);
   const xml = await sitemap.text();
   assert.match(xml, /<loc>.*\/certifications\/<\/loc>/);
-  assert.match(xml, /<lastmod>2026-10-07/);
+  assert.match(xml, /<lastmod>2026-11-16/);
 
   const manifest = await worker.fetch(
     new Request("https://portfolio.jimblogic.chatgpt.site/manifest.webmanifest"),

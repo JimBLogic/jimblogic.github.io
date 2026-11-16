@@ -5,14 +5,14 @@ const siteUrl = "https://jimblogic.github.io";
 export const metadata: Metadata = {
   title: "Cybersecurity Certifications & Labs",
   description:
-    "Search and verify Jaime Ramsden de Frutos' Blue Team, SOC, AWS, digital forensics, threat intelligence, Linux and cybersecurity learning evidence.",
+    "Search and verify Jaime Ramsden de Frutos' ethical hacking, Blue Team, AWS, digital forensics, threat intelligence, Linux and cybersecurity learning evidence.",
   alternates: {
     canonical: `${siteUrl}/certifications/`,
   },
   openGraph: {
     title: "Cybersecurity certifications and labs | JimBLogic",
     description:
-      "A searchable record of verifiable Blue Team, AWS and cybersecurity learning evidence.",
+      "A searchable record of verifiable ethical hacking, AWS and cybersecurity learning evidence.",
     url: `${siteUrl}/certifications/`,
     type: "website",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cybersecurity certifications and labs | JimBLogic",
     description:
-      "Searchable, verifiable Blue Team, AWS and cybersecurity learning evidence.",
+      "Searchable, verifiable ethical hacking, AWS and cybersecurity learning evidence.",
     images: ["/images/generic-sbc-homelab.webp"],
   },
 };

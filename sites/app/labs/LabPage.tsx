@@ -90,7 +90,7 @@ const copy = {
         showsText:
           "Source validation, Python automation, data normalisation, prioritisation, documentation and bilingual product delivery.",
         relationshipText:
-          "My main Blue Team experimentation project. It turns daily learning into an auditable analyst workflow aligned with the SOC role I am targeting.",
+          "My main Blue Team experimentation project. It turns daily learning into an auditable analyst workflow supporting my wider cybersecurity and vulnerability-analysis practice.",
         accessItems: [
           ["Live dashboard", "Qualified developments, history and source health"],
           ["Public evidence", "Exports, methodology and source repository"],
@@ -208,7 +208,7 @@ const copy = {
         showsText:
           "Validación de fuentes, automatización con Python, normalización de datos, priorización, documentación y entrega bilingüe de producto.",
         relationshipText:
-          "Mi principal proyecto de experimentación Blue Team. Convierte el aprendizaje diario en un flujo de analista auditable y alineado con el puesto SOC al que aspiro.",
+          "Mi principal proyecto de experimentación Blue Team. Convierte el aprendizaje diario en un flujo de analista auditable y que complementa mi práctica en ciberseguridad y análisis de vulnerabilidades.",
         accessItems: [
           ["Dashboard en vivo", "Novedades cualificadas, histórico y salud de fuentes"],
           ["Evidencia pública", "Exportaciones, metodología y repositorio"],
@@ -326,7 +326,7 @@ const copy = {
         showsText:
           "Validació de fonts, automatització amb Python, normalització de dades, priorització, documentació i lliurament bilingüe de producte.",
         relationshipText:
-          "El meu principal projecte d’experimentació Blue Team. Converteix l’aprenentatge diari en un flux d’analista auditable i alineat amb el lloc SOC al qual aspiro.",
+          "El meu principal projecte d’experimentació Blue Team. Converteix l’aprenentatge diari en un flux d’analista auditable i que complementa la meva pràctica en ciberseguretat i anàlisi de vulnerabilitats.",
         accessItems: [
           ["Dashboard en viu", "Novetats qualificades, històric i salut de fonts"],
           ["Evidència pública", "Exportacions, metodologia i repositori"],
